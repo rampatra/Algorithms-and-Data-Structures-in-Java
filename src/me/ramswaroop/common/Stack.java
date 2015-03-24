@@ -8,4 +8,6 @@ package me.ramswaroop.common;
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
 public class Stack {
+    int top;
+
 }
