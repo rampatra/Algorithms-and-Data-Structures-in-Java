@@ -1,4 +1,4 @@
-package me.ramswaroop.rough;
+package me.ramswaroop.tests;
 
 /**
  * Created by IntelliJ IDEA.
