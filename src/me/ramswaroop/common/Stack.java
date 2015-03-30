@@ -7,7 +7,7 @@ package me.ramswaroop.common;
  * Time: 3:02 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class Stack {
+public class Stack<E> {
     int top;
 
 }
