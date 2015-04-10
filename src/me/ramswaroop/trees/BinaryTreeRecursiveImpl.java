@@ -1,66 +1,83 @@
-package me.ramswaroop.common.interfaces;
+package me.ramswaroop.trees;
 
 import me.ramswaroop.common.Node;
+import me.ramswaroop.common.interfaces.BinaryTree;
 
 /**
  * Created by IntelliJ IDEA.
  * User: ramswaroop
- * Date: 4/5/15
- * Time: 5:16 PM
+ * Date: 3/24/15
+ * Time: 3:02 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public interface Tree<E> {
+public class BinaryTreeRecursiveImpl<T> implements BinaryTree<T> {
+
+    public static void main(String[] a) {
+        BinaryTreeRecursiveImpl obj = new BinaryTreeRecursiveImpl();
+
+    }
 
     /**
      * Inserts a node to the tree.
      *
      * @param node
      */
-    public void insert(Node<E> node);
+    @Override
+    public void insert(Node<T> node) {
 
+    }
 
     /**
      * Deletes a particular node from the tree.
      *
      * @param node
      */
-    public void delete(Node<E> node);
+    @Override
+    public void delete(Node<T> node) {
 
+    }
 
     /**
      * Prints the pre-order traversal of the tree.
-     *
      */
-    public void preOrder();
+    @Override
+    public void preOrder() {
 
+    }
 
     /**
      * Prints the in-order traversal of the tree.
-     *
      */
-    public void inOrder();
+    @Override
+    public void inOrder() {
 
+    }
 
     /**
      * Prints the post-order traversal of the tree.
-     *
      */
-    public void postOrder();
+    @Override
+    public void postOrder() {
 
+    }
 
     /**
      * Returns the number of nodes currently in the tree.
      *
      * @return
      */
-    public int size();
-
+    @Override
+    public int size() {
+        return 0;
+    }
 
     /**
      * Tests if this tree is empty.
      *
      * @return
      */
-    public boolean isEmpty();
-
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
 }
