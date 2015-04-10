@@ -1,6 +1,7 @@
 package me.ramswaroop.common;
 
-import me.ramswaroop.interfaces.Stack;
+
+import me.ramswaroop.common.interfaces.Stack;
 
 import java.util.NoSuchElementException;
 

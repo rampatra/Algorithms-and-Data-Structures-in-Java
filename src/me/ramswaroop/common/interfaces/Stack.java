@@ -1,4 +1,4 @@
-package me.ramswaroop.interfaces;
+package me.ramswaroop.common.interfaces;
 
 /**
  * Created by IntelliJ IDEA.
