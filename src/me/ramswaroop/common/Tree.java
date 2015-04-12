@@ -1,6 +1,4 @@
-package me.ramswaroop.common.interfaces;
-
-import me.ramswaroop.common.Node;
+package me.ramswaroop.common;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,36 +12,33 @@ public interface Tree<E> {
     /**
      * Inserts a node to the tree.
      *
-     * @param node
+     * @param data
      */
-    public void insert(Node<E> node);
+    public void insert(E data, BinaryNode<E> node);
 
 
     /**
      * Deletes a particular node from the tree.
      *
-     * @param node
+     * @param data
      */
-    public void delete(Node<E> node);
+    public void delete(E data);
 
 
     /**
      * Prints the pre-order traversal of the tree.
-     *
      */
-    public void preOrder();
+    public void preOrder(BinaryNode<E> node);
 
 
     /**
      * Prints the in-order traversal of the tree.
-     *
      */
     public void inOrder();
 
 
     /**
      * Prints the post-order traversal of the tree.
-     *
      */
     public void postOrder();
 

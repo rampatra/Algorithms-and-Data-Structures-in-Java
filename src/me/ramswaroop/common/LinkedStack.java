@@ -1,9 +1,7 @@
 package me.ramswaroop.common;
 
 
-import me.ramswaroop.common.interfaces.Stack;
-
-import java.util.NoSuchElementException;
+import java.util.EmptyStackException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +19,11 @@ import java.util.NoSuchElementException;
  */
 public class LinkedStack<E> implements Stack<E> {
 
-    private Node top = null;
+    private Node<E> top;
+
+    public LinkedStack() {
+        top = null;
+    }
 
     /**
      * Pushes an item onto the top of this stack.
@@ -29,8 +31,9 @@ public class LinkedStack<E> implements Stack<E> {
      * @param item
      */
     @Override
-    public void push(E item) {
-        top = new Node(item, top);
+    public E push(E item) {
+        top = new Node<>(item, top);
+        return item;
     }
 
     /**
@@ -53,7 +56,7 @@ public class LinkedStack<E> implements Stack<E> {
     @Override
     public E peek() {
         if (top == null) {
-            throw new NoSuchElementException();
+            throw new EmptyStackException();
         }
         return top.data;
     }
@@ -66,10 +69,27 @@ public class LinkedStack<E> implements Stack<E> {
     @Override
     public int size() {
         int count = 0;
-        for (Node node = top; node != null; node = top.next) {
+        for (Node node = top; node != null; node = node.next) {
             count++;
         }
         return count;
+    }
+
+    /**
+     * Prints the content of the stack.
+     */
+    @Override
+    public void print() {
+        Node<E> node;
+        System.out.print("[");
+        if (top == null) {
+            System.out.print("]");
+            return;
+        }
+        for (node = top; node.next != null; node = node.next) {
+            System.out.print(node.data + ",");
+        }
+        System.out.print(node.data + "]");
     }
 
     /**
@@ -82,9 +102,9 @@ public class LinkedStack<E> implements Stack<E> {
         return top == null;
     }
 
-    private class Node {
+    private class Node<E> {
         E data;
-        Node next;
+        Node<E> next;
 
         Node(E data, Node next) {
             this.data = data;

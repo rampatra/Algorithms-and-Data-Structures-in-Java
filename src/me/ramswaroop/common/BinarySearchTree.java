@@ -1,4 +1,4 @@
-package me.ramswaroop.common.interfaces;
+package me.ramswaroop.common;
 
 /**
  * Created by IntelliJ IDEA.
@@ -7,6 +7,6 @@ package me.ramswaroop.common.interfaces;
  * Time: 10:57 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public interface BinaryTree<T> extends Tree<T> {
+public interface BinarySearchTree<E> extends Tree<E> {
 
 }

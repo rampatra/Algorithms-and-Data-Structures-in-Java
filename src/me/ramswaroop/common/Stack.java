@@ -1,4 +1,4 @@
-package me.ramswaroop.common.interfaces;
+package me.ramswaroop.common;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,17 +13,21 @@ public interface Stack<E> {
      *
      * @param item
      */
-    public void push(E item);
+    public E push(E item);
 
     /**
-     * Removes the object at the top of this stack and returns that object as the value of this function.
+     * Removes the object at the top of this stack and returns
+     * that object as the value of this function. This method
+     * throws an exception if this queue is empty.
      *
      * @return
      */
     public E pop();
 
     /**
-     * Looks at the object at the top of this stack without removing it from the stack.
+     * Looks at the object at the top of this stack without
+     * removing it from the stack. This method throws an
+     * exception if this queue is empty.
      *
      * @return
      */
@@ -42,4 +46,9 @@ public interface Stack<E> {
      * @return
      */
     public boolean isEmpty();
+
+    /**
+     * Prints the content of the stack.
+     */
+    public void print();
 }
