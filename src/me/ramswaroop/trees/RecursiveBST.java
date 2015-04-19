@@ -1,6 +1,7 @@
 package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
+import me.ramswaroop.utils.Utils;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,7 +10,7 @@ import me.ramswaroop.common.BinaryNode;
  * Time: 3:02 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class RecursiveBST<E extends Comparable<E>> {
+public class RecursiveBST<E extends Comparable<E>> extends Tree {
 
     BinaryNode root;
 
@@ -24,6 +25,7 @@ public class RecursiveBST<E extends Comparable<E>> {
         obj.inOrder();
         obj.print("\n");
         obj.postOrder();
+        Utils.println("\n" + obj.size());
     }
 
     /**
@@ -118,7 +120,15 @@ public class RecursiveBST<E extends Comparable<E>> {
      * @return
      */
     public int size() {
-        return 0;
+        return size(root);
+    }
+
+    public int size(BinaryNode<E> node) {
+        if (node == null) {
+            return 0;
+        } else {
+            return size(node.left) + 1 + size(node.right);
+        }
     }
 
     /**
@@ -127,9 +137,14 @@ public class RecursiveBST<E extends Comparable<E>> {
      * @return
      */
     public boolean isEmpty() {
-        return false;
+        return root == null;
     }
 
+    /**
+     * Utility methods
+     *
+     * @param value
+     */
     private void print(E value) {
         System.out.print(value);
     }
