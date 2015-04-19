@@ -13,7 +13,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
         LinkedStack<Integer> stack = new LinkedStack<>();
         LinkedQueue<Integer> queue = new LinkedQueue<>();
-        firstLoop:
+        chooseModule:
         while (true) {
             Utils.println("Choose module:");
             Utils.println("==============");
@@ -52,7 +52,7 @@ public class Main {
                                 stack.print();
                                 break;
                             case 5:
-                                continue firstLoop;
+                                continue chooseModule;
                             default:
                                 Utils.println("Wrong choice!");
                         }
@@ -86,7 +86,7 @@ public class Main {
                                 queue.print();
                                 break;
                             case 5:
-                                continue firstLoop;
+                                continue chooseModule;
                             default:
                                 Utils.println("Wrong choice!");
                         }

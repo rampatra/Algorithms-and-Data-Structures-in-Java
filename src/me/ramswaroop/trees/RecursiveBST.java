@@ -10,9 +10,9 @@ import me.ramswaroop.utils.Utils;
  * Time: 3:02 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class RecursiveBST<E extends Comparable<E>> extends Tree {
+public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
 
-    BinaryNode root;
+    //BinaryNode<E> root;
 
     public static void main(String[] a) {
         RecursiveBST obj = new RecursiveBST();
@@ -26,6 +26,8 @@ public class RecursiveBST<E extends Comparable<E>> extends Tree {
         obj.print("\n");
         obj.postOrder();
         Utils.println("\n" + obj.size());
+        Utils.println(BinaryTree.isIdentical(obj.root.right, obj.root.right));
+        Utils.println(obj.isIdentical(obj.root));
     }
 
     /**
