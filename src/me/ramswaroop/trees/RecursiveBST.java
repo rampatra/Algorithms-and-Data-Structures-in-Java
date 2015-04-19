@@ -1,0 +1,137 @@
+package me.ramswaroop.trees;
+
+import me.ramswaroop.common.BinaryNode;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: ramswaroop
+ * Date: 3/24/15
+ * Time: 3:02 PM
+ * To change this template go to Preferences | IDE Settings | File and Code Templates
+ */
+public class RecursiveBST<E extends Comparable<E>> {
+
+    BinaryNode root;
+
+    public static void main(String[] a) {
+        RecursiveBST obj = new RecursiveBST();
+        obj.put(6);
+        obj.put(3);
+        obj.put(5);
+        obj.put(7);
+        obj.preOrder();
+        obj.print("\n");
+        obj.inOrder();
+        obj.print("\n");
+        obj.postOrder();
+    }
+
+    /**
+     * Inserts a node to the tree.
+     *
+     * @param value
+     */
+    public void put(E value) {
+        put(root, value);
+    }
+
+    public BinaryNode<E> put(BinaryNode<E> node, E value) {
+        if (node == null) {
+            return root = new BinaryNode<>(value, null, null);
+        } else {
+            if (value.compareTo(node.value) < 0) {
+                if (node.left == null) {
+                    return node.left = new BinaryNode<>(value, null, null);
+                } else {
+                    return put(node.left, value);
+                }
+            } else {
+                if (node.right == null) {
+                    return node.right = new BinaryNode<>(value, null, null);
+                } else {
+                    return put(node.right, value);
+                }
+            }
+        }
+    }
+
+    /**
+     * Deletes a particular node from the tree.
+     *
+     * @param value
+     */
+    public void delete(E value) {
+
+    }
+
+    /**
+     * Prints the pre-order traversal of the tree.
+     */
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    public void preOrder(BinaryNode<E> node) {
+        if (node == null) {
+            return;
+        }
+        print(node.value);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    /**
+     * Prints the in-order traversal of the tree.
+     */
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    public void inOrder(BinaryNode<E> node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        print(node.value);
+        inOrder(node.right);
+    }
+
+    /**
+     * Prints the post-order traversal of the tree.
+     */
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    public void postOrder(BinaryNode<E> node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        print(node.value);
+    }
+
+    /**
+     * Returns the number of nodes currently in the tree.
+     *
+     * @return
+     */
+    public int size() {
+        return 0;
+    }
+
+    /**
+     * Tests if this tree is empty.
+     *
+     * @return
+     */
+    public boolean isEmpty() {
+        return false;
+    }
+
+    private void print(E value) {
+        System.out.print(value);
+    }
+
+}

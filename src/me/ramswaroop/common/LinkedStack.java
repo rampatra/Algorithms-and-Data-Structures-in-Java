@@ -58,7 +58,7 @@ public class LinkedStack<E> implements Stack<E> {
         if (top == null) {
             throw new EmptyStackException();
         }
-        return top.data;
+        return top.value;
     }
 
     /**
@@ -87,9 +87,9 @@ public class LinkedStack<E> implements Stack<E> {
             return;
         }
         for (node = top; node.next != null; node = node.next) {
-            System.out.print(node.data + ",");
+            System.out.print(node.value + ",");
         }
-        System.out.print(node.data + "]");
+        System.out.println(node.value + "]");
     }
 
     /**
@@ -103,11 +103,11 @@ public class LinkedStack<E> implements Stack<E> {
     }
 
     private class Node<E> {
-        E data;
+        E value;
         Node<E> next;
 
-        Node(E data, Node next) {
-            this.data = data;
+        Node(E value, Node next) {
+            this.value = value;
             this.next = next;
         }
     }
