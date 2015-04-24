@@ -7,6 +7,6 @@ package me.ramswaroop.trees;
  * Time: 6:36 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class BinarySearchTree<E> extends BinaryTree<E> {
+public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
 
 }

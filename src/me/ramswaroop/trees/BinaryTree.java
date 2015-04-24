@@ -3,6 +3,9 @@ package me.ramswaroop.trees;
 import me.ramswaroop.common.BinaryNode;
 import me.ramswaroop.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ramswaroop
@@ -10,7 +13,7 @@ import me.ramswaroop.utils.Utils;
  * Time: 6:35 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class BinaryTree<E> extends Tree<E> {
+public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     BinaryNode<E> root;
 
@@ -23,7 +26,7 @@ public class BinaryTree<E> extends Tree<E> {
      * @param <E>
      * @return
      */
-    public static <E> boolean isIdentical(BinaryNode<E> node1, BinaryNode<E> node2) {
+    public static <E extends Comparable<E>> boolean isIdentical(BinaryNode<E> node1, BinaryNode<E> node2) {
         if (node1 == null && node2 == null) return true;
         if (node1 == null && node2 != null || (node1 != null && node2 == null)) return false;
 
@@ -111,38 +114,6 @@ public class BinaryTree<E> extends Tree<E> {
         node = null; // delete node
     }
 
-    public boolean isIdentical(BinaryNode<E> node) {
-        return isIdentical(this.root, node);
-    }
-
-    /**
-     * Converts a Tree to its Mirror Tree.
-     * <p/>
-     * MIRROR OF A BINARY TREE T is another Binary Tree M(T) with
-     * left and right children of all non-leaf nodes interchanged.
-     * <p/>
-     * TIP: In-order traversal of mirror tree is exactly the
-     * reverse of the in-order traversal of the original tree.
-     */
-    public void mirror() {
-        mirror(root);
-    }
-
-    public void mirror(BinaryNode<E> node) {
-        if (node == null) return;
-
-        BinaryNode<E> tempNode;
-
-        // mirror sub-trees
-        mirror(node.left);
-        mirror(node.right);
-
-        // swap nodes
-        tempNode = node.left;
-        node.left = node.right;
-        node.right = tempNode;
-    }
-
     /**
      * Return the height of the tree.
      *
@@ -185,9 +156,49 @@ public class BinaryTree<E> extends Tree<E> {
     }
 
     /**
-     * Prints the node to leaf paths, one per line.
+     * Checks whether this tree and another with @param node
+     * as root are identical or not.
+     *
+     * @param node
+     * @return
      */
-    public void rootToLeafPaths() {
+    public boolean isIdentical(BinaryNode<E> node) {
+        return isIdentical(this.root, node);
+    }
+
+    /**
+     * Converts a Tree to its Mirror Tree.
+     * <p/>
+     * MIRROR OF A BINARY TREE T is another Binary Tree M(T) with
+     * left and right children of all non-leaf nodes interchanged.
+     * <p/>
+     * TIP: In-order traversal of mirror tree is exactly the
+     * reverse of the in-order traversal of the original tree.
+     */
+    public void mirror() {
+        mirror(root);
+    }
+
+    public void mirror(BinaryNode<E> node) {
+        if (node == null) return;
+
+        BinaryNode<E> tempNode;
+
+        // mirror sub-trees
+        mirror(node.left);
+        mirror(node.right);
+
+        // swap nodes
+        tempNode = node.left;
+        node.left = node.right;
+        node.right = tempNode;
+    }
+
+    /**
+     * Prints the node to leaf paths, one per line.
+     * (Using array)
+     */
+    /*public void rootToLeafPaths() {
         E[] pathList = (E[]) new Object[100];
         rootToLeafPaths(root, pathList, 0);
     }
@@ -210,6 +221,35 @@ public class BinaryTree<E> extends Tree<E> {
             // do the same for subtrees
             rootToLeafPaths(node.left, pathList, pathLength);
             rootToLeafPaths(node.right, pathList, pathLength);
+        }
+    }*/
+
+    /**
+     * Prints the node to leaf paths, one per line.
+     * (Using ArrayList)
+     */
+    public void rootToLeafPaths() {
+        List<E> pathList = new ArrayList<>();
+        rootToLeafPaths(root, pathList);
+    }
+
+    public void rootToLeafPaths(BinaryNode<E> node, List<E> pathList) {
+        if (node == null) return;
+
+        pathList.add(node.value);
+
+        // if its a leaf node then print the list
+        if (node.left == null && node.right == null) {
+            int i;
+            for (i = 0; i < pathList.size() - 1; i++) {
+                Utils.print(pathList.get(i) + " -> ");
+            }
+            // outside the loop so that "->" doesn't appear after the last node
+            Utils.println(pathList.get(i));
+        } else {
+            // do the same for subtrees
+            rootToLeafPaths(node.left, new ArrayList<>(pathList));
+            rootToLeafPaths(node.right, new ArrayList<>(pathList));
         }
     }
 }

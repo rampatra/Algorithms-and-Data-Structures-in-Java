@@ -7,7 +7,7 @@ package me.ramswaroop.common;
  * Time: 7:11 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class BinaryNode<E> {
+public class BinaryNode<E extends Comparable<E>> {
 
     public E value;
     public BinaryNode left;

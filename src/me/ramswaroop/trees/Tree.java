@@ -7,6 +7,6 @@ package me.ramswaroop.trees;
  * Time: 6:30 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class Tree<E> {
+public class Tree<E extends Comparable<E>> {
 
 }
