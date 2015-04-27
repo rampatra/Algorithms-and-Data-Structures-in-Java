@@ -1,4 +1,4 @@
-package me.ramswaroop.tests;
+package me.ramswaroop.practice;
 
 import java.util.ArrayList;
 import java.util.List;

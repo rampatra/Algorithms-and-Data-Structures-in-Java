@@ -3,6 +3,8 @@ package me.ramswaroop.trees;
 import me.ramswaroop.common.BinaryNode;
 import me.ramswaroop.utils.Utils;
 
+import java.util.NoSuchElementException;
+
 /**
  * Created by IntelliJ IDEA.
  * User: ramswaroop
@@ -39,7 +41,8 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         obj.inOrder();*/
         Utils.println("\nRoot to leafs: ");
         obj.rootToLeafPaths();
-        Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 16, 8).value);
+        Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
+        Utils.println("Min: " + obj.min().value);
     }
 
     /**
@@ -72,6 +75,25 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
     }
 
     /**
+     * Returns the node with minimum value.
+     *
+     * @return
+     */
+    public BinaryNode<E> min() {
+        return min(root);
+    }
+
+    public BinaryNode<E> min(BinaryNode<E> node) {
+        if (node == null) throw new NoSuchElementException();
+
+        if (node.left == null) {
+            return node;
+        } else {
+            return min(node.left);
+        }
+    }
+
+    /**
      * Determines the LCA for a BST
      * <p/>
      * DEFINITION OF LCA:
@@ -92,7 +114,7 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
     }
 
     public BinaryNode<E> leastCommonAncestor(BinaryNode<E> node, E value1, E value2) {
-        if (node == null || value1.compareTo(value2) > 0) return null;
+        if (node == null || value1.compareTo(value2) > 0) throw new NoSuchElementException();
 
         if (value1.compareTo(node.value) <= 0 && value2.compareTo(node.value) >= 0) {
             return node;

@@ -1,4 +1,4 @@
-package me.ramswaroop.tests;
+package me.ramswaroop.practice;
 
 /**
  * Created by IntelliJ IDEA.
