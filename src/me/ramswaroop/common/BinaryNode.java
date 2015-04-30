@@ -19,4 +19,9 @@ public class BinaryNode<E extends Comparable<E>> {
         this.right = right;
     }
 
+    public BinaryNode(BinaryNode<E> node) {
+        this.value = node.value;
+        this.left = node.left;
+        this.right = node.right;
+    }
 }

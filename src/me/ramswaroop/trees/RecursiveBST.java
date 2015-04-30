@@ -14,8 +14,10 @@ import java.util.NoSuchElementException;
  */
 public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
 
+    BinaryNode<E> listRoot;
+
     public static void main(String[] a) {
-        RecursiveBST obj = new RecursiveBST();
+        RecursiveBST<Integer> obj = new RecursiveBST<>();
         obj.put(6);
         obj.put(3);
         obj.put(5);
@@ -43,6 +45,7 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         obj.rootToLeafPaths();
         Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
         Utils.println("Min: " + obj.min().value);
+        obj.treeToList();
     }
 
     /**
@@ -130,18 +133,45 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
      * and rearranges the internal pointers to make a circular
      * doubly linked list out of the tree nodes. The list should
      * be arranged so that the nodes are in increasing order.
+     *
+     * P.S: For a better solution - http://cslibrary.stanford.edu/109/TreeListRecursion.html
      */
     public void treeToList() {
+        treeToList(root);
 
+        // print the list
+        BinaryNode<E> node;
+        Utils.print("[");
+        for (node = listRoot; node.right != listRoot; node = node.right) {
+            Utils.print(node.value + ",");
+        }
+        Utils.print(node.value + "]");
     }
 
-    /**
-     * Returns the head pointer to the new list.
-     *
-     * @param node
-     * @return
-     */
-    public BinaryNode<E> treeToList(BinaryNode<E> node) {
-        return null;
+    public void treeToList(BinaryNode<E> node) {
+        if (node == null) return;
+
+        treeToList(node.left);
+        addToList(new BinaryNode<>(node));
+        treeToList(node.right);
+    }
+
+    private void addToList(BinaryNode<E> node) {
+        if (listRoot == null) {
+            listRoot = new BinaryNode<>(node.value, null, null);
+            listRoot.left = listRoot;
+            listRoot.right = listRoot;
+        } else {
+            BinaryNode<E> head = listRoot;
+            // go to the last node
+            while (head.right != listRoot) {
+                head = head.right;
+            }
+            // make it circular
+            head.right = node;
+            node.left = head;
+            node.right = listRoot;
+            listRoot.left = head;
+        }
     }
 }
