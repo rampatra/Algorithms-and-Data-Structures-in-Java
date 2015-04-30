@@ -46,6 +46,8 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
         Utils.println("Min: " + obj.min().value);
         obj.treeToList();
+        Utils.println("");
+        obj.breadthFirstTraversal();
     }
 
     /**
@@ -133,24 +135,33 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
      * and rearranges the internal pointers to make a circular
      * doubly linked list out of the tree nodes. The list should
      * be arranged so that the nodes are in increasing order.
-     *
+     * <p/>
      * P.S: For a better solution - http://cslibrary.stanford.edu/109/TreeListRecursion.html
      */
     public void treeToList() {
         treeToList(root);
 
         // print the list
-        BinaryNode<E> node;
+        BinaryNode<E> current = listRoot;
         Utils.print("[");
-        for (node = listRoot; node.right != listRoot; node = node.right) {
-            Utils.print(node.value + ",");
+        if (current == null) {
+            System.out.print("]");
+            return;
         }
-        Utils.print(node.value + "]");
+        while (current.right != listRoot) {
+            Utils.print(current.value + ",");
+            current = current.right;
+        }
+        Utils.print(current.value + "]");
     }
 
     public void treeToList(BinaryNode<E> node) {
         if (node == null) return;
 
+        /**
+         * Process left node then root and then right node, so
+         * that the values in the list are in ascending order.
+         */
         treeToList(node.left);
         addToList(new BinaryNode<>(node));
         treeToList(node.right);
@@ -162,16 +173,16 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
             listRoot.left = listRoot;
             listRoot.right = listRoot;
         } else {
-            BinaryNode<E> head = listRoot;
+            BinaryNode<E> current = listRoot;
             // go to the last node
-            while (head.right != listRoot) {
-                head = head.right;
+            while (current.right != listRoot) {
+                current = current.right;
             }
             // make it circular
-            head.right = node;
-            node.left = head;
+            current.right = node;
+            node.left = current;
             node.right = listRoot;
-            listRoot.left = head;
+            listRoot.left = current;
         }
     }
 }

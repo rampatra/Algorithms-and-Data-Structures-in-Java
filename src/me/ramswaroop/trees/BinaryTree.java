@@ -86,6 +86,35 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     /**
+     * Prints the node of the tree breadth-wise.
+     * <p/>
+     * DEF: Breadth-first search (BFS) is an algorithm for traversing or searching tree
+     * or graph data structures. It starts at the tree root (or some arbitrary node of a
+     * graph, sometimes referred to as a `search key'[1]) and explores the neighbor nodes
+     * first, before moving to the next level neighbors.
+     */
+    public void breadthFirstTraversal() {
+        // assuming level starts at zero
+        breadthFirstTraversal(root, 0);
+    }
+
+    public void breadthFirstTraversal(BinaryNode<E> node, int level) {
+        if (node == null) return;
+
+        // print the starting node
+        if (level == 0) printValue(node);
+
+        // print the neighbour nodes
+        printValue(node.left);
+        printValue(node.right);
+
+        // go to next level
+        level++;
+        breadthFirstTraversal(node.left, level);
+        breadthFirstTraversal(node.right, level);
+    }
+
+    /**
      * Deletes a particular node from the tree.
      *
      * @param value
@@ -110,7 +139,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         // first delete the child nodes
         delete(node.left);
         delete(node.right);
-        //Utils.println("Deleting node: " + node.value);
         node = null; // delete node
     }
 
@@ -251,5 +279,16 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             rootToLeafPaths(node.left, new ArrayList<>(pathList));
             rootToLeafPaths(node.right, new ArrayList<>(pathList));
         }
+    }
+
+
+    /**
+     * Utility methods.
+     */
+
+    private void printValue(BinaryNode<E> node) {
+        if (node == null) return;
+
+        Utils.print(node.value);
     }
 }
