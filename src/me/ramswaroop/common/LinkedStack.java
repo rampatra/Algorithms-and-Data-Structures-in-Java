@@ -83,7 +83,7 @@ public class LinkedStack<E> implements Stack<E> {
         Node<E> node;
         System.out.print("[");
         if (top == null) {
-            System.out.print("]");
+            System.out.println("]");
             return;
         }
         for (node = top; node.next != null; node = node.next) {

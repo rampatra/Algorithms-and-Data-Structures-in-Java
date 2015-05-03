@@ -1,10 +1,12 @@
 package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
+import me.ramswaroop.common.LinkedQueue;
 import me.ramswaroop.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -112,6 +114,29 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         level++;
         breadthFirstTraversal(node.left, level);
         breadthFirstTraversal(node.right, level);
+    }
+
+    /**
+     * Breadth first traversal (Level-order traversal using Queue)
+     */
+    public void breadthFirstTraversalUsingQueue() {
+        LinkedQueue<BinaryNode<E>> queue = new LinkedQueue<>();
+        breadthFirstTraversalUsingQueue(root, queue);
+    }
+
+    public void breadthFirstTraversalUsingQueue(BinaryNode<E> node, LinkedQueue<BinaryNode<E>> queue) {
+
+        if (node != null) {
+            printValue(node);
+            queue.add(node.left);
+            queue.add(node.right);
+        }
+
+        try {
+            breadthFirstTraversalUsingQueue(queue.remove(), queue);
+        } catch (NoSuchElementException e) {
+            return;
+        }
     }
 
     /**

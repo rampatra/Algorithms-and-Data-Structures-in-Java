@@ -41,11 +41,11 @@ public class Main {
                                 stack.print();
                                 break;
                             case 2:
-                                stack.pop();
+                                Utils.println("Removed element: " + stack.pop());
                                 stack.print();
                                 break;
                             case 3:
-                                stack.peek();
+                                Utils.println("Front element: " + stack.peek());
                                 stack.print();
                                 break;
                             case 4:
@@ -63,7 +63,7 @@ public class Main {
                         Utils.println("=================");
                         Utils.println("1. Add");
                         Utils.println("2. Remove");
-                        Utils.println("3. Front Element");
+                        Utils.println("3. Front element");
                         Utils.println("4. Print");
                         Utils.println("5. Exit module");
                         k2 = Integer.parseInt(in.nextLine());
@@ -75,11 +75,11 @@ public class Main {
                                 queue.print();
                                 break;
                             case 2:
-                                queue.remove();
+                                Utils.println("Removed element: " + queue.remove());
                                 queue.print();
                                 break;
                             case 3:
-                                queue.element();
+                                Utils.println("Front element: " + queue.element());
                                 queue.print();
                                 break;
                             case 4:

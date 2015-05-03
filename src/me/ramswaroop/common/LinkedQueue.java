@@ -68,7 +68,7 @@ public class LinkedQueue<E> implements Queue<E> {
         Node<E> node;
         System.out.print("[");
         if (rear.next == front) {
-            System.out.print("]");
+            System.out.println("]");
             return;
         }
         for (node = front; node != rear; node = node.next) {

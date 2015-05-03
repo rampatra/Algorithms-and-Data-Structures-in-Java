@@ -46,8 +46,10 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
         Utils.println("Min: " + obj.min().value);
         obj.treeToList();
-        Utils.println("");
+        Utils.println("\nBFS: ");
         obj.breadthFirstTraversal();
+        Utils.println("\nBFS using queue: ");
+        obj.breadthFirstTraversalUsingQueue();
     }
 
     /**
