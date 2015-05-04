@@ -47,7 +47,8 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         obj.breadthFirstTraversal();
         Utils.println("\nBFS using queue: ");
         obj.breadthFirstTraversalUsingQueue();
-        Utils.println("\nTree to list: ");
+        Utils.println("\nNo. of leaf nodes: " + obj.countLeafNodes(obj.root));
+        Utils.print("Tree to list: ");
         obj.treeToList();
     }
 

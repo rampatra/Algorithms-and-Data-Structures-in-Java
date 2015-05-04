@@ -307,6 +307,22 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
+    /**
+     * Returns the number of leaf nodes in a binary tree.
+     *
+     * @param node
+     * @return
+     */
+    public int countLeafNodes(BinaryNode<E> node) {
+        if (node == null) {
+            return 0;
+        } else if (node.left == null && node.right == null) {
+            return 1;
+        } else {
+            return countLeafNodes(node.left) + countLeafNodes(node.right);
+        }
+    }
+
 
     /**
      * Utility methods.
