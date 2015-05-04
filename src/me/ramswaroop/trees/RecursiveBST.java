@@ -145,29 +145,37 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
     public BinaryNode<E> treeToList(BinaryNode<E> node) {
         if (node == null) return null;
 
-        BinaryNode<E> list1 = treeToList(node.left);
-        BinaryNode<E> list2 = treeToList(node.right);
+        BinaryNode<E> aList = treeToList(node.left);
+        BinaryNode<E> bList = treeToList(node.right);
 
         node.left = node;
         node.right = node;
 
-        list1 = addToList(list1, node);
-        list1 = addToList(list1, list2);
+        // attach left child then root followed by right child (so that final list is in ascending order)
+        aList = addToList(aList, node);
+        aList = addToList(aList, bList);
 
-        return list1;
+        return aList;
     }
 
-    private BinaryNode<E> addToList(BinaryNode<E> node1, BinaryNode<E> node2) {
+    private BinaryNode<E> addToList(BinaryNode<E> aList, BinaryNode<E> bList) {
 
-        if (node1 == null) return node2;
-        if (node2 == null) return node1;
+        if (aList == null) return bList;
+        if (bList == null) return aList;
 
-        node2.left = node1.left;
-        node2.right = node1;
-        node1.left.right = node2;
-        node1.left = node2;
+        // find the last node in each list
+        BinaryNode<E> aListLast = aList.left;
+        BinaryNode<E> bListLast = bList.left;
 
-        return node1;
+        // join end of one list to beginning of another
+        aListLast.right = bList;
+        bList.left = aListLast;
+
+        // make circular
+        aListLast.left = bListLast;
+        bListLast.right = aList;
+
+        return aList;
     }
 
 
