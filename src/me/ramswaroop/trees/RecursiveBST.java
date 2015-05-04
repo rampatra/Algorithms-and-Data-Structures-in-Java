@@ -14,8 +14,6 @@ import java.util.NoSuchElementException;
  */
 public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
 
-    BinaryNode<E> listRoot;
-
     public static void main(String[] a) {
         RecursiveBST<Integer> obj = new RecursiveBST<>();
         obj.put(6);
@@ -45,11 +43,12 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         obj.rootToLeafPaths();
         Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
         Utils.println("Min: " + obj.min().value);
-        obj.treeToList();
-        Utils.println("\nBFS: ");
+        Utils.println("BFS: ");
         obj.breadthFirstTraversal();
         Utils.println("\nBFS using queue: ");
         obj.breadthFirstTraversalUsingQueue();
+        Utils.println("\nTree to list: ");
+        obj.treeToList();
     }
 
     /**
@@ -137,54 +136,56 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
      * and rearranges the internal pointers to make a circular
      * doubly linked list out of the tree nodes. The list should
      * be arranged so that the nodes are in increasing order.
-     * <p/>
-     * P.S: For a better solution - http://cslibrary.stanford.edu/109/TreeListRecursion.html
      */
     public void treeToList() {
-        treeToList(root);
-
         // print the list
-        BinaryNode<E> current = listRoot;
+        printList(treeToList(root));
+    }
+
+    public BinaryNode<E> treeToList(BinaryNode<E> node) {
+        if (node == null) return null;
+
+        BinaryNode<E> list1 = treeToList(node.left);
+        BinaryNode<E> list2 = treeToList(node.right);
+
+        node.left = node;
+        node.right = node;
+
+        list1 = addToList(list1, node);
+        list1 = addToList(list1, list2);
+
+        return list1;
+    }
+
+    private BinaryNode<E> addToList(BinaryNode<E> node1, BinaryNode<E> node2) {
+
+        if (node1 == null) return node2;
+        if (node2 == null) return node1;
+
+        node2.left = node1.left;
+        node2.right = node1;
+        node1.left.right = node2;
+        node1.left = node2;
+
+        return node1;
+    }
+
+
+    /**
+     * Utility methods.
+     */
+
+    private void printList(BinaryNode<E> node) {
+        BinaryNode<E> current = node;
         Utils.print("[");
         if (current == null) {
-            System.out.print("]");
+            System.out.println("]");
             return;
         }
-        while (current.right != listRoot) {
+        while (current.right != node) {
             Utils.print(current.value + ",");
             current = current.right;
         }
-        Utils.print(current.value + "]");
-    }
-
-    public void treeToList(BinaryNode<E> node) {
-        if (node == null) return;
-
-        /**
-         * Process left node then root and then right node, so
-         * that the values in the list are in ascending order.
-         */
-        treeToList(node.left);
-        addToList(new BinaryNode<>(node));
-        treeToList(node.right);
-    }
-
-    private void addToList(BinaryNode<E> node) {
-        if (listRoot == null) {
-            listRoot = new BinaryNode<>(node.value, null, null);
-            listRoot.left = listRoot;
-            listRoot.right = listRoot;
-        } else {
-            BinaryNode<E> current = listRoot;
-            // go to the last node
-            while (current.right != listRoot) {
-                current = current.right;
-            }
-            // make it circular
-            current.right = node;
-            node.left = current;
-            node.right = listRoot;
-            listRoot.left = current;
-        }
+        Utils.println(current.value + "]");
     }
 }

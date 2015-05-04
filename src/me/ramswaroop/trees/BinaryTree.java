@@ -117,7 +117,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     /**
-     * Breadth first traversal (Level-order traversal using Queue)
+     * Breadth first traversal (Level-order traversal using Queue).
      */
     public void breadthFirstTraversalUsingQueue() {
         LinkedQueue<BinaryNode<E>> queue = new LinkedQueue<>();
@@ -249,13 +249,19 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     /**
      * Prints the node to leaf paths, one per line.
-     * (Using array)
      */
-    /*public void rootToLeafPaths() {
-        E[] pathList = (E[]) new Object[100];
-        rootToLeafPaths(root, pathList, 0);
+    public void rootToLeafPaths() {
+        List<E> pathList = new ArrayList<>();
+        rootToLeafPaths(root, pathList);
+
+        /*E[] pathList = (E[]) new Object[100];
+        rootToLeafPaths(root, pathList, 0);*/
     }
 
+    /**
+     * Prints the node to leaf paths, one per line.
+     * (Using array)
+     */
     public void rootToLeafPaths(BinaryNode<E> node, E[] pathList, int pathLength) {
         if (node == null) return;
 
@@ -275,17 +281,12 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             rootToLeafPaths(node.left, pathList, pathLength);
             rootToLeafPaths(node.right, pathList, pathLength);
         }
-    }*/
+    }
 
     /**
      * Prints the node to leaf paths, one per line.
      * (Using ArrayList)
      */
-    public void rootToLeafPaths() {
-        List<E> pathList = new ArrayList<>();
-        rootToLeafPaths(root, pathList);
-    }
-
     public void rootToLeafPaths(BinaryNode<E> node, List<E> pathList) {
         if (node == null) return;
 
@@ -311,7 +312,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * Utility methods.
      */
 
-    private void printValue(BinaryNode<E> node) {
+    protected void printValue(BinaryNode<E> node) {
         if (node == null) return;
 
         Utils.print(node.value);
