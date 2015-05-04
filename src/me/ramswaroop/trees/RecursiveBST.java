@@ -15,41 +15,41 @@ import java.util.NoSuchElementException;
 public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
 
     public static void main(String[] a) {
-        RecursiveBST<Integer> obj = new RecursiveBST<>();
-        obj.put(6);
-        obj.put(3);
-        obj.put(5);
-        obj.put(7);
-        obj.put(8);
-        obj.put(9);
-        obj.preOrder();
+        RecursiveBST<Integer> bst = new RecursiveBST<>();
+        bst.put(6);
+        bst.put(3);
+        bst.put(5);
+        bst.put(7);
+        bst.put(8);
+        bst.put(9);
+        bst.preOrder();
         Utils.println("");
-        obj.inOrder();
+        bst.inOrder();
         Utils.println("");
-        obj.postOrder();
-        Utils.println("\n" + obj.size());
-        Utils.println(BinaryTree.isIdentical(obj.root.right, obj.root.right));
-        Utils.println(obj.isIdentical(obj.root));
-        Utils.println(obj.height());
+        bst.postOrder();
+        Utils.println("\n" + bst.size());
+        Utils.println(BinaryTree.isIdentical(bst.root.right, bst.root.right));
+        Utils.println(bst.isIdentical(bst.root));
+        Utils.println(bst.height());
         /*obj.delete();
         Utils.println("After deletion: ");
         obj.postOrder();*/
         Utils.println("In Order: ");
-        obj.inOrder();
+        bst.inOrder();
         /*Utils.println("\nAfter mirroring: ");
         obj.mirror();
         obj.inOrder();*/
         Utils.println("\nRoot to leafs: ");
-        obj.rootToLeafPaths();
-        Utils.println("LCA: " + obj.leastCommonAncestor(obj.root, 6, 8).value);
-        Utils.println("Min: " + obj.min().value);
+        bst.rootToLeafPaths();
+        Utils.println("LCA: " + bst.leastCommonAncestor(bst.root, 6, 8).value);
+        Utils.println("Min: " + bst.min().value);
         Utils.println("BFS: ");
-        obj.breadthFirstTraversal();
+        bst.breadthFirstTraversal();
         Utils.println("\nBFS using queue: ");
-        obj.breadthFirstTraversalUsingQueue();
-        Utils.println("\nNo. of leaf nodes: " + obj.countLeafNodes(obj.root));
+        bst.breadthFirstTraversalUsingQueue();
+        Utils.println("\nNo. of leaf nodes: " + bst.countLeafNodes(bst.root));
         Utils.print("Tree to list: ");
-        obj.treeToList();
+        bst.treeToList();
     }
 
     /**

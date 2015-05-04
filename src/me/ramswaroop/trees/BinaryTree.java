@@ -19,25 +19,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     BinaryNode<E> root;
 
-    /**
-     * Checks whether two trees having their roots at node1 and node2
-     * are identical or not.
-     *
-     * @param node1
-     * @param node2
-     * @param <E>
-     * @return
-     */
-    public static <E extends Comparable<E>> boolean isIdentical(BinaryNode<E> node1, BinaryNode<E> node2) {
-        if (node1 == null && node2 == null) return true;
-        if (node1 == null && node2 != null || (node1 != null && node2 == null)) return false;
-
-        if (node1.value == node2.value) {
-            return true && isIdentical(node1.left, node2.left) && isIdentical(node1.right, node2.right);
-        } else {
-            return false;
-        }
-    }
 
     /**
      * Prints the pre-order traversal of the tree.
@@ -55,6 +36,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         preOrder(node.right);
     }
 
+
     /**
      * Prints the in-order traversal of the tree.
      */
@@ -71,6 +53,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         inOrder(node.right);
     }
 
+
     /**
      * Prints the post-order traversal of the tree.
      */
@@ -86,6 +69,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         postOrder(node.right);
         Utils.print(node.value);
     }
+
 
     /**
      * Prints the node of the tree breadth-wise.
@@ -139,6 +123,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
+
     /**
      * Deletes a particular node from the tree.
      *
@@ -167,6 +152,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         node = null; // delete node
     }
 
+
     /**
      * Return the height of the tree.
      *
@@ -181,6 +167,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
         return Math.max(height(node.left), height(node.right)) + 1;
     }
+
 
     /**
      * Returns the number of nodes currently in the tree.
@@ -220,6 +207,27 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     /**
+     * Checks whether two trees having their roots at node1 and node2
+     * are identical or not.
+     *
+     * @param node1
+     * @param node2
+     * @param <E>
+     * @return
+     */
+    public static <E extends Comparable<E>> boolean isIdentical(BinaryNode<E> node1, BinaryNode<E> node2) {
+        if (node1 == null && node2 == null) return true;
+        if (node1 == null && node2 != null || (node1 != null && node2 == null)) return false;
+
+        if (node1.value == node2.value) {
+            return true && isIdentical(node1.left, node2.left) && isIdentical(node1.right, node2.right);
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
      * Converts a Tree to its Mirror Tree.
      * <p/>
      * MIRROR OF A BINARY TREE T is another Binary Tree M(T) with
@@ -246,6 +254,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         node.left = node.right;
         node.right = tempNode;
     }
+
 
     /**
      * Prints the node to leaf paths, one per line.
@@ -321,6 +330,15 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         } else {
             return countLeafNodes(node.left) + countLeafNodes(node.right);
         }
+    }
+
+    /**
+     * Checks whether the binary tree is a BST or not.
+     *
+     * @return
+     */
+    public boolean isBST() {
+        return false;
     }
 
 
