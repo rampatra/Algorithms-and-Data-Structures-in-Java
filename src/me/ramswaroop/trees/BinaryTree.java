@@ -2,6 +2,7 @@ package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
 import me.ramswaroop.common.LinkedQueue;
+import me.ramswaroop.common.Queue;
 import me.ramswaroop.utils.Utils;
 
 import java.util.ArrayList;
@@ -18,6 +19,50 @@ import java.util.NoSuchElementException;
 public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     BinaryNode<E> root;
+    Queue<BinaryNode<E>> queue = new LinkedQueue<>(); // needed for insertion
+
+    public static void main(String[] a) {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.put(5);
+        binaryTree.put(3);
+        binaryTree.put(8);
+        binaryTree.put(2);
+        binaryTree.put(4);
+        binaryTree.put(6);
+        binaryTree.breadthFirstTraversal();
+        Utils.println("");
+        binaryTree.inOrder();
+        Utils.println("\nIs BST: " + binaryTree.isBST());
+    }
+
+    /**
+     * Inserts a node into the binary tree such that
+     * it always forms a complete binary tree.
+     *
+     * @param value
+     */
+    public void put(E value) {
+        put(root, value);
+    }
+
+    public BinaryNode<E> put(BinaryNode<E> node, E value) {
+        // create a new node from the value
+        BinaryNode<E> newNode = new BinaryNode<>(value, null, null);
+
+        if (node == null) {
+            return root = queue.add(newNode);
+        } else {
+            BinaryNode<E> parentNode = queue.element();
+            if (parentNode.left == null) {
+                parentNode.left = newNode;
+            } else if (parentNode.right == null) {
+                parentNode.right = newNode;
+                queue.remove();
+            }
+            queue.add(newNode);
+        }
+        return node;
+    }
 
 
     /**
@@ -104,11 +149,11 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * Breadth first traversal (Level-order traversal using Queue).
      */
     public void breadthFirstTraversalUsingQueue() {
-        LinkedQueue<BinaryNode<E>> queue = new LinkedQueue<>();
+        Queue<BinaryNode<E>> queue = new LinkedQueue<>();
         breadthFirstTraversalUsingQueue(root, queue);
     }
 
-    public void breadthFirstTraversalUsingQueue(BinaryNode<E> node, LinkedQueue<BinaryNode<E>> queue) {
+    public void breadthFirstTraversalUsingQueue(BinaryNode<E> node, Queue<BinaryNode<E>> queue) {
 
         if (node != null) {
             printValue(node);
@@ -319,9 +364,12 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     /**
      * Returns the number of leaf nodes in a binary tree.
      *
-     * @param node
      * @return
      */
+    public int countLeafNodes() {
+        return countLeafNodes(root);
+    }
+
     public int countLeafNodes(BinaryNode<E> node) {
         if (node == null) {
             return 0;
@@ -332,13 +380,36 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
+
     /**
      * Checks whether the binary tree is a BST or not.
      *
      * @return
      */
     public boolean isBST() {
-        return false;
+        return isBST(root);
+    }
+
+    public boolean isBST(BinaryNode<E> node) {
+        if (node == null || (node.left == null && node.right == null)) return true;
+
+        if (node.left == null && node.right != null) {
+            if (node.right.value.compareTo(node.value) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (node.left != null && node.right == null) {
+            if (node.left.value.compareTo(node.value) < 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (node.left.value.compareTo(node.value) < 0 && node.right.value.compareTo(node.value) > 0) {
+            return isBST(node.left) && isBST(node.right);
+        } else {
+            return false;
+        }
     }
 
 

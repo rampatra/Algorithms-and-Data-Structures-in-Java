@@ -47,13 +47,15 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         bst.breadthFirstTraversal();
         Utils.println("\nBFS using queue: ");
         bst.breadthFirstTraversalUsingQueue();
-        Utils.println("\nNo. of leaf nodes: " + bst.countLeafNodes(bst.root));
+        Utils.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
+        Utils.println("Is BST: " + bst.isBST());
         Utils.print("Tree to list: ");
         bst.treeToList();
     }
 
+
     /**
-     * Inserts a node into the tree.
+     * Inserts a node into the BST.
      *
      * @param value
      */
@@ -62,24 +64,27 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
     }
 
     public BinaryNode<E> put(BinaryNode<E> node, E value) {
+        BinaryNode<E> newNode = new BinaryNode<>(value, null, null);
+
         if (node == null) {
             return root = new BinaryNode<>(value, null, null);
         } else {
             if (value.compareTo(node.value) < 0) {
                 if (node.left == null) {
-                    return node.left = new BinaryNode<>(value, null, null);
+                    return node.left = newNode;
                 } else {
                     return put(node.left, value);
                 }
             } else {
                 if (node.right == null) {
-                    return node.right = new BinaryNode<>(value, null, null);
+                    return node.right = newNode;
                 } else {
                     return put(node.right, value);
                 }
             }
         }
     }
+
 
     /**
      * Returns the node with minimum value.
@@ -99,6 +104,7 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
             return min(node.left);
         }
     }
+
 
     /**
      * Determines the LCA for a BST
@@ -131,6 +137,7 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
             return leastCommonAncestor(node.left, value1, value2);
         }
     }
+
 
     /**
      * A recursive function that takes an ordered binary tree

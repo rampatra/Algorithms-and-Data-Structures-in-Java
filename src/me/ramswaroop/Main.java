@@ -2,6 +2,8 @@ package me.ramswaroop;
 
 import me.ramswaroop.common.LinkedQueue;
 import me.ramswaroop.common.LinkedStack;
+import me.ramswaroop.common.Queue;
+import me.ramswaroop.common.Stack;
 import me.ramswaroop.utils.Utils;
 
 import java.util.Scanner;
@@ -11,8 +13,8 @@ public class Main {
     public static void main(String[] args) {
         int k1, k2;
         Scanner in = new Scanner(System.in);
-        LinkedStack<Integer> stack = new LinkedStack<>();
-        LinkedQueue<Integer> queue = new LinkedQueue<>();
+        Stack<Integer> stack = new LinkedStack<>();
+        Queue<Integer> queue = new LinkedQueue<>();
         chooseModule:
         while (true) {
             Utils.println("Choose module:");
