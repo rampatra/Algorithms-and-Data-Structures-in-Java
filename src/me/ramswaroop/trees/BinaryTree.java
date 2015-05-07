@@ -28,7 +28,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(9);
         binaryTree.put(2);
         binaryTree.put(4);
-        binaryTree.put(8);
+        binaryTree.put(18);
         binaryTree.breadthFirstTraversal();
         Utils.println("");
         binaryTree.inOrder();
@@ -383,17 +383,26 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     /**
      * Checks whether the binary tree is a BST or not.
-     *
+     * <p/>
      * Approach: Performs in-order traversal of the tree and if
      * the result isn't in ascending order then returns false.
      *
      * @return
      */
     public boolean isBST() {
-        List<BinaryNode<E>> list = new ArrayList<>();
-        return isBST(root, list);
+        //List<BinaryNode<E>> list = new ArrayList<>();
+        BinaryNode<E> prev = null;
+        return isBST(root, prev);
     }
 
+    /**
+     * Traverse the tree in in-order fashion and insert all nodes
+     * in a list and check for sort order of list.
+     *
+     * @param node
+     * @param list
+     * @return
+     */
     public boolean isBST(BinaryNode<E> node, List<BinaryNode<E>> list) {
         if (node == null) return true;
 
@@ -407,6 +416,30 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
 
         boolean right = isBST(node.right, list);
+
+        return left && right;
+    }
+
+    /**
+     * Traverse the tree in in-order fashion and keep track of prev node.
+     *
+     * @param node
+     * @param prev
+     * @return
+     */
+    public boolean isBST(BinaryNode<E> node, BinaryNode<E> prev) {
+        if (node == null) return true;
+
+        boolean left = isBST(node.left, prev);
+
+        // compare current node with previous node
+        if (prev != null && prev.value.compareTo(node.value) > 0) {
+            return false;
+        } else {
+            prev = node;
+        }
+
+        boolean right = isBST(node.right, prev);
 
         return left && right;
     }

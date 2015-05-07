@@ -20,6 +20,8 @@ public class BinaryNode<E extends Comparable<E>> {
     }
 
     public BinaryNode(BinaryNode<E> node) {
+        if (node == null) return;
+
         this.value = node.value;
         this.left = node.left;
         this.right = node.right;
