@@ -57,7 +57,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
                 parentNode.left = newNode;
             } else if (parentNode.right == null) {
                 parentNode.right = newNode;
-                queue.remove();
+                queue.remove(); // parent node has both left and right child now, so dequeue it
             }
             queue.add(newNode);
         }
