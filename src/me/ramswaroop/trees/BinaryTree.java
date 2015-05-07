@@ -23,12 +23,13 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     public static void main(String[] a) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        binaryTree.put(5);
+        binaryTree.put(6);
         binaryTree.put(3);
         binaryTree.put(9);
         binaryTree.put(2);
         binaryTree.put(4);
-        binaryTree.put(18);
+        binaryTree.put(5);
+        //binaryTree.put(16);
         binaryTree.breadthFirstTraversal();
         Utils.println("");
         binaryTree.inOrder();
@@ -391,7 +392,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      */
     public boolean isBST() {
         //List<BinaryNode<E>> list = new ArrayList<>();
-        BinaryNode<E> prev = null;
+        BinaryNode<E> prev = new BinaryNode<>(null);
         return isBST(root, prev);
     }
 
@@ -411,9 +412,8 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         // while adding node to list, compare it with previous node in list
         if (list.size() > 0 && list.get(list.size() - 1).value.compareTo(node.value) > 0) {
             return false;
-        } else {
-            list.add(node);
         }
+        list.add(node);
 
         boolean right = isBST(node.right, list);
 
@@ -433,11 +433,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         boolean left = isBST(node.left, prev);
 
         // compare current node with previous node
-        if (prev != null && prev.value.compareTo(node.value) > 0) {
+        if (prev.value != null && prev.value.compareTo(node.value) > 0) {
             return false;
-        } else {
-            prev = node;
         }
+        prev.value = node.value;
 
         boolean right = isBST(node.right, prev);
 
