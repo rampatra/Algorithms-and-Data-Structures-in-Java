@@ -25,10 +25,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
         binaryTree.put(5);
         binaryTree.put(3);
-        binaryTree.put(8);
+        binaryTree.put(9);
         binaryTree.put(2);
         binaryTree.put(4);
-        binaryTree.put(6);
+        binaryTree.put(8);
         binaryTree.breadthFirstTraversal();
         Utils.println("");
         binaryTree.inOrder();
@@ -384,32 +384,31 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     /**
      * Checks whether the binary tree is a BST or not.
      *
+     * Approach: Performs in-order traversal of the tree and if
+     * the result isn't in ascending order then returns false.
+     *
      * @return
      */
     public boolean isBST() {
-        return isBST(root);
+        List<BinaryNode<E>> list = new ArrayList<>();
+        return isBST(root, list);
     }
 
-    public boolean isBST(BinaryNode<E> node) {
-        if (node == null || (node.left == null && node.right == null)) return true;
+    public boolean isBST(BinaryNode<E> node, List<BinaryNode<E>> list) {
+        if (node == null) return true;
 
-        if (node.left == null && node.right != null) {
-            if (node.right.value.compareTo(node.value) > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } else if (node.left != null && node.right == null) {
-            if (node.left.value.compareTo(node.value) < 0) {
-                return true;
-            } else {
-                return false;
-            }
-        } else if (node.left.value.compareTo(node.value) < 0 && node.right.value.compareTo(node.value) > 0) {
-            return isBST(node.left) && isBST(node.right);
-        } else {
+        boolean left = isBST(node.left, list);
+
+        // while adding node to list, compare it with previous node in list
+        if (list.size() > 0 && list.get(list.size() - 1).value.compareTo(node.value) > 0) {
             return false;
+        } else {
+            list.add(node);
         }
+
+        boolean right = isBST(node.right, list);
+
+        return left && right;
     }
 
 
