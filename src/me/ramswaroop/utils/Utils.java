@@ -8,10 +8,5 @@ package me.ramswaroop.utils;
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
 public class Utils {
-    public static void print(Object o) {
-        System.out.print(o);
-    }
-    public static void println(Object o) {
-        System.out.println(o);
-    }
+
 }

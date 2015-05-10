@@ -1,12 +1,13 @@
 package me.ramswaroop.trees;
 
 import me.ramswaroop.common.*;
-import me.ramswaroop.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import static java.lang.System.out;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,14 +36,14 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(5);
         binaryTree.put(1);
         binaryTree.put(1);
-        Utils.print("Breadth-first Traversal: ");
+        out.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
-        Utils.print("\nSpiral Traversal: ");
+        out.print("\nSpiral Traversal: ");
         binaryTree.spiralTraversal();
-        Utils.print("\nIn order traversal: ");
+        out.print("\nIn order traversal: ");
         binaryTree.inOrder();
-        Utils.print("\nIs BST: " + binaryTree.isBST());
-        Utils.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
+        out.print("\nIs BST: " + binaryTree.isBST());
+        out.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
     }
 
     /**
@@ -86,7 +87,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node == null) {
             return;
         }
-        Utils.print(node.value);
+        out.print(node.value);
         preOrder(node.left);
         preOrder(node.right);
     }
@@ -104,7 +105,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             return;
         }
         inOrder(node.left);
-        Utils.print(node.value);
+        out.print(node.value);
         inOrder(node.right);
     }
 
@@ -122,7 +123,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
         postOrder(node.left);
         postOrder(node.right);
-        Utils.print(node.value);
+        out.print(node.value);
     }
 
 
@@ -420,10 +421,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node.left == null && node.right == null) {
             int i;
             for (i = 0; i < pathLength - 1; i++) {
-                Utils.print(pathList[i] + " -> ");
+                out.print(pathList[i] + " -> ");
             }
             // outside the loop so that "->" doesn't appear after the last node
-            Utils.println(pathList[i]);
+            out.println(pathList[i]);
         } else {
             // do the same for subtrees
             rootToLeafPaths(node.left, pathList, pathLength);
@@ -444,10 +445,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node.left == null && node.right == null) {
             int i;
             for (i = 0; i < pathList.size() - 1; i++) {
-                Utils.print(pathList.get(i) + " -> ");
+                out.print(pathList.get(i) + " -> ");
             }
             // outside the loop so that "->" doesn't appear after the last node
-            Utils.println(pathList.get(i));
+            out.println(pathList.get(i));
         } else {
             // do the same for subtrees
             rootToLeafPaths(node.left, new ArrayList<>(pathList));
@@ -576,6 +577,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     protected void printValue(BinaryNode<E> node) {
         if (node == null) return;
 
-        Utils.print(node.value);
+        out.print(node.value);
     }
 }

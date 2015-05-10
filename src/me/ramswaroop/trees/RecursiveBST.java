@@ -1,9 +1,10 @@
 package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
-import me.ramswaroop.utils.Utils;
 
 import java.util.NoSuchElementException;
+
+import static java.lang.System.out;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,33 +24,33 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
         bst.put(8);
         bst.put(9);
         bst.preOrder();
-        Utils.println("");
+        out.println("");
         bst.inOrder();
-        Utils.println("");
+        out.println("");
         bst.postOrder();
-        Utils.println("\n" + bst.size());
-        Utils.println(BinaryTree.isIdentical(bst.root.right, bst.root.right));
-        Utils.println(bst.isIdentical(bst.root));
-        Utils.println(bst.height());
+        out.println("\n" + bst.size());
+        out.println(BinaryTree.isIdentical(bst.root.right, bst.root.right));
+        out.println(bst.isIdentical(bst.root));
+        out.println(bst.height());
         /*obj.delete();
-        Utils.println("After deletion: ");
+        out.println("After deletion: ");
         obj.postOrder();*/
-        Utils.println("In Order: ");
+        out.println("In Order: ");
         bst.inOrder();
-        /*Utils.println("\nAfter mirroring: ");
+        /*out.println("\nAfter mirroring: ");
         obj.mirror();
         obj.inOrder();*/
-        Utils.println("\nRoot to leafs: ");
+        out.println("\nRoot to leafs: ");
         bst.rootToLeafPaths();
-        Utils.println("LCA: " + bst.leastCommonAncestor(bst.root, 6, 8).value);
-        Utils.println("Min: " + bst.min().value);
-        Utils.println("BFS: ");
+        out.println("LCA: " + bst.leastCommonAncestor(bst.root, 6, 8).value);
+        out.println("Min: " + bst.min().value);
+        out.println("BFS: ");
         bst.breadthFirstTraversal();
-        Utils.println("\nBFS using queue: ");
+        out.println("\nBFS using queue: ");
         bst.breadthFirstTraversalUsingQueue();
-        Utils.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
-        Utils.println("Is BST: " + bst.isBST());
-        Utils.print("Tree to list: ");
+        out.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
+        out.println("Is BST: " + bst.isBST());
+        out.print("Tree to list: ");
         bst.treeToList();
     }
 
@@ -119,11 +120,11 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
     public void leastCommonAncestor() {
         /*int value1, value2;
         Scanner in = new Scanner(System.in);
-        Utils.println("Enter value 1: ");
+        out.println("Enter value 1: ");
         value1 = (E) Integer.valueOf(in.nextLine());
-        Utils.println("Enter value 1: ");
+        out.println("Enter value 1: ");
         value2 = (E) in.nextLine();
-        Utils.println("LCA of " + value1 + " and " + value2 + " is: " + leastCommonAncestor(root, value1, value2).value);*/
+        out.println("LCA of " + value1 + " and " + value2 + " is: " + leastCommonAncestor(root, value1, value2).value);*/
     }
 
     public BinaryNode<E> leastCommonAncestor(BinaryNode<E> node, E value1, E value2) {
@@ -193,15 +194,15 @@ public class RecursiveBST<E extends Comparable<E>> extends BinarySearchTree<E> {
 
     private void printList(BinaryNode<E> node) {
         BinaryNode<E> current = node;
-        Utils.print("[");
+        out.print("[");
         if (current == null) {
-            System.out.println("]");
+            out.println("]");
             return;
         }
         while (current.right != node) {
-            Utils.print(current.value + ",");
+            out.print(current.value + ",");
             current = current.right;
         }
-        Utils.println(current.value + "]");
+        out.println(current.value + "]");
     }
 }
