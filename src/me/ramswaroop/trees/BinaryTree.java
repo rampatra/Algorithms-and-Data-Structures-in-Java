@@ -22,13 +22,19 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     public static void main(String[] a) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        binaryTree.put(6);
+        /*binaryTree.put(6);
         binaryTree.put(3);
         binaryTree.put(9);
         binaryTree.put(2);
         binaryTree.put(4);
+        binaryTree.put(5);*/
+        binaryTree.put(10);
+        binaryTree.put(8);
+        binaryTree.put(2);
+        binaryTree.put(3);
         binaryTree.put(5);
-        //binaryTree.put(16);
+        binaryTree.put(1);
+        binaryTree.put(1);
         Utils.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
         Utils.print("\nSpiral Traversal: ");
@@ -36,6 +42,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         Utils.print("\nIn order traversal: ");
         binaryTree.inOrder();
         Utils.print("\nIs BST: " + binaryTree.isBST());
+        Utils.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
     }
 
     /**
@@ -527,6 +534,36 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         prev.value = node.value;
 
         boolean right = isBST(node.right, prev);
+
+        return left && right;
+    }
+
+    /**
+     * For every node, the value must be equal to
+     * sum of values in the left and right child.
+     * Consider data value as 0 for NULL child.
+     *
+     * @return
+     */
+    public boolean isChildrenSum() {
+        return isChildrenSum(root);
+    }
+
+    public boolean isChildrenSum(BinaryNode<E> node) {
+        if (node == null || node.left == null && node.right == null) return true;
+
+        E leftChildValue = (E) (node.left == null ? 0 : node.left.value);
+        E rightChildValue = (E) (node.right == null ? 0 : node.right.value);
+
+        boolean left = isChildrenSum(node.left);
+        boolean right = isChildrenSum(node.right);
+
+        if (!node.value.toString().equals(
+                String.valueOf(Integer.parseInt(leftChildValue.toString()) +
+                        Integer.parseInt(rightChildValue.toString()))
+        )) {
+            return false;
+        }
 
         return left && right;
     }
