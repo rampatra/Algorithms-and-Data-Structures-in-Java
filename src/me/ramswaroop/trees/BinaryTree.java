@@ -542,6 +542,21 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         return left && right;
     }
 
+
+    /**
+     * The diameter of a tree (sometimes called the width) is the number
+     * of nodes on the longest path between two leaves in the tree.
+     *
+     * @return the diameter of the tree.
+     */
+    public int diameter() {
+        return diameter(root);
+    }
+
+    public int diameter(BinaryNode<E> node) {
+        return 1;
+    }
+
     /**
      * Children Sum Invariant: For every node, the value must be equal to
      * sum of values in the left and right child.
