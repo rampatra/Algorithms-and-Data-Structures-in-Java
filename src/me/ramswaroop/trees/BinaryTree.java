@@ -31,7 +31,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(5);*/
         binaryTree.put(10);
         binaryTree.put(8);
-        binaryTree.put(2);
+        binaryTree.put(1);
         binaryTree.put(3);
         binaryTree.put(5);
         binaryTree.put(1);
@@ -44,6 +44,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.inOrder();
         out.print("\nIs BST: " + binaryTree.isBST());
         out.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
+        binaryTree.toChildrenSum();
+        out.print("\nBreadth-first Traversal after to children sum: ");
+        binaryTree.breadthFirstTraversal();
     }
 
     /**
@@ -540,7 +543,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     /**
-     * For every node, the value must be equal to
+     * Children Sum Invariant: For every node, the value must be equal to
      * sum of values in the left and right child.
      * Consider data value as 0 for NULL child.
      *
@@ -567,6 +570,52 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
 
         return left && right;
+    }
+
+    /**
+     * Converts a tree to hold the children sum invariant.
+     * <p/>
+     * It only increments data values in any node (Does not
+     * change structure of tree and cannot decrement value of
+     * any node).
+     */
+    public void toChildrenSum() {
+        toChildrenSum(root);
+    }
+
+    public void toChildrenSum(BinaryNode<E> node) {
+
+        if (node == null || node.left == null && node.right == null) return;
+
+        toChildrenSum(node.left);
+        toChildrenSum(node.right);
+
+        Integer nodeValue = (Integer) (node == null ? 0 : node.value);
+        Integer leftChildValue = (Integer) (node.left == null ? 0 : node.left.value);
+        Integer rightChildValue = (Integer) (node.right == null ? 0 : node.right.value);
+
+        int diff = (nodeValue - (leftChildValue + rightChildValue));
+
+        if (diff < 0) {
+            increment(node, diff);
+        } else if (diff > 0) {
+            if (node.left != null) {
+                increment(node.left, diff);
+            } else {
+                increment(node.right, diff);
+            }
+        }
+    }
+
+    // TODO
+    private void increment(BinaryNode<E> node, int diff) {
+        if (node.left != null) {
+            //node.value += Math.abs(diff);
+            increment(node.left, diff);
+        } else if (node.right != null) {
+            //node.value += Math.abs(diff);
+            increment(node.right, diff);
+        }
     }
 
 
