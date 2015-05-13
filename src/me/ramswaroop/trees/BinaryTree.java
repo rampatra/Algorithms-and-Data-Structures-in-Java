@@ -44,10 +44,11 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.inOrder();
         out.print("\nIs BST: " + binaryTree.isBST());
         out.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
-        binaryTree.toChildrenSum();
+        /*binaryTree.toChildrenSum();
         out.print("\nBreadth-first Traversal after to children sum: ");
-        binaryTree.breadthFirstTraversal();
+        binaryTree.breadthFirstTraversal();*/
         out.print("\nIs height balanced: " + binaryTree.isHeightBalanced());
+        out.print("\nDiameter: " + binaryTree.diameter());
     }
 
     /**
@@ -78,6 +79,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
         return node;
     }
+
+    /**
+     * Traversals using recursions.
+     */
 
 
     /**
@@ -130,6 +135,13 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         out.print(node.value);
     }
 
+    /**
+     * Traversals without recursions.
+     */
+
+    public void inOrder(BinaryNode<E> node, Stack<BinaryNode<E>> stack) {
+
+    }
 
     /**
      * Prints the node of the tree breadth-wise.
@@ -555,8 +567,15 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     public int diameter(BinaryNode<E> node) {
-        return 1;
+        if (node == null) return 0;
+
+        // diameter of current node
+        int diameter = height(node.left) + height(node.right) + 1;
+
+        // return max diameters of current node, left sub-tree and right sub-tree
+        return Math.max(diameter, Math.max(diameter(node.left), diameter(node.right)));
     }
+
 
     /**
      * An empty tree is height-balanced. A non-empty binary tree T is balanced if:

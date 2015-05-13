@@ -22,6 +22,23 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         bst.put(7);
         bst.put(8);
         bst.put(9);
+        /*bst.put(12);
+        bst.put(10);
+        bst.put(16);
+        bst.put(14);
+        bst.put(25);
+        bst.put(15);
+        bst.put(20);
+        bst.put(35);
+        bst.put(23);
+        bst.put(22);
+        bst.put(21);
+        bst.put(45);
+        bst.put(40);
+        bst.put(56);
+        bst.put(65);
+        bst.put(75);
+        bst.put(85);*/
         bst.preOrder();
         out.println("");
         bst.inOrder();
@@ -52,6 +69,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         /*out.print("Tree to list: ");
         bst.treeToList();*/
         out.print("\nIs height balanced: " + bst.isHeightBalanced());
+        out.print("\nDiameter: " + bst.diameter());
     }
 
 
