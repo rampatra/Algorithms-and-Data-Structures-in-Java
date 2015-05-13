@@ -49,8 +49,9 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         bst.breadthFirstTraversalUsingQueue();
         out.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
         out.println("Is BST: " + bst.isBST());
-        out.print("Tree to list: ");
-        bst.treeToList();
+        /*out.print("Tree to list: ");
+        bst.treeToList();*/
+        out.print("\nIs height balanced: " + bst.isHeightBalanced());
     }
 
 

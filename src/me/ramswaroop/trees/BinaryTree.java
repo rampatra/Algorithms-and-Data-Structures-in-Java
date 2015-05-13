@@ -47,6 +47,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.toChildrenSum();
         out.print("\nBreadth-first Traversal after to children sum: ");
         binaryTree.breadthFirstTraversal();
+        out.print("\nIs height balanced: " + binaryTree.isHeightBalanced());
     }
 
     /**
@@ -555,6 +556,28 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     public int diameter(BinaryNode<E> node) {
         return 1;
+    }
+
+    /**
+     * An empty tree is height-balanced. A non-empty binary tree T is balanced if:
+     * 1) Left subtree of T is balanced
+     * 2) Right subtree of T is balanced
+     * 3) The difference between heights of left subtree and right subtree is not more than 1.
+     *
+     * @return True if tree is height balanced otherwise false.
+     */
+    public boolean isHeightBalanced() {
+        return isHeightBalanced(root);
+    }
+
+    public boolean isHeightBalanced(BinaryNode<E> node) {
+        if (node == null) return true;
+
+        if (Math.abs(height(node.left) - height(node.right)) > 1) {
+            return false;
+        }
+
+        return isHeightBalanced(node.left) && isHeightBalanced(node.right);
     }
 
     /**
