@@ -23,19 +23,12 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
     public static void main(String[] a) {
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
-        /*binaryTree.put(6);
+        binaryTree.put(6);
         binaryTree.put(3);
         binaryTree.put(9);
         binaryTree.put(2);
         binaryTree.put(4);
-        binaryTree.put(5);*/
-        binaryTree.put(10);
-        binaryTree.put(8);
-        binaryTree.put(1);
-        binaryTree.put(3);
         binaryTree.put(5);
-        binaryTree.put(1);
-        binaryTree.put(1);
         out.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
         out.print("\nSpiral Traversal: ");
@@ -106,7 +99,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * Prints the in-order traversal of the tree.
      */
     public void inOrder() {
-        inOrder(root);
+        //inOrder(root);
+        //inOrderUsingStack(root);
+        inOrderWithoutStackAndRecursion(root);
     }
 
     public void inOrder(BinaryNode<E> node) {
@@ -139,7 +134,34 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * Traversals without recursions.
      */
 
-    public void inOrder(BinaryNode<E> node, Stack<BinaryNode<E>> stack) {
+    /**
+     * In-order traversal of tree using one stack and without recursion.
+     *
+     * @param node
+     */
+    public void inOrderUsingStack(BinaryNode<E> node) {
+        if (node == null) return;
+
+        Stack<BinaryNode<E>> stack = new LinkedStack<>();
+
+        BinaryNode<E> curr = node;
+        stack.push(curr);
+
+        while (!stack.isEmpty()) {
+
+            while (curr != null) {
+                curr = curr.left;
+                if (curr != null) stack.push(curr);
+            }
+
+            BinaryNode<E> top = stack.pop();
+            out.print(top.value);
+            curr = top.right;
+            if (curr != null) stack.push(curr);
+        }
+    }
+
+    public void inOrderWithoutStackAndRecursion(BinaryNode<E> node) {
 
     }
 

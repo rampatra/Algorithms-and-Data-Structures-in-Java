@@ -51,7 +51,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         /*obj.delete();
         out.println("After deletion: ");
         obj.postOrder();*/
-        out.println("In Order: ");
+        out.print("\nIn Order: ");
         bst.inOrder();
         /*out.println("\nAfter mirroring: ");
         obj.mirror();
@@ -60,9 +60,9 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         bst.rootToLeafPaths();
         out.println("LCA: " + bst.leastCommonAncestor(bst.root, 6, 8).value);
         out.println("Min: " + bst.min().value);
-        out.println("BFS: ");
+        out.println("BFT: ");
         bst.breadthFirstTraversal();
-        out.println("\nBFS using queue: ");
+        out.println("\nBFT using queue: ");
         bst.breadthFirstTraversalUsingQueue();
         out.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
         out.println("Is BST: " + bst.isBST());
