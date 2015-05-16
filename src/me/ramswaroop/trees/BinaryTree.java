@@ -35,6 +35,8 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.spiralTraversal();
         out.print("\nIn order traversal: ");
         binaryTree.inOrder();
+        out.print("\nIn order traversal without stack: ");
+        binaryTree.inOrderWithoutStackAndRecursion(binaryTree.root);
         out.print("\nIs BST: " + binaryTree.isBST());
         out.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
         /*binaryTree.toChildrenSum();
@@ -99,9 +101,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * Prints the in-order traversal of the tree.
      */
     public void inOrder() {
-        //inOrder(root);
-        //inOrderUsingStack(root);
-        inOrderWithoutStackAndRecursion(root);
+        inOrder(root);
     }
 
     public void inOrder(BinaryNode<E> node) {
@@ -130,6 +130,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         out.print(node.value);
     }
 
+
     /**
      * Traversals without recursions.
      */
@@ -144,26 +145,74 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
         Stack<BinaryNode<E>> stack = new LinkedStack<>();
 
-        BinaryNode<E> curr = node;
-        stack.push(curr);
+        BinaryNode<E> curr = node; // set root node as current node
+        stack.push(curr); // push current node
 
         while (!stack.isEmpty()) {
 
             while (curr != null) {
                 curr = curr.left;
-                if (curr != null) stack.push(curr);
+                if (curr != null) stack.push(curr); // push all left nodes of the current node
             }
 
             BinaryNode<E> top = stack.pop();
-            out.print(top.value);
+            out.print(top.value); // print top of stack
             curr = top.right;
-            if (curr != null) stack.push(curr);
+            if (curr != null) stack.push(curr); // push right child of top node
         }
     }
 
+    /**
+     * Using Morris Traversal, we can traverse the tree without using stack and
+     * recursion. The idea of Morris Traversal is based on Threaded Binary Tree.
+     * In this traversal, we first create links to Inorder successor and print the
+     * data using these links, and finally revert the changes to restore original tree.
+     * <p/>
+     * A binary tree is THREADED by making all right child pointers that would normally
+     * be null point to the inorder successor of the node (if it exists), and all left
+     * child pointers that would normally be null point to the inorder predecessor of
+     * the node.
+     * <p/>
+     * PSEUDOCODE:
+     * 1. Initialize current as root
+     * 2. While current is not NULL
+     * If current does not have left child
+     * a) Print current’s data
+     * b) Go to the right, i.e., current = current->right
+     * Else
+     * a) Make current as right child of the rightmost node in current's left subtree
+     * b) Go to this left child, i.e., current = current->left
+     *
+     * @param node
+     */
     public void inOrderWithoutStackAndRecursion(BinaryNode<E> node) {
+        if (node == null) return;
 
+        BinaryNode<E> curr = node;
+
+        while (curr != null) {
+            // print the leftmost node
+            if (curr.left == null) {
+                printValue(curr);
+                curr = curr.right;
+            } else { // make current as right child of the rightmost node in current's left subtree
+                BinaryNode<E> pre = curr.left;
+
+                while (pre.right != curr && pre.right != null) {
+                    pre = pre.right;
+                }
+                if (pre.right != curr) {
+                    pre.right = curr;
+                    curr = curr.left;
+                } else {
+                    printValue(curr);
+                    curr = curr.right;
+                    pre.right = null; // revert to the original tree structure
+                }
+            }
+        }
     }
+
 
     /**
      * Prints the node of the tree breadth-wise.
