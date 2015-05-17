@@ -44,6 +44,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.breadthFirstTraversal();*/
         out.print("\nIs height balanced: " + binaryTree.isHeightBalanced());
         out.print("\nDiameter: " + binaryTree.diameter());
+        out.print("\nRoot to Leaf Sum: " + binaryTree.rootToLeafPathsSum(binaryTree.root, new ArrayList<Integer>(), 13));
     }
 
     /**
@@ -272,8 +273,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * are printed in alternating order.
      */
     public void spiralTraversal() {
-        //spiralTraversal(root, 0); // uses recursion
-        spiralTraversal(root); // uses 2 stacks
+        spiralTraversal(root, 0); // uses recursion
     }
 
     public void spiralTraversal(BinaryNode<E> node, int level) {
@@ -302,7 +302,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
-    public void spiralTraversal(BinaryNode<E> node) {
+    public void spiralTraversalUsingStacks(BinaryNode<E> node) {
         Stack<BinaryNode<E>> stack1 = new LinkedStack<>(); // for nodes to be printed ltr
         Stack<BinaryNode<E>> stack2 = new LinkedStack<>(); // for nodes to be printed rtl
 
@@ -347,6 +347,13 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             } catch (EmptyStackException e) {
                 // ignore error when stack empty
             }
+        }
+    }
+
+
+    public void constructTreeWithInOrderAndPreOrder(List<BinaryNode<E>> inOrder, List<BinaryNode<E>> preOrder) {
+        for (int i = 0; i < preOrder.size(); i++) {
+
         }
     }
 
@@ -542,6 +549,36 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             rootToLeafPaths(node.right, new ArrayList<>(pathList));
         }
     }
+
+
+    /**
+     * Given a binary tree and a number, return true if the tree has a root-to-leaf
+     * path such that adding up all the values along the path equals the given number.
+     * Return false if no such path can be found.
+     *
+     * @param node
+     * @param pathList
+     * @param pathSum
+     * @return
+     */
+    public boolean rootToLeafPathsSum(BinaryNode<E> node, List<E> pathList, int pathSum) {
+        int sum = 0;
+
+        if (node != null) pathList.add(node.value);
+
+        // if its either a leaf node or null then path is complete, add all in the list
+        if (node == null || (node.left == null && node.right == null)) {
+            for (int i = 0; i < pathList.size(); i++) {
+                sum += Integer.parseInt(pathList.get(i).toString());
+            }
+            return sum == pathSum;
+        } else {
+            // do the same for subtrees
+            return rootToLeafPathsSum(node.left, new ArrayList<>(pathList), pathSum) ||
+                    rootToLeafPathsSum(node.right, new ArrayList<>(pathList), pathSum);
+        }
+    }
+
 
     /**
      * Returns the number of leaf nodes in a binary tree.
