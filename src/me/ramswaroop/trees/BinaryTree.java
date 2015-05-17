@@ -26,9 +26,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(6);
         binaryTree.put(3);
         binaryTree.put(9);
-        binaryTree.put(2);
+        /*binaryTree.put(2);
         binaryTree.put(4);
-        binaryTree.put(5);
+        binaryTree.put(5);*/
         out.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
         out.print("\nSpiral Traversal: ");
@@ -45,6 +45,11 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         out.print("\nIs height balanced: " + binaryTree.isHeightBalanced());
         out.print("\nDiameter: " + binaryTree.diameter());
         out.print("\nRoot to Leaf Sum: " + binaryTree.rootToLeafPathsSum(binaryTree.root, new ArrayList<Integer>(), 13));
+        out.print("\nBFS after Double tree: ");
+        binaryTree.doubleTree();
+        binaryTree.breadthFirstTraversalUsingQueue();
+        out.print("\nIn order traversal: ");
+        binaryTree.inOrder();
     }
 
     /**
@@ -781,6 +786,27 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             //node.value += Math.abs(diff);
             increment(node.right, diff);
         }
+    }
+
+
+    /**
+     * Converts a given tree to its Double tree. To create a Double tree
+     * of the given tree, create a new duplicate for each node, and insert
+     * the duplicate as the left child of the original node.
+     */
+    public void doubleTree() {
+        doubleTree(root);
+    }
+
+    public void doubleTree(BinaryNode<E> node) {
+        if (node == null) return;
+
+        BinaryNode<E> newNode = new BinaryNode<>(node.value, node.left, null);
+
+        node.left = newNode;
+
+        doubleTree(newNode.left);
+        doubleTree(node.right);
     }
 
 
