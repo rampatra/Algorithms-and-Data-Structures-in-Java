@@ -26,9 +26,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(6);
         binaryTree.put(3);
         binaryTree.put(9);
-        /*binaryTree.put(2);
-        binaryTree.put(4);
-        binaryTree.put(5);*/
+        binaryTree.put(2);
+        /*binaryTree.put(4);
+        binaryTree.put(5);
+        binaryTree.put(7);*/
         out.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
         out.print("\nSpiral Traversal: ");
@@ -37,6 +38,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.inOrder();
         out.print("\nIn order traversal without stack: ");
         binaryTree.inOrderWithoutStackAndRecursion(binaryTree.root);
+        out.print("\nWidth: " + binaryTree.width());
         out.print("\nIs BST: " + binaryTree.isBST());
         out.print("\nIs Children Sum : " + binaryTree.isChildrenSum());
         /*binaryTree.toChildrenSum();
@@ -689,6 +691,27 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         return Math.max(diameter, Math.max(diameter(node.left), diameter(node.right)));
     }
 
+
+    /**
+     * Width is the number of nodes in a particular level.
+     *
+     * @return maximum width of the tree.
+     */
+    public int width() {
+        return width(root, 0);
+    }
+
+    public int width(BinaryNode<E> node, int width) {
+        if (node == null) return 0;
+
+        if (node.left == null && node.right == null) return 1; // for single/leaf node
+
+        int level_width = width(node.left, width) + width(node.right, width);
+
+        if (level_width > width) width = level_width;
+
+        return width;
+    }
 
     /**
      * An empty tree is height-balanced. A non-empty binary tree T is balanced if:
