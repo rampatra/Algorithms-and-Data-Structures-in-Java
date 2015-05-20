@@ -9,6 +9,8 @@ package me.ramswaroop.arrays;
  */
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Given an array ar[] of n numbers and
@@ -17,6 +19,11 @@ import java.util.Arrays;
  */
 public class PairSum {
 
+    /**
+     * @param ar
+     * @param x
+     * @return
+     */
     static boolean pairSum(int ar[], int x) {
         Arrays.sort(ar);
 
@@ -31,11 +38,27 @@ public class PairSum {
                 j--;
             }
         }
+        return false;
+    }
 
+    /**
+     * @param ar
+     * @param x
+     * @param map
+     * @return
+     */
+    static boolean pairSum(int ar[], int x, Map<Integer, Integer> map) {
+        for (int i = 0; i < ar.length; i++) {
+            if (map.containsKey(x - ar[i])) {
+                return true;
+            }
+            map.put(ar[i], 1);
+        }
         return false;
     }
 
     public static void main(String a[]) {
-        System.out.print(pairSum(new int[]{3, 4, 6, 1, 1}, 9));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2, new HashMap<Integer, Integer>()));
     }
 }
