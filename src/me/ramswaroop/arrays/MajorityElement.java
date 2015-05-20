@@ -31,7 +31,7 @@ public class MajorityElement {
      */
     public static int findCandidate(int a[]) {
         int candidate = a[0], count = 1;
-        for (int i = 1; i < a.length - 1; i++) {
+        for (int i = 1; i < a.length; i++) {
             if (candidate == a[i]) {
                 count++;
             } else {
