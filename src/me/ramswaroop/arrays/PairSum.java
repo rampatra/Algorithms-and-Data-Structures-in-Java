@@ -20,6 +20,10 @@ import java.util.Map;
 public class PairSum {
 
     /**
+     * Using sorting. If we use Merge Sort or Heap Sort
+     * then (-)(nlogn) in worst case. If we use Quick Sort
+     * then O(n^2) in worst case.
+     *
      * @param ar
      * @param x
      * @return
@@ -42,6 +46,8 @@ public class PairSum {
     }
 
     /**
+     * Using hashmap in O(n) time
+     *
      * @param ar
      * @param x
      * @param map

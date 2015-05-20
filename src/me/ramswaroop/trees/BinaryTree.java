@@ -235,6 +235,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         breadthFirstTraversal(root, 0);
     }
 
+    // todo need to correct, failing in some cases
     public void breadthFirstTraversal(BinaryNode<E> node, int level) {
         if (node == null) return;
 
