@@ -40,6 +40,6 @@ public class Search {
      * @param a
      */
     public static void main(String a[]) {
-        System.out.print(binarySearch(new int[]{2, 3, 4, 5, 6}, 10));
+        System.out.println(binarySearch(new int[]{0, 2}, 2));
     }
 }
