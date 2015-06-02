@@ -48,6 +48,10 @@ public class CountSetBits {
 
         long n = Long.parseLong(in.nextLine());
         System.out.println(countSetBits(n));
+        System.out.println(Integer.toBinaryString((int) -n));
+        System.out.println(countSetBits((int) -n));
+
+
     }
 }
 
