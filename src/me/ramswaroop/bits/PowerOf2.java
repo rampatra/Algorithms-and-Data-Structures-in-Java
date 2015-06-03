@@ -15,7 +15,7 @@ public class PowerOf2 {
      * @param n
      * @return
      */
-    public static boolean isPowerOf2ByCountingSetBits(long n) {
+    public static boolean isPowerOf2(long n) {
         return CountSetBits.countSetBits(n) == 1;
     }
 
@@ -26,15 +26,21 @@ public class PowerOf2 {
      * @param n
      * @return
      */
-    public static boolean isPowerOf2(long n) {
+    public static boolean isPowerOf2UsingANDoperator(long n) {
         return (n & (n - 1)) == 0;
     }
 
     public static void main(String a[]) {
-        System.out.println(isPowerOf2ByCountingSetBits(18));
         System.out.println(isPowerOf2(18));
+        System.out.println(isPowerOf2UsingANDoperator(18));
 
-        System.out.println(isPowerOf2ByCountingSetBits(16));
         System.out.println(isPowerOf2(16));
+        System.out.println(isPowerOf2UsingANDoperator(16));
+
+        System.out.println(isPowerOf2(0)); // works for 0
+        System.out.println(isPowerOf2UsingANDoperator(0)); // doesn't work for 0
+
+        System.out.println(isPowerOf2(-2)); // doesn't work for -ve no.s
+        System.out.println(isPowerOf2UsingANDoperator(-2)); // doesn't work for -ve no.s
     }
 }
