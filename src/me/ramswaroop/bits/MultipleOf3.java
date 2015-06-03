@@ -49,3 +49,12 @@ public class MultipleOf3 {
         System.out.println(isMultipleOf3(-17));
     }
 }
+
+/**
+ * Old School Method:
+ *
+ * If sum of digits in a number is multiple of 3 then number is multiple of
+ * 3 e.g., for 612 sum of digits is 9 so it’s a multiple of 3. But this solution
+ * is not efficient. You have to get all decimal digits one by one, add them and then check if sum is multiple of 3.
+ *
+ */
