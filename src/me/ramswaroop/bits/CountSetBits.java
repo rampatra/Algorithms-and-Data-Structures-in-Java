@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CountSetBits {
 
     /**
-     * Unoptimized version
+     * Unoptimized version.
      *
      * @param number
      * @return
@@ -29,7 +29,7 @@ public class CountSetBits {
     }
 
     /**
-     * Optimized version
+     * Optimized version.
      *
      * @param n
      * @return

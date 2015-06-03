@@ -11,7 +11,7 @@ public class NextPowerOf2 {
 
     /**
      * Finds the left most set bit position and returns
-     * 2 to the power of that position plus 1
+     * 2 to the power of that position plus 1.
      *
      * @param n
      * @return
