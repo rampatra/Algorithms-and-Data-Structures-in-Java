@@ -19,12 +19,11 @@ public class SubBit {
      * @return
      */
     public static int getSubBits(int num, int start, int end) {
-        num <<= (32 - end);
-        num >>>= (start - end + 31); // more intuitive (start - 1 + 32 - end)
+        num = num << (32 - end) >>> (start - end + 31); // more intuitive (start - 1 + 32 - end)
         return num;
     }
 
     public static void main(String a[]) {
-        System.out.println(getSubBits(15, 1, 2));
+        System.out.println(getSubBits(5, 1, 2));
     }
 }
