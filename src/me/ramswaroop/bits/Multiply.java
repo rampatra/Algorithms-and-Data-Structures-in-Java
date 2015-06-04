@@ -7,6 +7,13 @@ package me.ramswaroop.bits;
  * @date: 6/3/15
  * @time: 11:35 PM
  */
+
+/**
+ * Time Complexity: O(1)
+ * Space Complexity: O(1)
+ * <p/>
+ * Note: Works only for positive integers.
+ */
 public class Multiply {
 
     /**

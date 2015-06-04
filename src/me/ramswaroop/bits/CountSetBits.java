@@ -31,13 +31,19 @@ public class CountSetBits {
     /**
      * Optimized version.
      *
+     * Uses BRIAN KERNIGAN'S bit counting. Acc. to this, the  right most/least significant set bit is unset
+     * in each iteration. The time complexity is proportional to the number of bits set.
+     *
+     * {@see http://stackoverflow.com/questions/12380478/bits-counting-algorithm-brian-kernighan-in-an-integer-time-complexity}
+     * {@see http://graphics.stanford.edu/~seander/bithacks.html#ParityNaive}
+     *
      * @param n
      * @return
      */
     static int countSetBits(long n) {
         int count = 0;
         while (n > 0) {
-            n &= n - 1;
+            n &= n - 1; // right most set bit in n is unset
             count++;
         }
         return count;
