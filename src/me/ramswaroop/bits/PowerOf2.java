@@ -27,7 +27,7 @@ public class PowerOf2 {
      * @return
      */
     public static boolean isPowerOf2UsingANDoperator(long n) {
-        return (n & (n - 1)) == 0;
+        return n != 0 && (n & (n - 1)) == 0; // n != 0 check added for input 0
     }
 
     public static void main(String a[]) {
@@ -38,7 +38,7 @@ public class PowerOf2 {
         System.out.println(isPowerOf2UsingANDoperator(16));
 
         System.out.println(isPowerOf2(0)); // works for 0
-        System.out.println(isPowerOf2UsingANDoperator(0)); // doesn't work for 0
+        System.out.println(isPowerOf2UsingANDoperator(0)); // works for 0
 
         System.out.println(isPowerOf2(-2)); // doesn't work for -ve no.s
         System.out.println(isPowerOf2UsingANDoperator(-2)); // doesn't work for -ve no.s
