@@ -14,8 +14,8 @@ public class SubBit {
      * and {@param end} of {@param num} (both inclusive).
      *
      * @param num
-     * @param start > 0
-     * @param end > 0
+     * @param start > 0 and <= 32
+     * @param end > 0 and <= 32
      * @return
      */
     public static int getSubBits(int num, int start, int end) {
