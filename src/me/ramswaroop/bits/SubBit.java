@@ -19,8 +19,7 @@ public class SubBit {
      * @return
      */
     public static int getSubBits(int num, int start, int end) {
-        num = num << (32 - end) >>> (start - end + 31); // more intuitive (start - 1 + 32 - end)
-        return num;
+        return num << (32 - end) >>> (start - end + 31); // more intuitive (start - 1 + 32 - end)
     }
 
     public static void main(String a[]) {
