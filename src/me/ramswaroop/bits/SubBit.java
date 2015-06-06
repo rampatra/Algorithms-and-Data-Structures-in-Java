@@ -15,14 +15,14 @@ public class SubBit {
      *
      * @param num
      * @param start > 0 and <= 32
-     * @param end > 0 and <= 32
+     * @param end   > 0 and <= 32
      * @return
      */
-    public static int getSubBits(int num, int start, int end) {
+    public static int getNumberFromSubBits(int num, int start, int end) {
         return num << (32 - end) >>> (start - end + 31); // more intuitive (start - 1 + 32 - end)
     }
 
     public static void main(String a[]) {
-        System.out.println(getSubBits(5, 1, 2));
+        System.out.println(getNumberFromSubBits(5, 1, 2));
     }
 }
