@@ -12,25 +12,23 @@ package me.ramswaroop.bits;
 public class ReverseBits {
 
     public static int getNumberByReversingBits(int n) {
-        System.out.println(Integer.toBinaryString(n));
 
         int m;
         // assume 32-bit number
         m = 0x55555555; // 1-bit swap
-        n = ((n & m) << 1) | ((n & ~m) >> 1);
+        n = ((n & m) << 1) | ((n & ~m) >>> 1);
 
         m = 0x33333333; // 2-bits swap
-        n = ((n & m) << 2) | ((n & ~m) >> 2);
+        n = ((n & m) << 2) | ((n & ~m) >>> 2);
 
         m = 0x0f0f0f0f; // 4-bits swap
-        n = ((n & m) << 4) | ((n & ~m) >> 4);
+        n = ((n & m) << 4) | ((n & ~m) >>> 4);
 
         m = 0x00ff00ff; // 8-bits swap
-        n = ((n & m) << 8) | ((n & ~m) >> 8);
+        n = ((n & m) << 8) | ((n & ~m) >>> 8);
 
-        n = (n << 16) | (n >> 16); // 16-bits swap
+        n = (n << 16) | (n >>> 16); // 16-bits swap
 
-        System.out.println(Integer.toBinaryString(n));
         return n;
     }
 
@@ -45,7 +43,6 @@ public class ReverseBits {
      * @return
      */
     public static int getNumberByReversingBits_V1(int n) {
-        System.out.println(Integer.toBinaryString(n));
 
         int reverseNum = 0, i = 0;
         while (n > 0) {
@@ -55,13 +52,12 @@ public class ReverseBits {
             n >>= 1;
             i++;
         }
-        System.out.println(Integer.toBinaryString(reverseNum));
 
         return reverseNum;
     }
 
     public static void main(String a[]) {
-        System.out.println(getNumberByReversingBits(7));
-        System.out.println(getNumberByReversingBits_V1(7));
+        System.out.println(getNumberByReversingBits(79876));
+        System.out.println(getNumberByReversingBits_V1(79876));
     }
 }
