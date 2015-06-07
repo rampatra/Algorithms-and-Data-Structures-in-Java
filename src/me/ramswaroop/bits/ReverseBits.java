@@ -34,7 +34,34 @@ public class ReverseBits {
         return n;
     }
 
+    /**
+     * Checks for set bits in {@param n} and sets them
+     * from the left end in {@code reverseNum}.
+     * <p/>
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     *
+     * @param n
+     * @return
+     */
+    public static int getNumberByReversingBits_V1(int n) {
+        System.out.println(Integer.toBinaryString(n));
+
+        int reverseNum = 0, i = 0;
+        while (n > 0) {
+            if ((n & 1) == 1) {
+                reverseNum |= 1 << 31 - i;
+            }
+            n >>= 1;
+            i++;
+        }
+        System.out.println(Integer.toBinaryString(reverseNum));
+
+        return reverseNum;
+    }
+
     public static void main(String a[]) {
         System.out.println(getNumberByReversingBits(7));
+        System.out.println(getNumberByReversingBits_V1(7));
     }
 }
