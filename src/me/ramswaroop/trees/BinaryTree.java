@@ -758,9 +758,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         E leftChildValue = (E) (node.left == null ? 0 : node.left.value);
         E rightChildValue = (E) (node.right == null ? 0 : node.right.value);
 
-        boolean left = isChildrenSum(node.left);
-        boolean right = isChildrenSum(node.right);
-
         if (!node.value.toString().equals(
                 String.valueOf(Integer.parseInt(leftChildValue.toString()) +
                         Integer.parseInt(rightChildValue.toString()))
@@ -768,7 +765,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             return false;
         }
 
-        return left && right;
+        return isChildrenSum(node.left) && isChildrenSum(node.right);
     }
 
     /**

@@ -6,8 +6,8 @@ package me.ramswaroop.bits;
  * @author: ramswaroop
  * @date: 6/5/15
  * @time: 4:26 PM
- * @link http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-msb-lsb-to-lsb-msb-in-c
- * @link http://graphics.stanford.edu/~seander/bithacks.html#BitReverseObvious
+ * @link: http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-msb-lsb-to-lsb-msb-in-c
+ * @link: http://graphics.stanford.edu/~seander/bithacks.html#BitReverseObvious
  */
 public class ReverseBits {
 
