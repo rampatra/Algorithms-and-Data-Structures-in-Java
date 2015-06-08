@@ -52,6 +52,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.breadthFirstTraversalUsingQueue();
         out.print("\nIn order traversal: ");
         binaryTree.inOrder();
+        binaryTree.deleteChildrens(binaryTree.root);
+        out.print("\nIn order traversal after deleteChildrens: ");
+        binaryTree.inOrder();
     }
 
     /**
@@ -367,7 +370,15 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
 
     /**
-     * Deletes a particular node from the tree.
+     * Deletes the entire tree.
+     */
+    public void delete() {
+        root = null;
+    }
+
+    /**
+     * Deletes a particular node from the tree
+     * and rearranges the remaining nodes.
      *
      * @param value
      */
@@ -376,22 +387,16 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     /**
-     * TODO
-     * Deletes the entire tree.
+     * Deletes all child nodes of {@param node}.
+     *
+     * @param node
      */
-    public void delete() {
-        delete(root);
-        root = null;
-    }
-
-    public void delete(BinaryNode<E> node) {
+    public void deleteChildrens(BinaryNode<E> node) {
         if (node == null) {
             return;
         }
-        // first delete the child nodes
-        delete(node.left);
-        delete(node.right);
-        node = null; // delete node
+        node.left = null;
+        node.right = null;
     }
 
 

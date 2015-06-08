@@ -9,6 +9,14 @@ package me.ramswaroop.bits;
  */
 public class ConvertAToB {
 
+    /**
+     * Returns the number of bits required to be
+     * flipped to convert {@param a} to {@param b}.
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static int getBitsToConvertAToB(int a, int b) {
         return CountSetBits.countSetBits(a ^ b);
     }
