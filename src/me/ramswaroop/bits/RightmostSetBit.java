@@ -21,6 +21,10 @@ public class RightmostSetBit {
         return position;
     }
 
+    public static long unsetRightmostSetBit(long n) {
+        return n & (n - 1);
+    }
+
     public static void main(String a[]) {
         System.out.println(getRightmostSetBitPosition(0));
         System.out.println(getRightmostSetBitPosition(1));
@@ -28,5 +32,14 @@ public class RightmostSetBit {
         System.out.println(getRightmostSetBitPosition(5));
         System.out.println(getRightmostSetBitPosition(18));
         System.out.println(getRightmostSetBitPosition(19));
+
+        System.out.println("========================");
+
+        System.out.println(unsetRightmostSetBit(0));
+        System.out.println(unsetRightmostSetBit(2));
+        System.out.println(unsetRightmostSetBit(12));
+        System.out.println(unsetRightmostSetBit(16));
+        System.out.println(unsetRightmostSetBit(18));
+        System.out.println(unsetRightmostSetBit(-1));
     }
 }
