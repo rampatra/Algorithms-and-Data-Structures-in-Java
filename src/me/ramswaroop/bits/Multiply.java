@@ -24,6 +24,17 @@ public class Multiply {
      * @return
      */
     public static long multiplyWith3point5(long n) {
+        return ((n << 3) - n) >> 1; // (8n-n)/2 = 7n/2 = 3.5n
+    }
+
+    /**
+     * Multiplies {@param n} with 3.5 and returns only the
+     * integral part of the number and omits the fractional part.
+     *
+     * @param n
+     * @return
+     */
+    public static long multiplyWith3point5_V1(long n) {
         return (n << 1) + n + (n >> 1); // n*2 + n + n/2 = 7n/2 = 3.5n
     }
 
