@@ -9,6 +9,10 @@ package me.ramswaroop.practice;
  */
 class MethodOverloading {
 
+    static void go(float x) {
+        System.out.print("float ");
+    }
+
     static void go(Long x) {
         System.out.print("Long ");
     }

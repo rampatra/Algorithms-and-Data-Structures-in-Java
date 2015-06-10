@@ -17,13 +17,14 @@ package me.ramswaroop.bits;
 public class Multiply {
 
     /**
-     * Multiplies a number with 8 by performing 3 left shifts.
+     * Multiplies {@param n} with 3.5 and returns only the
+     * integral part of the number and omits the fractional part.
      *
      * @param n
      * @return
      */
-    public static long multiplyBy8(long n) {
-        return (n << 3);
+    public static long multiplyWith3point5(long n) {
+        return (n << 1) + n + (n >> 1); // n*2 + n + n/2 = 7n/2 = 3.5n
     }
 
     /**
@@ -34,16 +35,31 @@ public class Multiply {
      * @param n
      * @return
      */
-    public static long multiplyBy7(long n) {
+    public static long multiplyWith7(long n) {
         return (n << 3) - n;
     }
 
+    /**
+     * Multiplies a number with 8 by performing 3 left shifts.
+     *
+     * @param n
+     * @return
+     */
+    public static long multiplyWith8(long n) {
+        return (n << 3);
+    }
+
     public static void main(String a[]) {
-        System.out.println(multiplyBy7(4));
-        System.out.println(multiplyBy7(6));
-        System.out.println(multiplyBy7(7));
-        System.out.println(multiplyBy8(4));
-        System.out.println(multiplyBy8(6));
-        System.out.println(multiplyBy8(7));
+        System.out.println(multiplyWith3point5(3));
+        System.out.println(multiplyWith3point5(4));
+        System.out.println(multiplyWith3point5(6));
+        System.out.println(multiplyWith3point5(-7));
+
+        System.out.println(multiplyWith7(6));
+        System.out.println(multiplyWith7(7));
+
+        System.out.println(multiplyWith8(4));
+        System.out.println(multiplyWith8(6));
+        System.out.println(multiplyWith8(7));
     }
 }
