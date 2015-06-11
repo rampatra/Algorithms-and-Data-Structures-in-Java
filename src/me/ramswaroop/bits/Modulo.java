@@ -9,6 +9,14 @@ package me.ramswaroop.bits;
  */
 public class Modulo {
 
+    /**
+     * Returns {@param n} modulo {@param d} provided
+     * {@param d} is a power of 2.
+     *
+     * @param n
+     * @param d
+     * @return
+     */
     public static int getNmoduloD(int n, int d) {
         return n & (d - 1);
     }
@@ -24,9 +32,9 @@ public class Modulo {
 }
 
 /**
- * For example,
+ * Consider example, for 18 % 8
  *
  * 18 = 10010
- *  8 = 01000
+ *  7 = 00111 (8 = 2 ^ 3, therefore mask has to have three 1's)
  *  2 = 00010 (remainder = 18 & (8-1))
  */
