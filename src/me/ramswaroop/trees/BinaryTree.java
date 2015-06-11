@@ -654,7 +654,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     /**
      * Traverse the tree in in-order fashion and keep track of prev node.
      * <p/>
-     * TODO Clarify doubt: Why it doesn't work if I replace "prev.value" with "prev"
      *
      * @param node
      * @param prev
