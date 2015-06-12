@@ -10,6 +10,19 @@ package me.ramswaroop.bits;
 public class NextHigherNumber {
 
     /**
+     * The main logic is to flip the bits in the first '01' bit pattern
+     * of {@param n} from the right and then push all 1 bits to the right
+     * of '01' to the extreme right.
+     *
+     *
+     * For example,
+     *
+     * 3    (0000011)  =   5    (0000101)
+     * 6    (0000110)  =   9    (0001001)
+     * 23   (0010111)  =   27   (0011011)
+     * 24   (0011000)  =   33   (0100001)
+     * 46   (0101110)  =   51   (0110011)
+     *
      * @param n
      * @return
      */
@@ -30,10 +43,6 @@ public class NextHigherNumber {
             }
             n >>>= 1;
         }
-
-        /*System.out.println("n: " + Integer.toBinaryString(n << count));
-        System.out.println("Left pattern: " + Integer.toBinaryString(leftPattern << count));
-        System.out.println("Right pattern: " + Integer.toBinaryString(rightPattern >> 1));*/
 
         return (n << count) | (leftPattern << count) | (rightPattern >> 1);
     }
