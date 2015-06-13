@@ -10,6 +10,55 @@ package me.ramswaroop.bits;
 public class Addition {
 
     /**
+     * Better solution.
+     * <p/>
+     * Adds two numbers without using any
+     * arithmetic operators.
+     *
+     * @param x
+     * @param y
+     * @return sum of {@param x} and {@param y}
+     */
+    public static int add(int x, int y) {
+        int carry;
+        while (y != 0) {
+            carry = x & y;
+            x = x ^ y;
+            y = carry << 1;
+        }
+        return x;
+    }
+
+    /**
+     * Naive approach.
+     * <p/>
+     * Adds two numbers without using any
+     * arithmetic operators.
+     *
+     * @param x
+     * @param y
+     * @return sum of {@param x} and {@param y}
+     */
+    public static int add_V1(int x, int y) {
+        int carry = 0, sum = 0, c = 0, xLSB, yLSB;
+        while (c < 32) {
+            xLSB = x & 1;
+            yLSB = y & 1;
+            sum |= (xLSB ^ yLSB ^ carry) << c;
+            if ((xLSB & yLSB) == 1 || (xLSB & carry) == 1 || (yLSB & carry) == 1) {
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            x >>= 1;
+            y >>= 1;
+            c++;
+        }
+        return sum;
+    }
+
+
+    /**
      * Best method.
      * <p/>
      * -n = ~n + 1.
@@ -48,6 +97,24 @@ public class Addition {
     }
 
     public static void main(String a[]) {
+        System.out.println(add(0, 0)); //0
+        System.out.println(add(12, 12)); //24
+        System.out.println(add(12, 5)); //17
+        System.out.println(add(3, 5)); //8
+        System.out.println(add(8, 5)); //13
+        System.out.println(add(13, 256)); // 269
+        System.out.println(add(456, 982348234)); // 982348690
+        System.out.println(add(1, 0xffffffff)); // 0
+        System.out.println("------");
+        System.out.println(add_V1(0, 0)); //0
+        System.out.println(add_V1(12, 12)); //24
+        System.out.println(add_V1(12, 5)); //17
+        System.out.println(add_V1(3, 5)); //8
+        System.out.println(add_V1(8, 5)); //13
+        System.out.println(add_V1(13, 256)); // 269
+        System.out.println(add_V1(456, 982348234)); // 982348690
+        System.out.println(add_V1(1, 0xffffffff)); // 0
+        System.out.println("------");
         System.out.println(add1_V1(0));
         System.out.println(add1_V1(1));
         System.out.println(add1_V1(2));
