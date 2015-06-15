@@ -10,6 +10,40 @@ package me.ramswaroop.bits;
 public class SwapBits {
 
     /**
+     * Swaps bits at even position with bits
+     * at odd position in {@param n}.
+     *
+     * @param n
+     * @return
+     */
+    public static int swapEvenOddBits(int n) {
+        int evenBits = n & 0x55555555;
+        int oddBits = n & 0xaaaaaaaa;
+
+        return evenBits << 1 | oddBits >> 1;
+    }
+
+    /**
+     * Swaps bits at even position with bits
+     * at odd position in {@param n}.
+     *
+     * @param n
+     * @return
+     */
+    public static int swapEvenOddBits_V1(int n) {
+        for (int i = 0; i < 32; i += 2) {
+            int evenBit = (n >> i) & 1;
+            int oddBit = (n >> (i + 1)) & 1;
+            int xor = evenBit ^ oddBit;
+
+            n ^= xor << i;
+            n ^= xor << (i + 1);
+        }
+        return n;
+    }
+
+
+    /**
      * Swaps {@param length} bits in {@param n} starting from
      * {@param pos1} with bits starting from {@param pos2}.
      * <p/>
@@ -38,6 +72,16 @@ public class SwapBits {
     }
 
     public static void main(String a[]) {
+        System.out.println(swapEvenOddBits(23));
+        System.out.println(swapEvenOddBits(0));
+        System.out.println(swapEvenOddBits(5));
+        System.out.println(swapEvenOddBits(6));
+        System.out.println("-------------------------------");
+        System.out.println(swapEvenOddBits_V1(23));
+        System.out.println(swapEvenOddBits_V1(0));
+        System.out.println(swapEvenOddBits_V1(5));
+        System.out.println(swapEvenOddBits_V1(6));
+        System.out.println("-------------------------------");
         System.out.println(swapBitRangeInNumber(47, 1, 5, 3));
         System.out.println(swapBitRangeInNumber(28, 0, 3, 2));
         System.out.println(swapBitRangeInNumber(269, 1, 3, 2));

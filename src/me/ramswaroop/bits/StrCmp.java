@@ -11,7 +11,7 @@ public class StrCmp {
 
     /**
      * Compares two strings {@param s1} and {@param s2} lexicographically ignoring case.
-     * If both are equal, it returns 0 otherwise their lexicographic differences.
+     * If both are equal it returns 0 otherwise their lexicographic differences.
      *
      * @param s1
      * @param s2
