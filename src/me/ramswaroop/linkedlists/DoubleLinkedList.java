@@ -2,6 +2,8 @@ package me.ramswaroop.linkedlists;
 
 import me.ramswaroop.common.LinkedList;
 
+import static java.lang.System.out;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -10,6 +12,8 @@ import me.ramswaroop.common.LinkedList;
  * @time: 1:00 PM
  */
 public class DoubleLinkedList<E> implements LinkedList<E> {
+
+    Node<E> head;
 
     @Override
     public boolean add(E item) {
@@ -84,5 +88,40 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
     @Override
     public int size() {
         return 0;
+    }
+
+    @Override
+    public void printList() {
+        Node<E> curr = head;
+        out.print("[");
+        if (curr == null) {
+            out.println("]");
+            return;
+        }
+        while (curr.next != null) {
+            out.print(curr.item + ",");
+            curr = curr.next;
+        }
+        out.println(curr.item + "]");
+    }
+
+    private class Node<E> {
+        E item;
+        Node<E> next;
+        Node<E> prev;
+
+        Node(Node<E> prev, E item, Node<E> next) {
+            this.item = item;
+            this.next = next;
+            this.prev = prev;
+        }
+
+        Node(Node<E> node) {
+            if (node == null) return;
+
+            this.item = node.item;
+            this.next = node.next;
+            this.prev = node.prev;
+        }
     }
 }

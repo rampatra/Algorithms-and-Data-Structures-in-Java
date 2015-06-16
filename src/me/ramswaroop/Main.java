@@ -1,9 +1,7 @@
 package me.ramswaroop;
 
-import me.ramswaroop.common.LinkedQueue;
-import me.ramswaroop.common.LinkedStack;
-import me.ramswaroop.common.Queue;
-import me.ramswaroop.common.Stack;
+import me.ramswaroop.common.*;
+import me.ramswaroop.linkedlists.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -16,13 +14,14 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Stack<Integer> stack = new LinkedStack<>();
         Queue<Integer> queue = new LinkedQueue<>();
+        LinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
         chooseModule:
         while (true) {
             out.println("Choose module:");
             out.println("==============");
             out.println("1. Stack");
             out.println("2. Queue");
-            out.println("3. BST");
+            out.println("3. SingleLinkedList");
             out.println("4. Exit");
             k1 = Integer.parseInt(in.nextLine());
             switch (k1) {
@@ -95,7 +94,34 @@ public class Main {
                         }
                     }
                 case 3:
-                    break;
+                    while (true) {
+                        out.println("Select operation:");
+                        out.println("=================");
+                        out.println("1. Add");
+                        out.println("2. Remove");
+                        out.println("3. Print");
+                        out.println("4. Exit module");
+                        k2 = Integer.parseInt(in.nextLine());
+                        switch (k2) {
+                            case 1:
+                                out.println("Enter value:");
+                                int input = Integer.parseInt(in.nextLine());
+                                singleLinkedList.add(input);
+                                singleLinkedList.printList();
+                                break;
+                            case 2:
+                                out.println("Removed element: " + singleLinkedList.remove());
+                                singleLinkedList.printList();
+                                break;
+                            case 3:
+                                singleLinkedList.printList();
+                                break;
+                            case 5:
+                                continue chooseModule;
+                            default:
+                                out.println("Wrong choice!");
+                        }
+                    }
                 case 4:
                     out.println("Exiting...");
                     System.exit(0);

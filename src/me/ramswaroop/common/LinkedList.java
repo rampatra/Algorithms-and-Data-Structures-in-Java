@@ -13,7 +13,7 @@ public interface LinkedList<E> {
      * Appends the specified element to the end of this list.
      *
      * @param item
-     * @return
+     * @return {@code true} (as specified by {@link java.util.Collection#add})
      */
     boolean add(E item);
 
@@ -85,6 +85,11 @@ public interface LinkedList<E> {
      * @throws java.util.NoSuchElementException if this list is empty
      */
     E getLast();
+
+    /**
+     * Prints the contents of this list.
+     */
+    void printList();
 
     /**
      * Retrieves and removes the head (first element) of this list.
