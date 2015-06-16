@@ -45,7 +45,7 @@ public class LinkedQueue<E> implements Queue<E> {
         if (front == null) {
             throw new NoSuchElementException();
         }
-        return front.value;
+        return front.item;
     }
 
     @Override
@@ -72,17 +72,17 @@ public class LinkedQueue<E> implements Queue<E> {
             return;
         }
         for (node = front; node != rear; node = node.next) {
-            System.out.print(node.value + ",");
+            System.out.print(node.item + ",");
         }
-        System.out.println(node.value + "]");
+        System.out.println(node.item + "]");
     }
 
     private class Node<E> {
-        E value;
+        E item;
         Node<E> next;
 
-        public Node(E value, Node<E> next) {
-            this.value = value;
+        public Node(E item, Node<E> next) {
+            this.item = item;
             this.next = next;
         }
     }

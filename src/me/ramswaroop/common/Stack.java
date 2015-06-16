@@ -16,9 +16,8 @@ public interface Stack<E> {
     public E push(E item);
 
     /**
-     * Removes the object at the top of this stack and returns
-     * that object as the value of this function. This method
-     * throws an exception if this queue is empty.
+     * Removes the object at the top of this stack and returns it.
+     * This method throws an exception if this queue is empty.
      *
      * @return
      */

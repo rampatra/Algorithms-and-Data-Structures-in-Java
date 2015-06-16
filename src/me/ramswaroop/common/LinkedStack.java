@@ -37,7 +37,8 @@ public class LinkedStack<E> implements Stack<E> {
     }
 
     /**
-     * Removes the object at the top of this stack and returns that object as the value of this function.
+     * Removes the object at the top of this stack and
+     * returns it.
      *
      * @return
      */
@@ -58,7 +59,7 @@ public class LinkedStack<E> implements Stack<E> {
         if (top == null) {
             throw new EmptyStackException();
         }
-        return top.value;
+        return top.item;
     }
 
     /**
@@ -87,9 +88,9 @@ public class LinkedStack<E> implements Stack<E> {
             return;
         }
         for (node = top; node.next != null; node = node.next) {
-            System.out.print(node.value + ",");
+            System.out.print(node.item + ",");
         }
-        System.out.println(node.value + "]");
+        System.out.println(node.item + "]");
     }
 
     /**
@@ -103,11 +104,11 @@ public class LinkedStack<E> implements Stack<E> {
     }
 
     private class Node<E> {
-        E value;
+        E item;
         Node<E> next;
 
-        Node(E value, Node next) {
-            this.value = value;
+        Node(E item, Node next) {
+            this.item = item;
             this.next = next;
         }
     }
