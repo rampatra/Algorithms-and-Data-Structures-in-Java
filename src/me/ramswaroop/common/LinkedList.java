@@ -95,6 +95,7 @@ public interface LinkedList<E> {
      * Retrieves and removes the head (first element) of this list.
      *
      * @return
+     * @throws java.util.NoSuchElementException if this list is empty
      */
     E remove();
 

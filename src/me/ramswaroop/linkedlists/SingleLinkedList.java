@@ -2,6 +2,8 @@ package me.ramswaroop.linkedlists;
 
 import me.ramswaroop.common.LinkedList;
 
+import java.util.NoSuchElementException;
+
 import static java.lang.System.out;
 
 /**
@@ -19,9 +21,9 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     @Override
     public boolean add(E item) {
         Node<E> newNode = new Node<>(item, null);
-        if (head == null) {
+        if (head == null) { // list empty
             head = newNode;
-        } else {
+        } else { // add to the end of list
             Node<E> curr = head;
             while (curr.next != null) {
                 curr = curr.next;
@@ -39,16 +41,11 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         if (index == 0) { // add at first
             addFirst(item);
         } else { // add at any other location
-            Node<E> curr = head;
-            int i = 0;
-            while (i < index - 1) {
-                curr = curr.next;
-                i++;
-            }
-            Node<E> newNode = new Node<>(item, curr.next);
-            curr.next = newNode;
+            Node<E> nodeAtPrevIndex = getPredecessorNode(index);
+            Node<E> newNode = new Node<>(item, nodeAtPrevIndex.next);
+            nodeAtPrevIndex.next = newNode;
+            size++;
         }
-        size++;
         return true;
     }
 
@@ -56,6 +53,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     public void addFirst(E item) {
         Node<E> newNode = new Node<>(item, head);
         head = newNode;
+        size++;
     }
 
     @Override
@@ -80,21 +78,23 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E get(int index) {
-        return null;
+        return getNode(index).item;
     }
 
     @Override
     public E getFirst() {
-        return null;
+        return head.item;
     }
 
     @Override
     public E getLast() {
-        return null;
+        return getNode(size - 1).item;
     }
 
     @Override
     public E remove() {
+        isLinkedListEmpty();
+
         E item = head.item;
         head = head.next;
         return item;
@@ -102,7 +102,11 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E remove(int index) {
-        return null;
+        isIndexOutOfBounds(index);
+
+        Node<E> prevNode = getPredecessorNode(index);
+        prevNode.next = prevNode.next.next;
+        return prevNode.next.item;
     }
 
     @Override
@@ -112,7 +116,11 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E set(int index, E item) {
-        return null;
+        isIndexOutOfBounds(index);
+
+        Node<E> node = getNode(index);
+        node.item = item;
+        return node.item;
     }
 
     @Override
@@ -135,7 +143,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         out.println(curr.item + "]");
     }
 
-    private Node<E> getNode(int index) {
+    private Node<E> getPredecessorNode(int index) {
         isIndexOutOfBounds(index);
 
         Node<E> curr = head;
@@ -145,6 +153,24 @@ public class SingleLinkedList<E> implements LinkedList<E> {
             i++;
         }
         return curr;
+    }
+
+    private Node<E> getNode(int index) {
+        isIndexOutOfBounds(index);
+
+        Node<E> curr = head;
+        int i = 0;
+        while (i < index) {
+            curr = curr.next;
+            i++;
+        }
+        return curr;
+    }
+
+    private void isLinkedListEmpty() {
+        if (head == null) {
+            throw new NoSuchElementException("LinkedList empty");
+        }
     }
 
     private void isIndexOutOfBounds(int index) {
