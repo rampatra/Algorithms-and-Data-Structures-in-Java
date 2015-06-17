@@ -34,7 +34,28 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean add(int index, E item) {
-        return false;
+        // base case
+        if (index > size) {
+            throw new IndexOutOfBoundsException("LinkedList isn't long enough.");
+        }
+        // linkedlist is empty
+        if (head == null) {
+            head = new Node<>(item, null);
+        } else if (index == 0) { // add at first
+            Node<E> newNode = new Node<>(item, head);
+            head = newNode;
+        } else { // add at any other location
+            Node<E> curr = head;
+            int i = 0;
+            while (i < index - 1) {
+                curr = curr.next;
+                i++;
+            }
+            Node<E> newNode = new Node<>(item, curr.next);
+            curr.next = newNode;
+        }
+        size++;
+        return true;
     }
 
     @Override
@@ -79,7 +100,9 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E remove() {
-        return null;
+        E item = head.item;
+        head = head.next;
+        return item;
     }
 
     @Override

@@ -98,22 +98,32 @@ public class Main {
                         out.println("Select operation:");
                         out.println("=================");
                         out.println("1. Add");
-                        out.println("2. Remove");
-                        out.println("3. Print");
-                        out.println("4. Exit module");
+                        out.println("2. Add at index");
+                        out.println("3. Remove");
+                        out.println("4. Print");
+                        out.println("5. Exit module");
                         k2 = Integer.parseInt(in.nextLine());
+                        int input, index;
                         switch (k2) {
                             case 1:
                                 out.println("Enter value:");
-                                int input = Integer.parseInt(in.nextLine());
+                                input = Integer.parseInt(in.nextLine());
                                 singleLinkedList.add(input);
                                 singleLinkedList.printList();
                                 break;
                             case 2:
-                                out.println("Removed element: " + singleLinkedList.remove());
+                                out.println("Enter value:");
+                                input = Integer.parseInt(in.nextLine());
+                                out.println("Enter index:");
+                                index = Integer.parseInt(in.nextLine());
+                                singleLinkedList.add(index, input);
                                 singleLinkedList.printList();
                                 break;
                             case 3:
+                                out.println("Removed element: " + singleLinkedList.remove());
+                                singleLinkedList.printList();
+                                break;
+                            case 4:
                                 singleLinkedList.printList();
                                 break;
                             case 5:
