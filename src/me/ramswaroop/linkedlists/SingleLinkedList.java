@@ -34,16 +34,10 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean add(int index, E item) {
-        // base case
-        if (index > size) {
-            throw new IndexOutOfBoundsException("LinkedList isn't long enough.");
-        }
-        // linkedlist is empty
-        if (head == null) {
-            head = new Node<>(item, null);
-        } else if (index == 0) { // add at first
-            Node<E> newNode = new Node<>(item, head);
-            head = newNode;
+        isIndexOutOfBounds(index);
+
+        if (index == 0) { // add at first
+            addFirst(item);
         } else { // add at any other location
             Node<E> curr = head;
             int i = 0;
@@ -60,12 +54,13 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public void addFirst(E item) {
-
+        Node<E> newNode = new Node<>(item, head);
+        head = newNode;
     }
 
     @Override
     public void addLast(E item) {
-
+        add(item);
     }
 
     @Override
@@ -138,6 +133,24 @@ public class SingleLinkedList<E> implements LinkedList<E> {
             curr = curr.next;
         }
         out.println(curr.item + "]");
+    }
+
+    private Node<E> getNode(int index) {
+        isIndexOutOfBounds(index);
+
+        Node<E> curr = head;
+        int i = 0;
+        while (i < index - 1) {
+            curr = curr.next;
+            i++;
+        }
+        return curr;
+    }
+
+    private void isIndexOutOfBounds(int index) {
+        if (index < 0 && index > size) {
+            throw new IndexOutOfBoundsException("Index must be less than or equal to: " + size);
+        }
     }
 
     private class Node<E> {
