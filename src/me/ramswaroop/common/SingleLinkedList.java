@@ -13,16 +13,16 @@ import static java.lang.System.out;
  */
 public class SingleLinkedList<E> implements LinkedList<E> {
 
-    Node<E> head;
+    SingleLinkedNode<E> head;
     int size;
 
     @Override
     public boolean add(E item) {
-        Node<E> newNode = new Node<>(item, null);
+        SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, null);
         if (head == null) { // list empty
             head = newNode;
         } else { // add to the end of list
-            Node<E> curr = head;
+            SingleLinkedNode<E> curr = head;
             while (curr.next != null) {
                 curr = curr.next;
             }
@@ -39,8 +39,8 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         if (index == 0) { // add at first
             addFirst(item);
         } else { // add at any other location
-            Node<E> nodeAtPrevIndex = getPredecessorNode(index);
-            Node<E> newNode = new Node<>(item, nodeAtPrevIndex.next);
+            SingleLinkedNode<E> nodeAtPrevIndex = getPredecessorNode(index);
+            SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, nodeAtPrevIndex.next);
             nodeAtPrevIndex.next = newNode;
             size++;
         }
@@ -49,7 +49,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public void addFirst(E item) {
-        Node<E> newNode = new Node<>(item, head);
+        SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, head);
         head = newNode;
         size++;
     }
@@ -104,8 +104,8 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     public E remove(int index) {
         isLinkedListEmpty();
 
-        Node<E> prevNode = getPredecessorNode(index);
-        Node<E> delNode;
+        SingleLinkedNode<E> prevNode = getPredecessorNode(index);
+        SingleLinkedNode<E> delNode;
         if (prevNode == null) { // index = 0
             delNode = head;
             head = head.next;
@@ -125,7 +125,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
         if (!contains(item)) return false;
 
-        Node<E> prevNode = getPredecessorNode(item);
+        SingleLinkedNode<E> prevNode = getPredecessorNode(item);
         if (prevNode == null) { // index = 0
             head = head.next;
             size--;
@@ -138,7 +138,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E set(int index, E item) {
-        Node<E> node = getNode(index);
+        SingleLinkedNode<E> node = getNode(index);
         node.item = item;
         return node.item;
     }
@@ -150,7 +150,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public void printList() {
-        Node<E> curr = head;
+        SingleLinkedNode<E> curr = head;
         out.print("[");
         if (curr == null) {
             out.println("]");
@@ -163,10 +163,10 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         out.println(curr.item + "]");
     }
 
-    private Node<E> getPredecessorNode(int index) {
+    private SingleLinkedNode<E> getPredecessorNode(int index) {
         isIndexOutOfBounds(index);
 
-        Node<E> curr = head;
+        SingleLinkedNode<E> curr = head;
         int i = 0;
         while (i < index - 1) {
             curr = curr.next;
@@ -175,9 +175,9 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         return (index == 0) ? null : curr;
     }
 
-    private Node<E> getPredecessorNode(E item) {
-        Node<E> prev = null;
-        Node<E> curr = head;
+    private SingleLinkedNode<E> getPredecessorNode(E item) {
+        SingleLinkedNode<E> prev = null;
+        SingleLinkedNode<E> curr = head;
         if (item == null) {
             while (curr != null) {
                 if (curr.item == item) { // when item is null, use == rather than equals()
@@ -198,10 +198,10 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         return null;
     }
 
-    private Node<E> getNode(int index) {
+    protected SingleLinkedNode<E> getNode(int index) {
         isIndexOutOfBounds(index);
 
-        Node<E> curr = head;
+        SingleLinkedNode<E> curr = head;
         int i = 0;
         while (i < index) {
             curr = curr.next;
@@ -210,8 +210,8 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         return curr;
     }
 
-    private Node<E> getNode(E item) {
-        Node<E> curr = head;
+    protected SingleLinkedNode<E> getNode(E item) {
+        SingleLinkedNode<E> curr = head;
         if (item == null) {
             while (curr != null) { // when item is null, use == rather than equals()
                 if (curr.item == item) {
@@ -239,23 +239,6 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     private void isIndexOutOfBounds(int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Index must be less than " + size);
-        }
-    }
-
-    private class Node<E> {
-        E item;
-        Node<E> next;
-
-        Node(E item, Node<E> next) {
-            this.item = item;
-            this.next = next;
-        }
-
-        Node(Node<E> node) {
-            if (node == null) return;
-
-            this.item = node.item;
-            this.next = node.next;
         }
     }
 }
