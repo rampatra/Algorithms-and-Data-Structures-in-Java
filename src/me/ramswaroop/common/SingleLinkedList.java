@@ -1,6 +1,4 @@
-package me.ramswaroop.linkedlists;
-
-import me.ramswaroop.common.LinkedList;
+package me.ramswaroop.common;
 
 import java.util.NoSuchElementException;
 
@@ -122,7 +120,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     }
 
     @Override
-    public boolean remove(E item) {
+    public boolean removeItem(E item) {
         isLinkedListEmpty();
 
         if (!contains(item)) return false;

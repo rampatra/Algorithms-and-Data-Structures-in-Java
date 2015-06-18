@@ -1,6 +1,4 @@
-package me.ramswaroop.linkedlists;
-
-import me.ramswaroop.common.LinkedList;
+package me.ramswaroop.common;
 
 import static java.lang.System.out;
 
@@ -76,7 +74,7 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
     }
 
     @Override
-    public boolean remove(E item) {
+    public boolean removeItem(E item) {
         return false;
     }
 

@@ -1,7 +1,6 @@
 package me.ramswaroop;
 
 import me.ramswaroop.common.*;
-import me.ramswaroop.linkedlists.SingleLinkedList;
 
 import java.util.Scanner;
 
@@ -135,7 +134,7 @@ public class Main {
                             case 5:
                                 out.println("Enter value:");
                                 item = Integer.parseInt(in.nextLine());
-                                out.println("Removed: " + singleLinkedList.remove(item));
+                                out.println("Removed: " + singleLinkedList.removeItem(item));
                                 singleLinkedList.printList();
                                 break;
                             case 6:

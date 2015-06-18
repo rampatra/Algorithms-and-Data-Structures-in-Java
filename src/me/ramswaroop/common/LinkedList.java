@@ -114,7 +114,7 @@ public interface LinkedList<E> {
      * @param item
      * @return {@code true} if this list contained the specified element
      */
-    boolean remove(E item);
+    boolean removeItem(E item);
 
     /**
      * Replaces the element at the specified position in this list with the specified element.
