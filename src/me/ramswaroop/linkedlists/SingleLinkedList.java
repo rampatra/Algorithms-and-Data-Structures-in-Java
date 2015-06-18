@@ -73,7 +73,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean contains(E item) {
-        return getNode(item) == null;
+        return getNode(item) != null;
     }
 
     @Override
@@ -104,20 +104,27 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E remove(int index) {
+        isLinkedListEmpty();
+
         Node<E> prevNode = getPredecessorNode(index);
+        Node<E> delNode;
         if (prevNode == null) { // index = 0
+            delNode = head;
             head = head.next;
             size--;
-            return head.item;
+            return delNode.item;
         } else {
-            prevNode.next = prevNode.next.next;
+            delNode = prevNode.next;
+            prevNode.next = delNode.next;
             size--;
-            return prevNode.next.item;
+            return delNode.item;
         }
     }
 
     @Override
     public boolean remove(E item) {
+        isLinkedListEmpty();
+
         if (!contains(item)) return false;
 
         Node<E> prevNode = getPredecessorNode(item);
@@ -232,8 +239,8 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     }
 
     private void isIndexOutOfBounds(int index) {
-        if (index < 0 && index > size) {
-            throw new IndexOutOfBoundsException("Index must be less than or equal to: " + size);
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index must be less than " + size);
         }
     }
 
