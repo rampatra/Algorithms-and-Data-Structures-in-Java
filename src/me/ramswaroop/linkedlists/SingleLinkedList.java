@@ -73,7 +73,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean contains(E item) {
-        return false;
+        return getNode(item) == null;
     }
 
     @Override
@@ -83,6 +83,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public E getFirst() {
+        isLinkedListEmpty();
         return head.item;
     }
 
@@ -97,27 +98,41 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
         E item = head.item;
         head = head.next;
+        size--;
         return item;
     }
 
     @Override
     public E remove(int index) {
-        isIndexOutOfBounds(index);
-
         Node<E> prevNode = getPredecessorNode(index);
-        prevNode.next = prevNode.next.next;
-        return prevNode.next.item;
+        if (prevNode == null) { // index = 0
+            head = head.next;
+            size--;
+            return head.item;
+        } else {
+            prevNode.next = prevNode.next.next;
+            size--;
+            return prevNode.next.item;
+        }
     }
 
     @Override
     public boolean remove(E item) {
-        return false;
+        if (!contains(item)) return false;
+
+        Node<E> prevNode = getPredecessorNode(item);
+        if (prevNode == null) { // index = 0
+            head = head.next;
+            size--;
+        } else {
+            prevNode.next = prevNode.next.next;
+            size--;
+        }
+        return true;
     }
 
     @Override
     public E set(int index, E item) {
-        isIndexOutOfBounds(index);
-
         Node<E> node = getNode(index);
         node.item = item;
         return node.item;
@@ -152,7 +167,30 @@ public class SingleLinkedList<E> implements LinkedList<E> {
             curr = curr.next;
             i++;
         }
-        return curr;
+        return (index == 0) ? null : curr;
+    }
+
+    private Node<E> getPredecessorNode(E item) {
+        Node<E> prev = null;
+        Node<E> curr = head;
+        if (item == null) {
+            while (curr != null) {
+                if (curr.item == item) { // when item is null, use == rather than equals()
+                    return prev;
+                }
+                prev = curr;
+                curr = curr.next;
+            }
+        } else {
+            while (curr != null) {
+                if (curr.item.equals(item)) {
+                    return prev;
+                }
+                prev = curr;
+                curr = curr.next;
+            }
+        }
+        return null;
     }
 
     private Node<E> getNode(int index) {
@@ -165,6 +203,26 @@ public class SingleLinkedList<E> implements LinkedList<E> {
             i++;
         }
         return curr;
+    }
+
+    private Node<E> getNode(E item) {
+        Node<E> curr = head;
+        if (item == null) {
+            while (curr != null) { // when item is null, use == rather than equals()
+                if (curr.item == item) {
+                    return curr;
+                }
+                curr = curr.next;
+            }
+        } else {
+            while (curr != null) {
+                if (curr.item.equals(item)) {
+                    return curr;
+                }
+                curr = curr.next;
+            }
+        }
+        return null;
     }
 
     private void isLinkedListEmpty() {

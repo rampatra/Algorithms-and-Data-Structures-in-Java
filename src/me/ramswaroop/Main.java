@@ -100,23 +100,26 @@ public class Main {
                         out.println("1. Add");
                         out.println("2. Add at index");
                         out.println("3. Remove");
-                        out.println("4. Print");
-                        out.println("5. Exit module");
+                        out.println("4. Remove at index");
+                        out.println("5. Remove item");
+                        out.println("6. Edit item");
+                        out.println("7. Print");
+                        out.println("8. Exit module");
                         k2 = Integer.parseInt(in.nextLine());
-                        int input, index;
+                        int item, index;
                         switch (k2) {
                             case 1:
                                 out.println("Enter value:");
-                                input = Integer.parseInt(in.nextLine());
-                                singleLinkedList.add(input);
+                                item = Integer.parseInt(in.nextLine());
+                                singleLinkedList.add(item);
                                 singleLinkedList.printList();
                                 break;
                             case 2:
                                 out.println("Enter value:");
-                                input = Integer.parseInt(in.nextLine());
+                                item = Integer.parseInt(in.nextLine());
                                 out.println("Enter index:");
                                 index = Integer.parseInt(in.nextLine());
-                                singleLinkedList.add(index, input);
+                                singleLinkedList.add(index, item);
                                 singleLinkedList.printList();
                                 break;
                             case 3:
@@ -124,9 +127,29 @@ public class Main {
                                 singleLinkedList.printList();
                                 break;
                             case 4:
+                                out.println("Enter index:");
+                                index = Integer.parseInt(in.nextLine());
+                                out.println("Removed element: " + singleLinkedList.remove(index));
                                 singleLinkedList.printList();
                                 break;
                             case 5:
+                                out.println("Enter value:");
+                                item = Integer.parseInt(in.nextLine());
+                                out.println("Removed: " + singleLinkedList.remove(item));
+                                singleLinkedList.printList();
+                                break;
+                            case 6:
+                                out.println("Enter index to edit:");
+                                index = Integer.parseInt(in.nextLine());
+                                out.println("Enter new value:");
+                                item = Integer.parseInt(in.nextLine());
+                                singleLinkedList.set(index, item);
+                                singleLinkedList.printList();
+                                break;
+                            case 7:
+                                singleLinkedList.printList();
+                                break;
+                            case 8:
                                 continue chooseModule;
                             default:
                                 out.println("Wrong choice!");
