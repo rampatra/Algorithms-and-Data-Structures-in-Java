@@ -9,8 +9,8 @@ package me.ramswaroop.common;
  */
 public class SingleLinkedNode<E> {
 
-    E item;
-    SingleLinkedNode<E> next;
+    public E item;
+    public SingleLinkedNode<E> next;
 
     SingleLinkedNode(E item, SingleLinkedNode<E> next) {
         this.item = item;

@@ -13,7 +13,9 @@ import me.ramswaroop.common.SingleLinkedNode;
 public class DeleteNode<E> extends SingleLinkedList<E> {
 
     public void deleteNode(SingleLinkedNode<E> node) {
-
+        // assert node isn't the last node in the linked list
+        node.item = node.next.item;
+        node.next = node.next.next;
     }
 
     public static void main(String a[]) {
@@ -21,6 +23,7 @@ public class DeleteNode<E> extends SingleLinkedList<E> {
         linkedList.add(34);
         linkedList.add(64);
         linkedList.add(43);
+        linkedList.printList();
         linkedList.deleteNode(linkedList.getNode(1));
         linkedList.printList();
     }
