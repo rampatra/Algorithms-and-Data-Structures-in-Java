@@ -3,6 +3,8 @@ package me.ramswaroop.linkedlists;
 import me.ramswaroop.common.SingleLinkedList;
 import me.ramswaroop.common.SingleLinkedNode;
 
+import java.util.HashMap;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -22,6 +24,9 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
      * there is a loop. If pointers do not meet
      * then linked list does not have loop.
      *
+     * Time:    O(n)
+     * Space:   O(1)
+     *
      * @param node
      * @return
      */
@@ -33,6 +38,28 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
             if (prev == curr) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    /**
+     * Uses HashMap to store visited nodes.
+     * <p/>
+     * Time:    O(n)
+     * Space:   O(n)
+     *
+     * @param node
+     * @return
+     */
+    public boolean isLoopPresentUsingHashMap(SingleLinkedNode<E> node) {
+        HashMap<SingleLinkedNode<E>, Boolean> map = new HashMap<>();
+        SingleLinkedNode<E> curr = node;
+        while (curr != null) {
+            if (map.get(curr) != null && map.get(curr) == true) {
+                return true;
+            }
+            map.put(curr, true);
+            curr = curr.next;
         }
         return false;
     }

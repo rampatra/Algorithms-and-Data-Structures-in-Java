@@ -147,8 +147,8 @@ public class Main {
                                 singleLinkedList.printList();
                                 break;
                             case 7:
-                                out.println("LinkedList deleted.");
                                 singleLinkedList.clear();
+                                out.println("LinkedList deleted.");
                                 singleLinkedList.printList();
                                 break;
                             case 8:
