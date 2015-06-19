@@ -102,8 +102,9 @@ public class Main {
                         out.println("4. Remove at index");
                         out.println("5. Remove item");
                         out.println("6. Edit item");
-                        out.println("7. Print");
-                        out.println("8. Exit module");
+                        out.println("7. Delete LinkedList");
+                        out.println("8. Print");
+                        out.println("9. Exit module");
                         k2 = Integer.parseInt(in.nextLine());
                         int item, index;
                         switch (k2) {
@@ -146,9 +147,14 @@ public class Main {
                                 singleLinkedList.printList();
                                 break;
                             case 7:
+                                out.println("LinkedList deleted.");
+                                singleLinkedList.clear();
                                 singleLinkedList.printList();
                                 break;
                             case 8:
+                                singleLinkedList.printList();
+                                break;
+                            case 9:
                                 continue chooseModule;
                             default:
                                 out.println("Wrong choice!");

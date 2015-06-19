@@ -61,7 +61,18 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public void clear() {
-
+        // Clearing all of the links between nodes is "unnecessary", but:
+        // - helps a generational GC if the discarded nodes inhabit
+        //   more than one generation
+        // - is sure to free memory even if there is a reachable Iterator
+        for (SingleLinkedNode<E> node = head; node != null; ) {
+            SingleLinkedNode<E> next = node.next;
+            node.item = null;
+            node.next = null;
+            node = next;
+        }
+        head = null;
+        size = 0;
     }
 
     @Override
