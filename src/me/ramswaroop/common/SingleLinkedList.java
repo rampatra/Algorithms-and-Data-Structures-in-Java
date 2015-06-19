@@ -13,8 +13,8 @@ import static java.lang.System.out;
  */
 public class SingleLinkedList<E> implements LinkedList<E> {
 
-    SingleLinkedNode<E> head;
-    int size;
+    public SingleLinkedNode<E> head;
+    public int size;
 
     @Override
     public boolean add(E item) {
