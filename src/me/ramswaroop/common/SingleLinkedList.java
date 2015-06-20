@@ -175,15 +175,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     }
 
     private SingleLinkedNode<E> getPredecessorNode(int index) {
-        isIndexOutOfBounds(index);
-
-        SingleLinkedNode<E> curr = head;
-        int i = 0;
-        while (i < index - 1) {
-            curr = curr.next;
-            i++;
-        }
-        return (index == 0) ? null : curr;
+        return getNode(index - 1);
     }
 
     private SingleLinkedNode<E> getPredecessorNode(E item) {
@@ -249,7 +241,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     private void isIndexOutOfBounds(int index) {
         if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Index must be less than " + size);
+            throw new IndexOutOfBoundsException("Index [" + index + "] must be less than size [" + size + "]");
         }
     }
 }
