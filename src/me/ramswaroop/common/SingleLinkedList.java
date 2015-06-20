@@ -34,7 +34,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
 
     @Override
     public boolean add(int index, E item) {
-        isIndexOutOfBounds(index);
+        isPositionIndex(index);
 
         if (index == 0) { // add at first
             addFirst(item);
@@ -202,7 +202,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
     }
 
     protected SingleLinkedNode<E> getNode(int index) {
-        isIndexOutOfBounds(index);
+        isElementIndex(index);
 
         SingleLinkedNode<E> curr = head;
         int i = 0;
@@ -239,9 +239,22 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         }
     }
 
-    private void isIndexOutOfBounds(int index) {
-        if (index < 0 || index > size) {
+    /**
+     * Tells if the argument is the index of an existing element.
+     */
+    private void isElementIndex(int index) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index [" + index + "] must be less than size [" + size + "]");
+        }
+    }
+
+    /**
+     * Tells if the argument is the index of a valid position for an
+     * iterator or an add operation.
+     */
+    private void isPositionIndex(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index [" + index + "] must be less than or equal to size [" + size + "]");
         }
     }
 }
