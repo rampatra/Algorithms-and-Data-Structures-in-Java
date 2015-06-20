@@ -29,6 +29,7 @@ public class NthNodeFromLast<E> extends SingleLinkedList<E> {
 
     public static void main(String a[]) {
         NthNodeFromLast<Integer> linkedList = new NthNodeFromLast<>();
+        linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);

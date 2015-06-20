@@ -24,6 +24,7 @@ public class MiddleNode<E> extends SingleLinkedList<E> {
 
     public static void main(String a[]) {
         MiddleNode<Integer> linkedList = new MiddleNode<>();
+        linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);

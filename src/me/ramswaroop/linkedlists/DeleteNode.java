@@ -20,9 +20,9 @@ public class DeleteNode<E> extends SingleLinkedList<E> {
 
     public static void main(String a[]) {
         DeleteNode<Integer> linkedList = new DeleteNode<>();
-        linkedList.add(34);
-        linkedList.add(64);
-        linkedList.add(43);
+        linkedList.add(00);
+        linkedList.add(11);
+        linkedList.add(22);
         linkedList.printList();
         linkedList.deleteNode(linkedList.getNode(1));
         linkedList.printList();

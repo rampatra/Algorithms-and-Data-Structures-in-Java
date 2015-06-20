@@ -66,6 +66,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
 
     public static void main(String a[]) {
         DetectLoop<Integer> linkedList = new DetectLoop<>();
+        linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);
