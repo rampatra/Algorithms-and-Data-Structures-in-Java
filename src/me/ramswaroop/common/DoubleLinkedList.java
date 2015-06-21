@@ -188,12 +188,18 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
         }
         out.println(curr.item + "]");
         // prints the list from last node
-        out.print("[");
+        /*out.print("[");
         while (curr.prev != null) {
             out.print(curr.item + ",");
             curr = curr.prev;
         }
-        out.println(curr.item + "]");
+        out.println(curr.item + "]");*/
+    }
+
+    public static <E> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
+        DoubleLinkedList<E> linkedList = new DoubleLinkedList<>();
+        linkedList.head = node;
+        return linkedList;
     }
 
     private DoubleLinkedNode<E> getPredecessorNode(int index) {
@@ -204,7 +210,7 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
         return getNode(item) != null ? getNode(item).prev : null;
     }
 
-    protected DoubleLinkedNode<E> getNode(int index) {
+    public DoubleLinkedNode<E> getNode(int index) {
         isElementIndex(index);
 
         DoubleLinkedNode<E> curr = head;
@@ -216,7 +222,7 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
         return curr;
     }
 
-    protected DoubleLinkedNode<E> getNode(E item) {
+    public DoubleLinkedNode<E> getNode(E item) {
         DoubleLinkedNode<E> curr = head;
         if (item == null) {
             while (curr != null) { // when item is null, use == rather than equals()

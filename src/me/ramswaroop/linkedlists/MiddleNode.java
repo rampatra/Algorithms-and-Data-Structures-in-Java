@@ -12,7 +12,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class MiddleNode<E> extends SingleLinkedList<E> {
 
-    public SingleLinkedNode<E> getMiddleNode(SingleLinkedNode<E> node) {
+    public static <E> SingleLinkedNode<E> getMiddleNode(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> slow = node;
         SingleLinkedNode<E> fast = node;
         while (fast != null && fast.next != null) {
@@ -23,7 +23,7 @@ public class MiddleNode<E> extends SingleLinkedList<E> {
     }
 
     public static void main(String a[]) {
-        MiddleNode<Integer> linkedList = new MiddleNode<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
@@ -33,6 +33,6 @@ public class MiddleNode<E> extends SingleLinkedList<E> {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.add(88);
-        System.out.println(linkedList.getMiddleNode(linkedList.getNode(0)).item);
+        System.out.println(getMiddleNode(linkedList.getNode(0)).item);
     }
 }

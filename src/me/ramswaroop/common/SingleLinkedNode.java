@@ -12,12 +12,12 @@ public class SingleLinkedNode<E> {
     public E item;
     public SingleLinkedNode<E> next;
 
-    SingleLinkedNode(E item, SingleLinkedNode<E> next) {
+    public SingleLinkedNode(E item, SingleLinkedNode<E> next) {
         this.item = item;
         this.next = next;
     }
 
-    SingleLinkedNode(SingleLinkedNode<E> node) {
+    public SingleLinkedNode(SingleLinkedNode<E> node) {
         if (node == null) return;
 
         this.item = node.item;

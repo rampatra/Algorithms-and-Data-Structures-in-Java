@@ -201,7 +201,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         return null;
     }
 
-    protected SingleLinkedNode<E> getNode(int index) {
+    public SingleLinkedNode<E> getNode(int index) {
         isElementIndex(index);
 
         SingleLinkedNode<E> curr = head;
@@ -213,7 +213,7 @@ public class SingleLinkedList<E> implements LinkedList<E> {
         return curr;
     }
 
-    protected SingleLinkedNode<E> getNode(E item) {
+    public SingleLinkedNode<E> getNode(E item) {
         SingleLinkedNode<E> curr = head;
         if (item == null) {
             while (curr != null) { // when item is null, use == rather than equals()

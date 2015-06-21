@@ -30,7 +30,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public boolean isLoopPresent(SingleLinkedNode<E> node) {
+    public static <E> boolean isLoopPresent(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> prev = node, curr = node;
         while (curr != null && curr.next != null) {
             prev = prev.next;
@@ -51,7 +51,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public boolean isLoopPresentUsingHashMap(SingleLinkedNode<E> node) {
+    public static <E> boolean isLoopPresentUsingHashMap(SingleLinkedNode<E> node) {
         HashMap<SingleLinkedNode<E>, Boolean> map = new HashMap<>();
         SingleLinkedNode<E> curr = node;
         while (curr != null) {
@@ -65,7 +65,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
     }
 
     public static void main(String a[]) {
-        DetectLoop<Integer> linkedList = new DetectLoop<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
@@ -73,6 +73,6 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
         linkedList.add(44);
         linkedList.add(55);
         linkedList.getNode(4).next = linkedList.getNode(3);
-        System.out.println(linkedList.isLoopPresent(linkedList.getNode(0)));
+        System.out.println(isLoopPresent(linkedList.getNode(0)));
     }
 }

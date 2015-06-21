@@ -12,7 +12,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class NthNodeFromLast<E> extends SingleLinkedList<E> {
 
-    public SingleLinkedNode<E> getNthNodeFromLast(SingleLinkedNode<E> node, int n) {
+    public static <E> SingleLinkedNode<E> getNthNodeFromLast(SingleLinkedNode<E> node, int n) {
         SingleLinkedNode<E> slow = node;
         SingleLinkedNode<E> fast = node;
         // move the fast reference ahead of slow reference by 'n' nodes
@@ -28,7 +28,7 @@ public class NthNodeFromLast<E> extends SingleLinkedList<E> {
     }
 
     public static void main(String a[]) {
-        NthNodeFromLast<Integer> linkedList = new NthNodeFromLast<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
@@ -38,6 +38,6 @@ public class NthNodeFromLast<E> extends SingleLinkedList<E> {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.add(88);
-        System.out.println(linkedList.getNthNodeFromLast(linkedList.getNode(0), 3).item);
+        System.out.println(getNthNodeFromLast(linkedList.getNode(0), 3).item);
     }
 }

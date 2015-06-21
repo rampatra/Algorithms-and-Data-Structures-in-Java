@@ -9,17 +9,17 @@ package me.ramswaroop.common;
  */
 public class DoubleLinkedNode<E> {
 
-    E item;
-    DoubleLinkedNode<E> next;
-    DoubleLinkedNode<E> prev;
+    public E item;
+    public DoubleLinkedNode<E> next;
+    public DoubleLinkedNode<E> prev;
 
-    DoubleLinkedNode(DoubleLinkedNode<E> prev, E item, DoubleLinkedNode<E> next) {
+    public DoubleLinkedNode(DoubleLinkedNode<E> prev, E item, DoubleLinkedNode<E> next) {
         this.item = item;
         this.next = next;
         this.prev = prev;
     }
 
-    DoubleLinkedNode(DoubleLinkedNode<E> node) {
+    public DoubleLinkedNode(DoubleLinkedNode<E> node) {
         if (node == null) return;
 
         this.item = node.item;
