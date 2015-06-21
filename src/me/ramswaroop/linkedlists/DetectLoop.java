@@ -12,7 +12,7 @@ import java.util.HashMap;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class DetectLoop<E> extends SingleLinkedList<E> {
+public class DetectLoop<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Uses Flyod's Cycle Finding algorithm.
@@ -30,7 +30,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public static <E> boolean isLoopPresent(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> boolean isLoopPresent(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> prev = node, curr = node;
         while (curr != null && curr.next != null) {
             prev = prev.next;
@@ -51,7 +51,7 @@ public class DetectLoop<E> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public static <E> boolean isLoopPresentUsingHashMap(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> boolean isLoopPresentUsingHashMap(SingleLinkedNode<E> node) {
         HashMap<SingleLinkedNode<E>, Boolean> map = new HashMap<>();
         SingleLinkedNode<E> curr = node;
         while (curr != null) {

@@ -7,7 +7,7 @@ package me.ramswaroop.common;
  * @date: 6/16/15
  * @time: 12:53 PM
  */
-public interface LinkedList<E> {
+public interface LinkedList<E extends Comparable<E>> {
 
     /**
      * Appends the specified element to the end of this list.

@@ -10,9 +10,9 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 6:49 PM
  */
-public class NthNodeFromLast<E> extends SingleLinkedList<E> {
+public class NthNodeFromLast<E extends Comparable<E>> extends SingleLinkedList<E> {
 
-    public static <E> SingleLinkedNode<E> getNthNodeFromLast(SingleLinkedNode<E> node, int n) {
+    public static <E extends Comparable<E>> SingleLinkedNode<E> getNthNodeFromLast(SingleLinkedNode<E> node, int n) {
         SingleLinkedNode<E> slow = node;
         SingleLinkedNode<E> fast = node;
         // move the fast reference ahead of slow reference by 'n' nodes

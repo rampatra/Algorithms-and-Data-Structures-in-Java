@@ -11,7 +11,7 @@ import static java.lang.System.out;
  * @date: 6/16/15
  * @time: 1:00 PM
  */
-public class DoubleLinkedList<E> implements LinkedList<E> {
+public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> {
 
     public DoubleLinkedNode<E> head;
     public int size;
@@ -196,7 +196,7 @@ public class DoubleLinkedList<E> implements LinkedList<E> {
         out.println(curr.item + "]");*/
     }
 
-    public static <E> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
         DoubleLinkedList<E> linkedList = new DoubleLinkedList<>();
         linkedList.head = node;
         return linkedList;

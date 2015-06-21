@@ -7,7 +7,7 @@ package me.ramswaroop.common;
  * @date: 6/18/15
  * @time: 2:42 PM
  */
-public class DoubleLinkedNode<E> {
+public class DoubleLinkedNode<E extends Comparable<E>> {
 
     public E item;
     public DoubleLinkedNode<E> next;

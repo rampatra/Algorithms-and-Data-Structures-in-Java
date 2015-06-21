@@ -10,9 +10,9 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 10:34 PM
  */
-public class MiddleNode<E> extends SingleLinkedList<E> {
+public class MiddleNode<E extends Comparable<E>> extends SingleLinkedList<E> {
 
-    public static <E> SingleLinkedNode<E> getMiddleNode(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> SingleLinkedNode<E> getMiddleNode(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> slow = node;
         SingleLinkedNode<E> fast = node;
         while (fast != null && fast.next != null) {

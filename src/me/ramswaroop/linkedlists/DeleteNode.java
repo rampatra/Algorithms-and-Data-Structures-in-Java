@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 2:35 PM
  */
-public class DeleteNode<E> extends SingleLinkedList<E> {
+public class DeleteNode<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Given a pointer to a node, delete it.
@@ -18,7 +18,7 @@ public class DeleteNode<E> extends SingleLinkedList<E> {
      * @param node
      * @param <E>
      */
-    public static <E> void deleteNode(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> void deleteNode(SingleLinkedNode<E> node) {
         // assert node isn't the last node in the linked list
         node.item = node.next.item;
         node.next = node.next.next;

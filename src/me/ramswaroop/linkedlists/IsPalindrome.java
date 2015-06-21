@@ -12,7 +12,7 @@ import me.ramswaroop.common.Stack;
  * @date: 6/18/15
  * @time: 2:35 PM
  */
-public class IsPalindrome<E> extends SingleLinkedList<E> {
+public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Uses Stack to test whether a linked list starting
@@ -21,7 +21,7 @@ public class IsPalindrome<E> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public static <E> boolean isPalindrome(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> boolean isPalindrome(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> curr = node;
         Stack<SingleLinkedNode<E>> stack = new LinkedStack<>();
 

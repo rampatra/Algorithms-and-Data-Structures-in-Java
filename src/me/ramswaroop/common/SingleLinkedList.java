@@ -11,7 +11,7 @@ import static java.lang.System.out;
  * @date: 6/16/15
  * @time: 1:00 PM
  */
-public class SingleLinkedList<E> implements LinkedList<E> {
+public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> {
 
     public SingleLinkedNode<E> head;
     public int size;

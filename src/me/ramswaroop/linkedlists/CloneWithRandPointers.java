@@ -10,9 +10,9 @@ import me.ramswaroop.common.DoubleLinkedNode;
  * @date: 6/20/15
  * @time: 1:00 PM
  */
-public class CloneWithRandPointers<E> extends DoubleLinkedList<E> {
+public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinkedList<E> {
 
-    public static <E> DoubleLinkedList<E> clone(DoubleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> DoubleLinkedList<E> clone(DoubleLinkedNode<E> node) {
         DoubleLinkedNode<E> curr = node;
 
         // copy node and insert after it
@@ -57,6 +57,9 @@ public class CloneWithRandPointers<E> extends DoubleLinkedList<E> {
         linkedList.getNode(3).prev = linkedList.getNode(1);
         linkedList.printList();
         DoubleLinkedList<Integer> clonedList = clone(linkedList.getNode(0));
+        clonedList.size = 4;
+        clonedList.set(1, 567);
         clonedList.printList();
+        linkedList.printList();
     }
 }

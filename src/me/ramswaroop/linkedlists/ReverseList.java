@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class ReverseList<E> extends SingleLinkedList<E> {
+public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Reverses the linked list using 3 references prev, curr and next.
