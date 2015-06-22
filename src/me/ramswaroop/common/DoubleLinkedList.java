@@ -188,12 +188,12 @@ public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         }
         out.println(curr.item + "]");
         // prints the list from last node
-        /*out.print("[");
+        out.print("[");
         while (curr.prev != null) {
             out.print(curr.item + ",");
             curr = curr.prev;
         }
-        out.println(curr.item + "]");*/
+        out.println(curr.item + "]");
     }
 
     public static <E extends Comparable<E>> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
