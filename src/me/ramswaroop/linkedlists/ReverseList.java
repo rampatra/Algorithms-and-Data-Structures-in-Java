@@ -51,6 +51,23 @@ public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
         return node;
     }
 
+    /**
+     * Recursive method to PRINT the linked list in reverse.
+     * <p/>
+     * NOTE: It doesn't reverse the linked list but just PRINTS
+     * them in reverse.
+     *
+     * @param node
+     * @param <E>
+     */
+    public static <E extends Comparable<E>> void printListInReverse(SingleLinkedNode<E> node) {
+        if (node == null) return;
+
+        printListInReverse(node.next);
+
+        System.out.print(node.item + ",");
+    }
+
     public static void main(String a[]) {
         ReverseList<Integer> linkedList = new ReverseList<>();
         linkedList.add(11);
@@ -63,5 +80,6 @@ public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
         linkedList.printList();
         linkedList.recursiveReverseList(linkedList.getNode(0));
         linkedList.printList();
+        printListInReverse(linkedList.getNode(0));
     }
 }
