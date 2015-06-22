@@ -27,11 +27,12 @@ public class DetectLoop<E extends Comparable<E>> extends SingleLinkedList<E> {
      * Time:    O(n)
      * Space:   O(1)
      *
-     * @param node
+     * @param list
      * @return
      */
-    public static <E extends Comparable<E>> boolean isLoopPresent(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> prev = node, curr = node;
+    public static <E extends Comparable<E>> boolean isLoopPresent(SingleLinkedList<E> list) {
+        SingleLinkedNode<E> firstNode = list.getNode(0);
+        SingleLinkedNode<E> prev = firstNode, curr = firstNode;
         while (curr != null && curr.next != null) {
             prev = prev.next;
             curr = curr.next.next;
@@ -73,6 +74,6 @@ public class DetectLoop<E extends Comparable<E>> extends SingleLinkedList<E> {
         linkedList.add(44);
         linkedList.add(55);
         linkedList.getNode(4).next = linkedList.getNode(3);
-        System.out.println(isLoopPresent(linkedList.getNode(0)));
+        System.out.println(isLoopPresent(linkedList));
     }
 }

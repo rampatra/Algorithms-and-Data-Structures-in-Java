@@ -12,9 +12,9 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class MiddleNode<E extends Comparable<E>> extends SingleLinkedList<E> {
 
-    public static <E extends Comparable<E>> SingleLinkedNode<E> getMiddleNode(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> slow = node;
-        SingleLinkedNode<E> fast = node;
+    public static <E extends Comparable<E>> SingleLinkedNode<E> getMiddleNode(SingleLinkedList<E> list) {
+        SingleLinkedNode<E> slow = list.getNode(0);
+        SingleLinkedNode<E> fast = list.getNode(0);
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -33,6 +33,6 @@ public class MiddleNode<E extends Comparable<E>> extends SingleLinkedList<E> {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.add(88);
-        System.out.println(getMiddleNode(linkedList.getNode(0)).item);
+        System.out.println(getMiddleNode(linkedList).item);
     }
 }

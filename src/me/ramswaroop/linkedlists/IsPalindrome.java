@@ -18,11 +18,12 @@ public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
      * Uses Stack to test whether a linked list starting
      * from {@param node} is palindrome or not.
      *
-     * @param node
+     * @param list
      * @return
      */
-    public static <E extends Comparable<E>> boolean isPalindrome(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> curr = node;
+    public static <E extends Comparable<E>> boolean isPalindrome(SingleLinkedList<E> list) {
+        SingleLinkedNode<E> head = list.getNode(0);
+        SingleLinkedNode<E> curr = head;
         Stack<SingleLinkedNode<E>> stack = new LinkedStack<>();
 
         while (curr != null) {
@@ -30,7 +31,7 @@ public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
             curr = curr.next;
         }
 
-        curr = node;
+        curr = head;
 
         while (curr != null) {
             if (curr.item != stack.pop().item) {
@@ -72,7 +73,7 @@ public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
         linkedList.add(11);
         linkedList.add(00);
         linkedList.printList();
-        System.out.println(isPalindrome(linkedList.getNode(0)));
+        System.out.println(isPalindrome(linkedList));
         linkedList.printList();
         System.out.println(linkedList.isPalindromeRecursive(linkedList.getNode(0)));
     }

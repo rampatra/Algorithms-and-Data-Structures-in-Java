@@ -13,8 +13,17 @@ import me.ramswaroop.common.DoubleLinkedNode;
  */
 public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinkedList<E> {
 
-    public static <E extends Comparable<E>> DoubleLinkedList<E> clone(DoubleLinkedNode<E> node) {
-        DoubleLinkedNode<E> curr = node;
+    /**
+     * Clones a linked list with next pointer pointing to the
+     * next node and prev pointer pointing to any random node.
+     *
+     * @param list
+     * @param <E>
+     * @return
+     */
+    public static <E extends Comparable<E>> DoubleLinkedList<E> clone(DoubleLinkedList<E> list) {
+        DoubleLinkedNode<E> firstNode = list.getNode(0);
+        DoubleLinkedNode<E> curr = firstNode;
 
         // copy each node and insert after it
         while (curr != null) {
@@ -24,16 +33,16 @@ public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinked
         }
 
         // copy all random pointers from original node to the copied node
-        curr = node;
+        curr = firstNode;
         while (curr != null && curr.next != null) {
             curr.next.prev = (curr.prev != null) ? curr.prev.next : null;
             curr = curr.next.next;
         }
 
         // separate the copied nodes into a different linked list
-        curr = node;
-        DoubleLinkedNode<E> cloneHead = node.next;
-        DoubleLinkedNode<E> dupNode = cloneHead;
+        curr = firstNode;
+        DoubleLinkedNode<E> cloneHead = firstNode.next;
+        DoubleLinkedNode<E> dupNode;
         while (curr != null && curr.next != null) {
             dupNode = curr.next;
             curr.next = (dupNode != null) ? dupNode.next : null;
@@ -54,11 +63,16 @@ public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinked
         linkedList.getNode(1).prev = linkedList.getNode(2);
         linkedList.getNode(2).prev = linkedList.getNode(0);
         linkedList.getNode(3).prev = linkedList.getNode(1);
+        System.out.println("======Original======");
         linkedList.printList();
-        DoubleLinkedList<Integer> clonedList = clone(linkedList.getNode(0));
+        DoubleLinkedList<Integer> clonedList = clone(linkedList);
+        System.out.println("======Cloned======");
+        clonedList.printList();
+        System.out.println("======Cloned (Modified)======");
         clonedList.set(0, 234);
         clonedList.set(1, 567);
         clonedList.printList();
+        System.out.println("======Original======");
         linkedList.printList();
     }
 }
