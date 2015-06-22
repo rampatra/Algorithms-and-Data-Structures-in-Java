@@ -174,6 +174,19 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         out.println(curr.item + "]");
     }
 
+    public static <E extends Comparable<E>> SingleLinkedList<E> getLinkedList(SingleLinkedNode<E> node) {
+        SingleLinkedList<E> linkedList = new SingleLinkedList<>();
+        // set head
+        linkedList.head = node;
+        // set size
+        SingleLinkedNode<E> curr = node;
+        while (curr != null) {
+            linkedList.size++;
+            curr = curr.next;
+        }
+        return linkedList;
+    }
+
     private SingleLinkedNode<E> getPredecessorNode(int index) {
         return getNode(index - 1);
     }

@@ -198,7 +198,14 @@ public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
     public static <E extends Comparable<E>> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
         DoubleLinkedList<E> linkedList = new DoubleLinkedList<>();
+        // set head
         linkedList.head = node;
+        // set size
+        DoubleLinkedNode<E> curr = node;
+        while (curr != null) {
+            linkedList.size++;
+            curr = curr.next;
+        }
         return linkedList;
     }
 

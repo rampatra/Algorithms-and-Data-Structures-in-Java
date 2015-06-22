@@ -9,6 +9,7 @@ import me.ramswaroop.common.DoubleLinkedNode;
  * @author: ramswaroop
  * @date: 6/20/15
  * @time: 1:00 PM
+ * @see: http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
  */
 public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinkedList<E> {
 
@@ -55,7 +56,6 @@ public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinked
         linkedList.getNode(3).prev = linkedList.getNode(1);
         linkedList.printList();
         DoubleLinkedList<Integer> clonedList = clone(linkedList.getNode(0));
-        clonedList.size = 4;
         clonedList.set(0, 234);
         clonedList.set(1, 567);
         clonedList.printList();
