@@ -10,16 +10,16 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Reverses the linked list using 3 references prev, curr and next.
      *
-     * @param node
+     * @param list
      */
-    public void reverseList(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> prev = node;
-        SingleLinkedNode<E> curr = node.next;
+    public static <E extends Comparable<E>> void reverseList(SingleLinkedList<E> list) {
+        SingleLinkedNode<E> prev = list.getNode(0);
+        SingleLinkedNode<E> curr = prev.next;
         prev.next = null; // this will be the last node after reversal, so make next of node = null
         while (curr != null) {
             SingleLinkedNode<E> next = curr.next;
@@ -27,7 +27,7 @@ public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
             prev = curr;
             curr = next;
         }
-        head = prev;
+        list.head = prev;
     }
 
     /**
@@ -69,14 +69,14 @@ public class ReverseList<E extends Comparable<E>> extends SingleLinkedList<E> {
     }
 
     public static void main(String a[]) {
-        ReverseList<Integer> linkedList = new ReverseList<>();
+        ReverseSingleLinkedList<Integer> linkedList = new ReverseSingleLinkedList<>();
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);
         linkedList.add(44);
         linkedList.add(55);
         linkedList.printList();
-        linkedList.reverseList(linkedList.getNode(0));
+        reverseList(linkedList);
         linkedList.printList();
         linkedList.recursiveReverseList(linkedList.getNode(0));
         linkedList.printList();
