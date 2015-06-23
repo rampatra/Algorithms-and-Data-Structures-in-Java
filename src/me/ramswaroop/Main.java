@@ -15,6 +15,7 @@ public class Main {
         Queue<Integer> queue = new LinkedQueue<>();
         LinkedList<Integer> singleLinkedList = new SingleLinkedList<>();
         LinkedList<Integer> doubleLinkedList = new DoubleLinkedList<>();
+        LinkedList<Integer> circularSingleLinkedList = new CircularSingleLinkedList<>();
         chooseModule:
         while (true) {
             out.println("Choose module:");
@@ -23,7 +24,9 @@ public class Main {
             out.println("2. Queue");
             out.println("3. SingleLinkedList");
             out.println("4. DoubleLinkedList");
-            out.println("5. Exit");
+            out.println("5. CircularSingleLinkedList");
+            out.println("6. CircularDoubleLinkedList");
+            out.println("7. Exit");
             k1 = Integer.parseInt(in.nextLine());
             switch (k1) {
                 case 1:
@@ -231,6 +234,77 @@ public class Main {
                         }
                     }
                 case 5:
+                    while (true) {
+                        out.println("Select operation:");
+                        out.println("=================");
+                        out.println("1. Add");
+                        out.println("2. Add at index");
+                        out.println("3. Remove");
+                        out.println("4. Remove at index");
+                        out.println("5. Remove item");
+                        out.println("6. Edit item");
+                        out.println("7. Delete LinkedList");
+                        out.println("8. Print");
+                        out.println("9. Exit module");
+                        k2 = Integer.parseInt(in.nextLine());
+                        int item, index;
+                        switch (k2) {
+                            case 1:
+                                out.println("Enter value:");
+                                item = Integer.parseInt(in.nextLine());
+                                circularSingleLinkedList.add(item);
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 2:
+                                out.println("Enter value:");
+                                item = Integer.parseInt(in.nextLine());
+                                out.println("Enter index:");
+                                index = Integer.parseInt(in.nextLine());
+                                circularSingleLinkedList.add(index, item);
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 3:
+                                out.println("Removed element: " + circularSingleLinkedList.remove());
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 4:
+                                out.println("Enter index:");
+                                index = Integer.parseInt(in.nextLine());
+                                out.println("Removed element: " + circularSingleLinkedList.remove(index));
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 5:
+                                out.println("Enter value:");
+                                item = Integer.parseInt(in.nextLine());
+                                out.println("Removed: " + circularSingleLinkedList.removeItem(item));
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 6:
+                                out.println("Enter index to edit:");
+                                index = Integer.parseInt(in.nextLine());
+                                out.println("Enter new value:");
+                                item = Integer.parseInt(in.nextLine());
+                                circularSingleLinkedList.set(index, item);
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 7:
+                                circularSingleLinkedList.clear();
+                                out.println("LinkedList deleted.");
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 8:
+                                circularSingleLinkedList.printList();
+                                break;
+                            case 9:
+                                continue chooseModule;
+                            default:
+                                out.println("Wrong choice!");
+                        }
+                    }
+                case 6:
+                    out.println("Yet to be developed!");
+                    break;
+                case 7:
                     out.println("Exiting...");
                     System.exit(0);
                 default:
