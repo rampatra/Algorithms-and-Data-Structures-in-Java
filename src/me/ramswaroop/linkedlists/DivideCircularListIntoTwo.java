@@ -13,11 +13,12 @@ import me.ramswaroop.common.SingleLinkedNode;
 public class DivideCircularListIntoTwo<E extends Comparable<E>> extends CircularSingleLinkedList<E> {
 
     public static <E extends Comparable<E>> CircularSingleLinkedList[] divideIntoTwoHalves(CircularSingleLinkedList<E> list) {
-        SingleLinkedNode<E> middleNode = list.getNode(list.size >> 1),
+        SingleLinkedNode<E> middleNode = list.getNode(list.size - 1 >> 1),
                 lastNode = list.getNode(list.size - 1),
                 secondHead = middleNode.next;
-
+        // make the 2nd half circular first
         lastNode.next = middleNode.next;
+        // then make the 1st half circular
         middleNode.next = list.head;
 
         return new CircularSingleLinkedList[]{getLinkedList(list.head), getLinkedList(secondHead)};
