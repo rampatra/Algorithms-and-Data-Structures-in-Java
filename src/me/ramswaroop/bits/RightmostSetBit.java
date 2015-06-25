@@ -9,9 +9,18 @@ package me.ramswaroop.bits;
  */
 public class RightmostSetBit {
 
+    /**
+     * Returns the position of the rightmost set bit
+     * in {@param n} where the position starts from 1.
+     * <p/>
+     * Works for -ve no.s as well.
+     *
+     * @param n
+     * @return
+     */
     public static int getRightmostSetBitPosition(long n) {
         int position = 0;
-        while (n > 0) {
+        while (n != 0) {
             position++;
             if ((n & 1) == 1) {
                 break;
@@ -22,7 +31,7 @@ public class RightmostSetBit {
     }
 
     public static long unsetRightmostSetBit(long n) {
-        return n & (n - 1);
+        return n & (n - 1); // brian kerningham's algorithm
     }
 
     public static void main(String a[]) {
@@ -32,6 +41,9 @@ public class RightmostSetBit {
         System.out.println(getRightmostSetBitPosition(5));
         System.out.println(getRightmostSetBitPosition(18));
         System.out.println(getRightmostSetBitPosition(19));
+        System.out.println(getRightmostSetBitPosition(-1));
+        System.out.println(getRightmostSetBitPosition(-2));
+        System.out.println(getRightmostSetBitPosition(-4));
 
         System.out.println("========================");
 
