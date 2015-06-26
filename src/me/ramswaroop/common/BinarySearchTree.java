@@ -1,6 +1,4 @@
-package me.ramswaroop.trees;
-
-import me.ramswaroop.common.BinaryNode;
+package me.ramswaroop.common;
 
 import java.util.NoSuchElementException;
 
@@ -45,8 +43,6 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         out.println("");
         bst.postOrder();
         out.println("\n" + bst.size());
-        out.println(BinaryTree.isIdentical(bst.root.right, bst.root.right));
-        out.println(bst.isIdentical(bst.root));
         out.println(bst.height());
         /*obj.delete();
         out.println("After deletion: ");
@@ -56,15 +52,12 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         /*out.println("\nAfter mirroring: ");
         obj.mirror();
         obj.inOrder();*/
-        out.println("\nRoot to leafs: ");
-        bst.rootToLeafPaths();
         out.println("LCA: " + bst.leastCommonAncestor(bst.root, 6, 8).value);
         out.println("Min: " + bst.min().value);
         out.println("BFT: ");
         bst.breadthFirstTraversal();
         out.println("\nBFT using queue: ");
         bst.breadthFirstTraversalUsingQueue();
-        out.println("\nNo. of leaf nodes: " + bst.countLeafNodes());
         out.println("Is BST: " + bst.isBST());
         /*out.print("Tree to list: ");
         bst.treeToList();*/
@@ -157,60 +150,7 @@ public class BinarySearchTree<E extends Comparable<E>> extends BinaryTree<E> {
         }
     }
 
-
-    /**
-     * A recursive function that takes an ordered binary tree
-     * and rearranges the internal pointers to make a circular
-     * doubly linked list out of the tree nodes. The list should
-     * be arranged so that the nodes are in increasing order.
-     */
-    public void treeToList() {
-        // print the list
-        printList(treeToList(root));
-    }
-
-    public BinaryNode<E> treeToList(BinaryNode<E> node) {
-        if (node == null) return null;
-
-        BinaryNode<E> aList = treeToList(node.left);
-        BinaryNode<E> bList = treeToList(node.right);
-
-        node.left = node;
-        node.right = node;
-
-        // attach left child then root followed by right child (so that final list is in ascending order)
-        aList = addToList(aList, node);
-        aList = addToList(aList, bList);
-
-        return aList;
-    }
-
-    private BinaryNode<E> addToList(BinaryNode<E> aList, BinaryNode<E> bList) {
-
-        if (aList == null) return bList;
-        if (bList == null) return aList;
-
-        // find the last node in each list
-        BinaryNode<E> aListLast = aList.left;
-        BinaryNode<E> bListLast = bList.left;
-
-        // join end of one list to beginning of another
-        aListLast.right = bList;
-        bList.left = aListLast;
-
-        // make circular
-        aListLast.left = bListLast;
-        bListLast.right = aList;
-
-        return aList;
-    }
-
-
-    /**
-     * Utility methods.
-     */
-
-    private void printList(BinaryNode<E> node) {
+    public void printList(BinaryNode<E> node) {
         BinaryNode<E> current = node;
         out.print("[");
         if (current == null) {

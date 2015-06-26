@@ -1,9 +1,5 @@
-package me.ramswaroop.trees;
+package me.ramswaroop.common;
 
-import me.ramswaroop.common.*;
-
-import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -18,7 +14,7 @@ import static java.lang.System.out;
  */
 public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
-    BinaryNode<E> root;
+    public BinaryNode<E> root;
     Queue<BinaryNode<E>> queue = new LinkedQueue<>(); // needed for insertion
 
     public static void main(String[] a) {
@@ -32,8 +28,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.put(7);*/
         out.print("Breadth-first Traversal: ");
         binaryTree.breadthFirstTraversal();
-        out.print("\nSpiral Traversal: ");
-        binaryTree.spiralTraversal();
         out.print("\nIn order traversal: ");
         binaryTree.inOrder();
         out.print("\nIn order traversal without stack: ");
@@ -46,9 +40,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         binaryTree.breadthFirstTraversal();*/
         out.print("\nIs height balanced: " + binaryTree.isHeightBalanced());
         out.print("\nDiameter: " + binaryTree.diameter());
-        out.print("\nRoot to Leaf Sum: " + binaryTree.rootToLeafPathsSum(binaryTree.root, new ArrayList<Integer>(), 13));
-        out.print("\nBFS after Double tree: ");
-        binaryTree.doubleTree();
+
         binaryTree.breadthFirstTraversalUsingQueue();
         out.print("\nIn order traversal: ");
         binaryTree.inOrder();
@@ -278,97 +270,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
-
-    /**
-     * In spiral order traversal, nodes at different levels
-     * are printed in alternating order.
-     */
-    public void spiralTraversal() {
-        spiralTraversal(root, 0); // uses recursion
-    }
-
-    public void spiralTraversal(BinaryNode<E> node, int level) {
-        if (node == null) return;
-
-        // print the starting node
-        if (level == 0) printValue(node);
-
-        // print the neighbour nodes
-        if (level % 2 == 0) {
-            printValue(node.left);
-            printValue(node.right);
-        } else {
-            printValue(node.right);
-            printValue(node.left);
-        }
-
-        // go to next level
-        level++;
-        if (level % 2 == 0) {
-            spiralTraversal(node.left, level);
-            spiralTraversal(node.right, level);
-        } else {
-            spiralTraversal(node.right, level);
-            spiralTraversal(node.left, level);
-        }
-    }
-
-    public void spiralTraversalUsingStacks(BinaryNode<E> node) {
-        Stack<BinaryNode<E>> stack1 = new LinkedStack<>(); // for nodes to be printed ltr
-        Stack<BinaryNode<E>> stack2 = new LinkedStack<>(); // for nodes to be printed rtl
-
-        printValue(node);
-
-        stack1.push(node.right);
-        stack1.push(node.left);
-
-        // pop stack1 and push their child nodes in stack2
-        while (!stack1.isEmpty()) {
-
-            BinaryNode<E> leftChild = stack1.pop();
-            BinaryNode<E> rightChild = stack1.pop();
-
-            printValue(leftChild);
-            printValue(rightChild);
-
-            try {
-                if (leftChild != null) stack2.push(leftChild.left);
-                if (leftChild != null) stack2.push(leftChild.right);
-                if (rightChild != null) stack2.push(rightChild.left);
-                if (rightChild != null) stack2.push(rightChild.right);
-            } catch (EmptyStackException e) {
-                // ignore error when stack empty
-            }
-        }
-
-        // pop stack2 and push their child nodes in stack1
-        while (!stack2.isEmpty()) {
-
-            BinaryNode<E> rightChild = stack2.pop();
-            BinaryNode<E> leftChild = stack2.pop();
-
-            printValue(rightChild);
-            printValue(leftChild);
-
-            try {
-                if (rightChild != null) stack1.push(rightChild.right);
-                if (rightChild != null) stack1.push(rightChild.left);
-                if (leftChild != null) stack1.push(leftChild.right);
-                if (leftChild != null) stack1.push(leftChild.left);
-            } catch (EmptyStackException e) {
-                // ignore error when stack empty
-            }
-        }
-    }
-
-
-    public void constructTreeWithInOrderAndPreOrder(List<BinaryNode<E>> inOrder, List<BinaryNode<E>> preOrder) {
-        for (int i = 0; i < preOrder.size(); i++) {
-
-        }
-    }
-
-
     /**
      * Deletes the entire tree.
      */
@@ -442,37 +343,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         return root == null;
     }
 
-    /**
-     * Checks whether this tree and another with @param node
-     * as root are identical or not.
-     *
-     * @param node
-     * @return
-     */
-    public boolean isIdentical(BinaryNode<E> node) {
-        return isIdentical(this.root, node);
-    }
-
-    /**
-     * Checks whether two trees having their roots at node1 and node2
-     * are identical or not.
-     *
-     * @param node1
-     * @param node2
-     * @param <E>
-     * @return
-     */
-    public static <E extends Comparable<E>> boolean isIdentical(BinaryNode<E> node1, BinaryNode<E> node2) {
-        if (node1 == null && node2 == null) return true;
-        if (node1 == null && node2 != null || (node1 != null && node2 == null)) return false;
-
-        if (node1.value == node2.value) {
-            return true && isIdentical(node1.left, node2.left) && isIdentical(node1.right, node2.right);
-        } else {
-            return false;
-        }
-    }
-
 
     /**
      * Converts a Tree to its Mirror Tree.
@@ -500,116 +370,6 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         tempNode = node.left;
         node.left = node.right;
         node.right = tempNode;
-    }
-
-
-    /**
-     * Prints the node to leaf paths, one per line.
-     */
-    public void rootToLeafPaths() {
-        List<E> pathList = new ArrayList<>();
-        rootToLeafPaths(root, pathList);
-
-        /*E[] pathList = (E[]) new Object[100];
-        rootToLeafPaths(root, pathList, 0);*/
-    }
-
-    /**
-     * Prints the node to leaf paths, one per line.
-     * (Using array)
-     */
-    public void rootToLeafPaths(BinaryNode<E> node, E[] pathList, int pathLength) {
-        if (node == null) return;
-
-        pathList[pathLength] = node.value;
-        pathLength++;
-
-        // if its a leaf node then print the list
-        if (node.left == null && node.right == null) {
-            int i;
-            for (i = 0; i < pathLength - 1; i++) {
-                out.print(pathList[i] + " -> ");
-            }
-            // outside the loop so that "->" doesn't appear after the last node
-            out.println(pathList[i]);
-        } else {
-            // do the same for subtrees
-            rootToLeafPaths(node.left, pathList, pathLength);
-            rootToLeafPaths(node.right, pathList, pathLength);
-        }
-    }
-
-    /**
-     * Prints the node to leaf paths, one per line.
-     * (Using ArrayList)
-     */
-    public void rootToLeafPaths(BinaryNode<E> node, List<E> pathList) {
-        if (node == null) return;
-
-        pathList.add(node.value);
-
-        // if its a leaf node then print the list
-        if (node.left == null && node.right == null) {
-            int i;
-            for (i = 0; i < pathList.size() - 1; i++) {
-                out.print(pathList.get(i) + " -> ");
-            }
-            // outside the loop so that "->" doesn't appear after the last node
-            out.println(pathList.get(i));
-        } else {
-            // do the same for subtrees
-            rootToLeafPaths(node.left, new ArrayList<>(pathList));
-            rootToLeafPaths(node.right, new ArrayList<>(pathList));
-        }
-    }
-
-
-    /**
-     * Given a binary tree and a number, return true if the tree has a root-to-leaf
-     * path such that adding up all the values along the path equals the given number.
-     * Return false if no such path can be found.
-     *
-     * @param node
-     * @param pathList
-     * @param pathSum
-     * @return
-     */
-    public boolean rootToLeafPathsSum(BinaryNode<E> node, List<E> pathList, int pathSum) {
-        int sum = 0;
-
-        if (node != null) pathList.add(node.value);
-
-        // if its either a leaf node or null then path is complete, add all in the list
-        if (node == null || (node.left == null && node.right == null)) {
-            for (int i = 0; i < pathList.size(); i++) {
-                sum += Integer.parseInt(pathList.get(i).toString());
-            }
-            return sum == pathSum;
-        } else {
-            // do the same for subtrees
-            return rootToLeafPathsSum(node.left, new ArrayList<>(pathList), pathSum) ||
-                    rootToLeafPathsSum(node.right, new ArrayList<>(pathList), pathSum);
-        }
-    }
-
-
-    /**
-     * Returns the number of leaf nodes in a binary tree.
-     *
-     * @return
-     */
-    public int countLeafNodes() {
-        return countLeafNodes(root);
-    }
-
-    public int countLeafNodes(BinaryNode<E> node) {
-        if (node == null) {
-            return 0;
-        } else if (node.left == null && node.right == null) {
-            return 1;
-        } else {
-            return countLeafNodes(node.left) + countLeafNodes(node.right);
-        }
     }
 
 
@@ -813,33 +573,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
     }
 
-
-    /**
-     * Converts a given tree to its Double tree. To create a Double tree
-     * of the given tree, create a new duplicate for each node, and insert
-     * the duplicate as the left child of the original node.
-     */
-    public void doubleTree() {
-        doubleTree(root);
-    }
-
-    public void doubleTree(BinaryNode<E> node) {
-        if (node == null) return;
-
-        BinaryNode<E> newNode = new BinaryNode<>(node.value, node.left, null);
-
-        node.left = newNode;
-
-        doubleTree(newNode.left);
-        doubleTree(node.right);
-    }
-
-
-    /**
-     * Utility methods.
-     */
-
-    protected void printValue(BinaryNode<E> node) {
+    public void printValue(BinaryNode<E> node) {
         if (node == null) return;
 
         out.print(node.value);

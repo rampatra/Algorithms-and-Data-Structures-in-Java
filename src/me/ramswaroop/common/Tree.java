@@ -1,4 +1,4 @@
-package me.ramswaroop.trees;
+package me.ramswaroop.common;
 
 /**
  * Created by IntelliJ IDEA.
