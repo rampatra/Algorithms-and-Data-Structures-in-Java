@@ -25,16 +25,16 @@ public class DeleteAlternateNodes<E extends Comparable<E>> extends SingleLinkedL
     }
 
     public static void main(String a[]) {
-        SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
-        linkedList1.add(00);
-        linkedList1.add(11);
-        linkedList1.add(22);
-        linkedList1.add(33);
-        linkedList1.add(44);
-        linkedList1.add(55);
-        linkedList1.printList();
-        deleteAlternateNodes(linkedList1);
-        linkedList1.printList();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
+        linkedList.add(00);
+        linkedList.add(11);
+        linkedList.add(22);
+        linkedList.add(33);
+        linkedList.add(44);
+        linkedList.add(55);
+        linkedList.printList();
+        deleteAlternateNodes(linkedList);
+        linkedList.printList();
 
     }
 }

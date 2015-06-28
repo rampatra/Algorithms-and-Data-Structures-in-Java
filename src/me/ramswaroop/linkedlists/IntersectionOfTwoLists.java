@@ -13,6 +13,14 @@ import me.ramswaroop.common.SingleLinkedNode;
 public class IntersectionOfTwoLists<E extends Comparable<E>> extends SingleLinkedList<E> {
 
 
+    /**
+     * Returns the node at which {@param list1} and {@param list2} intersect.
+     *
+     * @param list1
+     * @param list2
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> SingleLinkedNode<E> getIntersectionNode(SingleLinkedList<E> list1,
                                                                                     SingleLinkedList<E> list2) {
 
