@@ -56,6 +56,50 @@ public class MergeTwoSortedLists<E extends Comparable<E>> extends SingleLinkedLi
         return intersectedList;
     }
 
+    /**
+     * Recursive method to merge two sorted lists into one sorted list.
+     *
+     * NOTE: You can make {@param mergedList} as static and not pass as params
+     * to this method.
+     *
+     * @param node1
+     * @param node2
+     * @param <E>
+     */
+    public static <E extends Comparable<E>> SingleLinkedNode<E> mergeTwoSortedLists(SingleLinkedList<E> mergedList,
+                                                                                    SingleLinkedNode<E> node1,
+                                                                                    SingleLinkedNode<E> node2) {
+
+        if (node1 == null && node2 == null) return null;
+
+        // if either of the list runs out first
+        if (node1 == null) {
+            mergeTwoSortedLists(mergedList, node1, node2.next);
+            mergedList.addFirst(node2.item);
+            return node2;
+        }
+        if (node2 == null) {
+            mergeTwoSortedLists(mergedList, node1.next, node2);
+            mergedList.addFirst(node1.item);
+            return node1;
+        }
+
+        if (node1.item.compareTo(node2.item) < 0) { // node1 is smaller, so add it and advance the pointer
+            mergeTwoSortedLists(mergedList, node1.next, node2);
+            mergedList.addFirst(node1.item);
+            return node1;
+        } else if (node1.item.compareTo(node2.item) > 0) {
+            mergeTwoSortedLists(mergedList, node1, node2.next);
+            mergedList.addFirst(node2.item);
+            return node2;
+        } else { // both nodes are equal so add both
+            mergeTwoSortedLists(mergedList, node1.next, node2.next);
+            mergedList.addFirst(node1.item);
+            mergedList.addFirst(node2.item);
+            return node1;
+        }
+    }
+
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(00);
@@ -72,7 +116,14 @@ public class MergeTwoSortedLists<E extends Comparable<E>> extends SingleLinkedLi
         linkedList2.add(55);
         linkedList2.add(67);
         linkedList2.add(89);
+        linkedList2.add(99);
         linkedList2.printList();
         mergeTwoSortedLists(linkedList1, linkedList2).printList();
+        System.out.println("====================");
+        linkedList1.printList();
+        linkedList2.printList();
+        SingleLinkedList<Integer> mergedList = new SingleLinkedList<>();
+        mergeTwoSortedLists(mergedList, linkedList1.head, linkedList2.head);
+        mergedList.printList();
     }
 }
