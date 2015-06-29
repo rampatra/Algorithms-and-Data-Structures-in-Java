@@ -10,7 +10,7 @@ import me.ramswaroop.common.DoubleLinkedNode;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class ReverseDoubleLinkedList<E extends Comparable<E>> extends DoubleLinkedList<E> {
+public class ReverseDoubleLinkedList {
 
     /**
      * Reverses the doubly linked list.

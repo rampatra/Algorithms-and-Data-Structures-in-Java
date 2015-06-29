@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/27/15
  * @time: 5:27 PM
  */
-public class DeleteAlternateNodes<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class DeleteAlternateNodes {
 
     public static <E extends Comparable<E>> void deleteAlternateNodes(SingleLinkedList<E> list) {
         deleteAlternateNodes(list.head);

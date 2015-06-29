@@ -13,7 +13,7 @@ import java.util.Map;
  * @date: 6/18/15
  * @time: 2:35 PM
  */
-public class RemoveDuplicates<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class RemoveDuplicates {
 
     /**
      * Removes duplicates from a sorted linked list

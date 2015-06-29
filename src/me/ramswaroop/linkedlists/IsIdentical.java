@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/29/15
  * @time: 9:42 AM
  */
-public class IsIdentical<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class IsIdentical {
 
     /**
      * Returns {@code true} if linked list {@param list1} and {@param list2}

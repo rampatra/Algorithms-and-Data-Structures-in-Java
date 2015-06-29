@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/27/15
  * @time: 8:47 PM
  */
-public class MergeTwoSortedLists<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class MergeTwoSortedLists {
 
     /**
      * Merges two sorted list {@param list1} and {@param list2} into

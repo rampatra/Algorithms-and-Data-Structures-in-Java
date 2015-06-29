@@ -12,7 +12,7 @@ import java.util.HashMap;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class DetectLoop<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class DetectLoop {
 
     /**
      * Uses Flyod's Cycle Finding algorithm.

@@ -11,7 +11,7 @@ import me.ramswaroop.common.DoubleLinkedNode;
  * @time: 1:00 PM
  * @see: http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
  */
-public class CloneWithRandPointers<E extends Comparable<E>> extends DoubleLinkedList<E> {
+public class CloneWithRandPointers {
 
     /**
      * Clones a linked list with next pointer pointing to the

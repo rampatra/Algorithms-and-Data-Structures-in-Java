@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 2:35 PM
  */
-public class DeleteNode<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class DeleteNode {
 
     /**
      * Given a pointer to a node, delete it.

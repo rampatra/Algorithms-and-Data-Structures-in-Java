@@ -13,7 +13,8 @@ import me.ramswaroop.common.SingleLinkedNode;
 public class InsertInSortedList<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
-     * Insert an element in the sorted linked list.
+     * Inserts an element in the sorted linked
+     * list maintaining the sorted property.
      *
      * @param item
      */

@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 10:34 PM
  */
-public class MiddleNode<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class MiddleNode {
 
     public static <E extends Comparable<E>> SingleLinkedNode<E> getMiddleNode(SingleLinkedList<E> list) {
         SingleLinkedNode<E> slow = list.getNode(0);

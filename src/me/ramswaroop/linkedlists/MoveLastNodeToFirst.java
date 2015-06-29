@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/23/15
  * @time: 7:52 PM
  */
-public class MoveLastNodeToFirst<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class MoveLastNodeToFirst {
 
     public static <E extends Comparable<E>> void moveLastNodeToFirst(SingleLinkedList<E> list) {
         if (list.size <= 1) return;

@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 10:34 PM
  */
-public class IntersectionOfTwoLists<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class IntersectionOfTwoLists {
 
 
     /**
