@@ -181,7 +181,11 @@ public class CircularSingleLinkedList<E extends Comparable<E>> implements Linked
 
     @Override
     public void printList() {
-        SingleLinkedNode<E> curr = head;
+        printList(head);
+    }
+
+    public void printList(SingleLinkedNode<E> node) {
+        SingleLinkedNode<E> curr = node;
         out.print("[");
         if (curr == null) {
             out.println("]");

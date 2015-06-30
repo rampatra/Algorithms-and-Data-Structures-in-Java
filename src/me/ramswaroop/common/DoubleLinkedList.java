@@ -175,7 +175,11 @@ public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
     @Override
     public void printList() {
-        DoubleLinkedNode<E> curr = head;
+        printList(head);
+    }
+
+    public void printList(DoubleLinkedNode<E> node) {
+        DoubleLinkedNode<E> curr = node;
         out.print("[");
         if (curr == null) {
             out.println("]");
