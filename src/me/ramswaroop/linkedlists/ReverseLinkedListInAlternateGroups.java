@@ -20,7 +20,7 @@ public class ReverseLinkedListInAlternateGroups<E extends Comparable<E>> extends
      * <p/>
      * Example:
      * Inputs:   1->2->3->4->5->6->7->8->9 and k = 3
-     * Output:   3->2->1->4->5->6->9->8->7.
+     * Output:   3->2->1->4->5->6->9->8->7
      *
      * @param node
      * @param k
@@ -53,7 +53,7 @@ public class ReverseLinkedListInAlternateGroups<E extends Comparable<E>> extends
             i++;
         }
 
-        // recursively call on the next 2k set of nodes
+        // recursively call on the next set of nodes
         if (curr != null) {
             curr.next = reverseLinkedListInAltGroups(curr.next, k);
         }

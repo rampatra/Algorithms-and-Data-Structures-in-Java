@@ -18,11 +18,9 @@ public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLink
      * @param list
      */
     public static <E extends Comparable<E>> void reverseList(SingleLinkedList<E> list) {
-        SingleLinkedNode<E> prev = list.getNode(0);
-        SingleLinkedNode<E> curr = prev.next;
-        prev.next = null; // this will be the last node after reversal, so make next of node = null
+        SingleLinkedNode<E> curr = list.getNode(0), prev = null, next;
         while (curr != null) {
-            SingleLinkedNode<E> next = curr.next;
+            next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
