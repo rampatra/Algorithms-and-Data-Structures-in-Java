@@ -32,7 +32,7 @@ public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLi
         SingleLinkedNode<E> curr = node, prev = null, next = null;
         int i = 0;
 
-        // reverse the 'next' pointer of nodes
+        // reverse the 'next' pointer of nodes with help of 3 pointers
         while (curr != null && i < k) {
             next = curr.next;
             curr.next = prev;
