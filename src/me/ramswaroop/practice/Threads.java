@@ -27,6 +27,10 @@ public class Threads {
         Thread t2 = new Thread(r);
         Thread t3 = new Thread(r);
 
+        t1.setName("T1");
+        t2.setName("T2");
+        t3.setName("T3");
+
         t1.start();
         t2.start();
         t3.start();

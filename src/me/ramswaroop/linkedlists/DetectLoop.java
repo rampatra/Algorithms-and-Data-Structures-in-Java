@@ -23,7 +23,7 @@ public class DetectLoop {
      * If these pointers meet at some node then
      * there is a loop. If pointers do not meet
      * then linked list does not have loop.
-     *
+     * <p/>
      * Time:    O(n)
      * Space:   O(1)
      *
@@ -31,14 +31,13 @@ public class DetectLoop {
      * @return
      */
     public static <E extends Comparable<E>> boolean isLoopPresent(SingleLinkedList<E> list) {
-        SingleLinkedNode<E> firstNode = list.getNode(0);
-        SingleLinkedNode<E> prev = firstNode, curr = firstNode;
-        while (curr != null && curr.next != null) {
-            prev = prev.next;
-            curr = curr.next.next;
-            if (prev == curr) {
+        SingleLinkedNode<E> slow = list.head, fast = slow.next;
+        while (fast != null && fast.next != null) {
+            if (slow == fast) {
                 return true;
             }
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return false;
     }
