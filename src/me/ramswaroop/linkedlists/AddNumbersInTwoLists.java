@@ -14,19 +14,20 @@ public class AddNumbersInTwoLists {
 
     /**
      * Adds two numbers represented by two linked lists {@param list1}
-     * and {@param list2} and stores them in another list.
+     * and {@param list2} (where first node is the least significant
+     * digit) and stores them in another list.
      * <p/>
      * Example:
      * <p/>
      * Input:
      * First List: 5->6->3              // represents number 365
-     * Second List: 8->4->2             //  represents number 248
+     * Second List: 8->4->2             // represents number 248
      * Output:
      * Resultant list: 3->1->6          // represents number 613
      * <p/>
      * Input:
      * First List: 7->5->9->4->6        // represents number 64957
-     * Second List: 8->4                //  represents number 48
+     * Second List: 8->4                // represents number 48
      * Output:
      * Resultant list: 5->0->0->5->6    // represents number 65005
      *
