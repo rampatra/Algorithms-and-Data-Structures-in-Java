@@ -27,10 +27,10 @@ public class RotateLinkedList {
 
     /**
      * Rotates the {@param list} clockwise by {@param k} nodes.
-     *
+     * <p/>
      * Example,
-     *
-     * Input:   [0,11,22,33,44,55] and k =2
+     * <p/>
+     * Input:   [0,11,22,33,44,55] and k = 2
      * Output:  [22,33,44,55,0,11]
      *
      * @param list

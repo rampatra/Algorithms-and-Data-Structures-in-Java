@@ -35,8 +35,8 @@ public class AddNumbersInTwoLists {
      * @param list2
      * @return list containing the sum of numbers in {@param list1} and {@param list2}.
      */
-    public static SingleLinkedList<Integer> add(SingleLinkedList<Integer> list1,
-                                                SingleLinkedList<Integer> list2) {
+    public static SingleLinkedList<Integer> addWithNode1LSD(SingleLinkedList<Integer> list1,
+                                                            SingleLinkedList<Integer> list2) {
 
         int sum, carry = 0;
         SingleLinkedNode<Integer> curr1 = list1.head, curr2 = list2.head;
@@ -86,9 +86,16 @@ public class AddNumbersInTwoLists {
      * @param list2
      * @return
      */
-    public static SingleLinkedList<Integer> add_V1(SingleLinkedList<Integer> list1,
-                                                SingleLinkedList<Integer> list2) {
-        return null;
+    public static SingleLinkedList<Integer> addWithNode1MSD(SingleLinkedList<Integer> list1,
+                                                            SingleLinkedList<Integer> list2) {
+        ReverseSingleLinkedList.reverseList(list1);
+        ReverseSingleLinkedList.reverseList(list2);
+
+        SingleLinkedList<Integer> resultList = addWithNode1LSD(list1, list2);
+
+        ReverseSingleLinkedList.reverseList(resultList);
+
+        return resultList;
     }
 
     public static void main(String a[]) {
@@ -103,6 +110,7 @@ public class AddNumbersInTwoLists {
         linkedList2.add(8);
         linkedList2.add(4);
         linkedList2.printList();
-        add(linkedList1, linkedList2).printList();
+        addWithNode1LSD(linkedList1, linkedList2).printList();
+        addWithNode1MSD(linkedList1, linkedList2).printList();
     }
 }
