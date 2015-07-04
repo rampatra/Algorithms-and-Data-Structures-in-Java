@@ -63,6 +63,29 @@ public class AddNumbersInTwoLists {
         return resultList;
     }
 
+    /**
+     * Adds two numbers represented by two linked lists {@param list1}
+     * and {@param list2} (where first node is the most significant
+     * digit) and stores them in another list.
+     * <p/>
+     * Example:
+     * <p/>
+     * Input:
+     * First List: 5->6->3              // represents number 563
+     * Second List: 8->4->2             // represents number 842
+     * Output:
+     * Resultant list: 1->4->0->5       // represents number 1405
+     * <p/>
+     * Input:
+     * First List: 7->5->9->4->6        // represents number 75946
+     * Second List: 8->4                // represents number 84
+     * Output:
+     * Resultant list: 7->6->0->3->0    // represents number 76030
+     *
+     * @param list1
+     * @param list2
+     * @return
+     */
     public static SingleLinkedList<Integer> add_V1(SingleLinkedList<Integer> list1,
                                                 SingleLinkedList<Integer> list2) {
         return null;
