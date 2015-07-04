@@ -63,6 +63,11 @@ public class AddNumbersInTwoLists {
         return resultList;
     }
 
+    public static SingleLinkedList<Integer> add_V1(SingleLinkedList<Integer> list1,
+                                                SingleLinkedList<Integer> list2) {
+        return null;
+    }
+
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(7);
