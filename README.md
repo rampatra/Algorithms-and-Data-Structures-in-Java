@@ -1,6 +1,6 @@
 # Algorithms and Data Structures in Java
 
-The repo consists of solutions to various problems invloving different data structures and algorithms. All solutions are coded in Java.
+The repo consists of solutions to numerous problems invloving different data structures and algorithms. All solutions are coded in Java.
 
 ## Environment
 
