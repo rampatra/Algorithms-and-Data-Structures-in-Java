@@ -23,23 +23,18 @@ public class MergeTwoSortedLists {
      */
     public static <E extends Comparable<E>> SingleLinkedList<E> mergeTwoSortedLists(SingleLinkedList<E> list1,
                                                                                     SingleLinkedList<E> list2) {
-        SingleLinkedNode<E> curr1 = list1.getNode(0), curr2 = list2.getNode(0);
+        SingleLinkedNode<E> curr1 = list1.head, curr2 = list2.head;
         SingleLinkedList<E> intersectedList = new SingleLinkedList<>();
         while (curr1 != null || curr2 != null) {
             // handle cases where either of the list run out first
             if (curr1 == null) {
                 intersectedList.add(curr2.item);
                 curr2 = curr2.next;
-                continue;
-            }
-            if (curr2 == null) {
+            } else if (curr2 == null) {
                 intersectedList.add(curr1.item);
                 curr1 = curr1.next;
-                continue;
-            }
-
-            // advance the current pointer of the list having smaller {@code item}
-            if (curr1.item.compareTo(curr2.item) < 0) {
+            } else if (curr1.item.compareTo(curr2.item) < 0) { // advance the current pointer of
+                // the list having smaller {@code item}
                 intersectedList.add(curr1.item);
                 curr1 = curr1.next;
             } else if (curr1.item.compareTo(curr2.item) > 0) {
@@ -58,7 +53,7 @@ public class MergeTwoSortedLists {
 
     /**
      * Recursive method to merge two sorted lists into one sorted list.
-     *
+     * <p/>
      * NOTE: You can make {@param mergedList} as static and not pass as params
      * to this method.
      *

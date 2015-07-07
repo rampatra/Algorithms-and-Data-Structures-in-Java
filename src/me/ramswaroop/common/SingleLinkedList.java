@@ -164,7 +164,7 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         printList(head);
     }
 
-    public void printList(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> void printList(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> curr = node;
         out.print("[");
         if (curr == null) {

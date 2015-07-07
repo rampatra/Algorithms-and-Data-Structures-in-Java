@@ -13,8 +13,7 @@ import me.ramswaroop.common.SingleLinkedNode;
 public class MiddleNode {
 
     public static <E extends Comparable<E>> SingleLinkedNode<E> getMiddleNode(SingleLinkedList<E> list) {
-        SingleLinkedNode<E> slow = list.getNode(0);
-        SingleLinkedNode<E> fast = list.getNode(0);
+        SingleLinkedNode<E> slow = list.head, fast = list.head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
