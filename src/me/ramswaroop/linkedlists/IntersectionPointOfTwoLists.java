@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/18/15
  * @time: 10:34 PM
  */
-public class IntersectionOfTwoLists {
+public class IntersectionPointOfTwoLists {
 
 
     /**
@@ -29,11 +29,11 @@ public class IntersectionOfTwoLists {
 
         // forward the pointer in the longer list by their diff. in length
         if (list1.size > list2.size) {
-            curr1 = list1.getNode(0);
-            curr2 = list2.getNode(0);
+            curr1 = list1.head;
+            curr2 = list2.head;
         } else {
-            curr1 = list2.getNode(0);
-            curr2 = list1.getNode(0);
+            curr1 = list2.head;
+            curr2 = list1.head;
         }
         while (diffLength > 0) {
             curr1 = curr1.next;
@@ -68,7 +68,7 @@ public class IntersectionOfTwoLists {
         linkedList2.add(45);
         linkedList2.add(23);
         linkedList2.getNode(3).next = linkedList1.getNode(5); // join 2 lists at some point
-        linkedList2.size = 8; // update size after joining
+        linkedList2.size = 8; // IMP: update size after joining
         System.out.println(getIntersectionNode(linkedList1, linkedList2) != null ?
                 getIntersectionNode(linkedList1, linkedList2).item : "List don't intersect!");
     }
