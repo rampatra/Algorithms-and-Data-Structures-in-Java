@@ -1,6 +1,7 @@
 package me.ramswaroop.linkedlists;
 
 import me.ramswaroop.common.SingleLinkedList;
+import me.ramswaroop.common.SingleLinkedNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,12 +12,45 @@ import me.ramswaroop.common.SingleLinkedList;
  */
 public class IntersectionAndUnionOf2Lists {
 
+    /**
+     *
+     * @param list1
+     * @param list2
+     * @param <E>
+     * @return an array of list consisting of intersection and union of {@param list1} and {@param list2} respectively.
+     */
     public static <E extends Comparable<E>> SingleLinkedList<E>[] getIntersectionAndUnion(SingleLinkedList<E> list1,
                                                                                           SingleLinkedList<E> list2) {
 
+        SingleLinkedNode<E> curr1 = list1.head, curr2 = list2.head;
+        SingleLinkedList<E> intersectionList = new SingleLinkedList<>(),
+                unionList = new SingleLinkedList<>();
 
+        MergeSort.mergeSort(curr1);
+        MergeSort.mergeSort(curr2);
 
-        return null;
+        while (curr1 != null || curr2 != null) {
+            if (curr1 == null) {
+                unionList.add(curr2.item);
+                curr2 = curr2.next;
+            } else if (curr2 == null) {
+                unionList.add(curr1.item);
+                curr1 = curr1.next;
+            } else if (curr1.item.compareTo(curr2.item) < 0) {
+                unionList.add(curr1.item);
+                curr1 = curr1.next;
+            } else if (curr1.item.compareTo(curr2.item) > 0) {
+                unionList.add(curr2.item);
+                curr2=curr2.next;
+            } else {
+                unionList.add(curr1.item);
+                intersectionList.add(curr1.item);
+                curr1 = curr1.next;
+                curr2 = curr2.next;
+            }
+        }
+
+        return new SingleLinkedList[]{intersectionList, unionList};
     }
 
     public static void main(String a[]) {
@@ -36,7 +70,9 @@ public class IntersectionAndUnionOf2Lists {
         linkedList2.add(67);
         linkedList2.add(89);
         linkedList2.printList();
+        System.out.println("Intersection:");
         getIntersectionAndUnion(linkedList1, linkedList2)[0].printList();
+        System.out.println("Union:");
         getIntersectionAndUnion(linkedList1, linkedList2)[1].printList();
     }
 }
