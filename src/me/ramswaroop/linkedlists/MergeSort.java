@@ -58,9 +58,10 @@ public class MergeSort {
         return slow;
     }
 
+
     /**
      * Merges two sorted lists starting at {@param node1} and {@param node2}
-     * into one and returns its {@code head} reference.
+     * into one and returns its starting node.
      * <p/>
      * This method is similar to {@link me.ramswaroop.linkedlists.MergeTwoSortedLists#mergeTwoSortedLists}
      *
@@ -75,21 +76,8 @@ public class MergeSort {
 
         if (node1 == null && node2 == null) return null;
 
-        if (node1 == null) {
-            head = node2;
-            curr2 = curr2.next;
-        } else if (node2 == null) {
-            head = node1;
-            curr1 = curr1.next;
-        } else if (node1.item.compareTo(node2.item) < 0) {
-            head = node1;
-            curr1 = curr1.next;
-        } else {
-            head = node2;
-            curr2 = curr2.next;
-        }
+        head = curr = new SingleLinkedNode<>(null); // dummy node
 
-        curr = head;
         while (curr1 != null || curr2 != null) {
             // handle cases where either of the list run out first
             if (curr1 == null) {
@@ -116,15 +104,15 @@ public class MergeSort {
             curr = curr.next;
         }
 
-        return head;
+        return head.next;
     }
 
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(33);
         linkedList.add(21);
+        linkedList.add(33);
         linkedList.add(89);
-        linkedList.add(55);
+        linkedList.add(21);
         linkedList.add(44);
         linkedList.add(67);
         linkedList.printList();
