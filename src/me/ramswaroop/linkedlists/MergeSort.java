@@ -12,19 +12,36 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class MergeSort {
 
+    /**
+     * Merge sort for linked list starting at {@param node}.
+     *
+     * @param node
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> SingleLinkedNode<E> mergeSort(SingleLinkedNode<E> node) {
-        if (node == null || node.next == null) return null;
+        if (node == null || node.next == null) return node;
 
-        SingleLinkedNode<E> middleNode = divideInTwoHalves(node);
+        SingleLinkedNode<E> middleNode, head1, head2;
 
-        mergeSort(node);
-        mergeSort(middleNode);
+        middleNode = divideInTwoHalves(node);
 
-        return mergeTwoSortedLists(node, middleNode);
+        head1 = mergeSort(node);
+        head2 = mergeSort(middleNode);
+
+        return mergeTwoSortedLists(head1, head2);
 
     }
 
 
+    /**
+     * Divides a linked list starting from {@param node} into 2 halves
+     * and returns the starting {@code node} of the second half.
+     *
+     * @param node
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> SingleLinkedNode<E> divideInTwoHalves(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> slow = node, fast = node, prev = slow;
 
@@ -44,6 +61,8 @@ public class MergeSort {
     /**
      * Merges two sorted lists starting at {@param node1} and {@param node2}
      * into one and returns its {@code head} reference.
+     * <p/>
+     * This method is similar to {@link me.ramswaroop.linkedlists.MergeTwoSortedLists#mergeTwoSortedLists}
      *
      * @param node1
      * @param node2
