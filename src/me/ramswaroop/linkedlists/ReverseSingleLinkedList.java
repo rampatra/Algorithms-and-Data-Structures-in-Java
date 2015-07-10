@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/19/15
  * @time: 9:24 AM
  */
-public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class ReverseSingleLinkedList {
 
     /**
      * Reverses the linked list using 3 references prev, curr and next.
@@ -34,19 +34,18 @@ public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLink
      * @param node
      * @return
      */
-    public SingleLinkedNode<E> recursiveReverseList(SingleLinkedNode<E> node) {
-        if (node == null) return null;
+    public static <E extends Comparable<E>> SingleLinkedNode<E> recursiveReverseList(SingleLinkedNode<E> node) {
+        if (node == null || node.next == null) return node;
 
-        SingleLinkedNode<E> nextNode = recursiveReverseList(node.next);
+        SingleLinkedNode<E> nextNode = node.next;
 
-        if (nextNode == null) {
-            head.next = null; // head will be the last node so head.next = null;
-            head = node;
-        } else {
-            nextNode.next = node;
-        }
+        node.next = null;
 
-        return node;
+        SingleLinkedNode<E> newHead = recursiveReverseList(nextNode);
+
+        nextNode.next = node;
+
+        return newHead;
     }
 
     /**
@@ -67,7 +66,7 @@ public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLink
     }
 
     public static void main(String a[]) {
-        ReverseSingleLinkedList<Integer> linkedList = new ReverseSingleLinkedList<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);
@@ -76,8 +75,8 @@ public class ReverseSingleLinkedList<E extends Comparable<E>> extends SingleLink
         linkedList.printList();
         reverseList(linkedList);
         linkedList.printList();
-        linkedList.recursiveReverseList(linkedList.getNode(0));
-        linkedList.printList();
-        printListInReverse(linkedList.getNode(0));
+        printListInReverse(linkedList.head);
+        System.out.println();
+        SingleLinkedList.printList(recursiveReverseList(linkedList.head));
     }
 }
