@@ -14,9 +14,9 @@ public class PairWiseSwap {
 
     /**
      * Recursively swaps adjacent nodes of a linked list.
-     * The swapping is done in place.
      *
      * @param node
+     * @return new starting node after swapping adjacent nodes.
      */
     public static <E extends Comparable<E>> SingleLinkedNode<E> pairWiseSwap(SingleLinkedNode<E> node) {
         if (node == null || node.next == null) return node;
