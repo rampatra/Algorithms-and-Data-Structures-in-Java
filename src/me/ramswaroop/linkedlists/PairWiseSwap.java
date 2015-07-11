@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/24/15
  * @time: 3:48 PM
  */
-public class PairWiseSwap<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class PairWiseSwap {
 
     /**
      * Recursively swaps adjacent nodes of a linked list.
@@ -18,35 +18,19 @@ public class PairWiseSwap<E extends Comparable<E>> extends SingleLinkedList<E> {
      *
      * @param node
      */
-    public void pairWiseSwap(SingleLinkedNode<E> node) {
-        if (node == null || node.next == null) return;
+    public static <E extends Comparable<E>> SingleLinkedNode<E> pairWiseSwap(SingleLinkedNode<E> node) {
+        if (node == null || node.next == null) return node;
 
-        // the trick is to swap the next two nodes of {@param node}
-        // but if {@param node} is head then swap itself with the next node
-        SingleLinkedNode<E> firstNode = (node == head) ? node : node.next,
-                secondNode = (node == head) ? node.next : node.next.next;
+        SingleLinkedNode<E> nextNode = node.next, nextOfNextNode = nextNode.next;
 
-        if (firstNode == null || secondNode == null) return;
+        nextNode.next = node;
+        node.next = pairWiseSwap(nextOfNextNode);
 
-        firstNode.next = secondNode.next;
-        secondNode.next = firstNode;
-
-        if (node == head) {
-            head = secondNode;
-        } else {
-            node.next = secondNode;
-        }
-
-        // pass firstNode as the next two nodes are swapped
-        pairWiseSwap(firstNode);
-    }
-
-    public void pairWiseSwap() {
-        pairWiseSwap(head);
+        return nextNode;
     }
 
     public static void main(String a[]) {
-        PairWiseSwap<Integer> linkedList = new PairWiseSwap<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(11);
         linkedList.add(22);
         linkedList.add(33);
@@ -55,7 +39,6 @@ public class PairWiseSwap<E extends Comparable<E>> extends SingleLinkedList<E> {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.printList();
-        linkedList.pairWiseSwap();
-        linkedList.printList();
+        linkedList.printList(pairWiseSwap(linkedList.head));
     }
 }
