@@ -14,6 +14,10 @@ public class PairWiseSwap {
 
     /**
      * Recursively swaps adjacent nodes of a linked list.
+     * <p/>
+     * Example:
+     * Input:   11->22->33->44->55
+     * Output:  22->11->44->33->55
      *
      * @param node
      * @return new starting node after swapping adjacent nodes.
