@@ -34,13 +34,16 @@ public class SwapNodes {
 
         head.next = node;
 
-        while (curr1.next.item != item1) {
+        while (curr1.next != null && curr1.next.item != item1) {
             curr1 = curr1.next;
         }
 
-        while (curr2.next.item != item2) {
+        while (curr2.next != null && curr2.next.item != item2) {
             curr2 = curr2.next;
         }
+
+        // if either of the node isn't present in the list then do nothing
+        if (curr1.next == null || curr2.next == null) return head.next;
 
         // swap nodes
         temp = curr1.next;
@@ -65,6 +68,6 @@ public class SwapNodes {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.printList();
-        linkedList.printList(swap(linkedList.head, 11, 77));
+        linkedList.printList(swap(linkedList.head, 111, 77));
     }
 }
