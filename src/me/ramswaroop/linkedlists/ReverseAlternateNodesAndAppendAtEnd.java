@@ -12,6 +12,21 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class ReverseAlternateNodesAndAppendAtEnd {
 
+    /**
+     * Reverse alternate nodes and append them to end of the list.
+     *
+     * Example,
+     *
+     * Input List:  1->2->3->4->5->6
+     * Output List: 1->3->5->6->4->2
+     *
+     * Input List:  12->14->16->18->20
+     * Output List: 12->16->20->18->14
+     *
+     * @param node
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> SingleLinkedNode<E> reverseAlternateNodesAndAppendAtEnd(SingleLinkedNode<E> node) {
         SingleLinkedNode<E> curr = node, end = node, currNext, endNext;
 
