@@ -37,7 +37,21 @@ public class MaximumSumLinkedList {
         boolean isList1 = true;
         SingleLinkedNode<E> head = node1, node = node1, curr1 = node1.next, curr2 = node2.next;
 
-        while (curr1 != null && curr2 != null) {
+        while (curr1 != null || curr2 != null) {
+            // if either of the list runs out first
+            if (curr1 == null) {
+                node.next = curr2;
+                node = node.next;
+                curr2 = curr2.next;
+                continue;
+            }
+            if (curr2 == null) {
+                node.next = curr1;
+                node = node.next;
+                curr1 = curr1.next;
+                continue;
+            }
+
             if (curr1.item.compareTo(curr2.item) == 0) {
                 isList1 = !isList1;
             }
@@ -70,6 +84,8 @@ public class MaximumSumLinkedList {
         linkedList2.add(33);
         linkedList2.add(34);
         linkedList2.add(67);
+        linkedList2.add(88);
+        linkedList2.add(90);
         linkedList2.printList();
         SingleLinkedList.printList(maximumSumLinkedList(linkedList1.head, linkedList2.head));
     }
