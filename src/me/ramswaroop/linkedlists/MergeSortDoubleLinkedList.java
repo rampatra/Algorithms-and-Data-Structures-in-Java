@@ -1,7 +1,7 @@
 package me.ramswaroop.linkedlists;
 
-import me.ramswaroop.common.SingleLinkedList;
-import me.ramswaroop.common.SingleLinkedNode;
+import me.ramswaroop.common.DoubleLinkedList;
+import me.ramswaroop.common.DoubleLinkedNode;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 7/7/15
  * @time: 4:34 PM
  */
-public class MergeSort {
+public class MergeSortDoubleLinkedList {
 
     /**
      * Merge sort for linked list starting at {@param node}.
@@ -19,10 +19,10 @@ public class MergeSort {
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> SingleLinkedNode<E> mergeSort(SingleLinkedNode<E> node) {
+    public static <E extends Comparable<E>> DoubleLinkedNode<E> mergeSort(DoubleLinkedNode<E> node) {
         if (node == null || node.next == null) return node;
 
-        SingleLinkedNode<E> middleNode, head1, head2;
+        DoubleLinkedNode<E> middleNode, head1, head2;
 
         middleNode = divideInTwoHalves(node);
 
@@ -42,8 +42,8 @@ public class MergeSort {
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> SingleLinkedNode<E> divideInTwoHalves(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> slow = node, fast = node, prev = slow;
+    public static <E extends Comparable<E>> DoubleLinkedNode<E> divideInTwoHalves(DoubleLinkedNode<E> node) {
+        DoubleLinkedNode<E> slow = node, fast = node, prev = slow;
 
         if (node == null || node.next == null) {
             return null;
@@ -63,53 +63,62 @@ public class MergeSort {
      * Merges two sorted lists starting at {@param node1} and {@param node2}
      * into one and returns its starting node.
      * <p/>
-     * This method is similar to {@link me.ramswaroop.linkedlists.MergeTwoSortedLists#mergeTwoSortedLists}
+     * This method is similar to {@link MergeTwoSortedLists#mergeTwoSortedLists}
      *
      * @param node1
      * @param node2
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> SingleLinkedNode<E> mergeTwoSortedLists(SingleLinkedNode<E> node1,
-                                                                                    SingleLinkedNode<E> node2) {
-        SingleLinkedNode<E> curr1 = node1, curr2 = node2, head, curr;
+    public static <E extends Comparable<E>> DoubleLinkedNode<E> mergeTwoSortedLists(DoubleLinkedNode<E> node1,
+                                                                                    DoubleLinkedNode<E> node2) {
+        DoubleLinkedNode<E> curr1 = node1, curr2 = node2, head, curr;
 
         if (node1 == null && node2 == null) return null;
 
-        head = curr = new SingleLinkedNode<>(null); // dummy node
+        head = curr = new DoubleLinkedNode<>(null); // dummy node
 
         while (curr1 != null || curr2 != null) {
             // handle cases where either of the list run out first
             if (curr1 == null) {
                 curr.next = curr2;
+                curr2.prev = curr;
                 curr2 = curr2.next;
             } else if (curr2 == null) {
                 curr.next = curr1;
+                curr1.prev = curr;
                 curr1 = curr1.next;
             } else if (curr1.item.compareTo(curr2.item) < 0) {  // advance the current pointer of the
                 // list having smaller {@code item}
                 curr.next = curr1;
+                curr1.prev = curr;
                 curr1 = curr1.next;
             } else if (curr1.item.compareTo(curr2.item) > 0) {
                 curr.next = curr2;
+                curr2.prev = curr;
                 curr2 = curr2.next;
             } else { // both nodes are equal so add both to the result
                 curr.next = curr1;
                 curr = curr.next;
                 curr1 = curr1.next;
+                curr1.prev = curr;
                 curr.next = curr2;
+                curr2.prev = curr;
                 curr2 = curr2.next;
             }
 
             curr = curr.next;
         }
 
+        // the dummy node should be unlinked
+        head.next.prev = null;
+
         // return the node next to the dummy node
         return head.next;
     }
 
     public static void main(String a[]) {
-        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
+        DoubleLinkedList<Integer> linkedList = new DoubleLinkedList<>();
         linkedList.add(21);
         linkedList.add(33);
         linkedList.add(89);
