@@ -26,6 +26,14 @@ public class ReservoirSampling {
      * In the above procedure, we are computing random number for each of the indexes greater than k
      * thereby giving all items an equal probability.
      *
+     * NOTE: When {@param k} is small enough we can use a simpler method as follows:
+     * Create an array reservoir[] of maximum size k. One by one randomly select an
+     * item from stream[0..n-1]. If the selected item is not previously selected, then
+     * put it in reservoir[]. To check if an item is previously selected or not, we
+     * need to search the item in reservoir[].
+     * The time complexity of this algorithm will be O(k^2). This can be costly
+     * if k is big. Also, this is not efficient if the input is in the form of a stream.
+     *
      * @param stream
      * @param k
      * @return
