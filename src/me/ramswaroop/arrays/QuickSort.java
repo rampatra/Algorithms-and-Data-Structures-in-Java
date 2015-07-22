@@ -57,18 +57,18 @@ public class QuickSort {
      * @param low
      * @param high
      */
-    public static void sort(int[] ar, int low, int high) {
+    public static void quickSort(int[] ar, int low, int high) {
         if (low < high) {
             int partition = partition(ar, low, high);
-            sort(ar, low, partition - 1);
-            sort(ar, partition + 1, high);
+            quickSort(ar, low, partition - 1);
+            quickSort(ar, partition + 1, high);
         }
     }
 
     public static void main(String a[]) {
         int[] ar = {3, 2, 1, 6, 4, 9, 7, 8};
         System.out.println(Arrays.toString(ar));
-        sort(ar, 0, ar.length - 1);
+        quickSort(ar, 0, ar.length - 1);
         System.out.println(Arrays.toString(ar));
     }
 }
