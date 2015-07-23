@@ -12,10 +12,28 @@ import me.ramswaroop.common.SingleLinkedNode;
  */
 public class RemoveMiddlePointsFromLineSegments {
 
-    public static <E extends Comparable<E>> void removeMiddlePointsFromLineSegments(SingleLinkedNode<E> node) {
+    public static void removeMiddlePointsFromLineSegments(SingleLinkedNode<Point> node) {
 
+        SingleLinkedNode<Point> curr1 = node, curr2 = node;
+
+        while (curr1 != null && curr1.next != null) {
+            // vertical line
+            if (curr1.item.x == curr1.next.item.x) {
+                while (curr2.next != null && curr2.next.item.x == curr1.item.x) {
+                    curr2 = curr2.next;
+                }
+                curr1.next = curr2;
+            } else if (curr1.item.y == curr1.next.item.y) { // horizontal line
+                while (curr2.next != null && curr2.next.item.y == curr1.item.y) {
+                    curr2 = curr2.next;
+                }
+                curr1.next = curr2;
+            } else {
+                return;
+            }
+            curr1 = curr1.next;
+        }
     }
-
 
     public static void main(String a[]) {
         SingleLinkedList<Point> linkedList = new SingleLinkedList<>();
@@ -34,6 +52,7 @@ public class RemoveMiddlePointsFromLineSegments {
 }
 
 class Point implements Comparable<Point> {
+
     int x, y;
 
     Point(int x, int y) {
