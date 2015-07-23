@@ -172,10 +172,10 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
             return;
         }
         while (curr.next != null) {
-            out.print(curr.item + ",");
+            out.print(curr.item.toString() + ",");
             curr = curr.next;
         }
-        out.println(curr.item + "]");
+        out.println(curr.item.toString() + "]");
     }
 
     public static <E extends Comparable<E>> SingleLinkedList<E> getLinkedList(SingleLinkedNode<E> node) {

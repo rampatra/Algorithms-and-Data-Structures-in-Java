@@ -187,17 +187,17 @@ public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         }
         // prints the list from first node
         while (curr.next != null) {
-            out.print(curr.item + ",");
+            out.print(curr.item.toString() + ",");
             curr = curr.next;
         }
-        out.println(curr.item + "]");
+        out.println(curr.item.toString() + "]");
         // prints the list from last node
         out.print("[");
         while (curr.prev != null) {
-            out.print(curr.item + ",");
+            out.print(curr.item.toString() + ",");
             curr = curr.prev;
         }
-        out.println(curr.item + "]");
+        out.println(curr.item.toString() + "]");
     }
 
     public static <E extends Comparable<E>> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {

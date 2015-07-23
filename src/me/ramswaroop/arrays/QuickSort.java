@@ -48,6 +48,7 @@ public class QuickSort {
 
     /**
      * Recursive Quick sort.
+     * NOTE: This function is tail-recursive.
      * <p/>
      * Time complexity:
      * Best Case:   O(nlogn)
