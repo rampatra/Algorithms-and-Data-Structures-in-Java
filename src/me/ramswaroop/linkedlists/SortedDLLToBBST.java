@@ -29,6 +29,13 @@ public class SortedDLLToBBST {
         inOrder(node.next);
     }
 
+    /**
+     * Converts a sorted doubly linked list to a balanced binary tree in-place.
+     *
+     * @param node
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> DoubleLinkedNode<E> sortedSLLToBBST(DoubleLinkedNode<E> node) {
         return sortedSLLToBBST(node, getLength(node));
     }
