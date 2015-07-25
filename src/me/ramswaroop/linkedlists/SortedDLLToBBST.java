@@ -13,6 +13,7 @@ import me.ramswaroop.common.DoubleLinkedNode;
 public class SortedDLLToBBST {
 
     /**
+     * Returns the number of nodes in the doubly linked list.
      *
      * @param node
      * @param <E>
