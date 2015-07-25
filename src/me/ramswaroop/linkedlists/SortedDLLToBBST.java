@@ -10,7 +10,7 @@ import me.ramswaroop.common.DoubleLinkedNode;
  * @date: 7/24/15
  * @time: 3:16 PM
  */
-public class SortedSLLToBBST {
+public class SortedDLLToBBST {
 
     static <E extends Comparable<E>> int getLength(DoubleLinkedNode<E> node) {
         int l = 0;
