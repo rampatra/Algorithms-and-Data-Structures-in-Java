@@ -13,6 +13,10 @@ public class DoubleLinkedNode<E extends Comparable<E>> {
     public DoubleLinkedNode<E> next;
     public DoubleLinkedNode<E> prev;
 
+    public DoubleLinkedNode(E item) {
+        this(null, item, null);
+    }
+
     public DoubleLinkedNode(DoubleLinkedNode<E> prev, E item, DoubleLinkedNode<E> next) {
         this.item = item;
         this.next = next;

@@ -36,23 +36,23 @@ public class SortedDLLToBBST {
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> DoubleLinkedNode<E> sortedSLLToBBST(DoubleLinkedNode<E> node) {
-        return sortedSLLToBBST(node, getLength(node));
+    public static <E extends Comparable<E>> DoubleLinkedNode<E> sortedDLLToBBST(DoubleLinkedNode<E> node) {
+        return sortedDLLToBBST(node, getLength(node));
     }
 
-    public static <E extends Comparable<E>> DoubleLinkedNode<E> sortedSLLToBBST(DoubleLinkedNode<E> node, int n) {
+    public static <E extends Comparable<E>> DoubleLinkedNode<E> sortedDLLToBBST(DoubleLinkedNode<E> node, int n) {
         if (n <= 0) {
             return null;
         }
 
-        DoubleLinkedNode<E> left = sortedSLLToBBST(node, n / 2);
+        DoubleLinkedNode<E> left = sortedDLLToBBST(node, n / 2);
 
         DoubleLinkedNode<E> root = node;
         root.prev = left;
 
         node = node.next;
 
-        DoubleLinkedNode<E> right = sortedSLLToBBST(node, n - n / 2 - 1);
+        DoubleLinkedNode<E> right = sortedDLLToBBST(node, n - n / 2 - 1);
         root.next = right;
 
         return root;
@@ -68,7 +68,7 @@ public class SortedDLLToBBST {
         linkedList.add(66);
         linkedList.add(77);
         linkedList.printList();
-        inOrder(sortedSLLToBBST(linkedList.head));
+        inOrder(sortedDLLToBBST(linkedList.head));
         System.out.println();
         linkedList.printList();
     }
