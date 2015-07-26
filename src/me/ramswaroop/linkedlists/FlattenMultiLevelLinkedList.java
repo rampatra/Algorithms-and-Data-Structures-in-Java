@@ -18,6 +18,19 @@ public class FlattenMultiLevelLinkedList {
      * {@see http://www.geeksforgeeks.org/flatten-a-linked-list-with-next-and-child-pointers/} for
      * clarity on question.
      *
+     * Solution:
+     * 1) Take "cur" pointer, which will point to head of the fist level of the list
+     * 2) Take "tail" pointer, which will point to end of the first level of the list
+     * 3) Repeat the below procedure while "curr" is not NULL.
+     * I) if current node has a child then
+     * a) append this new child list to the "tail"
+     * tail->next = cur->child
+     * b) find the last node of new child list and update "tail"
+     * while (tail->next != null) {
+     * tail = tail->next;
+     * }
+     * II) move to the next node. i.e. cur = cur->next
+     *
      * @param node
      * @param <E>
      * @return
