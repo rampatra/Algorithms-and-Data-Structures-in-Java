@@ -12,6 +12,13 @@ import me.ramswaroop.common.DoubleLinkedNode;
  */
 public class SortedDLLToBBST {
 
+    /**
+     * Returns the number of nodes in the doubly linked list.
+     *
+     * @param node
+     * @param <E>
+     * @return
+     */
     static <E extends Comparable<E>> int getLength(DoubleLinkedNode<E> node) {
         int l = 0;
         DoubleLinkedNode<E> curr = node;
@@ -22,6 +29,11 @@ public class SortedDLLToBBST {
         return l;
     }
 
+    /**
+     *
+     * @param node
+     * @param <E>
+     */
     static <E extends Comparable<E>> void inOrder(DoubleLinkedNode<E> node) {
         if (node == null) return;
         inOrder(node.prev);
