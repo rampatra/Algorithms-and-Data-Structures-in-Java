@@ -11,6 +11,11 @@ import java.util.Arrays;
  */
 public class ReverseArray {
 
+    /**
+     * Iterative method to reverse the entire array.
+     *
+     * @param a
+     */
     public static void reverse(int[] a) {
         int temp;
         for (int i = 0, j = a.length - 1; i < j; i++, j--) {
@@ -21,6 +26,14 @@ public class ReverseArray {
         }
     }
 
+    /**
+     * Recursive method to reverse the array elements from
+     * {@param i} index to {@param j} index (both inclusive).
+     *
+     * @param a
+     * @param i
+     * @param j
+     */
     public static void reverseRecursive(int[] a, int i, int j) {
         if (i > j) return;
 
