@@ -21,10 +21,4 @@ public class SingleLinkedNode<E extends Comparable<E>> {
         this.next = next;
     }
 
-    public SingleLinkedNode(SingleLinkedNode<E> node) {
-        if (node == null) return;
-
-        this.item = node.item;
-        this.next = node.next;
-    }
 }

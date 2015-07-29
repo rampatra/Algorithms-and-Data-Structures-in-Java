@@ -22,12 +22,4 @@ public class DoubleLinkedNode<E extends Comparable<E>> {
         this.next = next;
         this.prev = prev;
     }
-
-    public DoubleLinkedNode(DoubleLinkedNode<E> node) {
-        if (node == null) return;
-
-        this.item = node.item;
-        this.next = node.next;
-        this.prev = node.prev;
-    }
 }
