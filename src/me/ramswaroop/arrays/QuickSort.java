@@ -66,10 +66,19 @@ public class QuickSort {
         }
     }
 
+    /**
+     * Wrapper method to quick sort the entire array.
+     *
+     * @param a
+     */
+    public static void quickSort(int[] a) {
+        quickSort(a, 0, a.length - 1);
+    }
+
     public static void main(String a[]) {
         int[] ar = {3, 2, 1, 6, 4, 9, 7, 8};
         System.out.println(Arrays.toString(ar));
-        quickSort(ar, 0, ar.length - 1);
+        quickSort(ar);
         System.out.println(Arrays.toString(ar));
     }
 }
