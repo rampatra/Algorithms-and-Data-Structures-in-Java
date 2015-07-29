@@ -10,7 +10,7 @@ import me.ramswaroop.common.SingleLinkedNode;
  * @date: 6/29/15
  * @time: 2:32 PM
  */
-public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class ReverseLinkedListInGroups {
 
     /**
      * Reverses the linked list in groups.
@@ -27,7 +27,7 @@ public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLi
      * @param k
      * @return
      */
-    public SingleLinkedNode<E> reverseLinkedListInGroups(SingleLinkedNode<E> node, int k) {
+    public static <E extends Comparable<E>> SingleLinkedNode<E> reverseLinkedListInGroups(SingleLinkedNode<E> node, int k) {
 
         SingleLinkedNode<E> curr = node, prev = null, next = null;
         int i = 0;
@@ -41,11 +41,6 @@ public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLi
             i++;
         }
 
-        // update the head
-        if (node == head) {
-            head = prev;
-        }
-
         // recursively call for the rest of the nodes in the linked list
         if (next != null) {
             node.next = reverseLinkedListInGroups(next, k);
@@ -55,7 +50,7 @@ public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLi
     }
 
     public static void main(String a[]) {
-        ReverseLinkedListInGroups<Integer> linkedList = new ReverseLinkedListInGroups<>();
+        SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);
         linkedList.add(22);
@@ -68,7 +63,6 @@ public class ReverseLinkedListInGroups<E extends Comparable<E>> extends SingleLi
         linkedList.add(99);
         linkedList.add(100);
         linkedList.printList();
-        linkedList.reverseLinkedListInGroups(linkedList.head, 3);
-        linkedList.printList();
+        linkedList.printList(reverseLinkedListInGroups(linkedList.head, 3));
     }
 }
