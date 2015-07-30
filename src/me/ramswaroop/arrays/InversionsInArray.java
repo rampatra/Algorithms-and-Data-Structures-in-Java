@@ -1,5 +1,7 @@
 package me.ramswaroop.arrays;
 
+import java.util.Arrays;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -8,6 +10,8 @@ package me.ramswaroop.arrays;
  * @time: 8:37 PM
  */
 public class InversionsInArray {
+
+    static int inversionCount = 0;
 
     /**
      * Naive approach.
@@ -24,7 +28,7 @@ public class InversionsInArray {
      * @param a
      * @return
      */
-    public static int getInversionCountNaive(int[] a) {
+    public static int getInversionCountNaiveApproach(int[] a) {
         int count = 0;
         for (int i = 0; i < a.length - 2; i++) {
             for (int j = 1; j < a.length - 1; j++) {
@@ -34,11 +38,65 @@ public class InversionsInArray {
         return count;
     }
 
+    /**
+     * Optimized approach.
+     *
+     * Explanation: In merge() if a[i] > b[j] then all elements in array a starting
+     * from i are greater than b[j] which equals to the number of inversions for
+     * the two sub-arrays.
+     *
+     * @param a
+     * @return
+     * @see: http://www.geeksforgeeks.org/counting-inversions/
+     */
     public static int getInversionCount(int[] a) {
-        return 0;
+        mergeSort(a);
+        return inversionCount;
+    }
+
+    /**
+     * Merge sort.
+     * <p/>
+     * Time complexity:     O(n log n)
+     * Space complexity:    O(n) (also needs O(log n) stack space as it is recursive)
+     *
+     * @param a
+     * @return
+     */
+    public static int[] mergeSort(int[] a) {
+        if (a.length == 1) return a;
+
+        int[] x = mergeSort(Arrays.copyOfRange(a, 0, a.length / 2));
+        int[] y = mergeSort(Arrays.copyOfRange(a, a.length / 2, a.length));
+
+        return merge(x, y);
+    }
+
+    /**
+     * Merges two sorted arrays {@param a} and {@param b}.
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static int[] merge(int[] a, int[] b) {
+        int lenA = a.length, lenB = b.length, k = 0;
+        int[] sortedArray = new int[lenA + lenB];
+
+        for (int i = 0, j = 0; i < lenA || j < lenB; ) {
+            if (j == lenB || (i < lenA && a[i] < b[j])) {
+                sortedArray[k++] = a[i++];
+            } else {
+                sortedArray[k++] = b[j++];
+                inversionCount += lenA - i;
+            }
+        }
+
+        return sortedArray;
     }
 
     public static void main(String a[]) {
-        System.out.println(getInversionCountNaive(new int[]{2, 4, 1, 3, 5}));
+        System.out.println(getInversionCountNaiveApproach(new int[]{2, 4, 1, 3, 5}));
+        System.out.println(getInversionCount(new int[]{2, 4, 1, 3, 5}));
     }
 }
