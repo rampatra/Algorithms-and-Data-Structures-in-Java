@@ -23,6 +23,9 @@ public class MajorityElementInSortedArray {
         int l = a.length;
         int startIndex = getIndexOf(a, 0, l - 1, n);
 
+        // element not found
+        if (startIndex == -1) return false;
+
         if (startIndex + l / 2 < l && a[startIndex + l / 2] == n) {
             return true;
         } else {
@@ -41,8 +44,8 @@ public class MajorityElementInSortedArray {
      * @return
      */
     public static int getIndexOf(int[] a, int low, int high, int n) {
-        int mid = (low + high) / 2;
-        if (low < high) {
+        if (low <= high) {
+            int mid = (low + high) / 2;
             /**
              * Check if a[mid] is the first occurrence of n:
              * a[mid] is first occurrence if n is one of the following
@@ -52,18 +55,19 @@ public class MajorityElementInSortedArray {
              */
             if ((mid == 0 || n > a[mid - 1]) && (a[mid] == n)) {
                 return mid;
-            } else if (n < a[mid]) {
-                getIndexOf(a, low, mid - 1, n);
+            } else if (n <= a[mid]) {
+                return getIndexOf(a, low, mid - 1, n);
             } else {
-                getIndexOf(a, mid + 1, high, n);
+                return getIndexOf(a, mid + 1, high, n);
             }
         }
         return -1;
     }
 
     public static void main(String a[]) {
+        System.out.println(isMajorityElement(new int[]{2, 2}, 2));
         System.out.println(isMajorityElement(new int[]{1, 2}, 2));
         System.out.println(isMajorityElement(new int[]{1, 2, 2, 2, 2, 2, 3, 3}, 2));
-        System.out.println(isMajorityElement(new int[]{1, 2, 2, 2, 2, 2, 3, 3}, 3));
+        System.out.println(isMajorityElement(new int[]{1, 2, 2, 2, 2, 3, 3, 3}, 2));
     }
 }
