@@ -35,21 +35,7 @@ public class MinHeap {
      * @param index
      */
     public static void minHeapify(int[] a, int index) {
-        int smallest = index;
-        int leftIndex = 2 * index + 1;
-        int rightIndex = 2 * index + 2;
-
-        if (leftIndex < a.length && a[index] > a[leftIndex]) {
-            smallest = leftIndex;
-        }
-        if (rightIndex < a.length && a[smallest] > a[rightIndex]) {
-            smallest = rightIndex;
-        }
-
-        if (smallest != index) {
-            swap(a, index, smallest);
-            minHeapify(a, smallest);
-        }
+        minHeapify(a, index, a.length);
     }
 
     /**
@@ -66,10 +52,10 @@ public class MinHeap {
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
-        if (leftIndex < a.length && a[index] > a[leftIndex]) {
+        if (leftIndex < l && a[index] > a[leftIndex]) {
             smallest = leftIndex;
         }
-        if (rightIndex < a.length && a[smallest] > a[rightIndex]) {
+        if (rightIndex < l && a[smallest] > a[rightIndex]) {
             smallest = rightIndex;
         }
 

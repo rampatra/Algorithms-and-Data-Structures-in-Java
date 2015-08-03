@@ -15,8 +15,9 @@ public class HeapSort {
 
     /**
      * Heapsort.
-     *
+     * <p/>
      * Time complexity: O(n log n)
+     *
      * @param a
      */
     public static void heapSort(int[] a) {

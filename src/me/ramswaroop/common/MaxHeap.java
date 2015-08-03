@@ -35,21 +35,7 @@ public class MaxHeap {
      * @param index
      */
     public static void maxHeapify(int[] a, int index) {
-        int largest = index;
-        int leftIndex = 2 * index + 1;
-        int rightIndex = 2 * index + 2;
-
-        if (leftIndex < a.length && a[index] < a[leftIndex]) {
-            largest = leftIndex;
-        }
-        if (rightIndex < a.length && a[largest] < a[rightIndex]) {
-            largest = rightIndex;
-        }
-
-        if (largest != index) {
-            swap(a, index, largest);
-            maxHeapify(a, largest);
-        }
+        maxHeapify(a, index, a.length);
     }
 
     /**
