@@ -22,37 +22,17 @@ import java.util.Arrays;
  * @date: 8/2/15
  * @time: 11:57 AM
  */
-public class Heap {
-
-    public static void minHeapify(int[] a, int index) {
-        int smallest = index;
-        int leftIndex = 2 * index + 1;
-        int rightIndex = 2 * index + 2;
-
-        if (leftIndex < a.length && a[index] > a[leftIndex]) {
-            smallest = leftIndex;
-        }
-        if (rightIndex < a.length && a[smallest] > a[rightIndex]) {
-            smallest = rightIndex;
-        }
-
-        if (smallest != index) {
-            swap(a, index, smallest);
-            minHeapify(a, smallest);
-        }
-    }
+public class MaxHeap {
 
     /**
-     * Converts array {@param a} in to a max heap.
+     * Makes the array {@param a} satisfy the max heap property starting from
+     * {@param index} till the end of array.
+     * <p/>
+     * Time complexity: O(log n).
      *
      * @param a
+     * @param index
      */
-    public static void buildMinHeap(int[] a) {
-        for (int i = a.length / 2 - 1; i >= 0; i--) {
-            minHeapify(a, i);
-        }
-    }
-
     public static void maxHeapify(int[] a, int index) {
         int largest = index;
         int leftIndex = 2 * index + 1;
@@ -73,6 +53,8 @@ public class Heap {
 
     /**
      * Converts array {@param a} in to a max heap.
+     * <p/>
+     * Time complexity: O(n) and is not O(n log n).
      *
      * @param a
      */
@@ -88,12 +70,11 @@ public class Heap {
         a[firstIndex] = a[firstIndex] - a[secondIndex];
     }
 
+    // test cases
     public static void main(String[] args) {
         int[] a = new int[]{2, 4, 5, 1, 6, 7, 8};
         System.out.println(Arrays.toString(a));
         buildMaxHeap(a);
-        System.out.println(Arrays.toString(a));
-        buildMinHeap(a);
         System.out.println(Arrays.toString(a));
     }
 }

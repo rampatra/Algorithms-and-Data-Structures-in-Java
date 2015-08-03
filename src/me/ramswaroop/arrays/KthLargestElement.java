@@ -1,6 +1,6 @@
 package me.ramswaroop.arrays;
 
-import me.ramswaroop.common.Heap;
+import me.ramswaroop.common.MaxHeap;
 
 import java.util.Arrays;
 
@@ -40,10 +40,10 @@ public class KthLargestElement {
      */
     public static int getKthLargestElement(int[] a, int k) {
         while (true) {
-            Heap.buildMaxHeap(a);
+            MaxHeap.buildMaxHeap(a);
             if (k == 1) break;
 
-            Heap.swap(a, 0, a.length - 1);
+            MaxHeap.swap(a, 0, a.length - 1);
             a = Arrays.copyOfRange(a, 0, a.length - 1);
             k--;
         }
@@ -52,7 +52,11 @@ public class KthLargestElement {
     }
 
     public static void main(String a[]) {
-        System.out.println(getKthLargestElementNaive(new int[]{2, 4, 5, 7, 1, 8, 9}, 3));
-        System.out.println(getKthLargestElement(new int[]{2, 4, 5, 7, 1, 8, 9}, 3));
+        int[] ar = new int[]{2, 4, 5, 7, 1, 8, 9};
+        System.out.println(Arrays.toString(ar));
+        System.out.println(getKthLargestElementNaive(ar, 3));
+        System.out.println(Arrays.toString(ar));
+        System.out.println(getKthLargestElement(ar, 3));
+        System.out.println(Arrays.toString(ar));
     }
 }
