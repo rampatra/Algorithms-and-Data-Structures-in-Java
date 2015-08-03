@@ -21,6 +21,7 @@ import java.util.Arrays;
  * @author: ramswaroop
  * @date: 8/2/15
  * @time: 11:57 AM
+ * @see: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm
  */
 public class MaxHeap {
 
@@ -48,6 +49,34 @@ public class MaxHeap {
         if (largest != index) {
             swap(a, index, largest);
             maxHeapify(a, largest);
+        }
+    }
+
+    /**
+     * Makes the array {@param a} satisfy the max heap property starting from
+     * {@param index} till {@param l} position in array.
+     * <p/>
+     * Time complexity: O(log n).
+     *
+     * @param a
+     * @param index
+     * @param l
+     */
+    public static void maxHeapify(int[] a, int index, int l) {
+        int largest = index;
+        int leftIndex = 2 * index + 1;
+        int rightIndex = 2 * index + 2;
+
+        if (leftIndex < l && a[index] < a[leftIndex]) {
+            largest = leftIndex;
+        }
+        if (rightIndex < l && a[largest] < a[rightIndex]) {
+            largest = rightIndex;
+        }
+
+        if (largest != index) {
+            swap(a, index, largest);
+            maxHeapify(a, largest, l);
         }
     }
 

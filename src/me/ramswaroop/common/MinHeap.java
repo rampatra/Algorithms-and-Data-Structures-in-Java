@@ -21,6 +21,7 @@ import java.util.Arrays;
  * @author: ramswaroop
  * @date: 8/2/15
  * @time: 11:57 AM
+ * @see: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm
  */
 public class MinHeap {
 
@@ -48,6 +49,33 @@ public class MinHeap {
         if (smallest != index) {
             swap(a, index, smallest);
             minHeapify(a, smallest);
+        }
+    }
+
+    /**
+     * Makes the array {@param a} satisfy the min heap property starting from
+     * {@param index} till {@param l} position in array.
+     * <p/>
+     * Time complexity: O(log n).
+     *
+     * @param a
+     * @param index
+     */
+    public static void minHeapify(int[] a, int index, int l) {
+        int smallest = index;
+        int leftIndex = 2 * index + 1;
+        int rightIndex = 2 * index + 2;
+
+        if (leftIndex < a.length && a[index] > a[leftIndex]) {
+            smallest = leftIndex;
+        }
+        if (rightIndex < a.length && a[smallest] > a[rightIndex]) {
+            smallest = rightIndex;
+        }
+
+        if (smallest != index) {
+            swap(a, index, smallest);
+            minHeapify(a, smallest, l);
         }
     }
 
