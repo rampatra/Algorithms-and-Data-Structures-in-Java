@@ -11,6 +11,14 @@ public class AbsWithoutBranching {
 
     /**
      * Returns the absolute value of any integer.
+     * <p/>
+     * EXPLANATION:
+     * For example, consider int takes 4 bits:
+     * So for input = -5, we have
+     * -5               = 1011
+     * mask             = 1111
+     * mask + n         = 1010
+     * (mask + n)^mask  = 0101 (which is 5)
      *
      * @param n
      * @return
@@ -27,12 +35,3 @@ public class AbsWithoutBranching {
         System.out.println(abs(-0));
     }
 }
-
-/**
- * For example, consider int takes 4 bits:
- * So for input = -5, we have
- * -5               = 1011
- * mask             = 1111
- * mask + n         = 1010
- * (mask + n)^mask  = 0101 (which is 5)
- */
