@@ -9,16 +9,33 @@ package me.ramswaroop.arrays;
  */
 public class MaximumSizeSquareSubMatrix {
 
+    /**
+     * Prints the maximum size square sub-matrix in {@param a} with all 1s.
+     * <p/>
+     * Algorithm:
+     * 1) Construct a sum matrix/auxiliary matrix aux[R][C] for the given a[R][C].
+     * ...a) Copy first row and first columns as it is from a[][] to aux[][]
+     * ...b) For other entries, use following expressions to construct aux[][]
+     * ........If a[i][j] is 1 then
+     * ........aux[i][j] = min(aux[i][j-1], aux[i-1][j], aux[i-1][j-1]) + 1
+     * ........Else
+     * ........aux[i][j] = 0
+     * 2) Find the maximum entry in aux[R][C]
+     * 3) Using the value and coordinates of maximum entry in aux[i], print sub-matrix of a[][]
+     *
+     * @param a
+     */
     public static void printMaximumSizeSquareSubMatrix(int[][] a) {
         int size = a[0].length; // no. of rows/columns
         int maxI = 0, maxJ = 0, maxSubMatrixSize = 0;
         int[][] auxMatrix = new int[size][size];
 
-        for (int i = 0, j = 0; j < size; j++) {
+        // construct auxiliary matrix
+        for (int i = 0, j = 0; j < size; j++) { // copy 1st row
             auxMatrix[i][j] = a[i][j];
         }
 
-        for (int i = 0, j = 0; i < size; i++) {
+        for (int i = 0, j = 0; i < size; i++) { // copy 1st column
             auxMatrix[i][j] = a[i][j];
         }
 
@@ -38,6 +55,7 @@ public class MaximumSizeSquareSubMatrix {
             }
         }
 
+        // print max size sub-matrix in array 'a' from the co-ordinates in auxiliary matrix
         for (int i = maxI; i > maxI - maxSubMatrixSize; i--) {
             for (int j = maxJ; j > maxJ - maxSubMatrixSize; j--) {
                 System.out.print(a[i][j]);
