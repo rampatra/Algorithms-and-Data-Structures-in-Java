@@ -13,7 +13,7 @@ public class IntersectionAndUnionOf2SortedArrays {
 
     /**
      * Returns a 2-D array consisting of intersection and union of 
-     * arrays {@param a} and {@param b} respectively.
+     * two sorted arrays {@param a} and {@param b} respectively.
      * 
      * @param a
      * @param b
