@@ -15,6 +15,7 @@ public class TwoRepeatingElements {
         int xor = a[0];
         int rightMostSetBit;
         int x = 0, y = 0;
+        
         for (int i = 1; i < a.length; i++) {
             xor ^= a[i];
         }
@@ -24,7 +25,7 @@ public class TwoRepeatingElements {
         rightMostSetBit = xor & ~(xor - 1);
 
         for (int i = 0; i < a.length; i++) {
-            if ((a[i] & rightMostSetBit) == 1) {
+            if ((a[i] & rightMostSetBit) == 0) {
                 x ^= a[i];
             } else {
                 y ^= a[i];
@@ -32,7 +33,7 @@ public class TwoRepeatingElements {
         }
 
         for (int i = 1; i <= a.length - 2; i++) {
-            if ((i & rightMostSetBit) == 1) {
+            if ((i & rightMostSetBit) == 0) {
                 x ^= i;
             } else {
                 y ^= i;
