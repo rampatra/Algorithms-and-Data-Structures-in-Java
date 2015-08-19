@@ -20,9 +20,9 @@ public class LargestSumContiguousSubArray {
         int maxSum = 0, maxSumTillIndex = 0;
 
         for (int i = 0; i < a.length; i++) {
-            maxSumTillIndex += a[i];
+            maxSumTillIndex += a[i]; // keep on adding elements
             if (maxSumTillIndex < 0) {
-                maxSumTillIndex = 0;
+                maxSumTillIndex = 0; // once the sum is less than 0 restart adding elements from next index
             } else if (maxSumTillIndex > maxSum) {
                 maxSum = maxSumTillIndex;
             }
