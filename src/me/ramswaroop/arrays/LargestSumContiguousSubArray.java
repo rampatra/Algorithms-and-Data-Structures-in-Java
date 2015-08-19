@@ -10,7 +10,7 @@ package me.ramswaroop.arrays;
 public class LargestSumContiguousSubArray {
 
     /**
-     * Based on Kadane's Algorithm. Doesn't work when all 
+     * Based on Kadane's Algorithm. Doesn't work when all
      * elements in array {@param a} are negative.
      *
      * @param a
@@ -31,7 +31,8 @@ public class LargestSumContiguousSubArray {
     }
 
     /**
-     * TODO
+     * Below algorithm works even when all elements in array {@param a} are negative.
+     *
      * @param a
      * @return
      */
@@ -39,11 +40,7 @@ public class LargestSumContiguousSubArray {
         int maxSum = a[0], maxSumTillIndex = a[0];
 
         for (int i = 1; i < a.length; i++) {
-            if (a[i] > maxSumTillIndex) {
-                maxSumTillIndex = a[i];
-            } else if (maxSumTillIndex + a[i] < maxSumTillIndex) {
-                maxSumTillIndex = a[i];
-            }
+            maxSumTillIndex = Math.max(a[i], maxSumTillIndex + a[i]);
             maxSum = Math.max(maxSum, maxSumTillIndex);
         }
 
