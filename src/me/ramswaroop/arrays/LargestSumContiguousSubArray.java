@@ -10,29 +10,54 @@ package me.ramswaroop.arrays;
 public class LargestSumContiguousSubArray {
 
     /**
-     * Based on Kadane's Algorithm. 
-     * 
+     * Based on Kadane's Algorithm. Doesn't work when all 
+     * elements in array {@param a} are negative.
+     *
      * @param a
      * @return
      */
-    public static int getLargestSumOfContiguousSubArray(int a[]) {
+    public static int getLargestSumOfContiguousSubArray(int[] a) {
         int maxSum = 0, maxSumTillIndex = 0;
 
         for (int i = 0; i < a.length; i++) {
             maxSumTillIndex += a[i];
             if (maxSumTillIndex < 0) {
                 maxSumTillIndex = 0;
-            }
-            if (maxSumTillIndex > maxSum) {
+            } else if (maxSumTillIndex > maxSum) {
                 maxSum = maxSumTillIndex;
             }
         }
         return maxSum;
     }
 
+    /**
+     * TODO
+     * @param a
+     * @return
+     */
+    public static int getLargestSumOfContiguousSubArrayWhenAllNosNegative(int[] a) {
+        int maxSum = a[0], maxSumTillIndex = a[0];
+
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] > maxSumTillIndex) {
+                maxSumTillIndex = a[i];
+            } else if (maxSumTillIndex + a[i] < maxSumTillIndex) {
+                maxSumTillIndex = a[i];
+            }
+            maxSum = Math.max(maxSum, maxSumTillIndex);
+        }
+
+        return maxSum;
+    }
+
     public static void main(String a[]) {
         System.out.println(getLargestSumOfContiguousSubArray(new int[]{-2, 1, -3, 4, 5, -1, 4}));
         System.out.println(getLargestSumOfContiguousSubArray(new int[]{2, -1, -3, 4, -5, 1, 4}));
-        System.out.println(getLargestSumOfContiguousSubArray(new int[]{-2, -1, -3, -4, -5, -1, -4})); // doesn't work
+        // kadane's algorithm doesn't work if all no.s are -ve
+        System.out.println(getLargestSumOfContiguousSubArray(new int[]{-2, -1, -3, -4, -5, -1, -4}));
+
+        System.out.println(getLargestSumOfContiguousSubArrayWhenAllNosNegative(new int[]{-2, 1, -3, 4, 5, -1, 4}));
+        System.out.println(getLargestSumOfContiguousSubArrayWhenAllNosNegative(new int[]{2, -1, -3, 4, -5, 1, 4}));
+        System.out.println(getLargestSumOfContiguousSubArrayWhenAllNosNegative(new int[]{-2, -1, -3, -4, -5, -1, -4}));
     }
 }
