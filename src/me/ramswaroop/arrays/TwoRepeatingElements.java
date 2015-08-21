@@ -62,9 +62,37 @@ public class TwoRepeatingElements {
         return new int[]{x, y};
     }
 
+    /**
+     * The algorithm is simple. We use index of the array to track repeating elements.
+     * Once we encounter a element lets say 2 then we make the 2nd index -ve just to mark
+     * that we have encountered 2. When we encounter 2 again and see that 2nd index
+     * is already -ve we conclude that 2 is repeated.
+     * 
+     * Similar to {@link me.ramswaroop.arrays.DuplicatesInArray#findDuplicatesInArray(int[])}.
+     * 
+     * @param a
+     * @return
+     */
+    public static int[] findTwoRepeatingElements(int[] a) {
+        int[] repeatingElements = new int[2];
+
+        for (int i = 0, j = 0; i < a.length; i++) {
+            if (a[Math.abs(a[i])] >= 0) {
+                a[Math.abs(a[i])] = -a[Math.abs(a[i])];
+            } else {
+                repeatingElements[j++] = Math.abs(a[i]);
+            }
+        }
+        return repeatingElements;
+    }
+
     public static void main(String a[]) {
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{4, 2, 4, 5, 2, 3, 1})));
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{2, 4, 5, 2, 3, 1, 6, 7, 7})));
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{1, 2, 1, 2})));
+        System.out.println("========");
+        System.out.println(Arrays.toString(findTwoRepeatingElements(new int[]{4, 2, 4, 5, 2, 3, 1})));
+        System.out.println(Arrays.toString(findTwoRepeatingElements(new int[]{2, 4, 5, 2, 3, 1, 6, 7, 7})));
+        System.out.println(Arrays.toString(findTwoRepeatingElements(new int[]{1, 2, 1, 2})));
     }
 }
