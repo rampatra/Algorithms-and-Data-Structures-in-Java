@@ -9,6 +9,17 @@ package me.ramswaroop.arrays;
  */
 public class RotateMatrixBy90Degrees {
 
+    /**
+     * Rotates a 2-D array by 90 degrees clockwise.
+     * <p/>
+     * The algorithm is simple:
+     * 1st row = last column
+     * 2nd row = 2nd last column
+     * and so on...
+     *
+     * @param a
+     * @return
+     */
     public static int[][] rotateMatrixBy90DegreesRight(int[][] a) {
         int rows = a.length, columns = a[0].length;
         int[][] rotatedMatrix = new int[columns][rows];
@@ -36,9 +47,9 @@ public class RotateMatrixBy90Degrees {
         print2DMatrix(ar);
         System.out.println("--------");
         print2DMatrix(rotateMatrixBy90DegreesRight(ar));
-        
+
         System.out.println("========");
-        
+
         ar = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {0, 5, 7}};
         print2DMatrix(ar);
         System.out.println("--------");
