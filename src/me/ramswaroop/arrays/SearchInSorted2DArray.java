@@ -16,15 +16,20 @@ public class SearchInSorted2DArray {
      * both row wise and column wise.
      * <p/>
      * Time complexity: O(n) where n is size of 2-D array.
+     * <p/>
+     * Explanation:
+     * Linearly searches across rows and columns until the element is found or till the last element. If
+     * the element is not found in the 1st row or 1st column then we search in 2nd row and 2nd column
+     * and so on.
      *
      * @param a
      * @param i
      * @param j
      * @param value
-     * @return
+     * @return an array consisting of co-ordinates if {@param value} is found otherwise {@code new int[]{-1, -1}}.
      */
     public static int[] search(int[][] a, int i, int j, int value) {
-        for (int x = 0; x < a.length; x++) {
+        for (int x = 0; x < a.length && (a[i][x] <= value || a[x][j] <= value); x++) {
             if (a[i][x] == value) {
                 return new int[]{i, x};
             } else if (a[x][j] == value) {
