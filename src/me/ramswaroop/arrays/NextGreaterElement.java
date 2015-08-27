@@ -1,6 +1,7 @@
 package me.ramswaroop.arrays;
 
-import java.util.Arrays;
+import me.ramswaroop.common.LinkedStack;
+import me.ramswaroop.common.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,22 +20,41 @@ public class NextGreaterElement {
      * @param a
      * @return
      */
-    public static int[] nextGreaterElements(int[] a) {
-        int[] greaterElements = new int[a.length]; // stores the next greater element of each element in array a
-        greaterElements[a.length - 1] = -1; // no elements greater than the last element
+    public static void nextGreaterElements(int[] a) {
+        int i = 0;
+        Stack<Integer> stack = new LinkedStack<>(); // used to store elements whose NGE is yet to be determined
 
-        for (int i = a.length - 2; i >= 0; i--) {
-            if (a[i + 1] > a[i]) { // if next element is greater than the current element
-                greaterElements[i] = a[i + 1];
-            } else { // if next element is smaller then find the greater element of the next element
-                greaterElements[i] = greaterElements[i + 1];
+        for (; i < a.length - 1; i++) {
+            stack.push(a[i]);
+
+            while (!stack.isEmpty()) {
+                Integer pop = stack.pop();
+                if (pop < a[i + 1]) { // NGE found for popped element
+                    System.out.println(pop + "->" + a[i + 1]);
+                } else {
+                    stack.push(pop); // NGE still not found for popped element, so push it again
+                    break;
+                }
             }
         }
-        return greaterElements;
+
+        // no NGE for elements left in stack
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop() + "->" + -1);
+        }
+        
+        // no NGE for last element
+        System.out.println(a[i] + "->" + -1);
     }
 
     public static void main(String a[]) {
-        System.out.println(Arrays.toString(nextGreaterElements(new int[]{4, 5, 2, 25})));
-        System.out.println(Arrays.toString(nextGreaterElements(new int[]{11, 13, 21, 3})));
+        int[] ar = new int[]{4, 5, 2, 25};
+        nextGreaterElements(ar);
+        System.out.println("=========");
+        ar = new int[]{11, 13, 21, 3};
+        nextGreaterElements(ar);
+        System.out.println("=========");
+        ar = new int[]{1, 5, 3, 4, 2, 0, 11};
+        nextGreaterElements(ar);
     }
 }
