@@ -13,18 +13,17 @@ public class SelectionSort {
 
     /**
      * Selection Sort.
-     * 
-     * Explanation: 
+     * <p/>
+     * Explanation:
      * This is one of the simplest algorithm where each time the smallest/largest
      * element is chosen and placed at the appropriate position and then again the
      * logic is applied on rest of the elements till the entire array is sorted.
-     * 
+     * <p/>
      * Time complexity: O(n) for all cases.
-     * 
+     * <p/>
      * NOTE: Advantage of this sort is that it requires minimum number of memory writes
-     * like Cycle sort. 
-     * 
-     * 
+     * like Cycle sort.
+     *
      * @param a
      */
     public static void selectionSort(int[] a) {
@@ -41,6 +40,13 @@ public class SelectionSort {
         }
     }
 
+    /**
+     * Swaps variables in {@param a} at {@param index1} with {@param index2}.
+     *
+     * @param a
+     * @param index1
+     * @param index2
+     */
     private static void swap(int[] a, int index1, int index2) {
         int temp = a[index1];
         a[index1] = a[index2];
