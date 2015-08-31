@@ -14,11 +14,14 @@ public class SmallestMissingNumber {
      * {@param a} consisting of numbers between 0 to m - 1 and m > n where n is
      * length of array.
      * <p/>
+     * Time complexity: O(log n)
+     * Con: Doesn't work if there are repetitive elements.
+     * <p/>
      * EXPLANATION:
      * In standard Binary Search, the element to be searched is compared with
      * the middle element and on the basis of comparison result, we decide whether
      * to search is over or to go to left half or right half.
-     * In this method, we modify the standard Binary Search algorithm to compare the 
+     * In this method, we modify the standard Binary Search algorithm to compare the
      * middle element with its index and make decision on the basis of this comparison.
      *
      * @param a
@@ -46,5 +49,6 @@ public class SmallestMissingNumber {
         System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 6, 9}, 0, 4));
         System.out.println(smallestMissingNumber(new int[]{4, 5, 10, 11}, 0, 3));
         System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 10}, 0, 8));
+        System.out.println(smallestMissingNumber(new int[]{0, 1, 3, 3, 11}, 0, 4)); // doesn't work
     }
 }
