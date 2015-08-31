@@ -10,7 +10,9 @@ package me.ramswaroop.common;
 public class Search {
 
     /**
-     * Searches an item in a sorted array in O(log n) time.
+     * Searches an element {@param n} in a sorted array {@param a}
+     * and returns its index in O(log n) time. The Index may not
+     * correspond to the first occurrence of the element.
      *
      * @param a
      * @param n
@@ -21,16 +23,19 @@ public class Search {
     }
 
     public static int binarySearch(int a[], int n, int low, int high) {
-        int mid = (low + high) / 2;
 
-        if (high < low) {
-            return -1;
-        } else if (n == a[mid]) {
-            return mid;
-        } else if (n < a[mid]) {
-            return binarySearch(a, n, 0, mid - 1);
+        if (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (n == a[mid]) {
+                return mid;
+            } else if (n < a[mid]) {
+                return binarySearch(a, n, 0, mid - 1);
+            } else {
+                return binarySearch(a, n, mid + 1, high);
+            }
         } else {
-            return binarySearch(a, n, mid + 1, high);
+            return -1;
         }
     }
 
@@ -41,5 +46,9 @@ public class Search {
      */
     public static void main(String a[]) {
         System.out.println(binarySearch(new int[]{0, 2}, 2));
+        System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 2));
+        System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 3));
+        System.out.println(binarySearch(new int[]{0, 2}, 0));
+        System.out.println(binarySearch(new int[]{0, 1, 2, 2, 2, 3, 3}, 2)); // doesn't return index of first occurrence
     }
 }
