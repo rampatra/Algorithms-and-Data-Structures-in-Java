@@ -30,7 +30,7 @@ public class SmallestMissingNumber {
      * @return
      */
     public static int smallestMissingNumber(int[] a, int low, int high) {
-        if (low < high) {
+        if (low <= high) {
             int mid = (low + high) / 2;
 
             if (a[mid] == mid) {
@@ -46,9 +46,11 @@ public class SmallestMissingNumber {
     }
 
     public static void main(String a[]) {
+        System.out.println(smallestMissingNumber(new int[]{0, 1}, 0, 1));
         System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 6, 9}, 0, 4));
         System.out.println(smallestMissingNumber(new int[]{4, 5, 10, 11}, 0, 3));
+        System.out.println(smallestMissingNumber(new int[]{0, 4, 5, 10, 56}, 0, 4));
         System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 10}, 0, 8));
-        System.out.println(smallestMissingNumber(new int[]{0, 1, 3, 3, 11}, 0, 4)); // doesn't work
+        System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 3, 3}, 0, 4)); // doesn't work
     }
 }
