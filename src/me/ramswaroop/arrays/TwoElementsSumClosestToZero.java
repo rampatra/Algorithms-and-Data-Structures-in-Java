@@ -1,5 +1,7 @@
 package me.ramswaroop.arrays;
 
+import me.ramswaroop.arrays.sorting.QuickSort;
+
 import java.util.Arrays;
 
 /**

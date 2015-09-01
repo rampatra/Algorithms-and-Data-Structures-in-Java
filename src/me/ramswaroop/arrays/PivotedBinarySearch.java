@@ -1,6 +1,6 @@
 package me.ramswaroop.arrays;
 
-import me.ramswaroop.common.Search;
+import me.ramswaroop.arrays.searching.BinarySearch;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,9 +28,9 @@ public class PivotedBinarySearch {
         if (pivot == -1 || a[pivot] == n) {
             return pivot;
         } else if (n <= a[0]) {
-            return Search.binarySearch(a, n, pivot + 1, a.length - 1);
+            return BinarySearch.binarySearch(a, n, pivot + 1, a.length - 1);
         } else {
-            return Search.binarySearch(a, n, 0, pivot - 1);
+            return BinarySearch.binarySearch(a, n, 0, pivot - 1);
         }
     }
 

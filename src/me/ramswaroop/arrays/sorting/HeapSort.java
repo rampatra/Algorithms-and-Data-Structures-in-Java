@@ -1,4 +1,4 @@
-package me.ramswaroop.arrays;
+package me.ramswaroop.arrays.sorting;
 
 import me.ramswaroop.common.MaxHeap;
 

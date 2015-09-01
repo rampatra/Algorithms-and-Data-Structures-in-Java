@@ -1,13 +1,13 @@
-package me.ramswaroop.common;
+package me.ramswaroop.arrays.searching;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author: ramswaroop
- * @date: 5/31/15
- * @time: 10:45 PM
+ * @date: 9/1/15
+ * @time: 4:56 PM
  */
-public class Search {
+public class BinarySearch {
 
     /**
      * Searches an element {@param n} in a sorted array {@param a}

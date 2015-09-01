@@ -1,5 +1,6 @@
 package me.ramswaroop.arrays;
 
+import me.ramswaroop.arrays.sorting.MergeSort;
 import me.ramswaroop.common.MaxHeap;
 
 import java.util.Arrays;
