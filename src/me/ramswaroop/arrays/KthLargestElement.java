@@ -44,12 +44,18 @@ public class KthLargestElement {
             MaxHeap.buildMaxHeap(a);
             if (k == 1) break;
 
-            MaxHeap.swap(a, 0, a.length - 1);
+            swap(a, 0, a.length - 1);
             a = Arrays.copyOfRange(a, 0, a.length - 1);
             k--;
         }
 
         return a[0];
+    }
+
+    private static void swap(int[] a, int firstIndex, int secondIndex) {
+        a[firstIndex] = a[firstIndex] + a[secondIndex];
+        a[secondIndex] = a[firstIndex] - a[secondIndex];
+        a[firstIndex] = a[firstIndex] - a[secondIndex];
     }
 
     public static void main(String a[]) {

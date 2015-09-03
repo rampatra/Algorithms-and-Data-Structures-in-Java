@@ -35,33 +35,20 @@ public class MinHeap {
      * @param index
      */
     public static void minHeapify(int[] a, int index) {
-        minHeapify(a, index, a.length);
-    }
-
-    /**
-     * Makes the array {@param a} satisfy the min heap property starting from
-     * {@param index} till {@param l} position in array.
-     * <p/>
-     * Time complexity: O(log n).
-     *
-     * @param a
-     * @param index
-     */
-    public static void minHeapify(int[] a, int index, int l) {
         int smallest = index;
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
-        if (leftIndex < l && a[index] > a[leftIndex]) {
+        if (leftIndex < a.length && a[index] > a[leftIndex]) {
             smallest = leftIndex;
         }
-        if (rightIndex < l && a[smallest] > a[rightIndex]) {
+        if (rightIndex < a.length && a[smallest] > a[rightIndex]) {
             smallest = rightIndex;
         }
 
         if (smallest != index) {
             swap(a, index, smallest);
-            minHeapify(a, smallest, l);
+            minHeapify(a, smallest);
         }
     }
 

@@ -29,40 +29,29 @@ public class MaxHeap {
      * Makes the array {@param a} satisfy the max heap property starting from
      * {@param index} till the end of array.
      * <p/>
+     * See {@link me.ramswaroop.arrays.sorting.HeapSort#maxHeapify} for a modified
+     * version of maxHeapify.
+     * <p/>
      * Time complexity: O(log n).
      *
      * @param a
      * @param index
      */
     public static void maxHeapify(int[] a, int index) {
-        maxHeapify(a, index, a.length);
-    }
-
-    /**
-     * Makes the array {@param a} satisfy the max heap property starting from
-     * {@param index} till {@param l} position in array.
-     * <p/>
-     * Time complexity: O(log n).
-     *
-     * @param a
-     * @param index
-     * @param l
-     */
-    public static void maxHeapify(int[] a, int index, int l) {
         int largest = index;
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
-        if (leftIndex < l && a[index] < a[leftIndex]) {
+        if (leftIndex < a.length && a[index] < a[leftIndex]) {
             largest = leftIndex;
         }
-        if (rightIndex < l && a[largest] < a[rightIndex]) {
+        if (rightIndex < a.length && a[largest] < a[rightIndex]) {
             largest = rightIndex;
         }
 
         if (largest != index) {
             swap(a, index, largest);
-            maxHeapify(a, largest, l);
+            maxHeapify(a, largest);
         }
     }
 
@@ -79,7 +68,7 @@ public class MaxHeap {
         }
     }
 
-    public static void swap(int[] a, int firstIndex, int secondIndex) {
+    private static void swap(int[] a, int firstIndex, int secondIndex) {
         a[firstIndex] = a[firstIndex] + a[secondIndex];
         a[secondIndex] = a[firstIndex] - a[secondIndex];
         a[firstIndex] = a[firstIndex] - a[secondIndex];

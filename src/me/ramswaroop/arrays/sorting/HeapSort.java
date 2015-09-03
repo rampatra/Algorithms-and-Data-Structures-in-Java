@@ -24,9 +24,45 @@ public class HeapSort {
         MaxHeap.buildMaxHeap(a);
 
         for (int i = a.length - 1; i > 0; i--) {
-            MaxHeap.swap(a, 0, i);
-            MaxHeap.maxHeapify(a, 0, i);
+            swap(a, 0, i);
+            maxHeapify(a, 0, i);
         }
+    }
+
+    /**
+     * Makes the array {@param a} satisfy the max heap property starting from
+     * {@param index} till {@param end} position in array.
+     * <p/>
+     * See this {@link MaxHeap#maxHeapify} for a basic version of maxHeapify.
+     * <p/>
+     * Time complexity: O(log n).
+     *
+     * @param a
+     * @param index
+     * @param end
+     */
+    private static void maxHeapify(int[] a, int index, int end) {
+        int largest = index;
+        int leftIndex = 2 * index + 1;
+        int rightIndex = 2 * index + 2;
+
+        if (leftIndex < end && a[index] < a[leftIndex]) {
+            largest = leftIndex;
+        }
+        if (rightIndex < end && a[largest] < a[rightIndex]) {
+            largest = rightIndex;
+        }
+
+        if (largest != index) {
+            swap(a, index, largest);
+            maxHeapify(a, largest, end);
+        }
+    }
+
+    private static void swap(int[] a, int firstIndex, int secondIndex) {
+        a[firstIndex] = a[firstIndex] + a[secondIndex];
+        a[secondIndex] = a[firstIndex] - a[secondIndex];
+        a[firstIndex] = a[firstIndex] - a[secondIndex];
     }
 
     public static void main(String a[]) {
