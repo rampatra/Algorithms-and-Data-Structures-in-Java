@@ -17,7 +17,7 @@ public class MaxInAllSubArrays {
      * Finds the maximum element in each and every sub-array
      * in {@param a} of size {@param k}.
      * <p/>
-     * Time complexity: O(n^2)
+     * Time complexity: O(n*k), or more precisely O((n-k) * k)
      *
      * @param a
      * @param k
