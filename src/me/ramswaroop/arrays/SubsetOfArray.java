@@ -11,6 +11,19 @@ import me.ramswaroop.arrays.sorting.QuickSort;
  */
 public class SubsetOfArray {
 
+    /**
+     * Determines if array {@param b} is a subset of array {@param a}.
+     * <p/>
+     * Explanation: The below method uses sorting + merge method of merge sort. Time
+     * complexity is O(mlogm + nlogn) where m and n are lengths of array a and b resp.
+     * You could also have used sorting + binary search but this fails when superset
+     * array has repeating elements for example, a={1,4,4,2} and b={1,4,2}. Time 
+     * complexity would be O(mlogm + nlogm).
+     *
+     * @param a
+     * @param b
+     * @return
+     */
     public static boolean isSubsetOfArray(int[] a, int[] b) {
 
         QuickSort.quickSort(a);
