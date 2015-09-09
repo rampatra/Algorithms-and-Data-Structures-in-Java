@@ -11,23 +11,35 @@ import static java.lang.System.out;
  */
 public class MatrixInSpiral {
 
+    /**
+     * 
+     * @param a
+     */
     public static void printMatrixInSpiral(int[][] a) {
         int row = a.length, col = a[0].length;
 
-        //for (int r = 0, c = col - 1; r < row && c >= 0; r++, c--) {
-            for (int i = 0, j = 0; j < col; j++) {
+        // this loop iterates for the entire matrix
+        for (int r = row, c = col, x = 0; r >= 0 && c >= 0; r--, c--, x++) {
+            /**
+             * Below 4 {@code for} loops print the perimeter of a matrix
+             */
+            // prints the top row
+            for (int i = x, j = x; i < r && j < c; j++) {
                 out.print(a[i][j]);
             }
-            for (int i = 1, j = col - 1; i < row; i++) {
+            // prints the right most column
+            for (int i = x + 1, j = c - 1; i < r; i++) {
                 out.print(a[i][j]);
             }
-            for (int i = row - 1, j = col - 2; j >= 0; j--) {
+            // prints the bottom row
+            for (int i = r - 1, j = c - 2; j >= x; j--) {
                 out.print(a[i][j]);
             }
-            for (int i = row - 2, j = 0; i > 0; i--) {
+            // prints the left most column
+            for (int i = r - 2, j = x; i > x; i--) {
                 out.print(a[i][j]);
             }
-        //}
+        }
     }
 
     public static void main(String a[]) {
