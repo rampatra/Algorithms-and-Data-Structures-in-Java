@@ -13,6 +13,7 @@ import java.util.NoSuchElementException;
 public class MedianOfStream {
 
     public static int getMedianOfStream(int med, int elem, MaxHeap maxHeap, MinHeap minHeap) {
+
         switch (compare(maxHeap.getSize(), minHeap.getSize())) {
             case 0:
                 if (elem < med) {
@@ -30,7 +31,7 @@ public class MedianOfStream {
                 } else {
                     minHeap.insert(elem);
                 }
-                med = (maxHeap.findMax() + minHeap.findMin())/2;
+                med = (maxHeap.findMax() + minHeap.findMin()) / 2;
                 break;
             case -1:
                 if (elem < med) {
@@ -39,7 +40,7 @@ public class MedianOfStream {
                     maxHeap.insert(minHeap.deleteMin());
                     minHeap.insert(elem);
                 }
-                med = (maxHeap.findMax() + minHeap.findMin())/2;
+                med = (maxHeap.findMax() + minHeap.findMin()) / 2;
                 break;
         }
         return med;
@@ -47,8 +48,8 @@ public class MedianOfStream {
 
     static void printMedianOfStream(int[] a) {
         int m = 0;
-        MaxHeap maxHeap = new MaxHeap(128);
-        MinHeap minHeap = new MinHeap(128);
+        MaxHeap maxHeap = new MaxHeap(12);
+        MinHeap minHeap = new MinHeap(12);
         for (int i = 0; i < a.length; i++) {
             m = getMedianOfStream(m, a[i], maxHeap, minHeap);
         }
@@ -135,8 +136,7 @@ class MinHeap {
      * Function to find least element *
      */
     public int findMin() {
-        if (isEmpty())
-            throw new NoSuchElementException("Underflow Exception");
+        if (size == 0) return -1;
         return heap[0];
     }
 
@@ -236,7 +236,8 @@ class MaxHeap {
     }
 
     public int findMax() {
-        return heap[0];
+        if (size == 0) return -1;
+        return heap[FRONT];
     }
 
     public int parent(int pos) {
