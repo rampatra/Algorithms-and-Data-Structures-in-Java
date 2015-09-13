@@ -76,11 +76,11 @@ public class MaxHeap {
     public void insert(int elem) {
         heap = Arrays.copyOf(heap, size + 1);
         int i = size;
-        int parentIndex = (int) Math.ceil((i / 2) - 1);
+        int parentIndex = (int) Math.floor((i - 1) / 2);
         while (i > 0 && elem > heap[parentIndex]) {
             heap[i] = heap[parentIndex];
             i = parentIndex;
-            parentIndex = (int) Math.ceil((parentIndex / 2) - 1);
+            parentIndex = (int) Math.floor((i - 1) / 2);
         }
         heap[i] = elem;
         size++;
