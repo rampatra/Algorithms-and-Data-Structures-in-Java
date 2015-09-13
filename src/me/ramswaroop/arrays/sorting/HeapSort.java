@@ -21,7 +21,7 @@ public class HeapSort {
      * @param a
      */
     public static void heapSort(int[] a) {
-        MaxHeap.buildMaxHeap(a);
+        buildMaxHeap(a);
 
         for (int i = a.length - 1; i > 0; i--) {
             swap(a, 0, i);
@@ -56,6 +56,17 @@ public class HeapSort {
         if (largest != index) {
             swap(a, index, largest);
             maxHeapify(a, largest, end);
+        }
+    }
+
+    /**
+     * Converts array {@param a} in to a max heap.
+     * <p/>
+     * Time complexity: O(n) and is not O(n log n).
+     */
+    private static void buildMaxHeap(int[] a) {
+        for (int i = a.length / 2 - 1; i >= 0; i--) {
+            maxHeapify(a, i, a.length);
         }
     }
 

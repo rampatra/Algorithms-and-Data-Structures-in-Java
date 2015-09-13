@@ -25,6 +25,14 @@ import java.util.Arrays;
  */
 public class MaxHeap {
 
+    int[] heap;
+    int size;
+
+    public MaxHeap(int[] heap) {
+        this.size = heap.length;
+        this.heap = Arrays.copyOf(heap, size);
+    }
+    
     /**
      * Makes the array {@param a} satisfy the max heap property starting from
      * {@param index} till the end of array.
@@ -34,24 +42,23 @@ public class MaxHeap {
      * <p/>
      * Time complexity: O(log n).
      *
-     * @param a
      * @param index
      */
-    public static void maxHeapify(int[] a, int index) {
+    public void maxHeapify(int index) {
         int largest = index;
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
-        if (leftIndex < a.length && a[index] < a[leftIndex]) {
+        if (leftIndex < size && heap[index] < heap[leftIndex]) {
             largest = leftIndex;
         }
-        if (rightIndex < a.length && a[largest] < a[rightIndex]) {
+        if (rightIndex < size && heap[largest] < heap[rightIndex]) {
             largest = rightIndex;
         }
 
         if (largest != index) {
-            swap(a, index, largest);
-            maxHeapify(a, largest);
+            swap(index, largest);
+            maxHeapify(largest);
         }
     }
 
@@ -59,26 +66,84 @@ public class MaxHeap {
      * Converts array {@param a} in to a max heap.
      * <p/>
      * Time complexity: O(n) and is not O(n log n).
-     *
-     * @param a
      */
-    public static void buildMaxHeap(int[] a) {
-        for (int i = a.length / 2 - 1; i >= 0; i--) {
-            maxHeapify(a, i);
+    public void buildMaxHeap() {
+        for (int i = size / 2 - 1; i >= 0; i--) {
+            maxHeapify(i);
         }
     }
 
-    private static void swap(int[] a, int firstIndex, int secondIndex) {
-        a[firstIndex] = a[firstIndex] + a[secondIndex];
-        a[secondIndex] = a[firstIndex] - a[secondIndex];
-        a[firstIndex] = a[firstIndex] - a[secondIndex];
+    public void insert(int elem) {
+        heap = Arrays.copyOf(heap, size + 1);
+        int i = size;
+        int parentIndex = (int) Math.ceil((i / 2) - 1);
+        while (i > 0 && elem > heap[parentIndex]) {
+            heap[i] = heap[parentIndex];
+            i = parentIndex;
+            parentIndex = (int) Math.ceil((parentIndex / 2) - 1);
+        }
+        heap[i] = elem;
+        size++;
+    }
+
+    public int findMax() {
+        if (size == 0) {
+            return -1;
+        } else {
+            return heap[0];
+        }
+    }
+
+    public int extractMax() {
+        if (size == 0) return -1;
+
+        int min = heap[0];
+        heap[0] = heap[size - 1];
+        size--;
+        maxHeapify(0);
+        return min;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int[] getHeap() {
+        return heap;
+    }
+
+    public void printHeap() {
+        if (heap == null)
+            System.out.print("null");
+        int iMax = size - 1, i;
+        if (iMax == -1)
+            System.out.print("[]");
+
+        StringBuilder b = new StringBuilder();
+        b.append('[');
+        for (i = 0; i < iMax; i++) {
+            b.append(heap[i]);
+            b.append(", ");
+        }
+        System.out.println(b.append(heap[i]).append(']').toString());
+    }
+
+    private void swap(int firstIndex, int secondIndex) {
+        int temp = heap[firstIndex];
+        heap[firstIndex] = heap[secondIndex];
+        heap[secondIndex] = temp;
     }
 
     // test cases
     public static void main(String[] args) {
         int[] a = new int[]{2, 4, 5, 1, 6, 7, 8};
-        System.out.println(Arrays.toString(a));
-        buildMaxHeap(a);
-        System.out.println(Arrays.toString(a));
+        MaxHeap maxHeap = new MaxHeap(a);
+        maxHeap.printHeap();
+        maxHeap.buildMaxHeap();
+        maxHeap.printHeap();
+        maxHeap.extractMax();
+        maxHeap.printHeap();
+        maxHeap.insert(12);
+        maxHeap.printHeap();
     }
 }

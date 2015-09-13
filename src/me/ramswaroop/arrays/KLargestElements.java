@@ -36,16 +36,17 @@ public class KLargestElements {
 
         int[] kElements = Arrays.copyOfRange(a, 0, k);
 
-        MinHeap.buildMinHeap(kElements);
+        MinHeap minHeap = new MinHeap(kElements);
+        minHeap.buildMinHeap();
 
         for (int i = k; i < a.length; i++) {
-            if (a[i] > kElements[0]) {
-                kElements[0] = a[i];
-                MinHeap.buildMinHeap(kElements);
+            if (a[i] > minHeap.findMin()) {
+                minHeap.extractMin();
+                minHeap.insert(a[i]);
             }
         }
 
-        return kElements;
+        return minHeap.getHeap();
     }
 
     public static void main(String a[]) {

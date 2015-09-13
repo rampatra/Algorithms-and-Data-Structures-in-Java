@@ -32,11 +32,12 @@ public class MaxInAllSubArrays {
         for (int i = 0; i <= a.length - k; i++) {
             kElements = Arrays.copyOfRange(a, i, i + k);
             /**
-             * maxHeapify() can't be used because to call maxHeapify() on i, left(i) and right (i) should 
+             * maxHeapify() can't be used because to call maxHeapify() on i because left(i) and right (i) should 
              * already satisfy the max heap property which isn't true in this case.
              */
-            MaxHeap.buildMaxHeap(kElements);
-            maxElements[i] = kElements[0];
+            MaxHeap maxHeap = new MaxHeap(kElements);
+            maxHeap.buildMaxHeap();
+            maxElements[i] = maxHeap.findMax();
         }
 
         return maxElements;

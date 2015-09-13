@@ -40,16 +40,16 @@ public class KthLargestElement {
      * @return
      */
     public static int getKthLargestElement(int[] a, int k) {
+        MaxHeap maxHeap = new MaxHeap(a);
+        maxHeap.buildMaxHeap();
         while (true) {
-            MaxHeap.buildMaxHeap(a);
             if (k == 1) break;
-
-            swap(a, 0, a.length - 1);
-            a = Arrays.copyOfRange(a, 0, a.length - 1);
+            
+            maxHeap.extractMax();
             k--;
         }
 
-        return a[0];
+        return maxHeap.findMax();
     }
 
     private static void swap(int[] a, int firstIndex, int secondIndex) {
