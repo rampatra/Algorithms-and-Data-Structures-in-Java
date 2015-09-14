@@ -56,5 +56,8 @@ public class NextGreaterElement {
         System.out.println("=========");
         ar = new int[]{1, 5, 3, 4, 2, 0, 11};
         nextGreaterElements(ar);
+        System.out.println("=========");
+        ar = new int[]{3, 6, 8, 2 , 1, 5, 12, 4, 9};
+        nextGreaterElements(ar);        
     }
 }
