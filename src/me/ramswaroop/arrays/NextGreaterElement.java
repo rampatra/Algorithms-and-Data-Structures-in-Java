@@ -42,7 +42,7 @@ public class NextGreaterElement {
         while (!stack.isEmpty()) {
             System.out.println(stack.pop() + "->" + -1);
         }
-        
+
         // no NGE for last element
         System.out.println(a[i] + "->" + -1);
     }
@@ -57,7 +57,7 @@ public class NextGreaterElement {
         ar = new int[]{1, 5, 3, 4, 2, 0, 11};
         nextGreaterElements(ar);
         System.out.println("=========");
-        ar = new int[]{3, 6, 8, 2 , 1, 5, 12, 4, 9};
-        nextGreaterElements(ar);        
+        ar = new int[]{3, 6, 8, 2, 1, 5, 12, 4, 9};
+        nextGreaterElements(ar);
     }
 }
