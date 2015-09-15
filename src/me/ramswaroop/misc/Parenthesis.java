@@ -16,9 +16,9 @@ import java.util.List;
 public class Parenthesis {
 
     public static String isWellFormed(String input) {
-        int len = input.length() - 1;
+        int len = input.length();
         for (int i = 0; i < len / 2; i++) {
-            if (input.charAt(0) != input.charAt(len - i - 1)) {
+            if (input.charAt(i) != input.charAt(len - i - 1)) {
                 return "False";
             }
         }
@@ -28,24 +28,22 @@ public class Parenthesis {
     public static void areParenthesisWellFormed(String filename) {
         List<String> input = readFile(filename);
         for (int i = 0; i < input.size(); i++) {
-            isWellFormed(input.get(i));
+            System.out.println(isWellFormed(input.get(i)));
         }
     }
 
     public static List<String> readFile(String filename) {
+
         List<String> input = new ArrayList<>();
         BufferedReader br = null;
 
         try {
-
             String sCurrentLine;
-
             br = new BufferedReader(new FileReader(filename));
 
             while ((sCurrentLine = br.readLine()) != null) {
                 input.add(sCurrentLine);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -60,5 +58,6 @@ public class Parenthesis {
 
     public static void main(String a[]) {
         areParenthesisWellFormed(a[0]);
+        System.exit(0);
     }
 }
