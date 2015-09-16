@@ -23,6 +23,18 @@ public class Parenthesis {
     private static final char L_BRACKET = '[';
     private static final char R_BRACKET = ']';
 
+    /**
+     * Checks if the parenthesis are well-formed in string {@param input}.
+     * <p/>
+     * For example,
+     * {[()]} : true
+     * {[]()[]} : true
+     * {[)} : false
+     * {(} : false
+     *
+     * @param input
+     * @return {@code true} if parenthesis are well-formed, {@code false} otherwise.
+     */
     public static boolean isWellFormed(String input) {
         int len = input.length();
         Stack<Character> stack = new Stack<>();
@@ -46,6 +58,11 @@ public class Parenthesis {
         return stack.isEmpty();
     }
 
+    /**
+     * Checks if the parenthesis are well-formed for the entire input.
+     *
+     * @param filePath
+     */
     public static void areParenthesisWellFormed(String filePath) {
         List<String> input = readFile(filePath);
         for (int i = 0; i < input.size(); i++) {
@@ -53,6 +70,12 @@ public class Parenthesis {
         }
     }
 
+    /**
+     * Reads the file specified in {@param filePath}.
+     *
+     * @param filePath
+     * @return list of strings in each line of the file
+     */
     public static List<String> readFile(String filePath) {
 
         List<String> input = new ArrayList<>();
@@ -70,6 +93,11 @@ public class Parenthesis {
         return input;
     }
 
+    /**
+     * Starting point of the program.
+     *
+     * @param a
+     */
     public static void main(String a[]) {
         areParenthesisWellFormed(a[0]);
         System.exit(0);
@@ -133,6 +161,11 @@ class Stack<E> {
         return top == null;
     }
 
+    /**
+     * Generic node for holding values of any object type.
+     *
+     * @param <E>
+     */
     private class Node<E> {
         E item;
         Node<E> next;
