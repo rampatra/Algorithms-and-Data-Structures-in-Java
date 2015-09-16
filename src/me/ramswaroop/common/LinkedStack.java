@@ -13,7 +13,7 @@ import java.util.EmptyStackException;
 
 /**
  * Stack implementation using
- * a singly linked list
+ * a singly linked list.
  *
  * @param <E>
  */
@@ -107,7 +107,7 @@ public class LinkedStack<E> implements Stack<E> {
         E item;
         Node<E> next;
 
-        Node(E item, Node next) {
+        Node(E item, Node<E> next) {
             this.item = item;
             this.next = next;
         }
