@@ -3,9 +3,7 @@ package me.ramswaroop.misc;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.EmptyStackException;
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -57,40 +55,26 @@ public class Parenthesis {
 
         return stack.isEmpty();
     }
-
+    
     /**
-     * Checks if the parenthesis are well-formed for the entire input.
+     * Reads the file specified in {@param filePath} line by line
+     * and checks if parenthesis are well-formed or not.
      *
      * @param filePath
      */
-    public static void areParenthesisWellFormed(String filePath) {
-        List<String> input = readFile(filePath);
-        for (int i = 0; i < input.size(); i++) {
-            System.out.println(isWellFormed(input.get(i)) ? "True" : "False");
-        }
-    }
+    public static void readFile(String filePath) {
 
-    /**
-     * Reads the file specified in {@param filePath}.
-     *
-     * @param filePath
-     * @return list of strings in each line of the file
-     */
-    public static List<String> readFile(String filePath) {
-
-        List<String> input = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
             String line;
 
             while ((line = br.readLine()) != null) {
-                input.add(line);
+                System.out.println(isWellFormed(line) ? "True" : "False");
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return input;
     }
 
     /**
@@ -99,7 +83,7 @@ public class Parenthesis {
      * @param a
      */
     public static void main(String a[]) {
-        areParenthesisWellFormed(a[0]);
+        readFile(a[0]);
         System.exit(0);
     }
 }
