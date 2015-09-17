@@ -3,6 +3,7 @@ package me.ramswaroop.misc;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigInteger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,36 +14,36 @@ import java.io.IOException;
  */
 public class ReverseAndAdd {
 
-    public static long getReverse(long n) {
-        return Long.valueOf(new StringBuilder().append(n).reverse().toString());
+    public static BigInteger getReverse(BigInteger n) {
+        return new BigInteger(new StringBuilder().append(n).reverse().toString());
     }
 
-    public static boolean isPalindrome(long n) {
-        return n == getReverse(n);
+    public static boolean isPalindrome(BigInteger n) {
+        return n.compareTo(getReverse(n)) == 0;
     }
 
-    public static boolean isNegative(long n) {
-        return n < 0;
+    public static boolean isNegative(BigInteger n) {
+        return n.compareTo(new BigInteger("0")) == -1;
     }
 
-    public static long[] reverseAddAndCheck(String n) {
-        long additions = 1;
-        long original = Long.valueOf(n);
+    public static BigInteger[] reverseAddAndCheck(String n) {
+        BigInteger additions = new BigInteger("1");
+        BigInteger original = new BigInteger(n);
 
         boolean isNegative = isNegative(original);
-        if (isNegative) original = -original;
+        if (isNegative) original = original.multiply(new BigInteger("-1"));
 
-        long reverse;
+        BigInteger reverse;
 
-        while (!isPalindrome(original + (reverse = getReverse(original)))) {
-            original += reverse;
-            additions++;
+        while (!isPalindrome(original.add(reverse = getReverse(original)))) {
+            original = original.add(reverse);
+            additions = additions.add(new BigInteger("1"));
         }
 
-        original += reverse;
-        if (isNegative) original = -original;
+        original = original.add(reverse);
+        if (isNegative) original = original.multiply(new BigInteger("-1"));
 
-        return new long[]{additions, original};
+        return new BigInteger[]{additions, original};
     }
 
     public static void readFile(String filePath) {
@@ -52,8 +53,8 @@ public class ReverseAndAdd {
             String line;
 
             while ((line = br.readLine()) != null) {
-                long[] result = reverseAddAndCheck(line);
-                System.out.println(result[0] + " " + result[1]);
+                BigInteger[] result = reverseAddAndCheck(line);
+                System.out.println(result[0].toString() + " " + result[1].toString());
             }
 
         } catch (IOException e) {
