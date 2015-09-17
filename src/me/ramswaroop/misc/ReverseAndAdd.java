@@ -14,18 +14,43 @@ import java.math.BigInteger;
  */
 public class ReverseAndAdd {
 
+    /**
+     * Reverses the number {@param n}.
+     * 
+     * @param n
+     * @return the reverse of the number {@param n}.
+     */
     public static BigInteger getReverse(BigInteger n) {
         return new BigInteger(new StringBuilder().append(n).reverse().toString());
     }
 
+    /**
+     * Checks if {@param n} is palindrome.
+     * 
+     * @param n
+     * @return {@code true} if {@param n} is palindrome.
+     */
     public static boolean isPalindrome(BigInteger n) {
         return n.compareTo(getReverse(n)) == 0;
     }
 
+    /**
+     * Checks if {@param n} is negative.
+     * 
+     * @param n
+     * @return {@code true} if {@param n} is negative, {@code false} otherwise.
+     */
     public static boolean isNegative(BigInteger n) {
         return n.compareTo(new BigInteger("0")) == -1;
     }
 
+    /**
+     * Reverses the number {@param n}, adds to itself and then checks
+     * for palindrome.
+     * 
+     * @param n
+     * @return an array of {@code BigInteger} with number of additions and final palindrome number respectively.
+     */
     public static BigInteger[] reverseAddAndCheck(String n) {
         BigInteger additions = new BigInteger("1");
         BigInteger original = new BigInteger(n);
@@ -46,6 +71,12 @@ public class ReverseAndAdd {
         return new BigInteger[]{additions, original};
     }
 
+    /**
+     * Reads the input file mentioned in {@param filePath} line by line
+     * and calls {@code reverseAddAndCheck()} for every line.
+     * 
+     * @param filePath
+     */
     public static void readFile(String filePath) {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -62,6 +93,11 @@ public class ReverseAndAdd {
         }
     }
 
+    /**
+     * Starting point of the program.
+     * 
+     * @param a
+     */
     public static void main(String a[]) {
         readFile(a[0]);
         System.exit(0);
