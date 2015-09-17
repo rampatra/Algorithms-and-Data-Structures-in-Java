@@ -26,7 +26,7 @@ public class ReverseAndAdd {
     }
 
     public static long[] reverseAddAndCheck(String n) {
-        long additions = 0;
+        long additions = 1;
         long original = Long.valueOf(n);
 
         boolean isNegative = isNegative(original);
