@@ -7,6 +7,7 @@ package me.ramswaroop.misc;
  * Time: 4:16 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,6 +22,7 @@ public class BotTesting {
         final URL myURL = new URL("http://localhost:8080/ifb.html");
         ExecutorService executorService = Executors.newFixedThreadPool(20);
         Long start = System.currentTimeMillis();
+
         for (int i = 0; i <= 50; i++) {
             executorService.execute(new Runnable() {
 
@@ -52,13 +54,5 @@ public class BotTesting {
         Long diff = System.currentTimeMillis() - start;
         System.out.println("Difference: " + diff + "ms");
         executorService.shutdown();
-    }
-
-    private class MyThread extends Thread {
-
-        @Override
-        public void run(){
-
-        }
     }
 }
