@@ -12,20 +12,13 @@ import java.util.Arrays;
 public class CountSmallerElementsOnRHS {
 
     public static int[] getSmallerElementsCountOnRHSNaive(int[] a) {
-        int[] result = new int[a.length];
-        int i, j, temp;
-        for (i = a.length - 2; i >= 0; i--) {
-            for (j = i + 1; a[i] < a[j]; j++) {
-                temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-            result[i] = j - i;
-        }
-        return result;
+        // TODO
+        return null;
     }
 
     public static void main(String a[]) {
         System.out.println(Arrays.toString(getSmallerElementsCountOnRHSNaive(new int[]{12, 1, 2, 3, 0, 11, 4})));
+        System.out.println(Arrays.toString(getSmallerElementsCountOnRHSNaive(new int[]{5, 4, 3, 2, 1})));
+        System.out.println(Arrays.toString(getSmallerElementsCountOnRHSNaive(new int[]{1, 2, 3, 4, 5})));
     }
 }
