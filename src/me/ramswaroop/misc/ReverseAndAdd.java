@@ -85,7 +85,7 @@ public class ReverseAndAdd {
 
             while ((line = br.readLine()) != null) {
                 BigInteger[] result = reverseAddAndCheck(line);
-                System.out.println(result[0].toString() + " " + result[1].toString());
+                System.out.println(result[0] + " " + result[1]);
             }
 
         } catch (IOException e) {
