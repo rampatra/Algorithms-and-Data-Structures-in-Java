@@ -4,18 +4,20 @@ import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
- *
- * Trie also called digital tree and sometimes radix tree or prefix tree (as they can be 
- * searched by prefixes), is an ordered tree data structure that is used to store a dynamic 
+ * <p/>
+ * Trie also called digital tree and sometimes radix tree or prefix tree (as they can be
+ * searched by prefixes), is an ordered tree data structure that is used to store a dynamic
  * set or associative array where the keys are usually strings.
- * 
- * You can think it as HashMap of HashMap of HashMap and so on. Each key in the HashMap is a 
+ * <p/>
+ * You can think it as HashMap of HashMap of HashMap and so on. Each key in the HashMap is a
  * single digit/letter of the data you want to store and {@code data} is the final full word
  * you want to save in trie.
- * 
+ *
  * @author: ramswaroop
  * @date: 9/22/15
  * @time: 8:19 PM
+ * @see: https://en.wikipedia.org/wiki/Trie
+ * @see: https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries
  */
 public class Trie<E> {
 
@@ -27,7 +29,7 @@ public class Trie<E> {
 
     /**
      * Inserts {@param data} in trie.
-     * 
+     *
      * @param data
      */
     public void insert(E data) {
@@ -56,7 +58,7 @@ public class Trie<E> {
 
     /**
      * Searches {@param data} in trie.
-     * 
+     *
      * @param data
      * @return {@code true} if {@param data} is present, {@code false} otherwise.
      */
@@ -74,7 +76,7 @@ public class Trie<E> {
             i++;
         }
 
-        return curr.data == data;
+        return curr.data != null && curr.data.equals(data);
     }
 
     private class TrieNode<E> {
