@@ -10,7 +10,25 @@ package me.ramswaroop.bits;
 public class Addition {
 
     /**
-     * Better solution.
+     * Best method.
+     * <p/>
+     * -n = ~n + 1.
+     * ~n = -(n+1). Therefore, n+1 = -(~n).
+     * <p/>
+     * Works for -ve numbers.
+     * <p/>
+     * Note: This method works only if the numbers
+     * are stored in 2’s complement form.
+     *
+     * @param n
+     * @return
+     */
+    public static int add(int n) {
+        return -(~n);
+    }
+
+    /**
+     * Good solution.
      * <p/>
      * Adds two numbers without using any
      * arithmetic operators.
@@ -39,7 +57,7 @@ public class Addition {
      * @param y
      * @return sum of {@param x} and {@param y}
      */
-    public static int add_V1(int x, int y) {
+    public static int addNaive(int x, int y) {
         int carry = 0, sum = 0, c = 0, xLSB, yLSB;
         while (c < 32) {
             xLSB = x & 1;
@@ -57,25 +75,6 @@ public class Addition {
         return sum;
     }
 
-
-    /**
-     * Best method.
-     * <p/>
-     * -n = ~n + 1.
-     * ~n = -(n+1). Therefore, n+1 = -(~n).
-     * <p/>
-     * Works for -ve numbers.
-     * <p/>
-     * Note: This method works only if the numbers
-     * are stored in 2’s complement form.
-     *
-     * @param n
-     * @return
-     */
-    public static int add1(int n) {
-        return -(~n);
-    }
-
     /**
      * Idea is to flip all the bits of {@param n} till
      * rightmost 0 bit in {@param n}.
@@ -85,7 +84,7 @@ public class Addition {
      * @param n
      * @return
      */
-    public static int add1_V1(int n) {
+    public static int addByFlip(int n) {
         int mask = 1;
         // flip all bits in n until rightmost 0 bit
         while ((n & mask) != 0) {
@@ -106,26 +105,26 @@ public class Addition {
         System.out.println(add(456, 982348234)); // 982348690
         System.out.println(add(1, 0xffffffff)); // 0
         System.out.println("------");
-        System.out.println(add_V1(0, 0)); //0
-        System.out.println(add_V1(12, 12)); //24
-        System.out.println(add_V1(12, 5)); //17
-        System.out.println(add_V1(3, 5)); //8
-        System.out.println(add_V1(8, 5)); //13
-        System.out.println(add_V1(13, 256)); // 269
-        System.out.println(add_V1(456, 982348234)); // 982348690
-        System.out.println(add_V1(1, 0xffffffff)); // 0
+        System.out.println(addNaive(0, 0)); //0
+        System.out.println(addNaive(12, 12)); //24
+        System.out.println(addNaive(12, 5)); //17
+        System.out.println(addNaive(3, 5)); //8
+        System.out.println(addNaive(8, 5)); //13
+        System.out.println(addNaive(13, 256)); // 269
+        System.out.println(addNaive(456, 982348234)); // 982348690
+        System.out.println(addNaive(1, 0xffffffff)); // 0
         System.out.println("------");
-        System.out.println(add1_V1(0));
-        System.out.println(add1_V1(1));
-        System.out.println(add1_V1(2));
-        System.out.println(add1_V1(3));
-        System.out.println(add1_V1(4));
-        System.out.println(add1_V1(5));
-        System.out.println(add1_V1(7));
+        System.out.println(addByFlip(0));
+        System.out.println(addByFlip(1));
+        System.out.println(addByFlip(2));
+        System.out.println(addByFlip(3));
+        System.out.println(addByFlip(4));
+        System.out.println(addByFlip(5));
+        System.out.println(addByFlip(7));
         System.out.println("------");
-        System.out.println(add1(1));
-        System.out.println(add1(5));
-        System.out.println(add1(-0));
-        System.out.println(add1(-5));
+        System.out.println(add(1));
+        System.out.println(add(5));
+        System.out.println(add(-0));
+        System.out.println(add(-5));
     }
 }

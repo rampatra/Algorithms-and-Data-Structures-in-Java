@@ -40,6 +40,8 @@ public class MinimumJumpsToReachEnd {
         }
         return minJumps;
     }
+    
+    // TODO dp approach
 
     public static void main(String a[]) {
         int[] ar = new int[]{1, 3, 5, 8, 9, 2, 6, 7, 6, 8, 9};
