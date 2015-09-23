@@ -77,7 +77,7 @@ public class Addition {
 
     /**
      * Idea is to flip all the bits of {@param n} till
-     * rightmost 0 bit in {@param n}.
+     * rightmost 0 bit (inclusive).
      * <p/>
      * Doesn't work for -ve numbers.
      *
