@@ -73,10 +73,22 @@ public class MaxHeap {
         }
     }
 
+    /**
+     * Insert a new element into the heap satisfying
+     * the heap property.
+     * 
+     * Time complexity: O(log n) where 'n' is total no. of 
+     * elements in heap or O(h) where 'h' is the height of
+     * heap.
+     * 
+     * @param elem
+     */
     public void insert(int elem) {
+        // increase heap size
         heap = Arrays.copyOf(heap, size + 1);
         int i = size;
         int parentIndex = (int) Math.floor((i - 1) / 2);
+        // move up through the heap till you find the right position
         while (i > 0 && elem > heap[parentIndex]) {
             heap[i] = heap[parentIndex];
             i = parentIndex;

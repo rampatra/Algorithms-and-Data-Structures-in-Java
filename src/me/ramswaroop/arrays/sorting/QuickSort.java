@@ -28,9 +28,10 @@ public class QuickSort {
         for (int i = low; i < high; i++) {
             /**
              * if ith element is smaller than pivot element then
-             * swap it with the last larger element known.
+             * swap it with the last larger element known
              */
             if (ar[i] < ar[pivot]) {
+                // swap a[low] with a[i]
                 temp = ar[low];
                 ar[low] = ar[i];
                 ar[i] = temp;
@@ -48,7 +49,8 @@ public class QuickSort {
 
     /**
      * Recursive Quick sort.
-     * NOTE: This function is tail-recursive.
+     * NOTE: This function is tail-recursive (doesn't use 
+     * extra stack space per recursive call).
      * <p/>
      * Time complexity:
      * Best Case:   O(nlogn)
