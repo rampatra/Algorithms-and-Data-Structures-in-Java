@@ -6,9 +6,18 @@ package me.ramswaroop.arrays;
  * @author: ramswaroop
  * @date: 9/24/15
  * @time: 2:27 PM
+ * @see: http://www.ericleschinski.com/c/java_permutations_recursion/
+ * @see: http://introcs.cs.princeton.edu/java/23recursion/Permutations.java.html
  */
 public class StringPermutations {
 
+    /**
+     * Generates and prints all possible permutations (in order) 
+     * of string {@param s}.
+     * 
+     * @param prefix
+     * @param s
+     */
     public static void printAllPermutations(String prefix, String s) {
         int len = s.length();
         if (len == 0) {
