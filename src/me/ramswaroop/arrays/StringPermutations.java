@@ -24,7 +24,7 @@ public class StringPermutations {
             System.out.println(prefix);
         } else {
             for (int i = 0; i < len; i++) {
-                printAllPermutations(prefix + s.charAt(i), s.substring(0, i) + s.substring(i + 1, len));
+                printAllPermutations(prefix + s.charAt(i), s.substring(0, i) + s.substring(i + 1));
             }
         }
     }
