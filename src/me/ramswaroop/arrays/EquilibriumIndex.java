@@ -34,7 +34,7 @@ public class EquilibriumIndex {
         }
 
         for (int i = 0; i < a.length; i++) {
-            totalSum -= a[i]; // totalSum now holds the right sum
+            totalSum -= a[i]; // totalSum now holds the right sum from ith index to end
             if (leftSum == totalSum) {
                 return i; // left sum == right sum
             }
