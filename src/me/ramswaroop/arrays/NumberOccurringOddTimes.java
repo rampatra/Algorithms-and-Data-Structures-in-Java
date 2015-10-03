@@ -12,6 +12,9 @@ package me.ramswaroop.arrays;
  * Given an array of positive integers. All numbers occur
  * even number of times except one number which occurs odd
  * number of times. Find the number in O(n) time & constant space.
+ * 
+ * See {@link me.ramswaroop.bits.TwoNonRepeatingElements} for a more
+ * complex problem which is solved in a similar approach.
  */
 public class NumberOccurringOddTimes {
 
