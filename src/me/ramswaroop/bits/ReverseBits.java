@@ -42,7 +42,7 @@ public class ReverseBits {
      * @param n
      * @return
      */
-    public static int getNumberByReversingBits_V1(int n) {
+    public static int getNumberByReversingBitsV1(int n) {
 
         int reverseNum = 0, i = 0;
         while (n > 0) {
@@ -56,8 +56,33 @@ public class ReverseBits {
         return reverseNum;
     }
 
+    /**
+     * This method is similar to {@link #getNumberByReversingBitsV1(int)} but here we put 
+     * the set bits of {@param n} in {@code reverse number} and keep on shifting the reverse number 
+     * left until {@param n} becomes {@code zero} and finally shift left for the remaining number of 
+     * bits used to represent the number.
+     *
+     * @param n
+     * @return
+     */
+    public static int getNumberByReversingBitsV2(int n) {
+        int noOfBits = 32;
+        int reverse = 0;
+
+        while (n > 0) {
+            reverse <<= 1;
+            reverse |= n & 1;
+            n >>>= 1;
+            noOfBits--;
+        }
+        reverse <<= noOfBits;
+        return reverse;
+    }
+
     public static void main(String a[]) {
         System.out.println(getNumberByReversingBits(79876));
-        System.out.println(getNumberByReversingBits_V1(79876));
+        System.out.println(getNumberByReversingBitsV1(79876));
+        System.out.println(getNumberByReversingBitsV2(79876));
+        System.out.println(getNumberByReversingBitsV2(5));
     }
 }
