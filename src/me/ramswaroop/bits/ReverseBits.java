@@ -63,6 +63,7 @@ public class ReverseBits {
      * bits used to represent the number.
      * <p/>
      * Time complexity: O(log n) (as we are dividing 'n' by 2 in each iteration)
+     * Space Complexity: O(1)
      *
      * @param n
      * @return
