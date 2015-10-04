@@ -57,10 +57,12 @@ public class ReverseBits {
     }
 
     /**
-     * This method is similar to {@link #getNumberByReversingBitsV1(int)} but here we put 
-     * the set bits of {@param n} in {@code reverse number} and keep on shifting the reverse number 
-     * left until {@param n} becomes {@code zero} and finally shift left for the remaining number of 
+     * This method is similar to {@link #getNumberByReversingBitsV1(int)} but here we put
+     * the set bits of {@param n} in {@code reverse number} and keep on shifting the reverse number
+     * left until {@param n} becomes {@code zero} and finally shift left for the remaining number of
      * bits used to represent the number.
+     * <p/>
+     * Time complexity: O(log n) (as we are dividing 'n' by 2 in each iteration)
      *
      * @param n
      * @return
