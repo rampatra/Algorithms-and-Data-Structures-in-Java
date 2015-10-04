@@ -49,7 +49,7 @@ public class ReverseBits {
             if ((n & 1) == 1) {
                 reverseNum |= 1 << 31 - i;
             }
-            n >>= 1;
+            n >>>= 1;
             i++;
         }
 
