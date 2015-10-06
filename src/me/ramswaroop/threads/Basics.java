@@ -1,4 +1,4 @@
-package me.ramswaroop.misc;
+package me.ramswaroop.threads;
 
 /**
  * Created by IntelliJ IDEA.
@@ -7,7 +7,7 @@ package me.ramswaroop.misc;
  * Time: 11:27 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
-public class Threads {
+public class Basics {
     public static void main(String[] a) {
         Runnable r = new Runnable() {
             @Override
