@@ -3,6 +3,8 @@ package me.ramswaroop.threads;
 /**
  * Created by IntelliJ IDEA.
  *
+ * Question: Print first name and last name (in order) using two different threads multiple times. 
+ * 
  * @author: ramswaroop
  * @date: 10/6/15
  * @time: 7:10 PM
@@ -28,7 +30,7 @@ public class NamePrint {
         }
     }
 
-    class PrintSecondName implements Runnable {
+    class PrintLastName implements Runnable {
         @Override
         public void run() {
             synchronized (lock) {
@@ -47,10 +49,10 @@ public class NamePrint {
 
     public void printNameUsingMultipleThreads() {
         Runnable printFirstName = new PrintFirstName();
-        Runnable printSecondName = new PrintSecondName();
+        Runnable printLastName = new PrintLastName();
 
         Thread firstThread = new Thread(printFirstName);
-        Thread secondThread = new Thread(printSecondName);
+        Thread secondThread = new Thread(printLastName);
 
         secondThread.start();
         firstThread.start();
