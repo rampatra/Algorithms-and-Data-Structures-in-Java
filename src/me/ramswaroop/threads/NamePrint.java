@@ -2,9 +2,9 @@ package me.ramswaroop.threads;
 
 /**
  * Created by IntelliJ IDEA.
+ * <p/>
+ * Question: Print first name and last name (in order) using two different threads multiple times.
  *
- * Question: Print first name and last name (in order) using two different threads multiple times. 
- * 
  * @author: ramswaroop
  * @date: 10/6/15
  * @time: 7:10 PM
@@ -54,6 +54,12 @@ public class NamePrint {
         Thread firstThread = new Thread(printFirstName);
         Thread secondThread = new Thread(printLastName);
 
+        /**
+         * Starting secondThread first so that secondThread starts waiting before the firstThread
+         * calls notify(). But this behavior is not guaranteed as you cannot be 100% sure that 
+         * secondThread will actually run before firstThread (though it may run before most of the 
+         * time).
+         */
         secondThread.start();
         firstThread.start();
     }
