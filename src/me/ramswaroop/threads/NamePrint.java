@@ -12,18 +12,21 @@ package me.ramswaroop.threads;
 public class NamePrint {
 
     Object lock = new Object();
+    boolean isFirstNamePrinted = false;
 
     class PrintFirstName implements Runnable {
         @Override
         public void run() {
             synchronized (lock) {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < 1000; i++) {
                     try {
-                        if (i > 0) lock.wait(); // releases lock
+                        // wait if first name is printed but not the last name
+                        if (isFirstNamePrinted) lock.wait(); 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.print("Ram ");
+                    isFirstNamePrinted = true;
                     lock.notify();
                 }
             }
@@ -34,13 +37,15 @@ public class NamePrint {
         @Override
         public void run() {
             synchronized (lock) {
-                for (int i = 0; i < 100; i++) {
+                for (int i = 0; i < 1000; i++) {
                     try {
-                        lock.wait(); // releases lock
+                        // wait if first name is not printed
+                        if(!isFirstNamePrinted) lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println("Swaroop");
+                    isFirstNamePrinted = false;
                     lock.notify();
                 }
             }
@@ -54,14 +59,8 @@ public class NamePrint {
         Thread firstThread = new Thread(printFirstName);
         Thread secondThread = new Thread(printLastName);
 
-        /**
-         * Starting secondThread first so that secondThread starts waiting before the firstThread
-         * calls notify(). But this behavior is not guaranteed as you cannot be 100% sure that 
-         * secondThread will actually run before firstThread (though it may run before most of the 
-         * time).
-         */
-        secondThread.start();
         firstThread.start();
+        secondThread.start();
     }
 
     public static void main(String a[]) {
