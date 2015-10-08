@@ -15,12 +15,13 @@ public class QuickSort {
     /**
      * In-place partition method which moves all elements smaller than
      * the pivot element to its left and all elements larger than the
-     * pivot element to its right.
+     * pivot element to its right and finally places the pivot element
+     * at its correct position.
      *
      * @param ar
      * @param low
      * @param high
-     * @return
+     * @return position of the pivot element
      */
     public static int partition(int[] ar, int low, int high) {
         int pivot = high, temp;
@@ -49,7 +50,7 @@ public class QuickSort {
 
     /**
      * Recursive Quick sort.
-     * NOTE: This function is tail-recursive (doesn't use 
+     * NOTE: This function is tail-recursive (doesn't use
      * extra stack space per recursive call).
      * <p/>
      * Time complexity:
