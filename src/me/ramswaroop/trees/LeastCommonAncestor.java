@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * @date: 6/26/15
  * @time: 7:38 PM
  */
-public class LeastCommonAncestor<E extends Comparable<E>> extends BinarySearchTree<E> {
+public class LeastCommonAncestor {
 
 
     public void leastCommonAncestor() {
