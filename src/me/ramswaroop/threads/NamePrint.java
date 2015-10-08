@@ -12,7 +12,7 @@ package me.ramswaroop.threads;
 public class NamePrint {
 
     Object lock = new Object();
-    boolean isFirstNamePrinted = false;
+    volatile boolean isFirstNamePrinted = false;
 
     class PrintFirstName implements Runnable {
         @Override
