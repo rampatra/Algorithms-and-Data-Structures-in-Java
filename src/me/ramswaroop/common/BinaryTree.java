@@ -20,8 +20,8 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      *
      * @param value
      */
-    public void put(E value) {
-        put(root, value);
+    public BinaryNode<E> put(E value) {
+        return put(root, value);
     }
 
     public BinaryNode<E> put(BinaryNode<E> node, E value) {
