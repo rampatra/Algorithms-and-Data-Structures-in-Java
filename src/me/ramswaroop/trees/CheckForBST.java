@@ -1,6 +1,7 @@
 package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
+import me.ramswaroop.common.BinarySearchTree;
 import me.ramswaroop.common.BinaryTree;
 
 import java.util.List;
@@ -13,22 +14,11 @@ import static java.lang.System.out;
  * @author: ramswaroop
  * @date: 6/26/15
  * @time: 7:14 PM
+ * 
+ * Concept: Perform in-order traversal of the tree and if
+ * the result isn't in ascending order then returns false.
  */
-public class CheckForBST<E extends Comparable<E>> extends BinaryTree<E> {
-
-    /**
-     * Checks whether the binary tree is a BST or not.
-     * <p/>
-     * Approach: Performs in-order traversal of the tree and if
-     * the result isn't in ascending order then returns false.
-     *
-     * @return
-     */
-    public boolean isBST() {
-        //List<BinaryNode<E>> list = new ArrayList<>();
-        BinaryNode<E> prev = new BinaryNode<>(null);
-        return isBST(root, prev);
-    }
+public class CheckForBST {
 
     /**
      * Traverse the tree in in-order fashion and insert all nodes
@@ -38,7 +28,7 @@ public class CheckForBST<E extends Comparable<E>> extends BinaryTree<E> {
      * @param list
      * @return
      */
-    public boolean isBST(BinaryNode<E> node, List<BinaryNode<E>> list) {
+    public static <E extends Comparable<E>> boolean isBST(BinaryNode<E> node, List<BinaryNode<E>> list) {
         if (node == null) return true;
 
         boolean left = isBST(node.left, list);
@@ -62,7 +52,7 @@ public class CheckForBST<E extends Comparable<E>> extends BinaryTree<E> {
      * @param prev
      * @return
      */
-    public boolean isBST(BinaryNode<E> node, BinaryNode<E> prev) {
+    public static <E extends Comparable<E>> boolean isBST(BinaryNode<E> node, BinaryNode<E> prev) {
         if (node == null) return true;
 
         boolean left = isBST(node.left, prev);
@@ -79,14 +69,23 @@ public class CheckForBST<E extends Comparable<E>> extends BinaryTree<E> {
     }
 
     public static void main(String a[]) {
-        CheckForBST<Integer> bt = new CheckForBST<>();
-        bt.put(6);
-        bt.put(3);
-        bt.put(5);
-        bt.put(7);
-        bt.put(8);
-        bt.put(9);
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        binarySearchTree.put(6);
+        binarySearchTree.put(3);
+        binarySearchTree.put(5);
+        binarySearchTree.put(7);
+        binarySearchTree.put(8);
+        binarySearchTree.put(9);
         out.println("Is BST: ");
-        out.println(bt.isBST());
+        out.println(isBST(binarySearchTree.root, new BinaryNode<Integer>(null)));
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.put(6);
+        binaryTree.put(3);
+        binaryTree.put(5);
+        binaryTree.put(7);
+        binaryTree.put(8);
+        binaryTree.put(9);
+        out.println("Is BST: ");
+        out.println(isBST(binaryTree.root, new BinaryNode<Integer>(null)));
     }
 }

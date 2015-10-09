@@ -4,10 +4,11 @@ import static java.lang.System.out;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ramswaroop
- * Date: 4/19/15
- * Time: 6:35 PM
- * To change this template go to Preferences | IDE Settings | File and Code Templates
+ *
+ * @author: ramswaroop
+ * @date: 4/19/15
+ * @time: 6:35 PM
+ * @see: https://www.cs.bu.edu/teaching/c/tree/breadth-first/
  */
 public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
@@ -151,7 +152,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      *
      * @param node
      */
-    public void deleteChildrens(BinaryNode<E> node) {
+    public void deleteChildren(BinaryNode<E> node) {
         if (node == null) {
             return;
         }
@@ -238,9 +239,10 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
         if (node.left == null && node.right == null) return 1; // for single/leaf node
 
-        int level_width = width(node.left, width) + width(node.right, width);
+        int levelWidth = width(node.left, width) + width(node.right, width);
 
-        if (level_width > width) width = level_width;
+        // to find max width
+        if (levelWidth > width) width = levelWidth;
 
         return width;
     }
@@ -249,5 +251,16 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node == null) return;
 
         out.print(node.value);
+    }
+
+    // test cases
+    public static void main(String[] a) {
+        BinaryTree<Integer> bt = new BinaryTree<>();
+        bt.put(1);
+        bt.put(2);
+        bt.put(3);
+        bt.put(4);
+        bt.put(5);
+        bt.breadthFirstTraversal();
     }
 }
