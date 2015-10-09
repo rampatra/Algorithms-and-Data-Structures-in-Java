@@ -12,18 +12,16 @@ import static java.lang.System.out;
  * @date: 6/26/15
  * @time: 6:02 PM
  */
-public class DoubleTree<E extends Comparable<E>> extends BinaryTree<E> {
+public class DoubleTree {
 
     /**
      * Converts a given tree to its Double tree. To create a Double tree
      * of the given tree, create a new duplicate for each node, and insert
      * the duplicate as the left child of the original node.
+     * 
+     * @param node
      */
-    public void doubleTree() {
-        doubleTree(root);
-    }
-
-    public void doubleTree(BinaryNode<E> node) {
+    public static <E extends Comparable<E>> void doubleTree(BinaryNode<E> node) {
         if (node == null) return;
 
         BinaryNode<E> newNode = new BinaryNode<>(node.value, node.left, null);
@@ -35,7 +33,7 @@ public class DoubleTree<E extends Comparable<E>> extends BinaryTree<E> {
     }
 
     public static void main(String a[]) {
-        DoubleTree<Integer> bt = new DoubleTree<>();
+        BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(6);
         bt.put(3);
         bt.put(5);
@@ -44,7 +42,7 @@ public class DoubleTree<E extends Comparable<E>> extends BinaryTree<E> {
         bt.put(9);
         bt.breadthFirstTraversal();
         out.println();
-        bt.doubleTree();
+        doubleTree(bt.root);
         out.println("BFS after Double tree: ");
         bt.breadthFirstTraversal();
     }
