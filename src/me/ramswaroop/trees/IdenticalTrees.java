@@ -2,7 +2,6 @@ package me.ramswaroop.trees;
 
 import me.ramswaroop.common.BinaryNode;
 import me.ramswaroop.common.BinarySearchTree;
-import me.ramswaroop.common.BinaryTree;
 
 import static java.lang.System.out;
 
@@ -13,18 +12,7 @@ import static java.lang.System.out;
  * @date: 6/26/15
  * @time: 5:36 PM
  */
-public class IdenticalTrees<E extends Comparable<E>> extends BinaryTree<E> {
-
-    /**
-     * Checks whether this tree and another with {@param node}
-     * as root are identical or not.
-     *
-     * @param node
-     * @return
-     */
-    public boolean isIdentical(BinaryNode<E> node) {
-        return isIdentical(this.root, node);
-    }
+public class IdenticalTrees {
 
     /**
      * Checks whether two trees having their roots at node1 and node2

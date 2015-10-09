@@ -14,18 +14,14 @@ import static java.lang.System.out;
  * @date: 6/26/15
  * @time: 7:31 PM
  */
-public class InOrderUsingStack<E extends Comparable<E>> extends BinarySearchTree<E> {
-
-    public void inOrder() {
-        inOrderUsingStack(root);
-    }
+public class InOrderUsingStack {
 
     /**
      * In-order traversal of tree using one stack and without recursion.
      *
      * @param node
      */
-    public void inOrderUsingStack(BinaryNode<E> node) {
+    public static <E extends Comparable<E>> void inOrderUsingStack(BinaryNode<E> node) {
         if (node == null) return;
 
         Stack<BinaryNode<E>> stack = new LinkedStack<>();
@@ -48,13 +44,13 @@ public class InOrderUsingStack<E extends Comparable<E>> extends BinarySearchTree
     }
 
     public static void main(String a[]) {
-        InOrderUsingStack<Integer> bst = new InOrderUsingStack<>();
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
         bst.put(6);
         bst.put(3);
         bst.put(5);
         bst.put(7);
         bst.put(8);
         bst.put(9);
-        bst.inOrder();
+        inOrderUsingStack(bst.root);
     }
 }
