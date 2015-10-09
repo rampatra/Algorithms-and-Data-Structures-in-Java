@@ -12,20 +12,18 @@ import static java.lang.System.out;
  * @date: 6/26/15
  * @time: 7:01 PM
  */
-public class ChildrenSum<E extends Comparable<E>> extends BinaryTree<E> {
+public class ChildrenSum {
 
     /**
      * Children Sum Invariant: For every node, the value must be equal to
      * sum of values in the left and right child.
      * Consider data value as 0 for NULL child.
      *
+     * @param node
+     * @param <E>
      * @return
      */
-    public boolean isChildrenSum() {
-        return isChildrenSum(root);
-    }
-
-    public boolean isChildrenSum(BinaryNode<E> node) {
+    public static <E extends Comparable<E>> boolean isChildrenSum(BinaryNode<E> node) {
         if (node == null || node.left == null && node.right == null) return true;
 
         E leftChildValue = (E) (node.left == null ? 0 : node.left.value);
@@ -41,18 +39,18 @@ public class ChildrenSum<E extends Comparable<E>> extends BinaryTree<E> {
         return isChildrenSum(node.left) && isChildrenSum(node.right);
     }
 
+
     /**
      * Converts a tree to hold the children sum invariant.
      * <p/>
      * It only increments data values in any node (Does not
      * change structure of tree and cannot decrement value of
      * any node).
+     *
+     * @param node
+     * @param <E>
      */
-    public void toChildrenSum() {
-        toChildrenSum(root);
-    }
-
-    public void toChildrenSum(BinaryNode<E> node) {
+    public static <E extends Comparable<E>> void toChildrenSum(BinaryNode<E> node) {
 
         if (node == null || node.left == null && node.right == null) return;
 
@@ -63,32 +61,28 @@ public class ChildrenSum<E extends Comparable<E>> extends BinaryTree<E> {
         Integer leftChildValue = (Integer) (node.left == null ? 0 : node.left.value);
         Integer rightChildValue = (Integer) (node.right == null ? 0 : node.right.value);
 
-        int diff = (nodeValue - (leftChildValue + rightChildValue));
+        int diff = leftChildValue + rightChildValue - nodeValue;
 
         if (diff < 0) {
-            increment(node, diff);
+            increment(node, -diff);
         } else if (diff > 0) {
-            if (node.left != null) {
-                increment(node.left, diff);
-            } else {
-                increment(node.right, diff);
-            }
+            //node.value += diff;
         }
     }
 
-    // TODO
-    private void increment(BinaryNode<E> node, int diff) {
+    // TODO: Not done due to generics
+    private static <E extends Comparable<E>> void increment(BinaryNode<E> node, int diff) {
         if (node.left != null) {
-            //node.value += Math.abs(diff);
+            //node.left.value += Math.abs(diff);
             increment(node.left, diff);
         } else if (node.right != null) {
-            //node.value += Math.abs(diff);
+            //node.right.value += Math.abs(diff);
             increment(node.right, diff);
         }
     }
 
     public static void main(String a[]) {
-        ChildrenSum<Integer> bt = new ChildrenSum<>();
+        BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(6);
         bt.put(3);
         bt.put(5);
@@ -96,7 +90,7 @@ public class ChildrenSum<E extends Comparable<E>> extends BinaryTree<E> {
         bt.put(8);
         bt.put(9);
         out.println("Is Children Sum : ");
-        out.println(bt.isChildrenSum());
+        out.println(isChildrenSum(bt.root));
         /*binaryTree.toChildrenSum();
         out.print("\nBreadth-first Traversal after to children sum: ");
         binaryTree.breadthFirstTraversal();*/
