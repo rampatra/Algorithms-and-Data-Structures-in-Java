@@ -10,7 +10,7 @@ import me.ramswaroop.common.BinaryTree;
  * @date: 6/26/15
  * @time: 7:03 PM
  */
-public class MirrorTree<E extends Comparable<E>> extends BinaryTree<E> {
+public class MirrorTree {
 
     /**
      * Converts a Tree to its Mirror Tree.
@@ -21,27 +21,22 @@ public class MirrorTree<E extends Comparable<E>> extends BinaryTree<E> {
      * TIP: In-order traversal of mirror tree is exactly the
      * reverse of the in-order traversal of the original tree.
      */
-    public void mirror() {
-        mirror(root);
-    }
-
-    public void mirror(BinaryNode<E> node) {
+    public static <E extends Comparable<E>> void mirror(BinaryNode<E> node) {
         if (node == null) return;
-
-        BinaryNode<E> tempNode;
 
         // mirror sub-trees
         mirror(node.left);
         mirror(node.right);
 
         // swap nodes
+        BinaryNode<E> tempNode;
         tempNode = node.left;
         node.left = node.right;
         node.right = tempNode;
     }
 
     public static void main(String a[]) {
-        MirrorTree<Integer> bt = new MirrorTree<>();
+        BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(6);
         bt.put(3);
         bt.put(5);
@@ -51,7 +46,7 @@ public class MirrorTree<E extends Comparable<E>> extends BinaryTree<E> {
         System.out.println("Original Tree");
         bt.breadthFirstTraversal();
         System.out.println("\nMirror Tree");
-        bt.mirror();
+        mirror(bt.root);
         bt.breadthFirstTraversal();
     }
 }

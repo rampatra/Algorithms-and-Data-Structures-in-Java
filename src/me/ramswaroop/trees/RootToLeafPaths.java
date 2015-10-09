@@ -93,7 +93,7 @@ public class RootToLeafPaths<E extends Comparable<E>> extends BinaryTree<E> {
 
         if (node != null) pathList.add(node.value);
 
-        // if its either a leaf node or null then path is complete, add all in the list
+        // if its either a leaf node or null then path is complete, add all elements present in list
         if (node == null || (node.left == null && node.right == null)) {
             for (int i = 0; i < pathList.size(); i++) {
                 sum += Integer.parseInt(pathList.get(i).toString());
