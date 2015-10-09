@@ -63,9 +63,9 @@ public class ChildrenSum {
 
         int diff = leftChildValue + rightChildValue - nodeValue;
 
-        if (diff < 0) {
+        if (diff < 0) { // tricky: children sum is less
             increment(node, -diff);
-        } else if (diff > 0) {
+        } else if (diff > 0) { // simple: children sum is more, so just add the diff to parent node
             //node.value += diff;
         }
     }
