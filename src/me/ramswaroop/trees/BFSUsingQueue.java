@@ -7,6 +7,8 @@ import me.ramswaroop.common.Queue;
 
 import java.util.NoSuchElementException;
 
+import static java.lang.System.out;
+
 /**
  * Created by IntelliJ IDEA.
  *
@@ -14,17 +16,18 @@ import java.util.NoSuchElementException;
  * @date: 6/26/15
  * @time: 7:34 PM
  */
-public class BFSUsingQueue<E extends Comparable<E>> extends BinaryTree<E> {
+public class BFSUsingQueue {
 
     /**
      * Breadth first traversal (Level-order traversal using Queue).
      */
-    public void breadthFirstTraversalUsingQueue() {
+    public static <E extends Comparable<E>> void breadthFirstTraversalUsingQueue(BinaryNode<E> node) {
         Queue<BinaryNode<E>> queue = new LinkedQueue<>();
-        breadthFirstTraversalUsingQueue(root, queue);
+        breadthFirstTraversalUsingQueue(node, queue);
     }
 
-    public void breadthFirstTraversalUsingQueue(BinaryNode<E> node, Queue<BinaryNode<E>> queue) {
+    public static <E extends Comparable<E>> void breadthFirstTraversalUsingQueue(BinaryNode<E> node,
+                                                                                 Queue<BinaryNode<E>> queue) {
 
         if (node != null) {
             printValue(node);
@@ -39,14 +42,20 @@ public class BFSUsingQueue<E extends Comparable<E>> extends BinaryTree<E> {
         }
     }
 
+    public static <E extends Comparable<E>> void printValue(BinaryNode<E> node) {
+        if (node == null) return;
+
+        out.print(node.value);
+    }
+
     public static void main(String a[]) {
-        BFSUsingQueue<Integer> bt = new BFSUsingQueue<>();
+        BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(6);
         bt.put(3);
         bt.put(5);
         bt.put(7);
         bt.put(8);
         bt.put(9);
-        bt.breadthFirstTraversalUsingQueue();
+        breadthFirstTraversalUsingQueue(bt.root);
     }
 }
