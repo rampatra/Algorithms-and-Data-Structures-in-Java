@@ -9,7 +9,7 @@ import java.util.*;
  * @date: 9/23/15
  * @time: 8:11 PM
  */
-public class PrintAnagramsTogether {
+public class AnagramsTogether {
 
     public static void printAnagramsTogether(String[] s) {
 
