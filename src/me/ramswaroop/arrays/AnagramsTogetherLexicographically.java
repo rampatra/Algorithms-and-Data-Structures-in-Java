@@ -11,6 +11,7 @@ import java.util.*;
  */
 public class AnagramsTogetherLexicographically {
 
+    // todo lexicographic for the entire output
     public static void printAnagramsTogether(String[] s) {
 
         TreeMap<String, List<Integer>> treeMap = new TreeMap<>();
@@ -34,8 +35,9 @@ public class AnagramsTogetherLexicographically {
                 anagrams.add(s[entry.getValue().get(i)]);
             }
 
-            // print list
+            // print anagrams lexicographically within a single line
             Collections.sort(anagrams);
+            
             for (int i = 0; i < anagrams.size(); i++) {
                 System.out.print(anagrams.get(i));
                 if (anagrams.size() - i > 1) System.out.print(",");
