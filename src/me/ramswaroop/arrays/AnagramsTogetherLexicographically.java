@@ -12,8 +12,9 @@ import java.util.*;
 public class AnagramsTogetherLexicographically {
 
     /**
-     * Prints anagrams in groups where the groups are arranged lexicographically
-     * and the strings within each group is also arranged lexicographically.
+     * Takes an array of String {@param s} and prints anagrams in groups where the groups
+     * are arranged lexicographically and the strings within each group are also arranged
+     * lexicographically.
      *
      * @param s
      */
@@ -48,6 +49,7 @@ public class AnagramsTogetherLexicographically {
             output.add(anagrams);
         }
 
+        // the entire output should also be in lexicographic order
         Collections.sort(output, new Comparator<List<String>>() {
             @Override
             public int compare(List<String> o1, List<String> o2) {
@@ -60,6 +62,11 @@ public class AnagramsTogetherLexicographically {
         }
     }
 
+    /**
+     * Take list of strings from console and print anagrams in groups.
+     *
+     * @param a
+     */
     public static void main(String a[]) {
         Scanner in = new Scanner(System.in);
         List<String> strings = new ArrayList<>();
