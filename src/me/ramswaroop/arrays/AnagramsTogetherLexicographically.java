@@ -11,38 +11,50 @@ import java.util.*;
  */
 public class AnagramsTogetherLexicographically {
 
-    // todo lexicographic for the entire output
+    /**
+     * 
+     * @param s
+     */
     public static void printAnagramsTogether(String[] s) {
 
-        TreeMap<String, List<Integer>> treeMap = new TreeMap<>();
-
+        HashMap<String, List<Integer>> hashMap = new HashMap<>();
+        List<List<String>> output = new ArrayList<>();
+        
         for (int i = 0; i < s.length; i++) {
             String removeSpaces = s[i].replaceAll("\\s+", "");
             char[] chars = removeSpaces.toCharArray();
             Arrays.sort(chars);
 
-            List<Integer> indexes = treeMap.get(String.valueOf(chars));
+            List<Integer> indexes = hashMap.get(String.valueOf(chars));
             if (indexes == null) {
                 indexes = new ArrayList<>();
             }
             indexes.add(i);
-            treeMap.put(String.valueOf(chars), indexes);
+            hashMap.put(String.valueOf(chars), indexes);
         }
 
-        for (Map.Entry<String, List<Integer>> entry : treeMap.entrySet()) {
+        for (Map.Entry<String, List<Integer>> entry : hashMap.entrySet()) {
+            
             List<String> anagrams = new ArrayList<>();
+            
             for (int i = 0; i < entry.getValue().size(); i++) {
                 anagrams.add(s[entry.getValue().get(i)]);
             }
 
-            // print anagrams lexicographically within a single line
+            // arrange anagrams lexicographically within a single line
             Collections.sort(anagrams);
-            
-            for (int i = 0; i < anagrams.size(); i++) {
-                System.out.print(anagrams.get(i));
-                if (anagrams.size() - i > 1) System.out.print(",");
+            output.add(anagrams);
+        }
+
+        Collections.sort(output, new Comparator<List<String>>() {
+            @Override
+            public int compare(List<String> o1, List<String> o2) {
+                return o1.get(0).compareTo(o2.get(0));
             }
-            System.out.println();
+        });
+        
+        for (int i = 0; i < output.size(); i++) {
+            System.out.println(output.get(i));            
         }
     }
 
