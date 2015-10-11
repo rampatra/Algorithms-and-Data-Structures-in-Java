@@ -12,14 +12,16 @@ import java.util.*;
 public class AnagramsTogetherLexicographically {
 
     /**
-     * 
+     * Prints anagrams in groups where the groups are arranged lexicographically
+     * and the strings within each group is also arranged lexicographically.
+     *
      * @param s
      */
     public static void printAnagramsTogether(String[] s) {
 
         HashMap<String, List<Integer>> hashMap = new HashMap<>();
         List<List<String>> output = new ArrayList<>();
-        
+
         for (int i = 0; i < s.length; i++) {
             String removeSpaces = s[i].replaceAll("\\s+", "");
             char[] chars = removeSpaces.toCharArray();
@@ -34,9 +36,9 @@ public class AnagramsTogetherLexicographically {
         }
 
         for (Map.Entry<String, List<Integer>> entry : hashMap.entrySet()) {
-            
+
             List<String> anagrams = new ArrayList<>();
-            
+
             for (int i = 0; i < entry.getValue().size(); i++) {
                 anagrams.add(s[entry.getValue().get(i)]);
             }
@@ -52,17 +54,19 @@ public class AnagramsTogetherLexicographically {
                 return o1.get(0).compareTo(o2.get(0));
             }
         });
-        
+
         for (int i = 0; i < output.size(); i++) {
-            System.out.println(output.get(i));            
+            System.out.println(output.get(i));
         }
     }
 
     public static void main(String a[]) {
         Scanner in = new Scanner(System.in);
         List<String> strings = new ArrayList<>();
-        while (in.hasNextLine()) {
-            strings.add(in.nextLine());
+        String s;
+        // you should use in.hasNextLine()
+        while (!(s = in.nextLine()).trim().equals("")) {
+            strings.add(s);
         }
         printAnagramsTogether(strings.toArray(new String[0]));
     }
