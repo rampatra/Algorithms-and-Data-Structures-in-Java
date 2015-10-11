@@ -21,7 +21,7 @@ public class SegregateEvenOddNumbers {
      * 1) Make a pointer point the last node of the list.
      * <p/>
      * 2) Traverse the linked list from start and append all odd values
-     * nodes to the end the above pointer.
+     * nodes to the end of the above pointer.
      * <p/>
      * 3) If the pointer in step 1 points to a odd valued node then move it
      * to the end so that the relative order of nodes remains unchanged.

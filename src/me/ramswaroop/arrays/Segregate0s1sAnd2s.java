@@ -50,16 +50,20 @@ public class Segregate0s1sAnd2s {
         segregate0s1sAnd2s(ar);
         System.out.println(Arrays.toString(ar));
 
-        int[] ar1 = new int[]{0, 2, 1, 1, 2, 0};
-        segregate0s1sAnd2s(ar1);
-        System.out.println(Arrays.toString(ar1));
+        ar = new int[]{0, 2, 1, 1, 2, 0};
+        segregate0s1sAnd2s(ar);
+        System.out.println(Arrays.toString(ar));
 
-        int[] ar2 = new int[]{0, 1, 2};
-        segregate0s1sAnd2s(ar2);
-        System.out.println(Arrays.toString(ar2));
+        ar = new int[]{0, 1, 2};
+        segregate0s1sAnd2s(ar);
+        System.out.println(Arrays.toString(ar));
 
-        int[] ar3 = new int[]{2, 1, 0, 2, 1, 0};
-        segregate0s1sAnd2s(ar3);
-        System.out.println(Arrays.toString(ar3));
+        ar = new int[]{2, 1, 0, 2, 1, 0};
+        segregate0s1sAnd2s(ar);
+        System.out.println(Arrays.toString(ar));
+
+        ar = new int[]{1, 2, 1, 0, 2, 1, 0};
+        segregate0s1sAnd2s(ar);
+        System.out.println(Arrays.toString(ar));
     }
 }
