@@ -21,7 +21,16 @@ public class AnagramsTogetherLexicographically {
     public static void printAnagramsTogether(String[] s) {
 
         HashMap<String, List<Integer>> hashMap = new HashMap<>();
-        List<List<String>> output = new ArrayList<>();
+        TreeSet<List<String>> treeSet = new TreeSet<>(new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof List<?> && o2 instanceof List<?>) {
+                    return ((List<String>) o1).get(0).compareTo(((List<String>) o2).get(0));
+                } else {
+                    return 0;
+                }
+            }
+        });
 
         for (int i = 0; i < s.length; i++) {
             String removeSpaces = s[i].replaceAll("\\s+", "");
@@ -44,21 +53,13 @@ public class AnagramsTogetherLexicographically {
                 anagrams.add(s[entry.getValue().get(i)]);
             }
 
-            // arrange anagrams lexicographically within a single line
-            Collections.sort(anagrams);
-            output.add(anagrams);
+            Collections.sort(anagrams); // arrange anagrams lexicographically within a single line
+            treeSet.add(anagrams); // sort the entire output lexicographically
         }
 
-        // the entire output should also be in lexicographic order
-        Collections.sort(output, new Comparator<List<String>>() {
-            @Override
-            public int compare(List<String> o1, List<String> o2) {
-                return o1.get(0).compareTo(o2.get(0));
-            }
-        });
-
-        for (int i = 0; i < output.size(); i++) {
-            System.out.println(output.get(i));
+        Iterator iterator = treeSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
         }
     }
 
