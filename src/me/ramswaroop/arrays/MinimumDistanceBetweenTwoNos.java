@@ -36,7 +36,7 @@ public class MinimumDistanceBetweenTwoNos {
                     endIndex = i;
                 }
             }
-            // if distance is less then update
+            // if distance is less, then update
             if (Math.abs(endIndex - startIndex) < minDiff) {
                 minDiff = Math.abs(endIndex - startIndex);
             }
