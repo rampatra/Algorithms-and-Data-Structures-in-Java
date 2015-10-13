@@ -37,7 +37,7 @@ public class Parenthesis {
         int len = input.length();
         Stack<Character> stack = new Stack<>();
 
-        // base case
+        // obvious check as the i/p only consists of parenthesis
         if (len % 2 != 0) return false;
 
         for (int i = 0; i < len; i++) {

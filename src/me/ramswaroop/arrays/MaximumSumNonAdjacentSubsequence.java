@@ -7,7 +7,7 @@ package me.ramswaroop.arrays;
  * @date: 7/29/15
  * @time: 9:18 AM
  */
-public class MaximumSumNonAdjacentSubsequence {
+public class MaximumSumNonAdjacentSubSequence {
 
     /**
      * Given an array of positive numbers, finds the maximum sum of a sub-sequence
@@ -24,7 +24,7 @@ public class MaximumSumNonAdjacentSubsequence {
      * @param a
      * @return
      */
-    public static int maximumSumNonAdjacentSubsequence(int[] a) {
+    public static int maximumSumNonAdjacentSubSequence(int[] a) {
         int incl = a[0], excl = 0, prevIncl = incl; // incl is max sum including the current element
                                                     // and excl is max sum excluding the current element
         for (int i = 1; i < a.length; i++) {
@@ -36,7 +36,7 @@ public class MaximumSumNonAdjacentSubsequence {
     }
 
     public static void main(String a[]) {
-        System.out.println(maximumSumNonAdjacentSubsequence(new int[]{3, 2, 7, 10}));
-        System.out.println(maximumSumNonAdjacentSubsequence(new int[]{3, 2, 5, 10, 7}));
+        System.out.println(maximumSumNonAdjacentSubSequence(new int[]{3, 2, 7, 10}));
+        System.out.println(maximumSumNonAdjacentSubSequence(new int[]{3, 2, 5, 10, 7}));
     }
 }
