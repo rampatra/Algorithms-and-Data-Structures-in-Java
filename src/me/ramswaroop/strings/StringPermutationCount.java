@@ -9,9 +9,19 @@ package me.ramswaroop.strings;
  * @author: ramswaroop
  * @date: 10/15/15
  * @time: 10:32 AM
+ * @see: me.ramswaroop.strings.StringPermutations for a simpler version
  */
 public class StringPermutationCount {
 
+    /**
+     * Finds the number of permutations of string {@param s1} that exists in string {@param s2}.
+     *
+     * @param prefix
+     * @param s1
+     * @param s2
+     * @param count
+     * @return
+     */
     public static int getStringPermutationCount(String prefix, String s1, String s2, int count) {
         if (s1.isEmpty()) {
             if (s2.indexOf(prefix) != -1) count++;
@@ -26,6 +36,6 @@ public class StringPermutationCount {
 
     public static void main(String a[]) {
         System.out.println(getStringPermutationCount("", "abc", "abcba", 0));
-        System.out.println(getStringPermutationCount("", "abc", "abcba", 0));
+        System.out.println(getStringPermutationCount("", "abc", "abcbacb", 0));
     }
 }

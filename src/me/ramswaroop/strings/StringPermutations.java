@@ -8,6 +8,7 @@ package me.ramswaroop.strings;
  * @time: 2:27 PM
  * @see: http://www.ericleschinski.com/c/java_permutations_recursion/
  * @see: http://introcs.cs.princeton.edu/java/23recursion/Permutations.java.html
+ * @see: me.ramswaroop.strings.StringPermutationCount for a modification of this problem
  */
 public class StringPermutations {
 
