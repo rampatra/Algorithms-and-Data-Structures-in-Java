@@ -11,7 +11,7 @@ package me.ramswaroop.strings;
  * @time: 10:32 AM
  * @see: me.ramswaroop.strings.StringPermutations for a simpler version
  */
-public class StringPermutationCount {
+public class StringPermutationsCount {
 
     /**
      * Finds the number of permutations of string {@param s1} that exists in string {@param s2}.
@@ -22,20 +22,20 @@ public class StringPermutationCount {
      * @param count
      * @return
      */
-    public static int getStringPermutationCount(String prefix, String s1, String s2, int count) {
+    public static int getStringPermutationsCount(String prefix, String s1, String s2, int count) {
         if (s1.isEmpty()) {
             if (s2.indexOf(prefix) != -1) count++;
         }
 
         for (int i = 0; i < s1.length(); i++) {
-            count = getStringPermutationCount(prefix + s1.substring(i, i + 1), s1.substring(0, i) + s1.substring(i + 1), s2, count);
+            count = getStringPermutationsCount(prefix + s1.substring(i, i + 1), s1.substring(0, i) + s1.substring(i + 1), s2, count);
         }
 
         return count;
     }
 
     public static void main(String a[]) {
-        System.out.println(getStringPermutationCount("", "abc", "abcba", 0));
-        System.out.println(getStringPermutationCount("", "abc", "abcbacb", 0));
+        System.out.println(getStringPermutationsCount("", "abc", "abcba", 0));
+        System.out.println(getStringPermutationsCount("", "abc", "abcbacb", 0));
     }
 }
