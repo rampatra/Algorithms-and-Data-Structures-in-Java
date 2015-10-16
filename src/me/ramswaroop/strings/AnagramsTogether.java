@@ -1,4 +1,4 @@
-package me.ramswaroop.arrays;
+package me.ramswaroop.strings;
 
 import java.util.*;
 
