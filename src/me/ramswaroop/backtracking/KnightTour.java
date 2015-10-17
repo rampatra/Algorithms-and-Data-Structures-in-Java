@@ -14,6 +14,13 @@ package me.ramswaroop.backtracking;
  */
 public class KnightTour {
 
+    /**
+     * 
+     * @param i
+     * @param j
+     * @param tour
+     * @return
+     */
     public static boolean isValidMove(int i, int j, int[][] tour) {
         if (i >= 0 && j >= 0 && i < tour.length && j < tour[0].length && tour[i][j] == 0) {
             return true;
@@ -22,21 +29,30 @@ public class KnightTour {
         }
     }
 
+    /**
+     * 
+     * @param i
+     * @param j
+     * @param xMoves
+     * @param yMoves
+     * @param step
+     * @param tour
+     * @return
+     */
     public static boolean isValidKnightTour(int i, int j, int[] xMoves, int[] yMoves, int step, int[][] tour) {
 
-        if (step == tour.length * tour[0].length) return true;
+        if (step > tour.length * tour[0].length) return true;
 
         for (int k = 0; k < xMoves.length; k++) {
-            i += xMoves[k];
-            j += yMoves[k];
+            int nextI = i + xMoves[k];
+            int nextJ = j + yMoves[k];
 
-            if (isValidMove(i, j, tour)) {
-                step++;
-                tour[i][j] = step;
-                if (isValidKnightTour(i, j, xMoves, yMoves, step, tour)) {
+            if (isValidMove(nextI, nextJ, tour)) {
+                tour[nextI][nextJ] = step;
+                if (isValidKnightTour(nextI, nextJ, xMoves, yMoves, step + 1, tour)) {
                     return true;
                 } else {
-                    tour[i][j] = 0;
+                    tour[nextI][nextJ] = 0;
                 }
             }
         }
@@ -44,6 +60,10 @@ public class KnightTour {
         return false;
     }
 
+    /**
+     * 
+     * @param boardSize
+     */
     public static void printKnightTour(int[] boardSize) {
         if (boardSize.length < 2) return;
 
@@ -53,7 +73,7 @@ public class KnightTour {
 
         tour[0][0] = 1;
 
-        if (isValidKnightTour(0, 0, xMoves, yMoves, 1, tour)) {
+        if (isValidKnightTour(0, 0, xMoves, yMoves, 2, tour)) {
             print2DMatrix(tour);
         } else {
             System.out.println("Knight's tour doesn't exist for board size [" + boardSize[0] + "x" + boardSize[1] + "]");
