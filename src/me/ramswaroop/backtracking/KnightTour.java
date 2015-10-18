@@ -15,14 +15,13 @@ package me.ramswaroop.backtracking;
 public class KnightTour {
 
     /**
-     * 
      * @param i
      * @param j
      * @param tour
      * @return
      */
     public static boolean isValidMove(int i, int j, int[][] tour) {
-        if (i >= 0 && j >= 0 && i < tour.length && j < tour[0].length && tour[i][j] == 0) {
+        if (i >= 0 && i < tour.length && j >= 0 && j < tour[0].length && tour[i][j] == 0) {
             return true;
         } else {
             return false;
@@ -30,7 +29,6 @@ public class KnightTour {
     }
 
     /**
-     * 
      * @param i
      * @param j
      * @param xMoves
@@ -43,9 +41,11 @@ public class KnightTour {
 
         if (step > tour.length * tour[0].length) return true;
 
+        int nextI, nextJ;
+
         for (int k = 0; k < xMoves.length; k++) {
-            int nextI = i + xMoves[k];
-            int nextJ = j + yMoves[k];
+            nextI = i + xMoves[k];
+            nextJ = j + yMoves[k];
 
             if (isValidMove(nextI, nextJ, tour)) {
                 tour[nextI][nextJ] = step;
@@ -61,7 +61,6 @@ public class KnightTour {
     }
 
     /**
-     * 
      * @param boardSize
      */
     public static void printKnightTour(int[] boardSize) {
