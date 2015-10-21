@@ -6,6 +6,7 @@ package me.ramswaroop.strings;
  * @author: ramswaroop
  * @date: 10/20/15
  * @time: 1:15 PM
+ * @see: me.ramswaroop.strings.StringRotation for a similar problem.
  */
 public class SubString {
 
@@ -36,6 +37,8 @@ public class SubString {
     }
 
     public static void main(String a[]) {
+        System.out.println(isSubString("ramswaroop", "ramswaroop"));
+        System.out.println(isSubString("ramswaroop", ""));
         System.out.println(isSubString("ramswaroop", "ram"));
         System.out.println(isSubString("ramswaroop", "rams"));
         System.out.println(isSubString("ramswaroop", "ramss"));
