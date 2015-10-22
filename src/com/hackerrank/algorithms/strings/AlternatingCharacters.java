@@ -1,4 +1,4 @@
-package me.ramswaroop.algorithms.strings;
+package com.hackerrank.algorithms.strings;
 
 import java.util.Scanner;
 

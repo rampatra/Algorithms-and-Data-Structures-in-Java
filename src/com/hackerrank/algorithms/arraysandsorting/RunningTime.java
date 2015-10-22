@@ -1,4 +1,4 @@
-package me.ramswaroop.algorithms.arraysandsorting;
+package com.hackerrank.algorithms.arraysandsorting;
 
 import java.util.Scanner;
 

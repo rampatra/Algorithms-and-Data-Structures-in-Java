@@ -8,7 +8,7 @@ package me.ramswaroop.strings;
  * @time: 1:15 PM
  * @see: me.ramswaroop.strings.StringRotation for a similar problem.
  */
-public class SubString {
+public class SubStringCheck {
 
     /**
      * Naive approach to determine whether string {@param s2} is a

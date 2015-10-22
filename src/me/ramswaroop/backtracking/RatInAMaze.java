@@ -9,6 +9,12 @@ package me.ramswaroop.backtracking;
  */
 public class RatInAMaze {
 
+    /**
+     * @param i
+     * @param j
+     * @param maze
+     * @return
+     */
     public static boolean isValidMove(int i, int j, int[][] maze) {
         if (i >= 0 && i < maze.length && j >= 0 && j < maze[0].length && maze[i][j] == 1) {
             return true;
@@ -17,6 +23,15 @@ public class RatInAMaze {
         }
     }
 
+    /**
+     * @param i
+     * @param j
+     * @param xMoves
+     * @param yMoves
+     * @param maze
+     * @param path
+     * @return
+     */
     public static boolean isValidPath(int i, int j, int[] xMoves, int[] yMoves, int[][] maze, int[][] path) {
 
         if (i == maze.length - 1 && j == maze[0].length - 1) return true;
@@ -38,13 +53,18 @@ public class RatInAMaze {
         return false;
     }
 
+    /**
+     * @param i    is the start row
+     * @param j    is the start column
+     * @param maze is the maze in which a path has to be found (1 denotes rat can traverse and 0 denotes it cannot)
+     */
     public static void printMazePath(int i, int j, int[][] maze) {
 
         int[] xMoves = {0, 1};
         int[] yMoves = {1, 0};
-        
+
         int[][] path = new int[maze.length][maze[0].length];
-        
+
         System.out.println("Maze");
         System.out.println("---------------");
         print2DMatrix(maze);
