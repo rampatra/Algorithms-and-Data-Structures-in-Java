@@ -1,6 +1,8 @@
 # Algorithms and Data Structures in Java
 
-The repo consists of solutions to numerous problems using different data structures and algorithms, where all solutions are coded purely in Java. You can also refer my [Java Notes](http://java.ramswaroop.me) for a quick refresh on the Java concepts.
+The repo consists of solutions to numerous problems using different data structures and algorithms, where all solutions are coded purely in Java. It also contains solutions to HackerRank problems which I have solved so far.
+
+You can also refer my [Java Notes](http://java.ramswaroop.me) for a quick refresh on the Java concepts.
 
 ## Environment
 
