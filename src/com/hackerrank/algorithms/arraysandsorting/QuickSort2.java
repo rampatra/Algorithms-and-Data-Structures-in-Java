@@ -1,7 +1,5 @@
 package com.hackerrank.algorithms.arraysandsorting;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -13,27 +11,43 @@ import java.util.Scanner;
  */
 public class QuickSort2 {
 
-    static void quickSort(int[] ar, int start, int end) {
-        int pivot = ar[0];
-        List<Integer> ar1 = new ArrayList<>();
-        List<Integer> ar2 = new ArrayList<>();
+    static int partition(int[] a, int start, int end) {
 
-        for (int i = start; i < end; i++) {
-            if (ar[i] < pivot) {
-                ar1.add(ar[i]);
-            } else if (ar[i] > pivot) {
-                ar2.add(ar[i]);
+        int pivot = start, temp;
+
+        for (int i = start + 1; i <= end; i++) {
+            // maintains the relative positioning of elements in each partition
+            if (a[i] < a[pivot]) {
+                start++;
+                temp = a[i];
+                int j;
+                for (j = i; j > start; j--) {
+                    a[j] = a[j - 1];
+                }
+                a[j] = temp;
             }
         }
 
-        //TODO
+        temp = a[pivot];
+        while (pivot < start) {
+            a[pivot] = a[pivot + 1];
+            pivot++;
+        }
+        a[pivot] = temp;
+
+        return pivot;
     }
 
-    static void printArray(int[] ar) {
-        for (int n : ar) {
-            System.out.print(n + " ");
+    static void quickSort(int[] ar, int start, int end) {
+        if (start < end) {
+            int p = partition(ar, start, end);
+            quickSort(ar, start, p - 1);
+            quickSort(ar, p + 1, end);
+            for (int i = start; i <= end; i++) {
+                System.out.print(ar[i] + " ");
+            }
+            System.out.println();
         }
-        System.out.println("");
     }
 
     public static void main(String[] args) {
@@ -43,6 +57,6 @@ public class QuickSort2 {
         for (int i = 0; i < n; i++) {
             ar[i] = in.nextInt();
         }
-        quickSort(ar, 0, ar.length);
+        quickSort(ar, 0, n - 1);
     }
 }
