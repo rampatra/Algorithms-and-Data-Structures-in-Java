@@ -19,53 +19,53 @@ public class QuickSort {
      * at its correct position.
      *
      * @param ar
-     * @param low
-     * @param high
+     * @param startIndex
+     * @param endIndex
      * @return position of the pivot element
      */
-    public static int partition(int[] ar, int low, int high) {
-        int pivot = high, temp;
+    public static int partition(int[] ar, int startIndex, int endIndex) {
+        int pivot = endIndex, temp;
 
-        for (int i = low; i < high; i++) {
+        for (int i = startIndex; i < endIndex; i++) {
             /**
              * if ith element is smaller than pivot element then
              * swap it with the last larger element known
              */
             if (ar[i] < ar[pivot]) {
-                // swap a[low] with a[i]
-                temp = ar[low];
-                ar[low] = ar[i];
+                // swap a[startIndex] with a[i]
+                temp = ar[startIndex];
+                ar[startIndex] = ar[i];
                 ar[i] = temp;
-                low++;
+                startIndex++;
             }
         }
 
         // place the pivot element in its correct position
-        temp = ar[low];
-        ar[low] = ar[pivot];
+        temp = ar[startIndex];
+        ar[startIndex] = ar[pivot];
         ar[pivot] = temp;
 
-        return low;
+        return startIndex;
     }
 
     /**
      * Recursive Quick sort.
-     * NOTE: This function is tail-recursive (doesn't use
-     * extra stack space per recursive call).
+     * NOTE: This function is tail-recursive (doesn't use extra stack space per recursive call in many
+     * programming languages but not in Java as it doesn't support tail-recursive optimization).
      * <p/>
      * Time complexity:
      * Best Case:   O(nlogn)
      * Worst Case:  O(n*n)
      *
      * @param ar
-     * @param low
-     * @param high
+     * @param startIndex
+     * @param endIndex
      */
-    public static void quickSort(int[] ar, int low, int high) {
-        if (low < high) {
-            int partition = partition(ar, low, high);
-            quickSort(ar, low, partition - 1);
-            quickSort(ar, partition + 1, high);
+    public static void quickSort(int[] ar, int startIndex, int endIndex) {
+        if (startIndex < endIndex) {
+            int partition = partition(ar, startIndex, endIndex);
+            quickSort(ar, startIndex, partition - 1);
+            quickSort(ar, partition + 1, endIndex);
         }
     }
 
