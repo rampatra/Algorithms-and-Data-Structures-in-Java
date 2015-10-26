@@ -19,9 +19,10 @@ public class RemoveExtraSpaces {
      * @return
      */
     public static String removeExtraSpaces(String s) {
+        
         char[] c = s.toCharArray();
-
         int j = c.length;
+        
         for (int i = 1; i < c.length; i++) {
             // check for two or more consecutive spaces
             if (c[i] == ' ' && c[i - 1] == ' ') {
@@ -39,6 +40,7 @@ public class RemoveExtraSpaces {
 
             // copy characters occurring after extra spaces to their appropriate positions
             while (i < c.length && j < c.length) {
+                // stop when you encounter extra spaces again
                 if (c[i] == ' ' && c[i - 1] == ' ') break;
 
                 c[j] = c[i];
@@ -53,6 +55,7 @@ public class RemoveExtraSpaces {
     public static void main(String a[]) {
         System.out.println(removeExtraSpaces("ram swaroop is a good boy."));
         System.out.println(removeExtraSpaces("ram swaroop      is      a    good boy."));
+        System.out.println(removeExtraSpaces("     ram swaroop      is      a    good boy."));
         System.out.println(removeExtraSpaces("ram swaroop      is      a    good    boy    ."));
         System.out.println(removeExtraSpaces("   ram swaroop      is      a    good boy    ."));
     }
