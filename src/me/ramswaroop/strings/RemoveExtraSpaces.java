@@ -58,5 +58,8 @@ public class RemoveExtraSpaces {
         System.out.println(removeExtraSpaces("     ram swaroop      is      a    good boy."));
         System.out.println(removeExtraSpaces("ram swaroop      is      a    good    boy    ."));
         System.out.println(removeExtraSpaces("   ram swaroop      is      a    good boy    ."));
+        System.out.println(removeExtraSpaces("    "));
+        System.out.println(removeExtraSpaces(""));
+        System.out.println(removeExtraSpaces(" "));
     }
 }
