@@ -33,8 +33,11 @@ public class PancakeSort {
                     maxIndex = j;
                 }
             }
-            reverse(a, maxIndex); // bring the max element to the front 
-            reverse(a, unsortedIndex); // move the max element to its appropriate index
+            // move the max element to its appropriate index if its not already in its correct index
+            if (maxIndex != unsortedIndex) {
+                reverse(a, maxIndex); // bring the max element to the front 
+                reverse(a, unsortedIndex); // move the max element to its appropriate index
+            }
             unsortedIndex--;
         }
     }
