@@ -11,14 +11,21 @@ import java.util.*;
  */
 public class AnagramsTogether {
 
+    /**
+     * Prints all the anagrams together from the string
+     * array {@param s}.
+     *
+     * @param s
+     */
     public static void printAnagramsTogether(String[] s) {
 
+        // each key holds all the indexes of a anagram
         HashMap<String, List<Integer>> hashMap = new HashMap<>();
 
         for (int i = 0; i < s.length; i++) {
             char[] chars = s[i].toCharArray();
             Arrays.sort(chars);
-            
+
             List<Integer> indexes = hashMap.get(String.valueOf(chars));
             if (indexes == null) {
                 indexes = new ArrayList<>();
