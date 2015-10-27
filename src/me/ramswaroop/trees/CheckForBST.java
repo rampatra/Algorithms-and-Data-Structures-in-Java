@@ -14,15 +14,15 @@ import static java.lang.System.out;
  * @author: ramswaroop
  * @date: 6/26/15
  * @time: 7:14 PM
- * 
- * Concept: Perform in-order traversal of the tree and if
- * the result isn't in ascending order then returns false.
  */
 public class CheckForBST {
 
     /**
      * Traverse the tree in in-order fashion and insert all nodes
      * in a list and check for sort order of list.
+     * <p/>
+     * Concept: Perform in-order traversal of the tree and if
+     * the result isn't in ascending order then returns false.
      *
      * @param node
      * @param list
@@ -47,6 +47,8 @@ public class CheckForBST {
     /**
      * Traverse the tree in in-order fashion and keep track of prev node.
      * <p/>
+     * Concept: Perform in-order traversal of the tree and if
+     * the result isn't in ascending order then returns false.
      *
      * @param node
      * @param prev
@@ -68,6 +70,23 @@ public class CheckForBST {
         return left && right;
     }
 
+    /**
+     * @param node
+     * @param minValue
+     * @param maxValue
+     * @param <E>
+     * @return
+     */
+    public static <E extends Comparable<E>> boolean isBST(BinaryNode<E> node, E minValue, E maxValue) {
+        if (node == null) return true;
+
+        if (node.value.compareTo(minValue) < 0 || node.value.compareTo(maxValue) > 0) {
+            return false;
+        }
+
+        return isBST(node.left, minValue, node.value) && isBST(node.right, node.value, maxValue);
+    }
+
     public static void main(String a[]) {
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.put(6);
@@ -87,5 +106,9 @@ public class CheckForBST {
         binaryTree.put(9);
         out.println("Is BST: ");
         out.println(isBST(binaryTree.root, new BinaryNode<Integer>(null)));
+        out.println("Is BST: ");
+        out.println(isBST(binarySearchTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+        out.println("Is BST: ");
+        out.println(isBST(binaryTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
     }
 }
