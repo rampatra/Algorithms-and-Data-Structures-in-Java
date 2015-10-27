@@ -21,8 +21,8 @@ public class CheckForBST {
      * Traverse the tree in in-order fashion and insert all nodes
      * in a list and check for sort order of list.
      * <p/>
-     * Concept: Perform in-order traversal of the tree and if
-     * the result isn't in ascending order then returns false.
+     * Concept: In-order traversal of a BST is always sorted in ascending
+     * manner.
      *
      * @param node
      * @param list
@@ -45,10 +45,12 @@ public class CheckForBST {
     }
 
     /**
-     * Traverse the tree in in-order fashion and keep track of prev node.
+     * Traverse the tree in in-order fashion and keep track of its in-order
+     * predecessor value. If at any point current node's value is found greater
+     * than its predecessor value then return {@code false}.
      * <p/>
-     * Concept: Perform in-order traversal of the tree and if
-     * the result isn't in ascending order then returns false.
+     * Concept: In-order traversal of a BST is always sorted in ascending
+     * manner.
      *
      * @param node
      * @param prev
@@ -71,6 +73,12 @@ public class CheckForBST {
     }
 
     /**
+     * Simplest way to test whether a binary tree is a BST or not.
+     * <p/>
+     * CONCEPT: A node's left sub-tree cannot have a value more than
+     * the node's value and similarly the node's right sub-tree cannot
+     * have a value less than the node's value.
+     *
      * @param node
      * @param minValue
      * @param maxValue
@@ -88,6 +96,7 @@ public class CheckForBST {
     }
 
     public static void main(String a[]) {
+        // in-order approach
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.put(6);
         binarySearchTree.put(3);
@@ -106,6 +115,7 @@ public class CheckForBST {
         binaryTree.put(9);
         out.println("Is BST: ");
         out.println(isBST(binaryTree.root, new BinaryNode<Integer>(null)));
+        // min max approach
         out.println("Is BST: ");
         out.println(isBST(binarySearchTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
         out.println("Is BST: ");
