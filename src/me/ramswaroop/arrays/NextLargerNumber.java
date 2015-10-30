@@ -8,6 +8,7 @@ import me.ramswaroop.arrays.sorting.QuickSort;
  * @author: ramswaroop
  * @date: 10/30/15
  * @time: 11:01 AM
+ * @see: http://www.geeksforgeeks.org/find-next-greater-number-set-digits/
  */
 public class NextLargerNumber {
 
@@ -30,17 +31,21 @@ public class NextLargerNumber {
         // construct int array containing all 
         // digits in number {@param n}  
         for (int i = 0; i < len; i++) {
-            a[i] = Integer.parseInt(str.charAt(i) + "");
+            a[i] = Integer.parseInt(String.valueOf(str.charAt(i)));
         }
 
+        // find the index where a digit is greater than its previous 
+        // digit (from left)
         int i = len - 1;
         while (i > 0) {
             if (a[i] > a[i - 1]) break;
             i--;
         }
 
+        // digits are already in descending order, so return
         if (i <= 0) return -1;
         
+        // find index of smallest no. greater than a[i-1] 
         minIndex = i;
         int j = len - 1;
         while (j >= i) {
@@ -50,10 +55,14 @@ public class NextLargerNumber {
             j--;
         }
 
+        // swap a[i-1] with the smallest no. on the right
+        // of i-1 index which is larger than a[i-1] 
         swap(a, i - 1, minIndex);
 
+        // sort all digits to the right of i-1 index
         QuickSort.quickSort(a, i, len - 1);
 
+        // construct the no. from the int array
         StringBuilder builder = new StringBuilder();
         for (int k = 0; k < len; k++) {
             builder.append(a[k]);
