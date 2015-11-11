@@ -20,12 +20,12 @@ public class MethodLocalVSInner {
     }
 
     void go() {
+        new A().m();
         class A {
             void m() {
                 System.out.println("inner");
             }
         }
-        new A().m();
     }
 
     class A {
