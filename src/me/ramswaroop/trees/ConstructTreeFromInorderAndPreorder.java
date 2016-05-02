@@ -11,7 +11,7 @@ import java.util.List;
  * @date: 6/26/15
  * @time: 5:34 PM
  */
-public class ConstructTreeFromInOrderAndPreorder {
+public class ConstructTreeFromInOrderAndPreOrder {
 
     public <E extends Comparable<E>> void constructTreeWithInOrderAndPreOrder(List<BinaryNode<E>> inOrder,
                                                                               List<BinaryNode<E>> preOrder) {
