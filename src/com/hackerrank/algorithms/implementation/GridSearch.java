@@ -24,11 +24,10 @@ public class GridSearch {
                 P[P_i] = in.next();
             }
             int count = 0;
-            int start = 0;
+            int start = -1;
 
-            loop1:
             for (int G_i = 0; G_i < R; G_i++) {
-                if ((start = G[G_i].indexOf(P[0], start)) > -1) {
+                if ((start = G[G_i].indexOf(P[0], start + 1)) > -1) {
                     count = 1;
                     for (int P_i = 1; P_i < r && G_i + P_i < R; P_i++) {
                         if (G[G_i + P_i].indexOf(P[P_i]) != start) {
@@ -40,7 +39,7 @@ public class GridSearch {
                         System.out.println("YES");
                         break;
                     } else {
-                        continue loop1;
+                        G_i = 0;
                     }
                 }
             }
