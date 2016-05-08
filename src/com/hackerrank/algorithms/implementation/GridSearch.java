@@ -23,28 +23,44 @@ public class GridSearch {
             for (int P_i = 0; P_i < r; P_i++) {
                 P[P_i] = in.next();
             }
-            int count = 0;
-            int start = -1;
 
-            for (int G_i = 0; G_i < R; G_i++) {
-                if ((start = G[G_i].indexOf(P[0], start + 1)) > -1) {
-                    count = 1;
-                    for (int P_i = 1; P_i < r && G_i + P_i < R; P_i++) {
-                        if (G[G_i + P_i].indexOf(P[P_i]) != start) {
-                            break;
-                        }
-                        count++;
-                    }
-                    if (count == r) {
-                        System.out.println("YES");
-                        break;
-                    } else {
-                        G_i = 0;
-                    }
+            // create 2D array for grid
+            int grid[][] = new int[R][C];
+            for (int i = 0; i < R; i++) {
+                for (int j = 0; j < C; j++) {
+                    grid[i][j] = Character.getNumericValue(G[i].charAt(j));
                 }
             }
-            if (count != r) {
-                System.out.println("NO");
+
+            // create 2D array for pattern to be searched in grid
+            int pattern[][] = new int[r][c];
+            for (int i = 0; i < r; i++) {
+                for (int j = 0; j < c; j++) {
+                    pattern[i][j] = Character.getNumericValue(P[i].charAt(j));
+                }
+            }
+
+            // search logic
+            outerLoop:
+            for (int G_i = 0; G_i < R; G_i++) {
+                for (int G_j = 0; G_j < C; G_j++) {
+                    innerLoop:
+                    for (int P_i = 0; P_i < r && G_i + P_i < R; P_i++) {
+                        for (int P_j = 0; P_j < c && G_j + P_j < C; P_j++) {
+                            if (grid[G_i + P_i][G_j + P_j] != pattern[P_i][P_j]) {
+                                break innerLoop;
+                            } else if (P_i == r - 1 && P_j == c - 1) {
+                                System.out.println("YES");
+                                break outerLoop;
+                            }
+                        }
+
+                    }
+                    if (R - G_i < r) { // no. of rows left in grid less than no. of rows in pattern
+                        System.out.println("NO");
+                        break outerLoop;
+                    }
+                }
             }
         }
     }
