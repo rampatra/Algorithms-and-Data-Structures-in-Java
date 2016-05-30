@@ -1,4 +1,4 @@
-package me.ramswaroop.practice;
+package me.ramswaroop.misc;
 
 import java.util.Random;
 
