@@ -1,4 +1,4 @@
-package me.ramswaroop.bitmanipulation;
+package com.hackerrank.bitmanipulation;
 
 import java.util.Scanner;
 
