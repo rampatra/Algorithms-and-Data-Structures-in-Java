@@ -104,21 +104,24 @@ public class CheckForBST {
         binarySearchTree.put(7);
         binarySearchTree.put(8);
         binarySearchTree.put(9);
-        out.println("Is BST: ");
-        out.println(isBST(binarySearchTree.root, new BinaryNode<Integer>(null)));
+        out.println("1) Is BST: ");
+        out.println(isBST(binarySearchTree.root, new BinaryNode<>(null))); // should be true
+        
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
         binaryTree.put(6);
-        binaryTree.put(3);
-        binaryTree.put(5);
-        binaryTree.put(7);
-        binaryTree.put(8);
+        binaryTree.put(4);
         binaryTree.put(9);
-        out.println("Is BST: ");
-        out.println(isBST(binaryTree.root, new BinaryNode<Integer>(null)));
+        binaryTree.put(2);
+        binaryTree.put(8);
+        binaryTree.put(7);
+        binaryTree.put(10);
+        out.println("2) Is BST: ");
+        out.println(isBST(binaryTree.root, new BinaryNode<>(null))); // should be false
+        
         // min max approach
-        out.println("Is BST: ");
-        out.println(isBST(binarySearchTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
-        out.println("Is BST: ");
-        out.println(isBST(binaryTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+        out.println("3) Is BST: ");
+        out.println(isBST(binarySearchTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE)); // should be true
+        out.println("4) Is BST: ");
+        out.println(isBST(binaryTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE)); // should be false
     }
 }
