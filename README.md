@@ -7,14 +7,15 @@ You can also refer my [Java Notes](http://java.ramswaroop.me) for a quick refres
 ## Environment
 
 ### Java Version
-Java version 1.7.0_51  
-Java(TM) SE Runtime Environment (build 1.7.0_51-b13)  
-Java HotSpot(TM) 64-Bit Server VM (build 24.51-b03, mixed mode)  
+java version "1.8.0_74"  
+Java(TM) SE Runtime Environment (build 1.8.0_74-b02)  
+Java HotSpot(TM) 64-Bit Server VM (build 25.74-b02, mixed mode) 
 
 ### IDE
-IntelliJ IDEA 14
+IntelliJ IDEA 16
 
 ### Machine
-MacBook Pro  
-2.6 GHz Intel Core i5   
-8 GB 1600 MHz DDR3
+__MacBook Pro (Retina, 15-inch, Mid 2015)__      
+__Processor__ 2.5 GHz Intel Core i7  
+__Memory__ 16 GB 1600 MHz DDR3  
+__Graphics__ AMD Radeon R9 M370X 2048 MB  
