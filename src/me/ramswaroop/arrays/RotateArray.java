@@ -46,10 +46,10 @@ public class RotateArray {
      * Reverse B, we get ArBr = [2, 1, 7, 6, 5, 4, 3]
      * Reverse all, we get (ArBr)r = [3, 4, 5, 6, 7, 1, 2]
      * NOTE: Ar = Reverse of A
+     * See: http://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
      *
      * @param a
      * @param k
-     * @see: http://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
      */
     public static void rotateReversal(int[] a, int k) {
         ReverseArray.reverseRecursive(a, 0, k - 1);
@@ -59,10 +59,10 @@ public class RotateArray {
 
     /**
      * Juggling algorithm for array rotation.
+     * See: http://www.geeksforgeeks.org/array-rotation/
      *
      * @param a
      * @param k
-     * @see: http://www.geeksforgeeks.org/array-rotation/
      */
     public static void rotateGCD(int[] a, int k) {
         int gcd = gcd(a.length, k), temp, i, j, p;
