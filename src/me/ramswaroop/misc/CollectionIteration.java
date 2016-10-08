@@ -8,6 +8,7 @@ import static java.lang.System.out;
  * Created by IntelliJ IDEA.
  * <p/>
  * All possible ways of iterating different collections in Java.
+ * Level: Basics
  *
  * @author: ramswaroop
  * @date: 10/16/15
