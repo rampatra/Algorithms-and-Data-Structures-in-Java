@@ -109,17 +109,40 @@ public class Streams {
                 .sorted()
                 .collect(toList());
     }
-    
+
     public static boolean areAnyTradersFromMilan() {
         return transactions.stream()
-                .anyMatch(t -> t.getTrader().getCity().equals("Milan"));
+                .anyMatch(t -> "Milan".equals(t.getTrader().getCity()));
+    }
+
+    public static Integer[] getAllTransValuesFromTradersInCambridge() {
+        return transactions.stream()
+                .filter(t -> "Cambridge".equals(t.getTrader().getCity()))
+                .map(Transaction::getValue)
+                .toArray(Integer[]::new);
+    }
+
+    public static int findHighestTransactionValue() {
+        return transactions.stream()
+                .map(Transaction::getValue)
+                .reduce((t1, t2) -> (t1 > t2) ? t1 : t2) // can replace with .reduce(Integer::max)
+                .get();
+    }
+    
+    public static Transaction getSmallestTransaction() {
+        return transactions.stream()
+                .reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2)
+                .get();
     }
 
     public static void main(String[] a) {
-        System.out.println(getTransactionsIn2011SortedByValue());
-        System.out.println(findUniqueCities());
-        System.out.println(getAllTradersFromCambridgeAndSortByName());
-        System.out.println(getAllTraderNamesAndSortByName());
-        System.out.println(areAnyTradersFromMilan());
+        System.out.println("1: " + getTransactionsIn2011SortedByValue());
+        System.out.println("2: " + findUniqueCities());
+        System.out.println("3: " + getAllTradersFromCambridgeAndSortByName());
+        System.out.println("4: " + getAllTraderNamesAndSortByName());
+        System.out.println("5: " + areAnyTradersFromMilan());
+        System.out.println("6: " + Arrays.asList(getAllTransValuesFromTradersInCambridge()));
+        System.out.println("7: " + findHighestTransactionValue());
+        System.out.println("8: " + getSmallestTransaction());
     }
 }
