@@ -3,9 +3,8 @@ package me.ramswaroop.arrays.searching;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/1/15
- * @time: 4:56 PM
+ * @author ramswaroop
+ * @version 9/1/15
  */
 public class BinarySearch {
 
@@ -18,11 +17,11 @@ public class BinarySearch {
      * @param n
      * @return
      */
-    public static int binarySearch(int a[], int n) {
+    public static int binarySearch(int[] a, int n) {
         return binarySearch(a, n, 0, a.length - 1);
     }
 
-    public static int binarySearch(int a[], int n, int low, int high) {
+    public static int binarySearch(int[] a, int n, int low, int high) {
 
         if (low <= high) {
             int mid = (low + high) / 2;
@@ -44,7 +43,7 @@ public class BinarySearch {
      *
      * @param a
      */
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         System.out.println(binarySearch(new int[]{0, 2}, 2));
         System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 2));
         System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 3));

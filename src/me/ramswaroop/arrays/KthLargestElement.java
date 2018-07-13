@@ -52,12 +52,6 @@ public class KthLargestElement {
         return maxHeap.findMax();
     }
 
-    private static void swap(int[] a, int firstIndex, int secondIndex) {
-        a[firstIndex] = a[firstIndex] + a[secondIndex];
-        a[secondIndex] = a[firstIndex] - a[secondIndex];
-        a[firstIndex] = a[firstIndex] - a[secondIndex];
-    }
-
     public static void main(String a[]) {
         int[] ar = new int[]{2, 4, 5, 7, 1, 8, 9};
         System.out.println(Arrays.toString(ar));
