@@ -15,6 +15,9 @@ public class AnagramsTogether {
      * Prints all the anagrams together from the string
      * array {@param s}.
      *
+     * Anagrams are words consisting of the same letters but in the same or different 
+     * order. For example, "cat" and "tac" are anagrams. Same as "god" and "dog".
+     *
      * @param s
      */
     public static void printAnagramsTogether(String[] s) {
