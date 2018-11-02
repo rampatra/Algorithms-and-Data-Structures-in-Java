@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rampatra.adsj</groupId>
     <artifactId>adsj</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <name>Algorithms and Data Structures in Java</name>
@@ -34,7 +32,7 @@
         <url>https://github.com/rampatra/Algorithms-and-Data-Structures-in-Java</url>
         <connection>scm:git:git://github.com/rampatra/Algorithms-and-Data-Structures-in-Java.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/rampatra/Algorithms-and-Data-Structures-in-Java.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>adsj-1.0.0</tag>
     </scm>
 
     <distributionManagement>
