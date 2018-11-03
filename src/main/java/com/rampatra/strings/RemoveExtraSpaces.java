@@ -19,10 +19,10 @@ public class RemoveExtraSpaces {
      * @return
      */
     public static String removeExtraSpaces(String s) {
-        
+
         char[] c = s.toCharArray();
         int j = c.length;
-        
+
         for (int i = 1; i < c.length; i++) {
             // check for two or more consecutive spaces
             if (c[i] == ' ' && c[i - 1] == ' ') {
@@ -33,7 +33,7 @@ public class RemoveExtraSpaces {
                 while (i < c.length && c[i] == ' ') {
                     i++;
                 }
-                
+
                 // if reached end of string then stop
                 if (i == c.length) break;
             }

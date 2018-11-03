@@ -15,17 +15,17 @@ public class KLargestElements {
 
     /**
      * Finds {@param k} largest elements in array {@param a}.
-     *
+     * <p>
      * Algorithm:
      * 1) Build a Min Heap MH of the first k elements (arr[0] to arr[k-1]) of the given array. This takes O(k) time.
-     *
+     * <p>
      * 2) For each element, after the kth element (arr[k] to arr[n-1]), compare it with root of MH.
      * ……a) If the element is greater than the root then make it root and call buildHeap for MH
      * ……b) Else ignore it.
      * This step takes (n-k) * O(k) time.
-     *
+     * <p>
      * 3) Finally, MH has k largest elements and root of the MH is the kth largest element.
-     *
+     * <p>
      * Therefore, the total time complexity of the above algorithm is: O(k) + (n-k) * O(k).
      *
      * @param a

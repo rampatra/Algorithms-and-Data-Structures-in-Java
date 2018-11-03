@@ -18,7 +18,7 @@ public class MakingAnagrams {
      * @return
      */
     public static int makeAnagrams(String a, String b) {
-        
+
         int i = 0, j = 0, c = 0;
         char[] s1 = a.toCharArray();
         char[] s2 = b.toCharArray();

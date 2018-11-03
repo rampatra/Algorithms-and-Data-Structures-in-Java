@@ -128,7 +128,7 @@ public class Streams {
                 .reduce((t1, t2) -> (t1 > t2) ? t1 : t2) // you can replace with .reduce(Integer::max)
                 .get();
     }
-    
+
     public static Transaction getSmallestTransaction() {
         return transactions.stream()
                 .reduce((t1, t2) -> t1.getValue() < t2.getValue() ? t1 : t2)

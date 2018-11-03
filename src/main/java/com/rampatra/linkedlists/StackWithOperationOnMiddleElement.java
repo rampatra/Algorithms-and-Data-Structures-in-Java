@@ -20,7 +20,7 @@ import static java.lang.System.out;
  * 3) findMiddle() which will return middle element of the stack.
  * 4) deleteMiddle() which will delete the middle element.
  * Push and pop are standard stack operations.
- *
+ * <p>
  * The idea is to use a double linked list to represent a stack with pointer pointing to the middle node.
  */
 public class StackWithOperationOnMiddleElement<E extends Comparable<E>> {

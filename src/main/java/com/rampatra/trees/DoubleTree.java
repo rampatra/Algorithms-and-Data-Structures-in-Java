@@ -18,7 +18,7 @@ public class DoubleTree {
      * Converts a given tree to its Double tree. To create a Double tree
      * of the given tree, create a new duplicate for each node, and insert
      * the duplicate as the left child of the original node.
-     * 
+     *
      * @param node
      */
     public static <E extends Comparable<E>> void doubleTree(BinaryNode<E> node) {

@@ -40,7 +40,7 @@ public class InversionsInArray {
 
     /**
      * Optimized approach.
-     *
+     * <p>
      * Explanation: In merge() if a[i] > b[j] then all elements in array a starting
      * from i are greater than b[j] which equals to the number of inversions for
      * the two sub-arrays.

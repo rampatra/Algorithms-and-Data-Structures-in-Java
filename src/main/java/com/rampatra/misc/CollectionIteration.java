@@ -1,6 +1,10 @@
 package com.rampatra.misc;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import static java.lang.System.out;
 
@@ -37,14 +41,14 @@ public class CollectionIteration {
         hashMap.put("three", 3);
         // 1st way
         Iterator<Map.Entry<String, Integer>> iterator1 = hashMap.entrySet().iterator(); // iterator only iterates on 
-                                                                                        // lists or set and not on maps
+        // lists or set and not on maps
         while (iterator1.hasNext()) {
             Map.Entry<String, Integer> entry = iterator1.next();
             out.println("HashMap: " + entry.getKey() + "->" + entry.getValue());
         }
         // 2nd way
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {   // entrySet() returns a Set of Entry objects 
-                                                                        // stored in HashMap
+            // stored in HashMap
             out.println("HashMap: " + entry.getKey() + "->" + entry.getValue());
         }
     }

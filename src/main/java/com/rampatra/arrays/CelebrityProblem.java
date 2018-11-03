@@ -13,7 +13,7 @@ import com.rampatra.common.Stack;
  * In a party of N people, only one person is known to everyone. Such a person may be present in the party, if yes,
  * (s)he doesn’t know anyone in the party. We can only ask questions like “does A know B? “. Find the stranger
  * (celebrity) in minimum number of questions.
- * 
+ * <p>
  * TODO: Not tested.
  */
 public class CelebrityProblem {
@@ -44,7 +44,7 @@ public class CelebrityProblem {
      * - Push the remained person onto stack.
      * - Repeat step 2 and 3 until only one person remains in the stack.
      * - Check the remained person in stack does not have acquaintance with anyone else.
-     * 
+     *
      * @param peoples
      * @return
      */

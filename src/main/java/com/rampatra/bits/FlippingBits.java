@@ -39,11 +39,11 @@ public class FlippingBits {
 
 /**
  * EXPLANATION:
- *
+ * <p>
  * For input: 5
- *
+ * <p>
  * Binary:    000.....101
  * Inverted:  111.....010 (which is the 2's compliment of -6)
- *
+ * <p>
  * Therefore, result is -6.
  */

@@ -48,12 +48,12 @@ public class ElementOccurringOnce {
  * 6    =   0110
  * -------------
  * res  =   0010
- *
+ * <p>
  * 1st bit of res = (0+0+0+0+0+0+0) % 3 = 0
  * 2nd bit of res = (0+0+1+1+1+0+1) % 3 = 1
  * 3rd bit of res = (1+1+1+1+0+1+1) % 3 = 0
  * 4th bit of res = (1+1+0+0+0+1+0) % 3 = 0
- *
+ * <p>
  * NOTE: Sum of bits at a particular position will not be divisible
  * by 3 if the no. occurring once has a set bit at that position.
  */

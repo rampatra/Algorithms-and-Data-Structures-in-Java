@@ -10,7 +10,6 @@ package com.rampatra.arrays;
 public class LargestProductContiguousSubArray {
 
     /**
-     *
      * @param a
      * @return
      */

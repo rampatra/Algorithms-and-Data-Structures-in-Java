@@ -13,9 +13,9 @@ package com.rampatra.strings;
 public class StringPermutations {
 
     /**
-     * Generates and prints all possible permutations (in order) 
+     * Generates and prints all possible permutations (in order)
      * of string {@param s}.
-     * 
+     *
      * @param prefix
      * @param s
      */

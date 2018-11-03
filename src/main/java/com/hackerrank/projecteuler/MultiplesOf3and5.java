@@ -13,8 +13,8 @@ public class MultiplesOf3and5 {
 
     public static void main(String a[]) {
         Scanner in = new Scanner(System.in);
-        
+
         int t = Integer.parseInt(in.nextLine());
-        
+
     }
 }

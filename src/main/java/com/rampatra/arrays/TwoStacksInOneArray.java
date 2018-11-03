@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by IntelliJ IDEA.
- * 
+ * <p>
  * Implement two stacks using a single array with efficient use of space.
  * We could do this by dividing the array into two equal halves or storing stack
  * elements alternatively in the array but that wouldn't utilize the space fully.

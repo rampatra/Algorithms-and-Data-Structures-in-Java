@@ -31,7 +31,7 @@ public class UppercaseLowercasePermutations {
             printUppercaseLowercasePermutations(prefix + Character.toLowerCase(s.charAt(0)), s.substring(1));
         } else {
             printUppercaseLowercasePermutations(prefix + s.charAt(0), s.substring(1));
-            
+
         }
 
     }

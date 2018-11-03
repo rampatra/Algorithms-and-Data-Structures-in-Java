@@ -30,15 +30,14 @@ public class CountSetBits {
 
     /**
      * Optimized version. Works for -ve numbers as well.
-     *
+     * <p>
      * Uses BRIAN KERNIGAN'S bit counting. Acc. to this, the  right most/least significant set bit is unset
      * in each iteration. The time complexity is proportional to the number of bits set.
      *
-     * @link http://stackoverflow.com/questions/12380478/bits-counting-algorithm-brian-kernighan-in-an-integer-time-complexity
-     * @link http://graphics.stanford.edu/~seander/bithacks.html#ParityNaive
-     *
      * @param n
      * @return
+     * @link http://stackoverflow.com/questions/12380478/bits-counting-algorithm-brian-kernighan-in-an-integer-time-complexity
+     * @link http://graphics.stanford.edu/~seander/bithacks.html#ParityNaive
      */
     static int countSetBits(long n) {
         int count = 0;
@@ -62,8 +61,6 @@ public class CountSetBits {
 }
 
 /**
- *
  * Learn more:
  * http://javarevisited.blogspot.in/2014/06/how-to-count-number-of-set-bits-or-1s.html
- *
  */

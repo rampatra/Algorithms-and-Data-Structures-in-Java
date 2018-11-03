@@ -17,7 +17,7 @@ public class SubsetOfArray {
      * Explanation: The below method uses sorting + merge method of merge sort. Time
      * complexity is O(mlogm + nlogn) where m and n are lengths of array a and b resp.
      * You could also have used sorting + binary search but this fails when array
-     * {@param b} has repeating elements for example, a={1,4,2} and b={1,4,4,2}. Time 
+     * {@param b} has repeating elements for example, a={1,4,2} and b={1,4,4,2}. Time
      * complexity would be O(mlogm + nlogm).
      *
      * @param a

@@ -12,15 +12,15 @@ import java.util.Arrays;
 public class Segregate0s1sAnd2s {
 
     /**
-     * Segregates an array {@param a} consisting of only 0s, 1s and 2s. Based on 
+     * Segregates an array {@param a} consisting of only 0s, 1s and 2s. Based on
      * Dutch National Flag (DNF) problem {@see: http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Sort/Flag/}.
-     * 
+     *
      * @param a
      */
     public static void segregate0s1sAnd2s(int[] a) {
         // assume low points to 0 and mid to 1 and high to 2
         int low = 0, mid = 0, high = a.length - 1;
-        
+
         while (mid <= high) {
             switch (a[mid]) {
                 case 0: // mid points to 0 but it should point to 1 so swap it with low

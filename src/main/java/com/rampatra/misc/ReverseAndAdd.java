@@ -16,7 +16,7 @@ public class ReverseAndAdd {
 
     /**
      * Reverses the number {@param n}.
-     * 
+     *
      * @param n
      * @return the reverse of the number {@param n}.
      */
@@ -26,7 +26,7 @@ public class ReverseAndAdd {
 
     /**
      * Checks if {@param n} is palindrome.
-     * 
+     *
      * @param n
      * @return {@code true} if {@param n} is palindrome.
      */
@@ -36,7 +36,7 @@ public class ReverseAndAdd {
 
     /**
      * Checks if {@param n} is negative.
-     * 
+     *
      * @param n
      * @return {@code true} if {@param n} is negative, {@code false} otherwise.
      */
@@ -47,7 +47,7 @@ public class ReverseAndAdd {
     /**
      * Reverses the number {@param n}, adds to itself and then checks
      * for palindrome.
-     * 
+     *
      * @param n
      * @return an array of {@code BigInteger} with number of additions and final palindrome number respectively.
      */
@@ -74,7 +74,7 @@ public class ReverseAndAdd {
     /**
      * Reads the input file mentioned in {@param filePath} line by line
      * and calls {@code reverseAddAndCheck()} for every line.
-     * 
+     *
      * @param filePath
      */
     public static void readFile(String filePath) {
@@ -95,7 +95,7 @@ public class ReverseAndAdd {
 
     /**
      * Starting point of the program.
-     * 
+     *
      * @param a
      */
     public static void main(String a[]) {

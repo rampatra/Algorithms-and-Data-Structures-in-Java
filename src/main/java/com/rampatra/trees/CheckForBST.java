@@ -106,7 +106,7 @@ public class CheckForBST {
         binarySearchTree.put(9);
         out.println("1) Is BST: ");
         out.println(isBST(binarySearchTree.root, new BinaryNode<>(null))); // should be true
-        
+
         BinaryTree<Integer> binaryTree = new BinaryTree<>();
         binaryTree.put(6);
         binaryTree.put(4);
@@ -117,7 +117,7 @@ public class CheckForBST {
         binaryTree.put(10);
         out.println("2) Is BST: ");
         out.println(isBST(binaryTree.root, new BinaryNode<>(null))); // should be false
-        
+
         // min max approach
         out.println("3) Is BST: ");
         out.println(isBST(binarySearchTree.root, Integer.MIN_VALUE, Integer.MAX_VALUE)); // should be true

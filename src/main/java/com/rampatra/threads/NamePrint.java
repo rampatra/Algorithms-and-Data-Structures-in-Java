@@ -21,7 +21,7 @@ public class NamePrint {
                 for (int i = 0; i < 1000; i++) {
                     try {
                         // wait if first name is printed but not the last name
-                        if (isFirstNamePrinted) lock.wait(); 
+                        if (isFirstNamePrinted) lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -40,7 +40,7 @@ public class NamePrint {
                 for (int i = 0; i < 1000; i++) {
                     try {
                         // wait if first name is not printed
-                        if(!isFirstNamePrinted) lock.wait();
+                        if (!isFirstNamePrinted) lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

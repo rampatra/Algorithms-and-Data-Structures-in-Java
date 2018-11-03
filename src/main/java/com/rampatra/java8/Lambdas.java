@@ -29,9 +29,10 @@ public class Lambdas {
         });*/
         l.testScopeOfLambda(new Consumer<String>() {
             int a = 2;
+
             @Override
             public void accept(String s) {
-                
+
             }
         });
     }

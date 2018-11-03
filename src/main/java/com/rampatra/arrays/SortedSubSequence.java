@@ -13,7 +13,7 @@ public class SortedSubSequence {
      * Finds 3 elements such that a[i] < a[j] < a[k] and i < j < k in O(n) time
      * in an array of n integers. If there are multiple such triplets, then prints any
      * one of them.
-     * 
+     * <p>
      * Algorithm:
      * 1) Create an auxiliary array smaller[0..n-1]. smaller[i] should store the index of a number which is smaller than arr[i] and is on left side of arr[i]. smaller[i] should contain -1 if there is no such element.
      * 2) Create another auxiliary array greater[0..n-1]. greater[i] should store the index of a number which is greater than arr[i] and is on right side of arr[i]. greater[i] should contain -1 if there is no such element.

@@ -16,9 +16,9 @@ public class SortAlternativelySortedLinkedList {
      * Given a Linked List which is in alternating ascending and descending orders. In other words, nodes
      * at even indexes are in ascending order whereas the nodes at odd indexes are in descending order.
      * Sort the list efficiently in O(n) time complexity.
-     *
+     * <p>
      * Example:
-     *
+     * <p>
      * Input List:   10->40->53->30->67->12->89->NULL
      * Output List:  10->12->30->43->53->67->89->NULL
      *

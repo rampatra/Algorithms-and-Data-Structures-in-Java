@@ -55,7 +55,7 @@ public class Parenthesis {
 
         return stack.isEmpty();
     }
-    
+
     /**
      * Reads the file specified in {@param filePath} line by line
      * and checks if parenthesis are well-formed or not.

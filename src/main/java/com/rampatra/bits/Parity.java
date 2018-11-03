@@ -19,7 +19,7 @@ public class Parity {
     /**
      * Uses BRIAN KERNIGAN'S bit counting. Acc. to this, the  right most/least significant set bit is unset
      * in each iteration. The time complexity is proportional to the number of bits set.
-     *
+     * <p>
      * {@see http://stackoverflow.com/questions/12380478/bits-counting-algorithm-brian-kernighan-in-an-integer-time-complexity}
      * {@see http://graphics.stanford.edu/~seander/bithacks.html#ParityNaive}
      *

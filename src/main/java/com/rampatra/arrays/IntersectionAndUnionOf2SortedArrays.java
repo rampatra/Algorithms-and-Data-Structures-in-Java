@@ -12,9 +12,9 @@ import java.util.Arrays;
 public class IntersectionAndUnionOf2SortedArrays {
 
     /**
-     * Returns a 2-D array consisting of intersection and union of 
+     * Returns a 2-D array consisting of intersection and union of
      * two sorted arrays {@param a} and {@param b} respectively.
-     * 
+     *
      * @param a
      * @param b
      * @return
@@ -24,7 +24,7 @@ public class IntersectionAndUnionOf2SortedArrays {
         int[] intersection = new int[length], union = new int[length];
 
         for (int i = 0, j = 0; i < a.length || j < b.length; ) {
-            
+
             // if either of the arrays runs out first
             if (i == a.length) {
                 union[y++] = b[j++];

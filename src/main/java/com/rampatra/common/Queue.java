@@ -55,7 +55,6 @@ public interface Queue<E> {
 
     /**
      * Prints the content of the queue.
-     *
      */
     public void print();
 

@@ -19,7 +19,7 @@ public class SelectionSort {
      * element is chosen and placed at the appropriate position and then again the
      * logic is applied on rest of the elements till the entire array is sorted.
      * <p/>
-     * Time complexity: O(n*n) for all cases.
+     * Time complexity: O(n^2) for all cases. Space complexity: O(1).
      * <p/>
      * NOTE: Advantage of this sort is that it requires minimum number of memory writes
      * like Cycle sort.

@@ -14,7 +14,7 @@ public class MergeSort {
 
     /**
      * Merge sort for linked list starting at {@param node}.
-     *
+     * <p>
      * Time complexity:     O(n log n)
      * Space complexity:    O(log n) stack space as it is recursive
      *

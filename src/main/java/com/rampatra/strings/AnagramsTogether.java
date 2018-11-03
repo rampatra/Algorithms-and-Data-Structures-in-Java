@@ -1,6 +1,10 @@
 package com.rampatra.strings;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,7 +19,7 @@ public class AnagramsTogether {
      * Prints all the anagrams together from the string
      * array {@param s}.
      * <p/>
-     * Anagrams are words consisting of the same letters but in the same or different 
+     * Anagrams are words consisting of the same letters but in the same or different
      * order. For example, "cat" and "tac" are anagrams. Same as "god" and "dog".
      *
      * @param s

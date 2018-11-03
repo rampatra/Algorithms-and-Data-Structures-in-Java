@@ -11,7 +11,7 @@ public class CountSetBitsFromMinusNtoN {
 
     /**
      * Explanation:
-     *
+     * <p>
      * -3:  101
      * -2:  110
      * -1:  111
@@ -19,7 +19,7 @@ public class CountSetBitsFromMinusNtoN {
      * 1:   001
      * 2:   010
      * 3:   110
-     *
+     * <p>
      * If you fold the above representation between -1 and 0, the total no. of set bits from -3 to 2
      * will be equal to the total no. of bits in nos. from -3 to 2.
      *

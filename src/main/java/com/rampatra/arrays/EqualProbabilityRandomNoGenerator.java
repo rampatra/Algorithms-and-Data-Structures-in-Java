@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Given a random number generator f(n) which generates a random number
  * from {@code 0} (inclusive) to {@code n} (exclusive), design a method
- * which uses f(n) to generate non repeating random numbers from 
+ * which uses f(n) to generate non repeating random numbers from
  * {@code 0} (inclusive) to {@code n} (exclusive)?
  *
  * @author: ramswaroop
@@ -19,9 +19,9 @@ public class EqualProbabilityRandomNoGenerator {
     static int size;
 
     /**
-     * The algorithm is to create a bucket of numbers and then to keep on 
+     * The algorithm is to create a bucket of numbers and then to keep on
      * removing the elements from the bucket which are returned.
-     * 
+     *
      * @return
      */
     public static int getRandom() {
@@ -37,12 +37,12 @@ public class EqualProbabilityRandomNoGenerator {
 
     public static void main(String a[]) {
         Scanner in = new Scanner(System.in);
-        
+
         System.out.println("How many random numbers you would like to generate?");
         size = in.nextInt();
-        
+
         bucket = new int[size];
-        
+
         for (int i = 0; i < bucket.length; i++) {
             bucket[i] = i;
         }

@@ -22,10 +22,10 @@ public class ReservoirSampling {
      * a) Generate a random number from 0 to i where i is index of current item in
      * stream[]. Let the generated random number is j.
      * b) If j is in range 0 to k-1, replace reservoir[j] with arr[i].
-     *
+     * <p>
      * In the above procedure, we are computing random number for each of the indexes greater than k
      * thereby giving all items an equal probability.
-     *
+     * <p>
      * NOTE: When {@param k} is small enough we can use a simpler method as follows:
      * Create an array reservoir[] of maximum size k. One by one randomly select an
      * item from stream[0..n-1]. If the selected item is not previously selected, then

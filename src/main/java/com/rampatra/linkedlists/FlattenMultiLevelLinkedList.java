@@ -17,7 +17,7 @@ public class FlattenMultiLevelLinkedList {
      * Flattens a multilevel linked list into a single level linked list. You can
      * {@see http://www.geeksforgeeks.org/flatten-a-linked-list-with-next-and-child-pointers/} for
      * clarity on question.
-     *
+     * <p>
      * Solution:
      * 1) Take "cur" pointer, which will point to head of the fist level of the list
      * 2) Take "tail" pointer, which will point to end of the first level of the list

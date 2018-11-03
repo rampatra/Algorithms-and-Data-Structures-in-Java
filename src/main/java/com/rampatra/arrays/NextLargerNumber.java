@@ -44,7 +44,7 @@ public class NextLargerNumber {
 
         // digits are already in descending order, so return
         if (i <= 0) return -1;
-        
+
         // find index of smallest no. greater than a[i-1] 
         minIndex = i;
         int j = len - 1;

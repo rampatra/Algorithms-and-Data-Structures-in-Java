@@ -14,12 +14,12 @@ public class ReverseLinkedListInGroups {
 
     /**
      * Reverses the linked list in groups.
-     *
+     * <p>
      * Example:
-     *
+     * <p>
      * Inputs:  1->2->3->4->5->6->7->8 and k = 3
      * Output:  3->2->1->6->5->4->8->7.
-     *
+     * <p>
      * Inputs:   1->2->3->4->5->6->7->8 and k = 5
      * Output:  5->4->3->2->1->8->7->6.
      *

@@ -34,7 +34,7 @@ public class MaxHeap {
         this.size = heap.length;
         this.heap = Arrays.copyOf(heap, size);
     }
-    
+
     /**
      * Makes the array {@param a} satisfy the max heap property starting from
      * {@param index} till the end of array.
@@ -78,11 +78,11 @@ public class MaxHeap {
     /**
      * Insert a new element into the heap satisfying
      * the heap property.
-     * 
-     * Time complexity: O(log n) where 'n' is total no. of 
+     * <p>
+     * Time complexity: O(log n) where 'n' is total no. of
      * elements in heap or O(h) where 'h' is the height of
      * heap.
-     * 
+     *
      * @param elem
      */
     public void insert(int elem) {

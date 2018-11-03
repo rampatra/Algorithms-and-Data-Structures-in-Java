@@ -17,7 +17,7 @@ public class RandomNode {
 
     /**
      * Returns a random node from linked list with each node having an equal probability.
-     *
+     * <p>
      * This method uses the simplified version of Reservoir Sampling ({@link ReservoirSampling})
      * where k = 1.
      *

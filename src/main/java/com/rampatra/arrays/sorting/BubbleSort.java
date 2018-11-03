@@ -15,10 +15,10 @@ public class BubbleSort {
      * of the array until it is sorted. In doing so, the smaller items
      * slowly "bubble" up to the beginning of the list and in each inner
      * iteration the largest element is sorted. Ergo, the inner loop runs
-     * until {@code length - i - 1} times. To learn more:
-     * {@see https://youtu.be/6Gv8vg0kcHc}
+     * until {@code length - i - 1} times. Time complexity: O(n^2). Space
+     * complexity: O(1), in place. To learn more: {@see https://youtu.be/6Gv8vg0kcHc}
      *
-     * @param ar
+     * @param ar to be sorted
      */
     private static void bubbleSort(int[] ar) {
         for (int i = 0; i < ar.length - 1; i++) {

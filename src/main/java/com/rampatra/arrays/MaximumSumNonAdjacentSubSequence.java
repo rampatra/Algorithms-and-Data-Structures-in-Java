@@ -17,7 +17,7 @@ public class MaximumSumNonAdjacentSubSequence {
      * Example:
      * 1) 3 2 7 10 should return 13 (sum of 3 and 10)
      * 2) 3 2 5 10 7 should return 15 (sum of 3, 5 and 7).
-     *
+     * <p>
      * Here we maintain 2 variables incl and excl which is max sum till now (satisfying the constraint)
      * including the current element and excluding the current element respectively.
      *
@@ -26,7 +26,7 @@ public class MaximumSumNonAdjacentSubSequence {
      */
     public static int maximumSumNonAdjacentSubSequence(int[] a) {
         int incl = a[0], excl = 0, prevIncl = incl; // incl is max sum including the current element
-                                                    // and excl is max sum excluding the current element
+        // and excl is max sum excluding the current element
         for (int i = 1; i < a.length; i++) {
             incl = excl + a[i]; // because we have to exclude the previous element if we consider the current element
             excl = Math.max(prevIncl, excl); // we are excluding the current element so we can consider the previous element or dont

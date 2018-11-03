@@ -33,8 +33,8 @@ public class Modulo {
 
 /**
  * Consider example, for 18 % 8
- *
+ * <p>
  * 18 = 10010
- *  7 = 00111 (8 = 2 ^ 3, therefore mask has to have three 1's)
- *  2 = 00010 (remainder = 18 & (8-1))
+ * 7 = 00111 (8 = 2 ^ 3, therefore mask has to have three 1's)
+ * 2 = 00010 (remainder = 18 & (8-1))
  */

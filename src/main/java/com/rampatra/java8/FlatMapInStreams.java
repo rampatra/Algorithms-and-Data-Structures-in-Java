@@ -23,7 +23,7 @@ public class FlatMapInStreams {
                 new Dish("biriyani", 600, ingredients),
                 new Dish("biriyani", 600, new ArrayList<>()));
         // to show whether empty List is counted in flatMap
-        System.out.println(countTotalIngredientsInAllDishes(dishes)); 
+        System.out.println(countTotalIngredientsInAllDishes(dishes));
     }
 }
 

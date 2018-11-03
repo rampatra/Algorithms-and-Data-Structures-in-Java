@@ -44,7 +44,7 @@ public class KthLargestElement {
         maxHeap.buildMaxHeap();
         while (true) {
             if (k == 1) break;
-            
+
             maxHeap.extractMax();
             k--;
         }

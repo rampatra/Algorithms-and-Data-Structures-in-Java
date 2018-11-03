@@ -14,9 +14,9 @@ public class DetectAndRemoveLoop {
 
     /**
      * Detects loop if any in {@param list} and removes it.
-     *
+     * <p>
      * Algorithm:
-     *
+     * <p>
      * 1) Use Floyd's cycle detection algorithm to detect loop.
      * 2) Acc. to FCD, once the fast pointer meets the slow pointer we conclude that there is a loop.
      * 3) Now compute the length 'l' of the loop.

@@ -18,7 +18,7 @@ class SPOJ1 {
 
         List<Integer> inputList = new ArrayList<>();
         int input;
-        for (; ;) {
+        for (; ; ) {
             input = Integer.parseInt(in.nextLine());
             if (input == 42) break;
             inputList.add(input);

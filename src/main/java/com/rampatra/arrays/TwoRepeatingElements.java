@@ -69,9 +69,9 @@ public class TwoRepeatingElements {
      * Once we encounter a element lets say 2 then we make the element in 2nd index -ve just
      * to mark that we have encountered 2. When we encounter 2 again and see that 2nd index
      * is already -ve we conclude that 2 is repeated.
-     * 
+     * <p>
      * Similar to {@link DuplicatesInArray#findDuplicatesInArray(int[])}.
-     * 
+     *
      * @param a
      * @return
      */

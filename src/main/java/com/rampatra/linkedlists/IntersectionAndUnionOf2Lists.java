@@ -13,11 +13,10 @@ import com.rampatra.common.SingleLinkedNode;
 public class IntersectionAndUnionOf2Lists {
 
     /**
-     *
      * @param list1
      * @param list2
      * @param <E>
-     * @return an array of list consisting of intersection and union of two sorted 
+     * @return an array of list consisting of intersection and union of two sorted
      * list {@param list1} and {@param list2} respectively.
      */
     public static <E extends Comparable<E>> SingleLinkedList<E>[] getIntersectionAndUnion(SingleLinkedList<E> list1,
@@ -42,7 +41,7 @@ public class IntersectionAndUnionOf2Lists {
                 curr1 = curr1.next;
             } else if (curr1.item.compareTo(curr2.item) > 0) {
                 unionList.add(curr2.item);
-                curr2=curr2.next;
+                curr2 = curr2.next;
             } else {
                 unionList.add(curr1.item);
                 intersectionList.add(curr1.item);

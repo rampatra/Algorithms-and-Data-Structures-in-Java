@@ -9,7 +9,7 @@ package com.rampatra.misc;
  */
 public class DivideByZero {
     public static void main(String[] a) {
-        System.out.println(5.0/0); // doesn't throw any exception
-        System.out.println(5/0); // throws runtime exception (arithmetic exception)
+        System.out.println(5.0 / 0); // doesn't throw any exception
+        System.out.println(5 / 0); // throws runtime exception (arithmetic exception)
     }
 }
