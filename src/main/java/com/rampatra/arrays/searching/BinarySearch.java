@@ -24,7 +24,7 @@ public class BinarySearch {
     public static int binarySearch(int[] a, int n, int low, int high) {
 
         if (low <= high) {
-            int mid = (low + high) / 2;
+            int mid = (low + high) / 2; // to prevent overflow you can instead do: mid = low + (high - low) / 2
 
             if (n == a[mid]) {
                 return mid;
@@ -48,7 +48,7 @@ public class BinarySearch {
     private static int binarySearchNonRecursive(int[] a, int n) {
         int low = 0, high = a.length, mid;
         while (low <= high) {
-            mid = (low + high) / 2;
+            mid = (low + high) / 2; // to prevent overflow you can instead do: mid = low + (high - low) / 2
             if (n == a[mid]) {
                 return mid;
             } else if (n < a[mid]) {
