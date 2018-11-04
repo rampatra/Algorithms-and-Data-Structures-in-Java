@@ -10,9 +10,14 @@ import java.util.Scanner;
  * @since 04/11/2018
  */
 public class SwappingInAnArray {
-    // Complete the swapToSort function below.
+
+    /**
+     * The problem asks if we can sort the array with only one swap.
+     *
+     * @param a array to sort
+     * @return 0 if already sorted, 1 if it can be sorted with one swap, -1 otherwise
+     */
     static int swapToSort(int[] a) {
-        // Return -1 or 0 or 1 as described in the problem statement.
         int swaps = 0;
         for (int i=0; i < a.length-1; i++) {
             int swapIndex = i;
