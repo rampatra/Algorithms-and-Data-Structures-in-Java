@@ -4,7 +4,8 @@ import com.rampatra.common.SingleLinkedList;
 import com.rampatra.common.SingleLinkedNode;
 
 /**
- * Created by IntelliJ IDEA.
+ * This is for reversing a linked list, both iteratively and recursively. If you
+ * want to reverse linked list in groups then see {@link ReverseLinkedListInGroups}.
  *
  * @author: ramswaroop
  * @date: 6/19/15
