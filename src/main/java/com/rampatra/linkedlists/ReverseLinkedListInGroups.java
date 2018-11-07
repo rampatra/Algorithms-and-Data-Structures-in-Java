@@ -43,7 +43,7 @@ public class ReverseLinkedListInGroups {
 
         // recursively call for the rest of the nodes in the linked list
         if (next != null) {
-            node.next = reverseLinkedListInGroups(next, k);
+            node.next = reverseLinkedListInGroups(curr, k);
         }
 
         return prev;
@@ -51,18 +51,18 @@ public class ReverseLinkedListInGroups {
 
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(44);
-        linkedList.add(55);
-        linkedList.add(66);
-        linkedList.add(77);
-        linkedList.add(88);
-        linkedList.add(99);
-        linkedList.add(100);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
+        linkedList.add(6);
+        linkedList.add(7);
+        linkedList.add(8);
+        linkedList.add(9);
+        linkedList.add(10);
         linkedList.printList();
-        linkedList.printList(reverseLinkedListInGroups(linkedList.head, 3));
+        SingleLinkedList.printList(reverseLinkedListInGroups(linkedList.head, 3));
     }
 }

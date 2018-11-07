@@ -55,7 +55,7 @@ public class DetectLoop {
         HashMap<SingleLinkedNode<E>, Boolean> map = new HashMap<>();
         SingleLinkedNode<E> curr = node;
         while (curr != null) {
-            if (map.get(curr) != null && map.get(curr) == true) {
+            if (map.get(curr) != null && map.get(curr)) {
                 return true;
             }
             map.put(curr, true);
@@ -66,12 +66,12 @@ public class DetectLoop {
 
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(44);
-        linkedList.add(55);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
         linkedList.getNode(4).next = linkedList.getNode(3);
         System.out.println(isLoopPresent(linkedList));
     }
