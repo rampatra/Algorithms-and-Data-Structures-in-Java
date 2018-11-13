@@ -1,6 +1,6 @@
 package com.rampatra.arrays;
 
-import com.rampatra.arrays.sorting.QuickSort;
+import com.rampatra.sorting.QuickSort;
 
 /**
  * Created by IntelliJ IDEA.

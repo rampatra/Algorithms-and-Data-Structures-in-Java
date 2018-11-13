@@ -313,7 +313,7 @@ public class Main {
                     break;
                 case 7:
                     out.println("Exiting...");
-                    System.exit(0);
+                    return;
                 default:
                     out.println("Wrong choice!");
             }

@@ -1,4 +1,4 @@
-package com.rampatra.arrays.sorting;
+package com.rampatra.sorting;
 
 /**
  * Created by IntelliJ IDEA.

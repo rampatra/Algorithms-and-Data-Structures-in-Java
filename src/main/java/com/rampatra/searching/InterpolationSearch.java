@@ -1,4 +1,4 @@
-package com.rampatra.arrays.searching;
+package com.rampatra.searching;
 
 /**
  * Created by IntelliJ IDEA.

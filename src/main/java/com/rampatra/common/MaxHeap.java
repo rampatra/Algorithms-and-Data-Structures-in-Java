@@ -1,6 +1,6 @@
 package com.rampatra.common;
 
-import com.rampatra.arrays.sorting.HeapSort;
+import com.rampatra.sorting.HeapSort;
 
 import java.util.Arrays;
 

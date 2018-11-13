@@ -1,6 +1,6 @@
 package com.rampatra.arrays;
 
-import com.rampatra.arrays.searching.BinarySearch;
+import com.rampatra.searching.BinarySearch;
 
 /**
  * Created by IntelliJ IDEA.
