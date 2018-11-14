@@ -12,7 +12,9 @@ import java.util.Arrays;
 public class MergeSort {
 
     /**
-     * Merge sort.
+     * Merge sort. Note that we are creating unnecessary arrays in each recursive
+     * call. This makes the algorithm simple but it occupies more space. Look at
+     * {@link MergeSortSpaceOptimized} instead.
      * <p/>
      * Time complexity:     O(n log n)
      * Space complexity:    O(n) (also needs O(log n) stack space as it is recursive)
