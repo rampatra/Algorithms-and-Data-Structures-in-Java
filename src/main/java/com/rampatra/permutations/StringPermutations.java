@@ -1,4 +1,4 @@
-package com.rampatra.strings;
+package com.rampatra.permutations;
 
 /**
  * Created by IntelliJ IDEA.

@@ -8,11 +8,10 @@ import java.util.EmptyStackException;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/15/15
- * @time: 11:15 PM
+ * @author ramswaroop
+ * @since 9/15/15
  */
-public class Parenthesis {
+public class BalancingParenthesis {
 
     private static final char L_PAREN = '(';
     private static final char R_PAREN = ')';
@@ -84,7 +83,6 @@ public class Parenthesis {
      */
     public static void main(String a[]) {
         readFile(a[0]);
-        System.exit(0);
     }
 }
 

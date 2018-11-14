@@ -1,4 +1,4 @@
-package com.rampatra.strings;
+package com.rampatra.permutations;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,14 +26,12 @@ public class UppercaseLowercasePermutations {
             return;
         }
 
-        if (!isNumber(s.charAt(0))) {
+        if (isNumber(s.charAt(0))) {
+            printUppercaseLowercasePermutations(prefix + s.charAt(0), s.substring(1));
+        } else {
             printUppercaseLowercasePermutations(prefix + Character.toUpperCase(s.charAt(0)), s.substring(1));
             printUppercaseLowercasePermutations(prefix + Character.toLowerCase(s.charAt(0)), s.substring(1));
-        } else {
-            printUppercaseLowercasePermutations(prefix + s.charAt(0), s.substring(1));
-
         }
-
     }
 
     public static boolean isNumber(char s) {
