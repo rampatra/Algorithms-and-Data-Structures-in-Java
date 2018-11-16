@@ -1,14 +1,14 @@
 package com.rampatra.permutations;
 
 /**
- * Created by IntelliJ IDEA.
+ * Prints all the permutations of a string by using the characters in the
+ * input only once.
  *
- * @author: ramswaroop
- * @date: 9/24/15
- * @time: 2:27 PM
- * @see: http://www.ericleschinski.com/c/java_permutations_recursion/
- * @see: http://introcs.cs.princeton.edu/java/23recursion/Permutations.java.html
- * @see: me.ramswaroop.strings.StringPermutationCount for a modification of this problem
+ * @author ramswaroop
+ * @link http://www.ericleschinski.com/c/java_permutations_recursion/
+ * @link http://introcs.cs.princeton.edu/java/23recursion/Permutations.java.html
+ * @link me.ramswaroop.strings.StringPermutationCount for a modification of this problem
+ * @since 9/24/15
  */
 public class StringPermutations {
 
@@ -16,8 +16,8 @@ public class StringPermutations {
      * Generates and prints all possible permutations (in order)
      * of string {@param s}.
      *
-     * @param prefix
-     * @param s
+     * @param prefix empty string, needed for the recursive method
+     * @param s input string with no repeated characters
      */
     public static void printAllPermutations(String prefix, String s) {
         int len = s.length();
