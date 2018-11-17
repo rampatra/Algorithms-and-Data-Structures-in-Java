@@ -10,10 +10,10 @@ package com.rampatra.common;
 public class BinaryNode<E extends Comparable<E>> {
 
     public E value;
-    public BinaryNode left;
-    public BinaryNode right;
+    public BinaryNode<E> left;
+    public BinaryNode<E> right;
 
-    public BinaryNode(E value, BinaryNode left, BinaryNode right) {
+    public BinaryNode(E value, BinaryNode<E> left, BinaryNode<E> right) {
         this.value = value;
         this.left = left;
         this.right = right;

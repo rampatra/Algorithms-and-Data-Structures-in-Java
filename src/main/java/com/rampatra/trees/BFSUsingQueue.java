@@ -5,6 +5,7 @@ import com.rampatra.common.BinaryTree;
 import com.rampatra.common.LinkedQueue;
 import com.rampatra.common.Queue;
 
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 import static java.lang.System.out;
@@ -20,13 +21,16 @@ public class BFSUsingQueue {
 
     /**
      * Breadth first traversal (Level-order traversal using Queue).
+     *
+     * @param node a tree node with left and right references and a value of type {@code E}
+     * @param <E> the type of value that the {@code node} holds
      */
     public static <E extends Comparable<E>> void breadthFirstTraversalUsingQueue(BinaryNode<E> node) {
         Queue<BinaryNode<E>> queue = new LinkedQueue<>();
         breadthFirstTraversalUsingQueue(node, queue);
     }
 
-    public static <E extends Comparable<E>> void breadthFirstTraversalUsingQueue(BinaryNode<E> node,
+    private static <E extends Comparable<E>> void breadthFirstTraversalUsingQueue(BinaryNode<E> node,
                                                                                  Queue<BinaryNode<E>> queue) {
 
         if (node != null) {
@@ -42,10 +46,31 @@ public class BFSUsingQueue {
         }
     }
 
-    public static <E extends Comparable<E>> void printValue(BinaryNode<E> node) {
+    private static <E extends Comparable<E>> void printValue(BinaryNode<E> node) {
         if (node == null) return;
 
         out.print(node.value);
+    }
+
+    /**
+     * Level order traversal using queue but iteratively.
+     *
+     * @param root the root node from where the traversal should start
+     * @param <E> type of the {@code value} that {@code BinaryNode} holds
+     */
+    public static <E extends Comparable<E>> void breadthFirstTraversalUsingQueueIterative(BinaryNode<E> root) {
+        if (root == null) return;
+
+        Queue<BinaryNode<E>> q = new LinkedQueue<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            BinaryNode<E> node = q.remove();
+            out.print(node.value);
+
+            if (node.left != null) q.add(node.left);
+            if (node.right != null) q.add(node.right);
+        }
     }
 
     public static void main(String a[]) {
@@ -57,5 +82,7 @@ public class BFSUsingQueue {
         bt.put(8);
         bt.put(9);
         breadthFirstTraversalUsingQueue(bt.root);
+        System.out.println();
+        breadthFirstTraversalUsingQueueIterative(bt.root);
     }
 }
