@@ -5,12 +5,12 @@ import com.rampatra.trees.BFSUsingQueue;
 import static java.lang.System.out;
 
 /**
- * Created by IntelliJ IDEA.
+ * Basic binary tree functions like put, delete, height, traversals, etc.
  *
- * @author: ramswaroop
- * @date: 4/19/15
- * @time: 6:35 PM
- * @see: https://www.cs.bu.edu/teaching/c/tree/breadth-first/
+ * @author rampatra
+ * @since 4/19/15
+ * @link https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/trees.html
+ * @link http://typeocaml.com/2014/11/26/height-depth-and-level-of-a-tree/
  */
 public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
@@ -46,10 +46,12 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         return node;
     }
 
-    /**
-     * Traversals.
-     */
 
+    /***********************************
+     *
+     * Tree Traversals.
+     *
+     ***********************************/
 
     /**
      * Prints the pre-order traversal of the tree.
@@ -164,25 +166,28 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
 
 
     /**
-     * Return the height of the tree.
+     * Height of the tree is the number of edges from the root to its farthest leaf.
+     * Note: The height of binary tree with single node is taken as zero.
      *
-     * @return
+     * @return the height of the tree.
      */
     public int height() {
         return height(root);
     }
 
     public int height(BinaryNode<E> node) {
-        if (node == null) return 0;
+        if (node == null || (node.left == null && node.right == null)) {
+            return 0;
+        }
 
         return Math.max(height(node.left), height(node.right)) + 1;
     }
 
 
     /**
-     * Returns the number of nodes currently in the tree.
+     * Size of tree.
      *
-     * @return
+     * @return the number of nodes currently in the tree.
      */
     public int size() {
         return size(root);
@@ -266,8 +271,15 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         bt.put(6);
         bt.put(7);
         bt.put(8);
+
+        out.print("BFS: ");
         bt.breadthFirstTraversal();
-        out.println();
+        out.print("\nPre Order: ");
+        bt.preOrder();
+        out.print("\nIn Order: ");
         bt.inOrder();
+        out.print("\nPost Order: ");
+        bt.postOrder();
+        out.println("\nHeight of tree: " + bt.height());
     }
 }
