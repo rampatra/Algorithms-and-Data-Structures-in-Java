@@ -1,16 +1,13 @@
-package com.rampatra.misc;
+package com.rampatra.bits;
 
 /**
- * Created by IntelliJ IDEA.
+ * {@code >>} shifts bits to right filling left bits with the left most
+ * bit (most significant bit). Also called signed right shift.
+ * {@code >>>} shifts bits to the right filling left bits
+ * with 0. Also called unsigned right shift.
  *
- * @author: ramswaroop
- * @date: 6/2/15
- * @time: 3:26 PM
- */
-
-/**
- * {@code >>} shifts bits to right filling left bits with the left most bit (most significant bit)
- * {@code >>>} shifts bits to the right filling left bits with 0
+ * @author rampatra
+ * @since 6/2/15
  */
 public class RightShiftOperator {
 
