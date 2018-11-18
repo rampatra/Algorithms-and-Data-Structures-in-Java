@@ -6,6 +6,16 @@ import static java.lang.System.out;
 
 /**
  * Basic binary tree functions like put, delete, height, traversals, etc.
+ * An example of a binary tree:
+ *
+ *                    5    ------> depth 0, level 1 (depth + 1)
+ *                  /   \
+ *                 3     8  -----> depth 1, level 2
+ *               /  \   / \
+ *              2   4  9  7  ----> depth 2, level 3
+ *
+ * Root of the tree: 5
+ * Height: 2
  *
  * @author rampatra
  * @since 4/19/15
@@ -113,11 +123,12 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * first, before moving to the next level neighbors. See {@link BFSUsingQueue}
      * for a O(n) solution.
      * <p>
-     * Time complexity: O(n^2)
+     * Time complexity: O(h^2) where, h is the height of the tree
      */
     public void breadthFirstTraversal() {
-        // assuming level starts at zero
-        for (int level = 0; level < height(root); level++) {
+        int height = height(root);
+        // assuming level starts at one
+        for (int level = 1; level <= height + 1; level++) {
             printLevel(root, level);
         }
     }
@@ -126,9 +137,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node == null) return;
 
         // print the starting node
-        if (level == 0) {
+        if (level == 1) {
             printValue(node);
-        } else { // print the neighbour nodes            
+        } else { // print the immediate child nodes
             printLevel(node.left, level - 1);
             printLevel(node.right, level - 1);
         }
