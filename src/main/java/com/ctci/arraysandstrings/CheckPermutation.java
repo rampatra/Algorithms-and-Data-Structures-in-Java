@@ -8,6 +8,13 @@ import java.util.Arrays;
  */
 public class CheckPermutation {
 
+    /**
+     * Checks if {@code s1} is a permutation of {@code s2}.
+     *
+     * @param s1
+     * @param s2
+     * @return
+     */
     private static boolean isOnePermutationOfOther(String s1, String s2) {
         if (s1.length() != s2.length()) {
             return false;
@@ -21,6 +28,13 @@ public class CheckPermutation {
         return Arrays.equals(c1, c2);
     }
 
+    /**
+     * Checks if {@code s1} is a permutation of {@code s2}.
+     *
+     * @param s1
+     * @param s2
+     * @return
+     */
     private static boolean isOnePermutationOfOtherGivenThatStringsContainOnlyAscii(String s1, String s2) {
         if (s1.length() != s2.length()) {
             return false;
