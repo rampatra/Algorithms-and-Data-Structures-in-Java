@@ -1,4 +1,4 @@
-package com.rampatra.ctci;
+package com.ctci.arraysandstrings;
 
 /**
  * @author rampatra
