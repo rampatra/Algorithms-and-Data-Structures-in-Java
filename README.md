@@ -7,8 +7,8 @@ You can also refer my [Java Notes](http://java.ramswaroop.me) for a quick refres
 ## Environment
 
 ### Java Version
-Java version 1.8.0_172
-Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+Java version 1.8.0_172  
+Java(TM) SE Runtime Environment (build 1.8.0_172-b11)  
 Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode) 
 
 ### IDE
