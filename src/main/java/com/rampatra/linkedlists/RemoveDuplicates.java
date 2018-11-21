@@ -3,8 +3,8 @@ package com.rampatra.linkedlists;
 import com.rampatra.common.SingleLinkedList;
 import com.rampatra.common.SingleLinkedNode;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,13 +24,11 @@ public class RemoveDuplicates {
      */
     public static <E extends Comparable<E>> void removeDuplicates(SingleLinkedList<E> list) {
         SingleLinkedNode<E> curr = list.getNode(0);
-        int index = 0;
         while (curr != null) {
             // inner while loop for removing multiple duplicates
             while (curr.next != null && curr.item == curr.next.item) {
-                list.remove(index + 1);
+                curr.next = curr.next.next;
             }
-            index++;
             curr = curr.next;
         }
     }
@@ -38,7 +36,7 @@ public class RemoveDuplicates {
     /**
      * Removes duplicates from an unsorted linked list.
      * <p/>
-     * This method uses {@link HashMap}, another
+     * This method uses {@link HashSet}, another
      * way is that you can sort it using merge sort and then
      * call {@link #removeDuplicates}.
      *
@@ -47,48 +45,48 @@ public class RemoveDuplicates {
      */
     public static <E extends Comparable<E>> void removeDuplicatesFromUnsortedList(SingleLinkedList<E> list) {
         SingleLinkedNode<E> curr = list.getNode(0);
-        Map<E, Boolean> map = new HashMap<>();
-        int index = 0;
+        SingleLinkedNode<E> prev = curr;
+        Set<E> itemsInList = new HashSet<>();
         while (curr != null) {
-            if (map.get(curr.item) == null) {
-                map.put(curr.item, true);
-                index++;
-            } else {
-                list.remove(index);
+            if (itemsInList.contains(curr.item)) {
+                itemsInList.add(curr.item);
+            } else { // delete duplicate element
+                prev.next = curr.next;
             }
+            prev = curr;
             curr = curr.next;
         }
     }
 
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(00);
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(22);
-        linkedList.add(22);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(33);
-        linkedList.add(33);
-        linkedList.add(33);
+        linkedList.add(0);
+        linkedList.add(0);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(2);
+        linkedList.add(2);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(3);
+        linkedList.add(3);
+        linkedList.add(3);
         linkedList.printList();
         removeDuplicates(linkedList);
         linkedList.printList();
 
         SingleLinkedList<Integer> linkedList2 = new SingleLinkedList<>();
-        linkedList2.add(00);
-        linkedList2.add(00);
-        linkedList2.add(22);
-        linkedList2.add(11);
-        linkedList2.add(44);
-        linkedList2.add(22);
-        linkedList2.add(66);
-        linkedList2.add(77);
-        linkedList2.add(66);
+        linkedList2.add(0);
+        linkedList2.add(0);
+        linkedList2.add(2);
+        linkedList2.add(1);
+        linkedList2.add(4);
+        linkedList2.add(2);
+        linkedList2.add(6);
+        linkedList2.add(7);
+        linkedList2.add(6);
         linkedList2.printList();
         removeDuplicatesFromUnsortedList(linkedList2);
         linkedList2.printList();
