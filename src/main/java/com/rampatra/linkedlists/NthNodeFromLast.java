@@ -6,12 +6,17 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/18/15
- * @time: 6:49 PM
+ * @author rampatra
+ * @since 6/18/15
  */
 public class NthNodeFromLast {
 
+    /**
+     * @param list
+     * @param n
+     * @param <E>
+     * @return
+     */
     public static <E extends Comparable<E>> SingleLinkedNode<E> getNthNodeFromLast(SingleLinkedList<E> list, int n) {
         SingleLinkedNode<E> slow = list.getNode(0);
         SingleLinkedNode<E> fast = list.getNode(0);
@@ -29,15 +34,42 @@ public class NthNodeFromLast {
 
     public static void main(String a[]) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(44);
-        linkedList.add(55);
-        linkedList.add(66);
-        linkedList.add(77);
-        linkedList.add(88);
-        System.out.println(getNthNodeFromLast(linkedList, 3).item);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
+        linkedList.add(6);
+        linkedList.add(7);
+        linkedList.add(8);
+        linkedList.printList();
+        System.out.println("n=3: " + getNthNodeFromLast(linkedList, 3).item);
+
+        SingleLinkedList<Integer> linkedList2 = new SingleLinkedList<>();
+        linkedList2.add(0);
+        linkedList2.add(1);
+        linkedList2.add(2);
+        linkedList2.add(3);
+        linkedList2.add(4);
+        linkedList2.add(5);
+        linkedList2.add(6);
+        linkedList2.add(7);
+        linkedList2.add(8);
+        linkedList2.printList();
+        System.out.println("n=1: " + getNthNodeFromLast(linkedList2, 1).item);
+
+        SingleLinkedList<Integer> linkedList3 = new SingleLinkedList<>();
+        linkedList3.add(0);
+        linkedList3.add(1);
+        linkedList3.add(2);
+        linkedList3.add(3);
+        linkedList3.add(4);
+        linkedList3.add(5);
+        linkedList3.add(6);
+        linkedList3.add(7);
+        linkedList3.add(8);
+        linkedList3.printList();
+        System.out.println("n=9: " + getNthNodeFromLast(linkedList3, 9).item);
     }
 }

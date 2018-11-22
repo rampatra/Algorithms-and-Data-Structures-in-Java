@@ -3,6 +3,8 @@ package com.ctci.linkedlists;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.ctci.linkedlists.Node.printList;
+
 /**
  * @author rampatra
  * @since 21/11/2018
@@ -32,17 +34,6 @@ public class RemoveDuplicates {
             prev = curr;
             curr = curr.next;
         }
-    }
-
-    private static void printList(Node head) {
-        if (head == null) return;
-
-        Node curr = head;
-        while (curr.next != null) {
-            System.out.print(curr.val + "->");
-            curr = curr.next;
-        }
-        System.out.println(curr.val);
     }
 
     public static void main(String[] args) {
@@ -81,14 +72,5 @@ public class RemoveDuplicates {
         removeDuplicatesFromUnsortedList(l3);
         System.out.print("Without dups: ");
         printList(l3);
-    }
-}
-
-class Node {
-    int val;
-    Node next;
-
-    Node(int val) {
-        this.val = val;
     }
 }
