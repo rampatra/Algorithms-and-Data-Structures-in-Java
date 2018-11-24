@@ -42,6 +42,8 @@ public class OneAway {
         int j = 0;
         int s1Len = s1.length();
         int s2Len = s2.length();
+        if (Math.abs(s1Len - s2Len) > 1) return false;
+
         while (i < s1Len && j < s2Len) {
             if (s1.charAt(i) != s2.charAt(j)) {
                 if (s1Len > s2Len) {
@@ -63,5 +65,6 @@ public class OneAway {
         System.out.println("pale, bale: " + isOneEditAway("pale", "bale"));
         System.out.println("pale, bake: " + isOneEditAway("pale", "bake"));
         System.out.println("ram, rama: " + isOneEditAway("ram", "rama"));
+        System.out.println("ram, ramaaaaaaa: " + isOneEditAway("ram", "ramaaaaaaa"));
     }
 }
