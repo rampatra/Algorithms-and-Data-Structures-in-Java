@@ -7,12 +7,18 @@ import java.util.Map;
 /**
  * Created by IntelliJ IDEA.
  * <p/>
- * A simple LRU cache using {@link LinkedHashMap}.
+ * A simple LRU cache using {@link LinkedHashMap}. A special
+ * LinkedHashMap(capacity, loadFactor, accessOrderBoolean) constructor is
+ * provided to create a linked hash map whose order of iteration is the
+ * order in which its entries were last accessed, from least-recently
+ * accessed to most-recently. Invoking the put or get method results
+ * in an access to the corresponding entry. If the enclosing Map is
+ * access-ordered, it moves the entry to the end of the list; otherwise,
+ * it does nothing.
  *
- * @author: ramswaroop
- * @date: 7/8/15
- * @time: 5:40 PM
- * @see: http://javarticles.com/2012/06/linkedhashmap.html
+ * @author ramswaroop
+ * @link http://javarticles.com/2012/06/linkedhashmap.html
+ * @since 7/8/15
  */
 public class LRUCache<E> {
 
