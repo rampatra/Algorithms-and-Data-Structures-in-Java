@@ -1,21 +1,16 @@
 package com.rampatra.arrays;
 
-/**
- * Created by IntelliJ IDEA.
- *
- * @author: ramswaroop
- * @date: 5/18/15
- * @time: 10:24 PM
- */
-
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Given an array ar[] of n numbers and
  * another number x, determine whether or not there
  * exists two elements in ar[] whose sum is exactly x.
+ * 
+ * @author rampatra
+ * @since 5/18/15
  */
 public class PairSum {
 
@@ -25,18 +20,18 @@ public class PairSum {
      * then O(n^2) in worst case.
      *
      * @param ar
-     * @param x
+     * @param sum
      * @return
      */
-    static boolean pairSum(int ar[], int x) {
+    static boolean pairSum(int[] ar, int sum) {
         Arrays.sort(ar);
 
         int len = ar.length;
 
         for (int i = 0, j = len - 1; i < j; ) {
-            if (ar[i] + ar[j] == x) {
+            if (ar[i] + ar[j] == sum) {
                 return true;
-            } else if (ar[i] + ar[j] < x) { // approach towards larger elements
+            } else if (ar[i] + ar[j] < sum) { // approach towards larger elements
                 i++;
             } else { // approach towards smaller elements
                 j--;
@@ -46,25 +41,30 @@ public class PairSum {
     }
 
     /**
-     * Using hashmap in O(n) time
+     * Using hashmap in O(n) time.
      *
      * @param ar
-     * @param x
-     * @param map
+     * @param sum
+     * @param numSet
      * @return
      */
-    static boolean pairSum(int ar[], int x, Map<Integer, Integer> map) {
+    static boolean pairSum(int[] ar, int sum, Set<Integer> numSet) {
         for (int i = 0; i < ar.length; i++) {
-            if (map.containsKey(x - ar[i])) {
+            if (numSet.contains(sum - ar[i])) {
                 return true;
             }
-            map.put(ar[i], 1);
+            numSet.add(ar[i]);
         }
         return false;
     }
 
     public static void main(String a[]) {
         System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2));
-        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2, new HashMap<Integer, Integer>()));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 5));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 0));
+        System.out.println("--------");
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2, new HashSet<>()));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 5, new HashSet<>()));
+        System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 0, new HashSet<>()));
     }
 }
