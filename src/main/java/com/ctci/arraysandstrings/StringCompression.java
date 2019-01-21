@@ -31,6 +31,7 @@ public class StringCompression {
 
     public static void main(String[] args) {
         System.out.println("aabccccaaa: " + compressString("aabccccaaa"));
+        System.out.println("aabccccAAAA: " + compressString("aabccccAAAA"));
         System.out.println("abcd: " + compressString("abcd"));
         System.out.println("a: " + compressString("a"));
         System.out.println("aabcccccccccccccccccccccccccaaa: " + compressString("aabcccccccccccccccccccccccccaaa"));
