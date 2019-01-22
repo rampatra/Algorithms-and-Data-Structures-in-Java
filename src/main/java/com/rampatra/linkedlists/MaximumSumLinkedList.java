@@ -75,7 +75,7 @@ public class MaximumSumLinkedList {
         return head;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(00);
         linkedList1.add(11);

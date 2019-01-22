@@ -49,14 +49,14 @@ public class LRUCache<E> {
         return itemFromCache;
     }
 
-    void printCache() {
+    private void printCache() {
         Iterator<E> iterator = linkedHashMap.keySet().iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + ((iterator.hasNext()) ? "," : "\n"));
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         LRUCache<Integer> cache = new LRUCache<>(3);
         cache.add(1);
         cache.add(2);

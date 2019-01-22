@@ -111,7 +111,7 @@ public class MergeSort {
         return head.next;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(21);
         linkedList.add(33);
