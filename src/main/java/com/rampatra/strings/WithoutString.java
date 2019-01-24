@@ -13,7 +13,7 @@ import com.sun.tools.javac.util.Assert;
  */
 public class WithoutString {
 
-    public static String withoutString(String base, String remove) {
+    private static String withoutString(String base, String remove) {
         String original = base;
         base = base.toLowerCase();
         remove = remove.toLowerCase();
@@ -24,10 +24,8 @@ public class WithoutString {
         for (int i = 0; i < baseLen; ) {
             int j = 0;
             // when we see a match, advance the pointer
-            if (base.charAt(i) == remove.charAt(0)) {
-                while (j < removeLen && i + j < baseLen && base.charAt(i + j) == remove.charAt(j)) {
-                    j++;
-                }
+            while (j < removeLen && i + j < baseLen && base.charAt(i + j) == remove.charAt(j)) {
+                j++;
             }
             if (j == removeLen) { // an entire match was found, move ahead and skip these chars
                 i += removeLen;
