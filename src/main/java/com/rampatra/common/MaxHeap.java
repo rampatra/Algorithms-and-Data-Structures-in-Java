@@ -5,8 +5,6 @@ import com.rampatra.sorting.HeapSort;
 import java.util.Arrays;
 
 /**
- * Created by IntelliJ IDEA.
- * <p/>
  * A HEAP is a specialized tree-based ABSTRACT DATA TYPE that satisfies the heap property:
  * min-heap: All non-leaf elements are either smaller than or equal to their left and right child.
  * max-heap: All non-leaf elements are either greater than or equal to their left and right child.
@@ -19,11 +17,10 @@ import java.util.Arrays;
  * Therefore, buildMaxHeap() would take O(n log n) time BUT IF OBSERVED CAREFULLY IT TAKES 0(N) TIME.
  * <p/>
  * Used in the HeapSort algorithm. Also can be used to implement a PriorityQueue.
+ * <a href="@see http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm">Learn more</a>
  *
- * @author: ramswaroop
- * @date: 8/2/15
- * @time: 11:57 AM
- * @see: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm
+ * @author rampatra
+ * @since 8/2/15
  */
 public class MaxHeap {
 

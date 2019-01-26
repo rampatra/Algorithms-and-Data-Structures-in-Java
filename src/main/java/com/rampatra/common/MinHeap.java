@@ -14,7 +14,7 @@ import java.util.Arrays;
  * Each successor can be found in O(log n). The algorithm in minHeapify() takes O(log n) time
  * Therefore, buildMinHeap() would take O(n log n) time BUT IF OBSERVED CAREFULLY IT TAKES 0(N) TIME.
  * <p/>
- * Used in the HeapSort algorithm. Also can be used to implement a PriorityQueue. 
+ * Used in the HeapSort algorithm. Also can be used to implement a PriorityQueue.
  * <a href="@see http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm">Learn more</a>
  *
  * @author rampatra
@@ -68,7 +68,7 @@ public class MinHeap {
     }
 
     public void insert(int elem) {
-        heap = Arrays.copyOf(heap, 2 * size);
+        heap = Arrays.copyOf(heap, size + 1);
         int i = size;
         int parentIndex = (int) Math.floor((i - 1) / 2);
         while (i > 0 && elem < heap[parentIndex]) {
