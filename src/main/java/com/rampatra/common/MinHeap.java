@@ -3,8 +3,6 @@ package com.rampatra.common;
 import java.util.Arrays;
 
 /**
- * Created by IntelliJ IDEA.
- * <p/>
  * A HEAP is a specialized tree-based ABSTRACT DATA TYPE that satisfies the heap property:
  * min-heap: All non-leaf elements are either smaller than or equal to their left and right child.
  * max-heap: All non-leaf elements are either greater than or equal to their left and right child.
@@ -16,17 +14,16 @@ import java.util.Arrays;
  * Each successor can be found in O(log n). The algorithm in minHeapify() takes O(log n) time
  * Therefore, buildMinHeap() would take O(n log n) time BUT IF OBSERVED CAREFULLY IT TAKES 0(N) TIME.
  * <p/>
- * Used in the HeapSort algorithm. Also can be used to implement a PriorityQueue.
+ * Used in the HeapSort algorithm. Also can be used to implement a PriorityQueue. 
+ * <a href="@see http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm">Learn more</a>
  *
- * @author: ramswaroop
- * @date: 8/2/15
- * @time: 11:57 AM
- * @see: http://staff.ustc.edu.cn/~csli/graduate/algorithms/book6/chap07.htm
+ * @author rampatra
+ * @since 8/2/15
  */
 public class MinHeap {
 
-    int[] heap;
-    int size;
+    private int[] heap;
+    private int size;
 
     public MinHeap(int[] heap) {
         this.size = heap.length;
@@ -71,7 +68,7 @@ public class MinHeap {
     }
 
     public void insert(int elem) {
-        heap = Arrays.copyOf(heap, size + 1);
+        heap = Arrays.copyOf(heap, 2 * size);
         int i = size;
         int parentIndex = (int) Math.floor((i - 1) / 2);
         while (i > 0 && elem < heap[parentIndex]) {

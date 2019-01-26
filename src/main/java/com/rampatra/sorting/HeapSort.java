@@ -7,9 +7,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/3/15
- * @time: 3:13 PM
+ * @author rampatra
+ * @since 8/3/15
  */
 public class HeapSort {
 
@@ -41,7 +40,7 @@ public class HeapSort {
      * @param index
      * @param end
      */
-    private static void maxHeapify(int[] a, int index, int end) {
+    public static void maxHeapify(int[] a, int index, int end) {
         int largest = index;
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
@@ -76,7 +75,7 @@ public class HeapSort {
         a[firstIndex] = a[firstIndex] - a[secondIndex];
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         int[] ar = new int[]{2, 5, 1, 7, 9, 4};
         System.out.println(Arrays.toString(ar));
         heapSort(ar);
