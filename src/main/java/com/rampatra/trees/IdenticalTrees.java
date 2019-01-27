@@ -8,8 +8,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 5:36 PM
  */
 public class IdenticalTrees {

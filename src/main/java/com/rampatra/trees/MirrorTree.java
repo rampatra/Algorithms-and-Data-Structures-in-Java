@@ -6,8 +6,8 @@ import com.rampatra.common.BinaryTree;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 7:03 PM
  */
 public class MirrorTree {

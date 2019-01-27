@@ -3,8 +3,8 @@ package com.hackerrank.java.oops;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/19/15
+ * @author rampatra
+ * @since 7/19/15
  * @time: 3:36 PM
  */
 public class JavaInheritance {

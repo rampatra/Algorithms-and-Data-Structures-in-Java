@@ -3,8 +3,8 @@ package com.rampatra.misc;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 11/13/15
+ * @author rampatra
+ * @since 11/13/15
  * @time: 11:39 AM
  */
 public class OuterClassAccess {

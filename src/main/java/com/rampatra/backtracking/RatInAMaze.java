@@ -3,8 +3,8 @@ package com.rampatra.backtracking;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/18/15
+ * @author rampatra
+ * @since 10/18/15
  * @time: 10:39 AM
  */
 public class RatInAMaze {

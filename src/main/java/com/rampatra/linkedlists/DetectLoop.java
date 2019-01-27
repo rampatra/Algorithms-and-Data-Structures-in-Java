@@ -8,8 +8,8 @@ import java.util.HashMap;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/19/15
+ * @author rampatra
+ * @since 6/19/15
  * @time: 9:24 AM
  */
 public class DetectLoop {

@@ -7,8 +7,8 @@ import com.rampatra.common.SingleLinkedNode;
  * This is for reversing a linked list, both iteratively and recursively. If you
  * want to reverse linked list in groups then see {@link ReverseLinkedListInGroups}.
  *
- * @author: ramswaroop
- * @date: 6/19/15
+ * @author rampatra
+ * @since 6/19/15
  * @time: 9:24 AM
  */
 public class ReverseSingleLinkedList {

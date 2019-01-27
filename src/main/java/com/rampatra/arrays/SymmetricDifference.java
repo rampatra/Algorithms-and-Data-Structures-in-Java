@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/20/15
+ * @author rampatra
+ * @since 10/20/15
  * @time: 11:34 PM
  */
 public class SymmetricDifference {

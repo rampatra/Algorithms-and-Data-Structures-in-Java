@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/12/15
+ * @author rampatra
+ * @since 6/12/15
  * @time: 3:31 PM
  */
 public class BooleanArrayPuzzle {

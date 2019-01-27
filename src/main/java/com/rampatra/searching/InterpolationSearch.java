@@ -3,8 +3,8 @@ package com.rampatra.searching;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/1/15
+ * @author rampatra
+ * @since 9/1/15
  * @time: 4:57 PM
  */
 public class InterpolationSearch {

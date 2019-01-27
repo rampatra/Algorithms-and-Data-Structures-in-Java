@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/12/15
+ * @author rampatra
+ * @since 8/12/15
  * @time: 5:40 PM
  */
 public class MaxDiffWithLargerElementAfterSmallerElement {

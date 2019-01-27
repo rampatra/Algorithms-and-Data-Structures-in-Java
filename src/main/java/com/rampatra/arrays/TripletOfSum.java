@@ -7,8 +7,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/28/15
+ * @author rampatra
+ * @since 9/28/15
  * @time: 10:39 PM
  */
 public class TripletOfSum {

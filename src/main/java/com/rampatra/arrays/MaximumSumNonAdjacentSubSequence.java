@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/29/15
+ * @author rampatra
+ * @since 7/29/15
  * @time: 9:18 AM
  */
 public class MaximumSumNonAdjacentSubSequence {

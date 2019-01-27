@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/14/15
+ * @author rampatra
+ * @since 6/14/15
  * @time: 12:37 AM
  */
 public class ElementOccurringOnce {

@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/5/15
+ * @author rampatra
+ * @since 6/5/15
  * @time: 4:26 PM
  * @link: http://stackoverflow.com/questions/746171/best-algorithm-for-bit-reversal-from-msb-lsb-to-lsb-msb-in-c
  * @link: http://graphics.stanford.edu/~seander/bithacks.html#BitReverseObvious

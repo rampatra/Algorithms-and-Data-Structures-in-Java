@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/11/15
+ * @author rampatra
+ * @since 9/11/15
  * @time: 3:28 PM
  * @see: http://www.geeksforgeeks.org/a-boolean-matrix-question/
  */

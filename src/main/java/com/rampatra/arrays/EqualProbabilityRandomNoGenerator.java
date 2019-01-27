@@ -9,8 +9,8 @@ import java.util.Scanner;
  * which uses f(n) to generate non repeating random numbers from
  * {@code 0} (inclusive) to {@code n} (exclusive)?
  *
- * @author: ramswaroop
- * @date: 8/13/15
+ * @author rampatra
+ * @since 8/13/15
  * @time: 1:41 PM
  */
 public class EqualProbabilityRandomNoGenerator {

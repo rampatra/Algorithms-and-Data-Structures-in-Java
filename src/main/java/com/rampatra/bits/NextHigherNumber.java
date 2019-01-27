@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/10/15
+ * @author rampatra
+ * @since 6/10/15
  * @time: 6:08 PM
  */
 public class NextHigherNumber {

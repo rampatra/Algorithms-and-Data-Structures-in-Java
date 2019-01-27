@@ -8,8 +8,8 @@ import java.math.BigInteger;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/16/15
+ * @author rampatra
+ * @since 9/16/15
  * @time: 10:53 PM
  */
 public class ReverseAndAdd {

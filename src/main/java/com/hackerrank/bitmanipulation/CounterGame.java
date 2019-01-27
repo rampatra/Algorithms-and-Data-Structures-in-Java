@@ -6,8 +6,8 @@ import java.util.Scanner;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/24/15
+ * @author rampatra
+ * @since 6/24/15
  * @time: 12:03 PM
  */
 public class CounterGame {

@@ -6,8 +6,8 @@ import java.util.Random;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/21/15
+ * @author rampatra
+ * @since 7/21/15
  * @time: 2:52 PM
  */
 public class ReservoirSampling {

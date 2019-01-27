@@ -7,8 +7,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/30/15
+ * @author rampatra
+ * @since 7/30/15
  * @time: 5:44 PM
  */
 public class TwoElementsSumClosestToZero {

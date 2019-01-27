@@ -3,8 +3,8 @@ package com.rampatra.permutations;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/26/15
+ * @author rampatra
+ * @since 9/26/15
  * @time: 4:43 PM
  */
 public class UppercaseLowercasePermutations {

@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/6/15
+ * @author rampatra
+ * @since 9/6/15
  * @time: 10:53 PM
  */
 public class MinimumDistanceBetweenTwoNos {

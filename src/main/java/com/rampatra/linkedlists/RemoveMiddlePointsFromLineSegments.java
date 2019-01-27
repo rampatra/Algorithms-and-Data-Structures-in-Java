@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/23/15
+ * @author rampatra
+ * @since 7/23/15
  * @time: 11:18 PM
  */
 public class RemoveMiddlePointsFromLineSegments {
@@ -53,7 +53,7 @@ public class RemoveMiddlePointsFromLineSegments {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         // test case 1
         SingleLinkedList<Point> linkedList = new SingleLinkedList<>();
         linkedList.add(new Point(0, 10));

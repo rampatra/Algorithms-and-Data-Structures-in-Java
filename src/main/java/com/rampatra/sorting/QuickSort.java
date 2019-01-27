@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/21/15
+ * @author rampatra
+ * @since 7/21/15
  * @time: 4:12 PM
  * @see: http://www.csanimated.com/animation.php?t=Quicksort
  */

@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/19/15
+ * @author rampatra
+ * @since 9/19/15
  * @time: 11:33 PM
  */
 public class CountSmallerElementsOnRHS {

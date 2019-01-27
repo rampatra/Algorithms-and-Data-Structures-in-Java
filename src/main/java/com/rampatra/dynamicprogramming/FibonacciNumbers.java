@@ -7,8 +7,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/10/15
+ * @author rampatra
+ * @since 9/10/15
  * @time: 3:57 PM
  */
 public class FibonacciNumbers {

@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 1/1/16
+ * @author rampatra
+ * @since 1/1/16
  * @time: 8:48 AM
  */
 public class MultiplesOf3and5 {

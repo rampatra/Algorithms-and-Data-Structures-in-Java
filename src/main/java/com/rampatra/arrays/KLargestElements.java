@@ -7,8 +7,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/3/15
+ * @author rampatra
+ * @since 8/3/15
  * @time: 3:47 PM
  */
 public class KLargestElements {

@@ -3,8 +3,8 @@ package com.rampatra.misc;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 5/8/15
+ * @author rampatra
+ * @since 5/8/15
  * @time: 12:08 PM
  */
 class MethodOverloading {

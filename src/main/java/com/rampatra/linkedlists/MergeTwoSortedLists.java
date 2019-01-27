@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/27/15
+ * @author rampatra
+ * @since 6/27/15
  * @time: 8:47 PM
  */
 public class MergeTwoSortedLists {

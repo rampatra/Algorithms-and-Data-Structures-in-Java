@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/13/15
+ * @author rampatra
+ * @since 6/13/15
  * @time: 4:45 PM
  */
 public class SwapBits {

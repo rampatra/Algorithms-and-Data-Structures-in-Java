@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/21/15
+ * @author rampatra
+ * @since 8/21/15
  * @time: 9:41 AM
  */
 public class DuplicatesInArray {

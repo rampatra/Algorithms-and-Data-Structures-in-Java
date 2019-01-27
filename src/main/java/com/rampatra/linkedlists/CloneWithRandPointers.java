@@ -6,8 +6,8 @@ import com.rampatra.common.DoubleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/20/15
+ * @author rampatra
+ * @since 6/20/15
  * @time: 1:00 PM
  * @see: http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
  */

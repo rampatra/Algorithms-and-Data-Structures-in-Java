@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/8/15
+ * @author rampatra
+ * @since 6/8/15
  * @time: 5:12 PM
  * <p/>
  * A ROTATION (OR CIRCULAR SHIFT) is an operation similar to

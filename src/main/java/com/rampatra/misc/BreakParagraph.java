@@ -6,8 +6,8 @@ import java.util.Locale;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/22/15
+ * @author rampatra
+ * @since 9/22/15
  * @time: 10:02 AM
  */
 public class BreakParagraph {

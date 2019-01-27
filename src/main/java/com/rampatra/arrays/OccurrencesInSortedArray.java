@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/31/15
+ * @author rampatra
+ * @since 8/31/15
  * @time: 2:52 PM
  */
 public class OccurrencesInSortedArray {

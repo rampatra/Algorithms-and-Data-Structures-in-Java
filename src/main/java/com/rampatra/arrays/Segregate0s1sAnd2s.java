@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/18/15
+ * @author rampatra
+ * @since 8/18/15
  * @time: 8:38 PM
  */
 public class Segregate0s1sAnd2s {

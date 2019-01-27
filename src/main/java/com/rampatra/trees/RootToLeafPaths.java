@@ -11,8 +11,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 5:52 PM
  */
 public class RootToLeafPaths<E extends Comparable<E>> extends BinaryTree<E> {

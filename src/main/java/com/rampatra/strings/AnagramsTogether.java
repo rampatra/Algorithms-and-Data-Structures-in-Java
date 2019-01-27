@@ -9,8 +9,8 @@ import java.util.Map;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/23/15
+ * @author rampatra
+ * @since 9/23/15
  * @time: 8:11 PM
  */
 public class AnagramsTogether {

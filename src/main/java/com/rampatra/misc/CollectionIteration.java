@@ -14,8 +14,8 @@ import static java.lang.System.out;
  * All possible ways of iterating different collections in Java.
  * Level: Basics
  *
- * @author: ramswaroop
- * @date: 10/16/15
+ * @author rampatra
+ * @since 10/16/15
  * @time: 9:24 AM
  */
 public class CollectionIteration {

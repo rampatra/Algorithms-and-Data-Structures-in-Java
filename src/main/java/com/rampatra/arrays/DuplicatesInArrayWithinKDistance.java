@@ -6,8 +6,8 @@ import java.util.HashSet;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/18/15
+ * @author rampatra
+ * @since 10/18/15
  * @time: 8:40 PM
  */
 public class DuplicatesInArrayWithinKDistance {

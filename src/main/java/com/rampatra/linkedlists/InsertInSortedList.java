@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/21/15
+ * @author rampatra
+ * @since 6/21/15
  * @time: 10:20 PM
  */
 public class InsertInSortedList<E extends Comparable<E>> extends SingleLinkedList<E> {

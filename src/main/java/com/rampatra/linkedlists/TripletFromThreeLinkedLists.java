@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/9/15
+ * @author rampatra
+ * @since 7/9/15
  * @time: 4:00 PM
  */
 public class TripletFromThreeLinkedLists {

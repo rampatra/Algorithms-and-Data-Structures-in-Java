@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/13/15
+ * @author rampatra
+ * @since 7/13/15
  * @time: 12:25 PM
  */
 public class SwapKthNode {

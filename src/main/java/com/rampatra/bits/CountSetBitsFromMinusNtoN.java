@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/22/15
+ * @author rampatra
+ * @since 7/22/15
  * @time: 12:42 PM
  */
 public class CountSetBitsFromMinusNtoN {

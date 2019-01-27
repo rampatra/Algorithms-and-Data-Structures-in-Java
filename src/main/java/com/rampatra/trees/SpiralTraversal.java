@@ -10,8 +10,8 @@ import java.util.EmptyStackException;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 5:14 PM
  */
 public class SpiralTraversal<E extends Comparable<E>> extends BinaryTree<E> {

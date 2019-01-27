@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/7/15
+ * @author rampatra
+ * @since 6/7/15
  * @time: 2:46 PM
  * @link: http://www.geeksforgeeks.org/find-two-non-repeating-elements-in-an-array-of-repeating-elements/
  */

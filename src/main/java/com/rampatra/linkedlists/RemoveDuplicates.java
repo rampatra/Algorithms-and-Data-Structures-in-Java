@@ -9,8 +9,8 @@ import java.util.Set;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/18/15
+ * @author rampatra
+ * @since 6/18/15
  * @time: 2:35 PM
  */
 public class RemoveDuplicates {
@@ -58,7 +58,7 @@ public class RemoveDuplicates {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(0);
         linkedList.add(0);

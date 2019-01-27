@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/20/15
+ * @author rampatra
+ * @since 7/20/15
  * @time: 3:03 PM
  */
 public class SortAlternativelySortedLinkedList {

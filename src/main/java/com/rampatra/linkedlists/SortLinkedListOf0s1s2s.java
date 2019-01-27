@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/5/15
+ * @author rampatra
+ * @since 7/5/15
  * @time: 1:47 PM
  */
 public class SortLinkedListOf0s1s2s {

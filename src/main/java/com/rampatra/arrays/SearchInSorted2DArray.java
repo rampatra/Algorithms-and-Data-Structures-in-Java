@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/23/15
+ * @author rampatra
+ * @since 8/23/15
  * @time: 10:31 PM
  */
 public class SearchInSorted2DArray {

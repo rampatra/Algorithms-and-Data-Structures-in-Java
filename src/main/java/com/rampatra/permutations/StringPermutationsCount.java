@@ -6,8 +6,8 @@ package com.rampatra.permutations;
  * You have 2 string, one smaller, one larger. Write an algorithm to figure out how many permutations of the
  * smaller string exist in the bigger string.
  *
- * @author: ramswaroop
- * @date: 10/15/15
+ * @author rampatra
+ * @since 10/15/15
  * @time: 10:32 AM
  * @see: StringPermutations for a simpler version
  */

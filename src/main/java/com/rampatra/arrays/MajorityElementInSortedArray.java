@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/31/15
+ * @author rampatra
+ * @since 7/31/15
  * @time: 10:02 AM
  */
 public class MajorityElementInSortedArray {

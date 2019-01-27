@@ -5,8 +5,8 @@ package com.rampatra.threads;
  * <p/>
  * Question: Print first name and last name (in order) using two different threads multiple times.
  *
- * @author: ramswaroop
- * @date: 10/6/15
+ * @author rampatra
+ * @since 10/6/15
  * @time: 7:10 PM
  */
 public class NamePrint {

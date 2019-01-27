@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/30/15
+ * @author rampatra
+ * @since 6/30/15
  * @time: 5:13 PM
  */
 public class DeleteLesserNodes {

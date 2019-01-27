@@ -5,8 +5,8 @@ import com.rampatra.sorting.QuickSort;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/4/15
+ * @author rampatra
+ * @since 9/4/15
  * @time: 11:28 PM
  */
 public class SubsetOfArray {

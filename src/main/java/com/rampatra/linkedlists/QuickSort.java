@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/21/15
+ * @author rampatra
+ * @since 7/21/15
  * @time: 11:43 PM
  */
 public class QuickSort {

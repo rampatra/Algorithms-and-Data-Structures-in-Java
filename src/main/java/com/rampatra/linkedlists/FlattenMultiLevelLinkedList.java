@@ -7,9 +7,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/26/15
- * @time: 12:08 PM
+ * @author rampatra
+ * @since 7/26/15
  */
 public class FlattenMultiLevelLinkedList {
 

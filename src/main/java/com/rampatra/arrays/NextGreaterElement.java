@@ -6,8 +6,8 @@ import com.rampatra.common.Stack;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/26/15
+ * @author rampatra
+ * @since 8/26/15
  * @time: 12:35 PM
  */
 public class NextGreaterElement {

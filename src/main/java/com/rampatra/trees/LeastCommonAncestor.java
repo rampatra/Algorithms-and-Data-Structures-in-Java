@@ -8,8 +8,8 @@ import java.util.NoSuchElementException;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 7:38 PM
  */
 public class LeastCommonAncestor {

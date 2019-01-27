@@ -5,8 +5,8 @@ import java.util.*;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/11/15
+ * @author rampatra
+ * @since 10/11/15
  * @time: 7:56 PM
  */
 public class AnagramsTogetherLexicographically {

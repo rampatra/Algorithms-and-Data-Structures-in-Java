@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/2/15
+ * @author rampatra
+ * @since 7/2/15
  * @time: 1:20 PM
  */
 public class AddNumbersInTwoLists {

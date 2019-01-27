@@ -10,8 +10,8 @@ import java.util.Map;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/16/15
+ * @author rampatra
+ * @since 10/16/15
  * @time: 8:40 AM
  */
 public class HitCount {

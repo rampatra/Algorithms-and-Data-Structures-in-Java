@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/27/15
+ * @author rampatra
+ * @since 9/27/15
  * @time: 7:32 PM
  */
 public class SubArrayOfSum {

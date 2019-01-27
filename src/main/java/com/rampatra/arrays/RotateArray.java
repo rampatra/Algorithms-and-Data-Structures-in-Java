@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/28/15
+ * @author rampatra
+ * @since 7/28/15
  * @time: 10:53 AM
  */
 public class RotateArray {

@@ -3,8 +3,8 @@ package com.rampatra.dynamicprogramming;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/29/15
+ * @author rampatra
+ * @since 9/29/15
  * @time: 10:15 PM
  */
 public class LongestIncreasingSubSequence {

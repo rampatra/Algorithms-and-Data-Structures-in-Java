@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/3/15
+ * @author rampatra
+ * @since 7/3/15
  * @time: 3:07 PM
  */
 public class RotateLinkedList {

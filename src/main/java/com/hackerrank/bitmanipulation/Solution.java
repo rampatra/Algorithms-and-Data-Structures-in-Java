@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/24/15
+ * @author rampatra
+ * @since 6/24/15
  * @time: 10:25 PM
  */
 public class Solution {

@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/12/15
+ * @author rampatra
+ * @since 9/12/15
  * @time: 1:49 PM
  */
 public class Regex {

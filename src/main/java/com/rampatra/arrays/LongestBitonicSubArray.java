@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/18/15
+ * @author rampatra
+ * @since 9/18/15
  * @time: 5:10 PM
  */
 public class LongestBitonicSubArray {

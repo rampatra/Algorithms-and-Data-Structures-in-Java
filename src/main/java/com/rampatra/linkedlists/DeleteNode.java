@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/18/15
+ * @author rampatra
+ * @since 6/18/15
  * @time: 2:35 PM
  */
 public class DeleteNode {
@@ -24,11 +24,11 @@ public class DeleteNode {
         node.next = node.next.next;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
         linkedList.printList();
         deleteNode(linkedList.getNode(1));
         linkedList.printList();

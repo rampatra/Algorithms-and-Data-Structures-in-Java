@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/18/15
+ * @author rampatra
+ * @since 6/18/15
  * @time: 10:34 PM
  */
 public class IntersectionPointOfTwoLists {

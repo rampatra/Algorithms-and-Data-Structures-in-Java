@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/22/15
+ * @author rampatra
+ * @since 8/22/15
  * @time: 12:28 PM
  */
 public class SelectionSort {

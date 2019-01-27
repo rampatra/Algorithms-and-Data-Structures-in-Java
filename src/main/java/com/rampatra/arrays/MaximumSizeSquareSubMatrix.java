@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/4/15
+ * @author rampatra
+ * @since 8/4/15
  * @time: 11:48 PM
  */
 public class MaximumSizeSquareSubMatrix {

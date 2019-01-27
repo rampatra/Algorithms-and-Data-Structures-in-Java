@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 5/20/15
+ * @author rampatra
+ * @since 5/20/15
  * @time: 11:09 PM
  */
 

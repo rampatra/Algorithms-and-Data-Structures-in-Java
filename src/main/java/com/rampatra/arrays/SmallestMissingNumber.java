@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/29/15
+ * @author rampatra
+ * @since 8/29/15
  * @time: 12:51 PM
  */
 public class SmallestMissingNumber {

@@ -3,8 +3,8 @@ package com.rampatra.common;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/16/15
+ * @author rampatra
+ * @since 6/16/15
  * @time: 12:53 PM
  */
 public interface LinkedList<E extends Comparable<E>> {

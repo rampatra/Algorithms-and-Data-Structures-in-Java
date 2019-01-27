@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/1/15
+ * @author rampatra
+ * @since 7/1/15
  * @time: 12:39 PM
  */
 public class DetectAndRemoveLoop {

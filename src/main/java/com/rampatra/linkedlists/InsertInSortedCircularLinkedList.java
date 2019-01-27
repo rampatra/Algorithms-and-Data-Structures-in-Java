@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/29/15
+ * @author rampatra
+ * @since 6/29/15
  * @time: 6:16 PM
  */
 public class InsertInSortedCircularLinkedList<E extends Comparable<E>> extends CircularSingleLinkedList<E> {

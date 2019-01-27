@@ -5,8 +5,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/9/15
+ * @author rampatra
+ * @since 9/9/15
  * @time: 2:55 PM
  */
 public class MatrixInSpiral {

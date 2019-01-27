@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/9/15
+ * @author rampatra
+ * @since 6/9/15
  * @time: 12:56 PM
  */
 public class PowerOf4 {

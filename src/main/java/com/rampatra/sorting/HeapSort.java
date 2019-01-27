@@ -15,7 +15,8 @@ public class HeapSort {
     /**
      * Heapsort.
      * <p/>
-     * Time complexity: O(n log n)
+     * Time complexity: O(n log n) as maxHeapify has complexity O(log n), buildMaxHeap has complexity O(n) and we 
+     * run maxHeapify n-1 times in heapSort function, therefore time complexity of heapSort function is O(n log n).
      *
      * @param a
      */

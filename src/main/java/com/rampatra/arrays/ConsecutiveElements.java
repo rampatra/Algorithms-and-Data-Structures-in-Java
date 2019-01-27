@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/28/15
+ * @author rampatra
+ * @since 8/28/15
  * @time: 10:32 AM
  */
 public class ConsecutiveElements {

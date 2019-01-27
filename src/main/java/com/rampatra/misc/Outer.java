@@ -3,8 +3,8 @@ package com.rampatra.misc;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/30/15
+ * @author rampatra
+ * @since 9/30/15
  * @time: 9:37 AM
  */
 class BigOuter {

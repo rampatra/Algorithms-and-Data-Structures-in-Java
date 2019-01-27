@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/15/15
+ * @author rampatra
+ * @since 8/15/15
  * @time: 9:17 PM
  */
 public class ProductArrayPuzzle {

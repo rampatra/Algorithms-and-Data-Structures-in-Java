@@ -6,8 +6,8 @@ import com.rampatra.common.BinarySearchTree;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/26/15
+ * @author rampatra
+ * @since 6/26/15
  * @time: 7:23 PM
  */
 public class InOrderWithoutStackAndRecursion<E extends Comparable<E>> extends BinarySearchTree<E> {

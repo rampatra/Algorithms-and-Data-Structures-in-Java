@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/22/15
+ * @author rampatra
+ * @since 8/22/15
  * @time: 11:56 AM
  */
 public class EquilibriumIndex {

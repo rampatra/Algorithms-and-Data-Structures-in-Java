@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/25/15
+ * @author rampatra
+ * @since 10/25/15
  * @time: 9:44 PM
  */
 public class RemoveExtraSpaces {

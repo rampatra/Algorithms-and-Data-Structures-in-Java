@@ -7,8 +7,8 @@ import static java.lang.System.out;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/16/15
+ * @author rampatra
+ * @since 6/16/15
  * @time: 1:00 PM
  */
 public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> {

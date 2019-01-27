@@ -3,8 +3,8 @@ package com.rampatra.strings;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/22/15
+ * @author rampatra
+ * @since 10/22/15
  * @time: 11:16 AM
  */
 public class SubStrings {

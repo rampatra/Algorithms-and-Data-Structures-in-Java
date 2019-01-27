@@ -5,8 +5,8 @@ import com.rampatra.sorting.QuickSort;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/30/15
+ * @author rampatra
+ * @since 10/30/15
  * @time: 11:01 AM
  * @see: http://www.geeksforgeeks.org/find-next-greater-number-set-digits/
  */

@@ -3,8 +3,8 @@ package com.rampatra.misc;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 11/3/15
+ * @author rampatra
+ * @since 11/3/15
  * @time: 2:21 PM
  */
 public class ReplaceAll {

@@ -5,8 +5,8 @@ import com.rampatra.searching.BinarySearch;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 5/31/15
+ * @author rampatra
+ * @since 5/31/15
  * @time: 10:44 PM
  */
 public class PivotedBinarySearch {

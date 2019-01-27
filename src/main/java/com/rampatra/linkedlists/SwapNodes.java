@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/12/15
+ * @author rampatra
+ * @since 7/12/15
  * @time: 1:23 PM
  */
 public class SwapNodes {

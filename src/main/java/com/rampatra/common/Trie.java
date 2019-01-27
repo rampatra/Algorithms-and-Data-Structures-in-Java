@@ -13,8 +13,8 @@ import java.util.HashMap;
  * single digit/letter of the data you want to store and {@code data} is the final full word
  * you want to save in trie.
  *
- * @author: ramswaroop
- * @date: 9/22/15
+ * @author rampatra
+ * @since 9/22/15
  * @time: 8:19 PM
  * @see: https://en.wikipedia.org/wiki/Trie
  * @see: https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries

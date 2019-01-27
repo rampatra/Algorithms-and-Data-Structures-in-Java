@@ -8,8 +8,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/3/15
+ * @author rampatra
+ * @since 9/3/15
  * @time: 9:21 PM
  */
 public class MaxInAllSubArrays {

@@ -3,8 +3,8 @@ package com.rampatra.arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/12/15
+ * @author rampatra
+ * @since 10/12/15
  * @time: 8:32 PM
  */
 public class SortedSubSequence {

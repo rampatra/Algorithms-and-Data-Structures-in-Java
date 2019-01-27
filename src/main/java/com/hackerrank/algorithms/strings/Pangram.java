@@ -5,8 +5,8 @@ import java.util.Scanner;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/22/15
+ * @author rampatra
+ * @since 10/22/15
  * @time: 8:47 AM
  */
 public class Pangram {

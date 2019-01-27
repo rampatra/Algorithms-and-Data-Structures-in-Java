@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/29/15
+ * @author rampatra
+ * @since 6/29/15
  * @time: 9:42 AM
  */
 public class IsIdentical {

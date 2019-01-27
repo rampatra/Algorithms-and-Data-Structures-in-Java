@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/2/15
+ * @author rampatra
+ * @since 6/2/15
  * @time: 5:08 PM
  */
 public class NextPowerOf2 {

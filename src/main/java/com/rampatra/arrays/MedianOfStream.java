@@ -6,8 +6,8 @@ import com.rampatra.common.MinHeap;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/12/15
+ * @author rampatra
+ * @since 9/12/15
  * @time: 11:19 PM
  */
 public class MedianOfStream {

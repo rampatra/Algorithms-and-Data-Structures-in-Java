@@ -3,8 +3,8 @@ package com.rampatra.strings;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/21/15
+ * @author rampatra
+ * @since 10/21/15
  * @time: 10:06 AM
  * @see: me.ramswaroop.strings.SubString for a similar problem.
  */

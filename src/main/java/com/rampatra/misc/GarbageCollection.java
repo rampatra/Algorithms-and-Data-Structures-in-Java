@@ -3,8 +3,8 @@ package com.rampatra.misc;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/2/15
+ * @author rampatra
+ * @since 10/2/15
  * @time: 12:44 AM
  */
 public class GarbageCollection {

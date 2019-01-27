@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/7/15
+ * @author rampatra
+ * @since 7/7/15
  * @time: 1:04 PM
  */
 public class IntersectionAndUnionOf2Lists {

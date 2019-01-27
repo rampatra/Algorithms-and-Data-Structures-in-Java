@@ -3,8 +3,8 @@ package com.rampatra.common;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/18/15
+ * @author rampatra
+ * @since 6/18/15
  * @time: 2:37 PM
  */
 public class SingleLinkedNode<E extends Comparable<E>> {

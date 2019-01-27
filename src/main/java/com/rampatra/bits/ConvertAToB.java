@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/7/15
+ * @author rampatra
+ * @since 6/7/15
  * @time: 1:53 PM
  */
 public class ConvertAToB {

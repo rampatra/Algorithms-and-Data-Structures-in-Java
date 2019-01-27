@@ -3,8 +3,8 @@ package com.rampatra.dynamicprogramming;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 9/20/15
+ * @author rampatra
+ * @since 9/20/15
  * @time: 1:18 PM
  */
 public class MinimumJumpsToReachEnd {

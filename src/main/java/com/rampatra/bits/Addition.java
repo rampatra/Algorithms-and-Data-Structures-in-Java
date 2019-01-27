@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/10/15
+ * @author rampatra
+ * @since 6/10/15
  * @time: 12:55 PM
  */
 public class Addition {

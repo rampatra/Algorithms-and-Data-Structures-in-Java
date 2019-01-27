@@ -8,8 +8,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 8/1/15
+ * @author rampatra
+ * @since 8/1/15
  * @time: 11:26 PM
  */
 public class KthLargestElement {

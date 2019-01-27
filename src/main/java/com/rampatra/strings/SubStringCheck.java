@@ -3,8 +3,8 @@ package com.rampatra.strings;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/20/15
+ * @author rampatra
+ * @since 10/20/15
  * @time: 1:15 PM
  * @see: StringRotation for a similar problem.
  */

@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/4/15
+ * @author rampatra
+ * @since 6/4/15
  * @time: 4:28 PM
  */
 public class IntegerOverflow {

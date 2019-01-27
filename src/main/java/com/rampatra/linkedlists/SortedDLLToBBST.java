@@ -6,8 +6,8 @@ import com.rampatra.common.DoubleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 7/24/15
+ * @author rampatra
+ * @since 7/24/15
  * @time: 3:16 PM
  */
 public class SortedDLLToBBST {

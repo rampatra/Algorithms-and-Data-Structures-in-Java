@@ -5,8 +5,8 @@ import java.util.Arrays;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/26/15
+ * @author rampatra
+ * @since 10/26/15
  * @time: 9:20 PM
  */
 public class PancakeSort {

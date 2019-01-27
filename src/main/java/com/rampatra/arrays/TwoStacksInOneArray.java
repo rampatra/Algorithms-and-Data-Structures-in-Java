@@ -11,8 +11,8 @@ import java.util.Arrays;
  * So we stored stack1's elements at one end of the array and stack2's elements at
  * the other end.
  *
- * @author: ramswaroop
- * @date: 9/21/15
+ * @author rampatra
+ * @since 9/21/15
  * @time: 6:18 PM
  */
 public class TwoStacksInOneArray {

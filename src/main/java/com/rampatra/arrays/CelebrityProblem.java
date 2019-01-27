@@ -6,8 +6,8 @@ import com.rampatra.common.Stack;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 10/2/15
+ * @author rampatra
+ * @since 10/2/15
  * @time: 10:48 PM
  * <p/>
  * In a party of N people, only one person is known to everyone. Such a person may be present in the party, if yes,

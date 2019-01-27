@@ -6,8 +6,8 @@ import com.rampatra.common.SingleLinkedNode;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/23/15
+ * @author rampatra
+ * @since 6/23/15
  * @time: 7:52 PM
  */
 public class MoveLastNodeToFirst {

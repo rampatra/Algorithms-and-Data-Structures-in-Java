@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/8/15
+ * @author rampatra
+ * @since 6/8/15
  * @time: 11:28 PM
  */
 public class Modulo {

@@ -3,8 +3,8 @@ package com.rampatra.bits;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author: ramswaroop
- * @date: 6/12/15
+ * @author rampatra
+ * @since 6/12/15
  * @time: 6:18 PM
  */
 public class SmallestOf3Integers {
