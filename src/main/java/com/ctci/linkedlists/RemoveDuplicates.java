@@ -72,5 +72,19 @@ public class RemoveDuplicates {
         removeDuplicatesFromUnsortedList(l3);
         System.out.print("Without dups: ");
         printList(l3);
+        
+        Node l4 = new Node(1);
+        System.out.print("\nWith dups: ");
+        printList(l4);
+        removeDuplicatesFromUnsortedList(l4);
+        System.out.print("Without dups: ");
+        printList(l4);
+
+        Node l5 = null;
+        System.out.print("\nWith dups: ");
+        printList(l5);
+        removeDuplicatesFromUnsortedList(l5);
+        System.out.print("Without dups: ");
+        printList(l5);
     }
 }

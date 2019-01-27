@@ -34,6 +34,25 @@ public class KthToLastElement {
         return slow;
     }
 
+    /**
+     * This approach is recursive and it just prints the kth to last node instead
+     * of returning the node.
+     *
+     * @param head starting node of the linklist
+     * @param k kth to last node to print
+     * @return the index of the kth to last node
+     */
+    private static int printKthToLastElement(Node head, int k) {
+        if (head == null) {
+            return 0;
+        }
+        int index = printKthToLastElement(head.next, k) + 1;
+        if (index == k) {
+            System.out.println(head.val);
+        }
+        return index;
+    }
+
     public static void main(String[] args) {
         Node l1 = new Node(1);
         l1.next = new Node(6);
@@ -43,6 +62,8 @@ public class KthToLastElement {
         l1.next.next.next.next.next = new Node(7);
         printList(l1);
         System.out.println("k=2: " + getKthToLastElement(l1, 2).val); // NPE check is omitted intentionally to keep it simple
+        System.out.print("k=2: ");
+        printKthToLastElement(l1, 2);
 
         Node l2 = new Node(1);
         l2.next = new Node(6);
@@ -52,6 +73,8 @@ public class KthToLastElement {
         l2.next.next.next.next.next = new Node(7);
         printList(l2);
         System.out.println("k=1: " + getKthToLastElement(l2, 1).val);
+        System.out.print("k=1: ");
+        printKthToLastElement(l2, 1);
 
         Node l3 = new Node(1);
         l3.next = new Node(6);
@@ -61,5 +84,7 @@ public class KthToLastElement {
         l3.next.next.next.next.next = new Node(7);
         printList(l3);
         System.out.println("k=6: " + getKthToLastElement(l3, 6).val);
+        System.out.print("k=6: ");
+        printKthToLastElement(l3, 6);
     }
 }
