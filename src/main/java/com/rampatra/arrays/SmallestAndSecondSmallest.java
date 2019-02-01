@@ -7,11 +7,10 @@ import java.util.Arrays;
  *
  * @author rampatra
  * @since 7/30/15
- * @time: 11:13 PM
  */
 public class SmallestAndSecondSmallest {
 
-    public static int[] getSmallestAndSecondSmallest(int[] a) {
+    private static int[] getSmallestAndSecondSmallest(int[] a) {
         int smallest = Integer.MAX_VALUE, secondSmallest = Integer.MAX_VALUE;
 
         for (int i = 0; i < a.length; i++) {
@@ -26,7 +25,7 @@ public class SmallestAndSecondSmallest {
         return new int[]{smallest, secondSmallest};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         System.out.println(Arrays.toString(getSmallestAndSecondSmallest(new int[]{100, 1, 60, -10, -80, 85, 70, -80})));
         System.out.println(Arrays.toString(getSmallestAndSecondSmallest(new int[]{100, 1, 60, 10, 80, 85, 70, 0})));
     }
