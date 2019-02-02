@@ -8,9 +8,8 @@ import com.rampatra.common.SingleLinkedNode;
  *
  * @author rampatra
  * @since 6/29/15
- * @time: 9:42 AM
  */
-public class IsIdentical {
+public class Identical {
 
     /**
      * Returns {@code true} if linked list {@param list1} and {@param list2}
@@ -22,13 +21,13 @@ public class IsIdentical {
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> boolean isIdentical(SingleLinkedList<E> list1,
+    private static <E extends Comparable<E>> boolean isIdentical(SingleLinkedList<E> list1,
                                                                 SingleLinkedList<E> list2) {
 
         // base cases
         if (list1.size != list2.size) {
             return false;
-        } else if (list1.size == 0 && list2.size == 0) {
+        } else if (list1.size == 0) {
             return true;
         }
 
@@ -45,24 +44,24 @@ public class IsIdentical {
         return true;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
-        linkedList1.add(00);
-        linkedList1.add(11);
-        linkedList1.add(22);
-        linkedList1.add(33);
-        linkedList1.add(44);
-        linkedList1.add(55);
-        linkedList1.add(66);
+        linkedList1.add(0);
+        linkedList1.add(1);
+        linkedList1.add(2);
+        linkedList1.add(3);
+        linkedList1.add(4);
+        linkedList1.add(5);
+        linkedList1.add(6);
         linkedList1.printList();
         SingleLinkedList<Integer> linkedList2 = new SingleLinkedList<>();
-        linkedList2.add(00);
-        linkedList2.add(11);
-        linkedList2.add(22);
-        linkedList2.add(33);
-        linkedList2.add(44);
-        linkedList2.add(55);
-        linkedList2.add(66);
+        linkedList2.add(0);
+        linkedList2.add(1);
+        linkedList2.add(2);
+        linkedList2.add(3);
+        linkedList2.add(4);
+        linkedList2.add(5);
+        linkedList2.add(6);
         linkedList2.printList();
         System.out.println(isIdentical(linkedList1, linkedList2));
     }

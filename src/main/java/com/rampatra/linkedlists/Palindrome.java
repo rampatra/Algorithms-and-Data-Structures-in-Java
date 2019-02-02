@@ -10,18 +10,17 @@ import com.rampatra.common.Stack;
  *
  * @author rampatra
  * @since 6/18/15
- * @time: 2:35 PM
  */
-public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
+public class Palindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
 
     /**
      * Uses Stack to test whether a linked list starting
      * from {@param node} is palindrome or not.
      *
      * @param list
-     * @return
+     * @return {@code true} if linked list palindrome, {@code false} otherwise.
      */
-    public static <E extends Comparable<E>> boolean isPalindrome(SingleLinkedList<E> list) {
+    private static <E extends Comparable<E>> boolean isPalindrome(SingleLinkedList<E> list) {
         SingleLinkedNode<E> head = list.getNode(0);
         SingleLinkedNode<E> curr = head;
         Stack<SingleLinkedNode<E>> stack = new LinkedStack<>();
@@ -52,7 +51,7 @@ public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
      * @param node
      * @return
      */
-    public boolean isPalindromeRecursive(SingleLinkedNode<E> node) {
+    private boolean isPalindromeRecursive(SingleLinkedNode<E> node) {
         if (node == null) return true;
 
         boolean isPalindrome = isPalindromeRecursive(node.next);
@@ -65,13 +64,13 @@ public class IsPalindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
         }
     }
 
-    public static void main(String a[]) {
-        IsPalindrome<Integer> linkedList = new IsPalindrome<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(11);
-        linkedList.add(00);
+    public static void main(String[] a) {
+        Palindrome<Integer> linkedList = new Palindrome<>();
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(1);
+        linkedList.add(0);
         linkedList.printList();
         System.out.println(isPalindrome(linkedList));
         linkedList.printList();
