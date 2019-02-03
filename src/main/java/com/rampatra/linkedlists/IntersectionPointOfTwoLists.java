@@ -8,7 +8,6 @@ import com.rampatra.common.SingleLinkedNode;
  *
  * @author rampatra
  * @since 6/18/15
- * @time: 10:34 PM
  */
 public class IntersectionPointOfTwoLists {
 
@@ -51,17 +50,17 @@ public class IntersectionPointOfTwoLists {
         return null;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
-        linkedList1.add(00);
-        linkedList1.add(11);
-        linkedList1.add(22);
-        linkedList1.add(33);
-        linkedList1.add(44);
-        linkedList1.add(55);
-        linkedList1.add(66);
-        linkedList1.add(77);
-        linkedList1.add(88);
+        linkedList1.add(0);
+        linkedList1.add(1);
+        linkedList1.add(2);
+        linkedList1.add(3);
+        linkedList1.add(4);
+        linkedList1.add(5);
+        linkedList1.add(6);
+        linkedList1.add(7);
+        linkedList1.add(8);
         SingleLinkedList<Integer> linkedList2 = new SingleLinkedList<>();
         linkedList2.add(56);
         linkedList2.add(78);
