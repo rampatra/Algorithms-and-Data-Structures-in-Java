@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @author ramswaroop
+ * @author rampatra
  * @version 17/02/2017
  */
 public class FlatMapInStreams {

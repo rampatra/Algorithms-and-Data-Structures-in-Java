@@ -37,11 +37,11 @@ public class SubStringCheck {
     }
 
     public static void main(String a[]) {
-        System.out.println(isSubString("ramswaroop", "ramswaroop"));
-        System.out.println(isSubString("ramswaroop", ""));
-        System.out.println(isSubString("ramswaroop", "ram"));
-        System.out.println(isSubString("ramswaroop", "rams"));
-        System.out.println(isSubString("ramswaroop", "ramss"));
-        System.out.println(isSubString("ramswaroop", "ar"));
+        System.out.println(isSubString("rampatra", "rampatra"));
+        System.out.println(isSubString("rampatra", ""));
+        System.out.println(isSubString("rampatra", "ram"));
+        System.out.println(isSubString("rampatra", "rams"));
+        System.out.println(isSubString("rampatra", "ramss"));
+        System.out.println(isSubString("rampatra", "ar"));
     }
 }

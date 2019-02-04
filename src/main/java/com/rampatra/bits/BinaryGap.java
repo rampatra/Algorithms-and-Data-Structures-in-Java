@@ -1,7 +1,7 @@
 package com.rampatra.bits;
 
 /**
- * Created by ramswaroop on 30/05/2016.
+ * Created by rampatra on 30/05/2016.
  */
 public class BinaryGap {
 

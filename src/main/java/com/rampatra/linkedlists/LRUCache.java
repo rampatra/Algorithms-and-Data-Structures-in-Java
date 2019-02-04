@@ -16,7 +16,7 @@ import java.util.Map;
  * access-ordered, it moves the entry to the end of the list; otherwise,
  * it does nothing.
  *
- * @author ramswaroop
+ * @author rampatra
  * @link http://javarticles.com/2012/06/linkedhashmap.html
  * @since 7/8/15
  */

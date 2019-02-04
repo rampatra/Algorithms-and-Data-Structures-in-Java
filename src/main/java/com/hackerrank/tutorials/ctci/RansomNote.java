@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Question: https://www.hackerrank.com/challenges/ctci-ransom-note
  * Level: Easy
  *
- * @author ramswaroop
+ * @author rampatra
  * @version 30/09/2016
  */
 public class RansomNote {

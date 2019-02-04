@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ramswaroop
+ * User: rampatra
  * Date: 3/3/15
  * Time: 1:05 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates

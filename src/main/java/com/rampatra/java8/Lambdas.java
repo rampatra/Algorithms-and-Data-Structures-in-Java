@@ -3,7 +3,7 @@ package com.rampatra.java8;
 import java.util.function.Consumer;
 
 /**
- * @author ramswaroop
+ * @author rampatra
  * @version 21/02/2017
  */
 public class Lambdas {

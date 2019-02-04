@@ -8,7 +8,7 @@ import java.util.EmptyStackException;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author ramswaroop
+ * @author rampatra
  * @since 9/15/15
  */
 public class BalancingParenthesis {

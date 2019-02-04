@@ -7,7 +7,7 @@ import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 /**
- * @author ramswaroop
+ * @author rampatra
  * @version 02/02/2017
  */
 class Trader {

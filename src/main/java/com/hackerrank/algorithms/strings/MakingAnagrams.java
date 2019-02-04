@@ -3,7 +3,7 @@ package com.hackerrank.algorithms.strings;
 import java.util.Arrays;
 
 /**
- * @author ramswaroop
+ * @author rampatra
  * @version 28/09/2016
  */
 public class MakingAnagrams {

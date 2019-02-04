@@ -3,7 +3,7 @@ package com.rampatra.searching;
 /**
  * Created by IntelliJ IDEA.
  *
- * @author ramswaroop
+ * @author rampatra
  * @version 9/1/15
  */
 public class BinarySearch {

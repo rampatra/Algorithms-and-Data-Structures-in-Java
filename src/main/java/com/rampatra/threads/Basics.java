@@ -2,7 +2,7 @@ package com.rampatra.threads;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ramswaroop
+ * User: rampatra
  * Date: 4/15/15
  * Time: 11:27 PM
  * To change this template go to Preferences | IDE Settings | File and Code Templates

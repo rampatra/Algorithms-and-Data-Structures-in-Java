@@ -7,7 +7,7 @@ import java.util.Stack;
  * Question: https://www.hackerrank.com/challenges/ctci-queue-using-two-stacks
  * Level: Medium
  *
- * @author ramswaroop
+ * @author rampatra
  * @version 07/10/2016
  */
 public class QueuesWithTwoStacks {

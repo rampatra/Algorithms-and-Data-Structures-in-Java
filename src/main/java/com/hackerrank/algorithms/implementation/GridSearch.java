@@ -3,7 +3,7 @@ package com.hackerrank.algorithms.implementation;
 import java.util.Scanner;
 
 /**
- * Created by ramswaroop on 02/05/2016.
+ * Created by rampatra on 02/05/2016.
  */
 public class GridSearch {
 

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * <p>
  * Ex: {1, 3, 2, 5, 4, 6}
  *
- * @author ramswaroop
+ * @author rampatra
  * @version 01/09/2016
  */
 public class WiggleSort {

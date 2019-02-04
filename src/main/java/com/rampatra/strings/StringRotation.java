@@ -6,7 +6,7 @@ package com.rampatra.strings;
  * @author rampatra
  * @since 10/21/15
  * @time: 10:06 AM
- * @see: me.ramswaroop.strings.SubString for a similar problem.
+ * @see: me.rampatra.strings.SubString for a similar problem.
  */
 public class StringRotation {
 
@@ -42,12 +42,12 @@ public class StringRotation {
     }
 
     public static void main(String a[]) {
-        System.out.println(isStringRotation("ramswaroop", "swaroopram"));
-        System.out.println(isStringRotation("ramswaroop", "swaroopramramram"));
-        System.out.println(isStringRotation("ramswaroop", "mswaroopra"));
-        System.out.println(isStringRotation("ramswaroop", "swarooppram"));
-        System.out.println(isStringRotation("ramswaroop", ""));
-        System.out.println(isStringRotation("mswaroopra", "ramswaroop"));
+        System.out.println(isStringRotation("rampatra", "swaroopram"));
+        System.out.println(isStringRotation("rampatra", "swaroopramramram"));
+        System.out.println(isStringRotation("rampatra", "mswaroopra"));
+        System.out.println(isStringRotation("rampatra", "swarooppram"));
+        System.out.println(isStringRotation("rampatra", ""));
+        System.out.println(isStringRotation("mswaroopra", "rampatra"));
         System.out.println(isStringRotation("amam", "mama"));
     }
 }

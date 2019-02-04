@@ -95,11 +95,11 @@ public class Trie<E> {
         trie.insert("ram");
         trie.insert("r");
         trie.insert("rama");
-        trie.insert("ramswaroop");
+        trie.insert("rampatra");
         System.out.println(trie.search("ram"));
         System.out.println(trie.search("r"));
         System.out.println(trie.search("ra"));
         System.out.println(trie.search("raz"));
-        System.out.println(trie.search("ramswaroop"));
+        System.out.println(trie.search("rampatra"));
     }
 }

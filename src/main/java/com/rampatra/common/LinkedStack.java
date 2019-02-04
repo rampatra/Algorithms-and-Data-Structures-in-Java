@@ -1,21 +1,13 @@
 package com.rampatra.common;
 
-
 import java.util.EmptyStackException;
 
 /**
- * Created by IntelliJ IDEA.
- * User: ramswaroop
- * Date: 3/24/15
- * Time: 3:02 PM
- * To change this template go to Preferences | IDE Settings | File and Code Templates
- */
-
-/**
- * Stack implementation using
- * a singly linked list.
+ * Stack implementation using a singly linked list.
  *
- * @param <E>
+ * @param <E> the data type to be stored in the stack
+ * @author rampatra
+ * @since 3/24/15
  */
 public class LinkedStack<E> implements Stack<E> {
 

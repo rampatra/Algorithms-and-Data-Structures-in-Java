@@ -3,11 +3,10 @@ package com.rampatra.common;
 import java.util.NoSuchElementException;
 
 /**
- * Created by IntelliJ IDEA.
- * User: ramswaroop
- * Date: 4/12/15
- * Time: 11:07 AM
- * To change this template go to Preferences | IDE Settings | File and Code Templates
+ * Queue implementation using a singly linked list with two pointers.
+ *
+ * @author rampatra
+ * @since 4/12/15
  */
 public class LinkedQueue<E> implements Queue<E> {
 
@@ -32,7 +31,7 @@ public class LinkedQueue<E> implements Queue<E> {
 
     @Override
     public E remove() {
-        if (rear.next == front) {
+        if (front == null) {
             throw new NoSuchElementException();
         }
         E item = element();
@@ -51,7 +50,7 @@ public class LinkedQueue<E> implements Queue<E> {
     @Override
     public int size() {
         int count = 0;
-        if (rear.next == front) return count;
+        if (front == null) return count;
         for (Node node = front; node != rear; node = node.next) {
             count++;
         }
@@ -60,14 +59,14 @@ public class LinkedQueue<E> implements Queue<E> {
 
     @Override
     public boolean isEmpty() {
-        return rear.next == front;
+        return front == null;
     }
 
     @Override
     public void print() {
         Node<E> node;
         System.out.print("[");
-        if (rear.next == front) {
+        if (front == null) {
             System.out.println("]");
             return;
         }

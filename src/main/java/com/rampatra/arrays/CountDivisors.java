@@ -1,7 +1,7 @@
 package com.rampatra.arrays;
 
 /**
- * Created by ramswaroop on 31/05/2016.
+ * Created by rampatra on 31/05/2016.
  */
 public class CountDivisors {
 

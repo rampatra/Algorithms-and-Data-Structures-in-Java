@@ -4,10 +4,10 @@ package com.rampatra.permutations;
  * Prints all the permutations of a string by using the characters in the
  * input only once.
  *
- * @author ramswaroop
+ * @author rampatra
  * @link http://www.ericleschinski.com/c/java_permutations_recursion/
  * @link http://introcs.cs.princeton.edu/java/23recursion/Permutations.java.html
- * @link me.ramswaroop.strings.StringPermutationCount for a modification of this problem
+ * @link me.rampatra.strings.StringPermutationCount for a modification of this problem
  * @since 9/24/15
  */
 public class StringPermutations {

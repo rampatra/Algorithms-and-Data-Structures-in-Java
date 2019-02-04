@@ -2,7 +2,7 @@ package com.rampatra.misc;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ramswaroop
+ * User: rampatra
  * Date: 4/14/15
  * Time: 11:39 AM
  * To change this template go to Preferences | IDE Settings | File and Code Templates

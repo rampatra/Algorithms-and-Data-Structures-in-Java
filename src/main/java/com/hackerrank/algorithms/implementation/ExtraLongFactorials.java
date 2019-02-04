@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
- * Created by ramswaroop on 29/05/2016.
+ * Created by rampatra on 29/05/2016.
  */
 public class ExtraLongFactorials {
     public static void main(String[] args) {

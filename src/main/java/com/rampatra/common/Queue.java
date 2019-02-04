@@ -2,7 +2,7 @@ package com.rampatra.common;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ramswaroop
+ * User: rampatra
  * Date: 4/12/15
  * Time: 10:39 AM
  * To change this template go to Preferences | IDE Settings | File and Code Templates
