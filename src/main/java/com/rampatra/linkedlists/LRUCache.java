@@ -5,8 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Created by IntelliJ IDEA.
- * <p/>
  * A simple LRU cache using {@link LinkedHashMap}. A special
  * LinkedHashMap(capacity, loadFactor, accessOrderBoolean) constructor is
  * provided to create a linked hash map whose order of iteration is the
@@ -15,18 +13,18 @@ import java.util.Map;
  * in an access to the corresponding entry. If the enclosing Map is
  * access-ordered, it moves the entry to the end of the list; otherwise,
  * it does nothing.
+ * See <a href="http://javarticles.com/2012/06/linkedhashmap.html">Javarticles.com</a>.
  *
  * @author rampatra
- * @link http://javarticles.com/2012/06/linkedhashmap.html
  * @since 7/8/15
  */
-public class LRUCache<E> {
+public class LRUCache<E, V> {
 
-    LinkedHashMap linkedHashMap;
+    LinkedHashMap<E, V> linkedHashMap;
 
     // initialize cache
     LRUCache(final int size) {
-        this.linkedHashMap = new LinkedHashMap(size, .75f, true) {
+        this.linkedHashMap = new LinkedHashMap<E, V>(size, .75f, true) {
             @Override
             protected boolean removeEldestEntry(Map.Entry eldest) {
                 return size() > size;
@@ -34,22 +32,15 @@ public class LRUCache<E> {
         };
     }
 
-    void add(E item) {
-        linkedHashMap.put(item, null);
-        printCache();
+    V add(E key, V value) {
+        return linkedHashMap.put(key, value);
     }
 
-    E get(E item) {
-        E itemFromCache = (E) linkedHashMap.get(item);
-        if (itemFromCache == null) {
-            add(item);
-            return item;
-        }
-        printCache();
-        return itemFromCache;
+    V get(E key) {
+       return linkedHashMap.get(key);
     }
 
-    private void printCache() {
+    private void print() {
         Iterator<E> iterator = linkedHashMap.keySet().iterator();
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + ((iterator.hasNext()) ? "," : "\n"));
@@ -57,13 +48,16 @@ public class LRUCache<E> {
     }
 
     public static void main(String[] a) {
-        LRUCache<Integer> cache = new LRUCache<>(3);
-        cache.add(1);
-        cache.add(2);
-        cache.add(3);
-        cache.get(null);
-        cache.add(4);
-        cache.add(5);
-        cache.get(null);
+        LRUCache<Integer, Integer> cache = new LRUCache<>(3);
+        cache.add(1, 1);
+        cache.add(2, 2);
+        cache.add(3, 3);
+        cache.print();
+        if (cache.get(4) == null) {
+            cache.add(4, 4);
+        }
+        cache.print();
+        cache.add(5, 5);
+        cache.print();
     }
 }
