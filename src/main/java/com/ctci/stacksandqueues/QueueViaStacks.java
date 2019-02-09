@@ -4,6 +4,8 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 
 /**
+ * Implement a queue using two stacks. No other data structures to be used.
+ *
  * @author rampatra
  * @since 2019-02-06
  */
