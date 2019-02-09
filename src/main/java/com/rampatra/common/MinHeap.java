@@ -39,20 +39,20 @@ public class MinHeap {
      * @param index
      */
     public void minHeapify(int index) {
-        int smallest = index;
+        int minIndex = index;
         int leftIndex = 2 * index + 1;
         int rightIndex = 2 * index + 2;
 
         if (leftIndex < size && heap[index] > heap[leftIndex]) {
-            smallest = leftIndex;
+            minIndex = leftIndex;
         }
-        if (rightIndex < size && heap[smallest] > heap[rightIndex]) {
-            smallest = rightIndex;
+        if (rightIndex < size && heap[minIndex] > heap[rightIndex]) {
+            minIndex = rightIndex;
         }
 
-        if (smallest != index) {
-            swap(index, smallest);
-            minHeapify(smallest);
+        if (minIndex != index) {
+            swap(index, minIndex);
+            minHeapify(minIndex);
         }
     }
 
