@@ -1,11 +1,10 @@
 package com.rampatra.common;
 
 /**
- * Created by IntelliJ IDEA.
+ * A generic interface for LinkedList.
  *
  * @author rampatra
  * @since 6/16/15
- * @time: 12:53 PM
  */
 public interface LinkedList<E extends Comparable<E>> {
 

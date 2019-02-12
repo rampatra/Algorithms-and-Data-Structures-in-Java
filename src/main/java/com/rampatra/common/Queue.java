@@ -1,11 +1,10 @@
 package com.rampatra.common;
 
 /**
- * Created by IntelliJ IDEA.
- * User: rampatra
- * Date: 4/12/15
- * Time: 10:39 AM
- * To change this template go to Preferences | IDE Settings | File and Code Templates
+ * A generic interface for a queue.
+ *
+ * @author rampatra
+ * @since 4/12/15
  */
 public interface Queue<E> {
 
