@@ -1,5 +1,6 @@
 package com.rampatra.common;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Set;
  */
 public class GraphNode<E extends Comparable<E>> {
     public E value;
-    public Set<GraphNode<E>> adjacentNodes;
+    public Set<GraphNode<E>> adjacentNodes = new HashSet<>();
 
     public GraphNode(E value) {
         this(value, null);
@@ -19,7 +20,9 @@ public class GraphNode<E extends Comparable<E>> {
 
     public GraphNode(E value, Set<GraphNode<E>> adjacentNodes) {
         this.value = value;
-        this.adjacentNodes = adjacentNodes;
+        if (adjacentNodes != null) {
+            this.adjacentNodes = adjacentNodes;
+        }
     }
 
     @Override

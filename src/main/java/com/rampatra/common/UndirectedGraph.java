@@ -1,42 +1,33 @@
-package com.rampatra.graphs;
+package com.rampatra.common;
 
-import com.rampatra.common.GraphNode;
-
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
- * A rudimentary Graph having all the basic methods.
- *
  * @author rampatra
- * @since 2019-02-10
+ * @since 2019-02-14
  */
-public class Graph<E extends Comparable<E>> {
+public class UndirectedGraph<E extends Comparable<E>> extends Graph<E> {
     // map for a fast lookup
     private Map<E, GraphNode<E>> nodes = new HashMap<>();
 
-    public GraphNode<E> addEdges(E value, E... adjacentValues) {
-        return addOrUpdateNodes(value, Arrays.stream(adjacentValues).map(GraphNode::new).collect(Collectors.toSet()));
-    }
-
-    private GraphNode<E> addOrUpdateNodes(E value, Set<GraphNode<E>> adjacentNodes) {
+    public GraphNode<E> addEdge(E value, E adjacentValue) {
         GraphNode<E> node = nodes.get(value);
+        GraphNode<E> adjNode = nodes.get(adjacentValue);
         if (node == null) {
-            return add(value, adjacentNodes);
+            node = new GraphNode<>(value);
+            nodes.put(value, node);
         }
-        node.adjacentNodes.addAll(adjacentNodes);
+        if (adjNode == null) {
+            adjNode = new GraphNode<>(adjacentValue);
+            nodes.put(adjacentValue, adjNode);
+        }
+        node.adjacentNodes.add(adjNode);
+        adjNode.adjacentNodes.add(node); // as this is an undirected graph
         return node;
-    }
-
-    private GraphNode<E> add(E value, Set<GraphNode<E>> adjacentNodes) {
-        GraphNode<E> newNode = new GraphNode<>(value, adjacentNodes);
-        nodes.put(value, newNode);
-        return newNode;
     }
 
     // todo
@@ -44,16 +35,14 @@ public class Graph<E extends Comparable<E>> {
         GraphNode<E> s = nodes.get(src);
         GraphNode<E> d = nodes.get(dest);
         Set<GraphNode<E>> visited = new HashSet<>();
-        for (GraphNode<E> node : s.adjacentNodes) {
-            if (hasPathDFS(node, d, visited)) {
-                return true;
-            }
-        }
-        return false;
+        return hasPathDFS(s, d, visited);
     }
-    
+
     // todo
     public boolean hasPathDFS(GraphNode<E> src, GraphNode<E> dest, Set<GraphNode<E>> visited) {
+        if (src == null || dest == null) {
+            return false;
+        }
         if (src.value.compareTo(dest.value) == 0) {
             return true;
         } else if (!visited.contains(src)) {
@@ -85,15 +74,20 @@ public class Graph<E extends Comparable<E>> {
     }
 
     public static void main(String[] args) {
-        Graph<Integer> graph = new Graph<>();
-        graph.addEdges(1, 4, 5);
-        graph.addEdges(4, 1, 5, 6, 7);
-        graph.addEdges(5, 1, 4, 6);
-        graph.addEdges(6, 5, 4);
-        graph.addEdges(7, 4);
+        UndirectedGraph<Integer> graph = new UndirectedGraph<>();
+        graph.addEdge(1, 4);
+        graph.addEdge(4, 5);
+        graph.addEdge(4, 6);
+        graph.addEdge(4, 7);
+        graph.addEdge(5, 1);
+        graph.addEdge(5, 6);
+        graph.addEdge(8, null);
         graph.print();
         // todo
-        System.out.println(graph.hasPathDFS(1,5));
-        System.out.println(graph.hasPathDFS(1,6));
+        System.out.println(graph.hasPathDFS(1, 5));
+        System.out.println(graph.hasPathDFS(1, 6));
+        System.out.println(graph.hasPathDFS(1, 8));
+        System.out.println(graph.hasPathDFS(4, 8));
+        System.out.println(graph.hasPathDFS(4, 100));
     }
 }
