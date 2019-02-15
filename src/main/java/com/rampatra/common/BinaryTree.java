@@ -74,7 +74,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         if (node == null) {
             return;
         }
-        out.print(node.value);
+        out.print("->" + node.value);
         preOrder(node.left);
         preOrder(node.right);
     }
@@ -92,7 +92,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
             return;
         }
         inOrder(node.left);
-        out.print(node.value);
+        out.print("->" + node.value);
         inOrder(node.right);
     }
 
@@ -110,7 +110,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
         }
         postOrder(node.left);
         postOrder(node.right);
-        out.print(node.value);
+        out.print("->" + node.value);
     }
 
 
