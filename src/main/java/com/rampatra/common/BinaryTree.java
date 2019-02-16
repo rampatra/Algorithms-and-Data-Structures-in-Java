@@ -119,9 +119,9 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
      * <p/>
      * DEF: Breadth-first search (BFS) is an algorithm for traversing or searching tree
      * or graph data structures. It starts at the tree root (or some arbitrary node of a
-     * graph, sometimes referred to as a `search key'[1]) and explores the neighbor nodes
-     * first, before moving to the next level neighbors. See {@link BFSUsingQueue}
-     * for a O(n) solution.
+     * graph, sometimes referred to as a `search key'[1]) and explores the neighboring nodes
+     * first, before moving to the next level neighbors. See {@link BFSUsingQueue} for a O(n)
+     * solution.
      * <p>
      * Time complexity: O(h^2) where, h is the height of the tree
      */
