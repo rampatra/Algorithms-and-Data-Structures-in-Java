@@ -22,6 +22,7 @@ public class ListOfDepths {
     private static List<List<TreeNode>> listOfDepths(TreeNode root) {
         List<List<TreeNode>> listOfDepths = new ArrayList<>();
         List<TreeNode> listOfNodesAtCurrentDepth = new ArrayList<>();
+
         if (root != null) {
             listOfNodesAtCurrentDepth.add(root);
         }
@@ -31,7 +32,7 @@ public class ListOfDepths {
             List<TreeNode> listOfNodesAtPreviousDepth = listOfNodesAtCurrentDepth; // make current depth as previous
             /* make current depth as the new depth to be processed considering 
             the nodes from the previous depth as parents */
-            listOfNodesAtCurrentDepth = new ArrayList<>(); 
+            listOfNodesAtCurrentDepth = new ArrayList<>();
 
             for (TreeNode node : listOfNodesAtPreviousDepth) {
                 if (node.left != null) {
@@ -46,6 +47,42 @@ public class ListOfDepths {
         return listOfDepths;
     }
 
+    /**
+     * This is a recursive approach where we pass the depth of each node in the call. We use a
+     * list {@code listOfDepths} to keep track of all the depths.
+     *
+     * @param node
+     * @param depth
+     * @param listOfDepths
+     * @return list of nodes at each depth, where depth starts from 0
+     */
+    private static List<List<TreeNode>> listOfDepths(TreeNode node, int depth, List<List<TreeNode>> listOfDepths) {
+        if (node == null) return null;
+
+        List<TreeNode> listOfNodesAtDepth;
+        if (depth == listOfDepths.size()) {
+            listOfNodesAtDepth = new ArrayList<>();
+            listOfDepths.add(listOfNodesAtDepth);
+        } else {
+            listOfNodesAtDepth = listOfDepths.get(depth);
+        }
+
+        listOfNodesAtDepth.add(node);
+
+        listOfDepths(node.left, depth + 1, listOfDepths);
+        listOfDepths(node.right, depth + 1, listOfDepths);
+
+        return listOfDepths;
+    }
+
+    private static void printAllDepths(List<List<TreeNode>> listOfDepths) {
+        for (int i = 0; i < listOfDepths.size(); i++) {
+            System.out.print("Depth " + i + ": ");
+            listOfDepths.get(i).forEach(node -> System.out.print("->" + node.val));
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode treeRoot = new TreeNode(1);
         treeRoot.left = new TreeNode(2);
@@ -55,11 +92,8 @@ public class ListOfDepths {
         treeRoot.right.left = new TreeNode(6);
         treeRoot.right.right = new TreeNode(7);
 
-        List<List<TreeNode>> listOfDepths = listOfDepths(treeRoot);
-        for (int i = 0; i < listOfDepths.size(); i++) {
-            System.out.print("Depth " + i + ": ");
-            listOfDepths.get(i).forEach(node -> System.out.print("->" + node.val));
-            System.out.println();
-        }
+        printAllDepths(listOfDepths(treeRoot));
+        System.out.println("-----");
+        printAllDepths(listOfDepths(treeRoot, 0, new ArrayList<>()));
     }
 }
