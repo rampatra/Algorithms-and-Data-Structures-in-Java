@@ -43,6 +43,17 @@ public class Successor {
         return curr;
     }
 
+    private static class TreeNode {
+        int val;
+        TreeNode parent;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public static void main(String[] args) {
         /* 
             The binary search tree looks like:
@@ -83,16 +94,5 @@ public class Successor {
         System.out.println("InOrder successor of 7 is: " + getInOrderSuccessor(treeRoot.right.left.right).val);
         System.out.println("InOrder successor of 8 is: " + getInOrderSuccessor(treeRoot.right).val);
         System.out.println("InOrder successor of 9 is: " + getInOrderSuccessor(treeRoot.right.right));
-    }
-
-    private static class TreeNode {
-        int val;
-        TreeNode parent;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
     }
 }
