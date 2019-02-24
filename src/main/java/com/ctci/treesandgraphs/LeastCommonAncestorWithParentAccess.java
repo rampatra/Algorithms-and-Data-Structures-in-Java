@@ -27,7 +27,8 @@ public class LeastCommonAncestorWithParentAccess {
 
         int depthA = depth(a);
         int depthB = depth(b);
-        // be little careful when both nodes are at same depth
+        /* be little careful when both nodes are at same depth, have the checks such that
+         shallow and deeper references point to different nodes */
         TreeNode shallowNode = depthA < depthB ? a : b;
         TreeNode deeperNode = depthB > depthA ? b : a;
 
