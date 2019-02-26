@@ -1,4 +1,4 @@
-package com.rampatra.common;
+package com.rampatra.base;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

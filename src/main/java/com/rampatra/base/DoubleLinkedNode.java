@@ -1,4 +1,4 @@
-package com.rampatra.common;
+package com.rampatra.base;
 
 /**
  * Created by IntelliJ IDEA.

@@ -1,7 +1,7 @@
 package com.rampatra.arrays;
 
-import com.rampatra.common.LinkedStack;
-import com.rampatra.common.Stack;
+import com.rampatra.base.LinkedStack;
+import com.rampatra.base.Stack;
 
 /**
  * Created by IntelliJ IDEA.

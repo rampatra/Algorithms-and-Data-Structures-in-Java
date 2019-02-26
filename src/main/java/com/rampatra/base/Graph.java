@@ -1,4 +1,4 @@
-package com.rampatra.common;
+package com.rampatra.base;
 
 /**
  * A rudimentary Graph having all the basic methods.

@@ -1,4 +1,4 @@
-package com.rampatra.misc;
+package com.rampatra.stacks;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

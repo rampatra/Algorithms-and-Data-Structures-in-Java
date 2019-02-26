@@ -1,7 +1,7 @@
 package com.rampatra.arrays;
 
 import com.rampatra.sorting.MergeSort;
-import com.rampatra.common.MaxHeap;
+import com.rampatra.base.MaxHeap;
 
 import java.util.Arrays;
 

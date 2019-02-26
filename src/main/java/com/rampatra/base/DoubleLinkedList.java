@@ -1,4 +1,4 @@
-package com.rampatra.common;
+package com.rampatra.base;
 
 import java.util.NoSuchElementException;
 
@@ -11,22 +11,23 @@ import static java.lang.System.out;
  * @since 6/16/15
  * @time: 1:00 PM
  */
-public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> {
+public class DoubleLinkedList<E extends Comparable<E>> implements LinkedList<E> {
 
-    public SingleLinkedNode<E> head;
+    public DoubleLinkedNode<E> head;
     public int size;
 
     @Override
     public boolean add(E item) {
-        SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, null);
+        DoubleLinkedNode<E> newNode = new DoubleLinkedNode<>(null, item, null);
         if (head == null) { // list empty
             head = newNode;
         } else { // add to the end of list
-            SingleLinkedNode<E> curr = head;
+            DoubleLinkedNode<E> curr = head;
             while (curr.next != null) {
                 curr = curr.next;
             }
             curr.next = newNode;
+            newNode.prev = curr;
         }
         size++;
         return true;
@@ -39,9 +40,11 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         if (index == 0) { // add at first
             addFirst(item);
         } else { // add at any other location
-            SingleLinkedNode<E> nodeAtPrevIndex = getPredecessorNode(index);
-            SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, nodeAtPrevIndex.next);
-            nodeAtPrevIndex.next = newNode;
+            DoubleLinkedNode<E> prevNode = getPredecessorNode(index);
+            DoubleLinkedNode<E> nextNode = prevNode.next;
+            DoubleLinkedNode<E> newNode = new DoubleLinkedNode<>(prevNode, item, prevNode.next);
+            prevNode.next = newNode;
+            if (nextNode != null) nextNode.prev = newNode;
             size++;
         }
         return true;
@@ -49,7 +52,8 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
     @Override
     public void addFirst(E item) {
-        SingleLinkedNode<E> newNode = new SingleLinkedNode<>(item, head);
+        DoubleLinkedNode<E> newNode = new DoubleLinkedNode<>(null, item, head);
+        if (head != null) head.prev = newNode;
         head = newNode;
         size++;
     }
@@ -65,10 +69,11 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         // - helps a generational GC if the discarded nodes inhabit
         //   more than one generation
         // - is sure to free memory even if there is a reachable Iterator
-        for (SingleLinkedNode<E> node = head; node != null; ) {
-            SingleLinkedNode<E> next = node.next;
+        for (DoubleLinkedNode<E> node = head; node != null; ) {
+            DoubleLinkedNode<E> next = node.next;
             node.item = null;
             node.next = null;
+            node.prev = null;
             node = next;
         }
         head = null;
@@ -107,6 +112,7 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
         E item = head.item;
         head = head.next;
+        if (head != null) head.prev = null; // check for linked list size = 1
         size--;
         return item;
     }
@@ -115,16 +121,20 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
     public E remove(int index) {
         isLinkedListEmpty();
 
-        SingleLinkedNode<E> prevNode = getPredecessorNode(index);
-        SingleLinkedNode<E> delNode;
+        DoubleLinkedNode<E> prevNode = getPredecessorNode(index);
+        DoubleLinkedNode<E> nextNode;
+        DoubleLinkedNode<E> delNode;
         if (prevNode == null) { // index = 0
             delNode = head;
             head = head.next;
+            if (head != null) head.prev = null; // check for linked list size = 1
             size--;
             return delNode.item;
         } else {
             delNode = prevNode.next;
-            prevNode.next = delNode.next;
+            nextNode = delNode.next;
+            prevNode.next = nextNode;
+            if (nextNode != null) nextNode.prev = prevNode; // check needed if node to be deleted is last node
             size--;
             return delNode.item;
         }
@@ -136,12 +146,16 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
         if (!contains(item)) return false;
 
-        SingleLinkedNode<E> prevNode = getPredecessorNode(item);
+        DoubleLinkedNode<E> prevNode = getPredecessorNode(item);
+        DoubleLinkedNode<E> nextNode;
         if (prevNode == null) { // index = 0
             head = head.next;
+            if (head != null) head.prev = null; // condition for list size = 1
             size--;
         } else {
-            prevNode.next = prevNode.next.next;
+            nextNode = prevNode.next.next;
+            prevNode.next = nextNode;
+            if (nextNode != null) nextNode.prev = prevNode;
             size--;
         }
         return true;
@@ -149,7 +163,7 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
 
     @Override
     public E set(int index, E item) {
-        SingleLinkedNode<E> node = getNode(index);
+        DoubleLinkedNode<E> node = getNode(index);
         node.item = item;
         return node.item;
     }
@@ -164,26 +178,34 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         printList(head);
     }
 
-    public static <E extends Comparable<E>> void printList(SingleLinkedNode<E> node) {
-        SingleLinkedNode<E> curr = node;
+    public static <E extends Comparable<E>> void printList(DoubleLinkedNode<E> node) {
+        DoubleLinkedNode<E> curr = node;
         out.print("[");
         if (curr == null) {
             out.println("]");
             return;
         }
+        // prints the list from first node
         while (curr.next != null) {
             out.print(curr.item.toString() + ",");
             curr = curr.next;
         }
         out.println(curr.item.toString() + "]");
+        // prints the list from last node
+        out.print("[");
+        while (curr.prev != null) {
+            out.print(curr.item.toString() + ",");
+            curr = curr.prev;
+        }
+        out.println(curr.item.toString() + "]");
     }
 
-    public static <E extends Comparable<E>> SingleLinkedList<E> getLinkedList(SingleLinkedNode<E> node) {
-        SingleLinkedList<E> linkedList = new SingleLinkedList<>();
+    public static <E extends Comparable<E>> DoubleLinkedList<E> getLinkedList(DoubleLinkedNode<E> node) {
+        DoubleLinkedList<E> linkedList = new DoubleLinkedList<>();
         // set head
         linkedList.head = node;
         // set size
-        SingleLinkedNode<E> curr = node;
+        DoubleLinkedNode<E> curr = node;
         while (curr != null) {
             linkedList.size++;
             curr = curr.next;
@@ -191,37 +213,18 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         return linkedList;
     }
 
-    private SingleLinkedNode<E> getPredecessorNode(int index) {
+    private DoubleLinkedNode<E> getPredecessorNode(int index) {
         return index > 0 ? getNode(index - 1) : null;
     }
 
-    private SingleLinkedNode<E> getPredecessorNode(E item) {
-        SingleLinkedNode<E> prev = null;
-        SingleLinkedNode<E> curr = head;
-        if (item == null) {
-            while (curr != null) {
-                if (curr.item == item) { // when item is null, use == rather than equals()
-                    return prev;
-                }
-                prev = curr;
-                curr = curr.next;
-            }
-        } else {
-            while (curr != null) {
-                if (curr.item.equals(item)) {
-                    return prev;
-                }
-                prev = curr;
-                curr = curr.next;
-            }
-        }
-        return null;
+    private DoubleLinkedNode<E> getPredecessorNode(E item) {
+        return getNode(item) != null ? getNode(item).prev : null;
     }
 
-    public SingleLinkedNode<E> getNode(int index) {
+    public DoubleLinkedNode<E> getNode(int index) {
         isElementIndex(index);
 
-        SingleLinkedNode<E> curr = head;
+        DoubleLinkedNode<E> curr = head;
         int i = 0;
         while (i < index) {
             curr = curr.next;
@@ -230,8 +233,8 @@ public class SingleLinkedList<E extends Comparable<E>> implements LinkedList<E> 
         return curr;
     }
 
-    public SingleLinkedNode<E> getNode(E item) {
-        SingleLinkedNode<E> curr = head;
+    public DoubleLinkedNode<E> getNode(E item) {
+        DoubleLinkedNode<E> curr = head;
         if (item == null) {
             while (curr != null) { // when item is null, use == rather than equals()
                 if (curr.item == item) {

@@ -1,6 +1,6 @@
 package com.rampatra.sorting;
 
-import com.rampatra.common.MaxHeap;
+import com.rampatra.base.MaxHeap;
 
 import java.util.Arrays;
 

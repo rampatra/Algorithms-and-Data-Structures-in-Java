@@ -1,7 +1,7 @@
 package com.rampatra.arrays;
 
-import com.rampatra.common.MaxHeap;
-import com.rampatra.common.MinHeap;
+import com.rampatra.base.MaxHeap;
+import com.rampatra.base.MinHeap;
 
 /**
  * Created by IntelliJ IDEA.

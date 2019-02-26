@@ -1,6 +1,6 @@
 package com.rampatra.linkedlists;
 
-import com.rampatra.common.DoubleLinkedNode;
+import com.rampatra.base.DoubleLinkedNode;
 
 import static java.lang.System.out;
 

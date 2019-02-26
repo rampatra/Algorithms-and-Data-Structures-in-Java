@@ -1,7 +1,7 @@
 package com.rampatra.linkedlists;
 
-import com.rampatra.common.CircularSingleLinkedList;
-import com.rampatra.common.SingleLinkedNode;
+import com.rampatra.base.CircularSingleLinkedList;
+import com.rampatra.base.SingleLinkedNode;
 
 /**
  * Created by IntelliJ IDEA.

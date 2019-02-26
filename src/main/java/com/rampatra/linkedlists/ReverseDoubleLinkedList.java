@@ -1,7 +1,7 @@
 package com.rampatra.linkedlists;
 
-import com.rampatra.common.DoubleLinkedList;
-import com.rampatra.common.DoubleLinkedNode;
+import com.rampatra.base.DoubleLinkedList;
+import com.rampatra.base.DoubleLinkedNode;
 
 /**
  * Created by IntelliJ IDEA.

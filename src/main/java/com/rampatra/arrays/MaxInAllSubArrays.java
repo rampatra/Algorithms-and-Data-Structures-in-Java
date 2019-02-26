@@ -1,6 +1,6 @@
 package com.rampatra.arrays;
 
-import com.rampatra.common.MaxHeap;
+import com.rampatra.base.MaxHeap;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

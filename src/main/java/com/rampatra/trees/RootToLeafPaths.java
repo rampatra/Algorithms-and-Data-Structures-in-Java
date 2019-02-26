@@ -1,7 +1,7 @@
 package com.rampatra.trees;
 
-import com.rampatra.common.BinaryNode;
-import com.rampatra.common.BinaryTree;
+import com.rampatra.base.BinaryNode;
+import com.rampatra.base.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.List;

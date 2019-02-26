@@ -1,9 +1,9 @@
 package com.rampatra.linkedlists;
 
-import com.rampatra.common.LinkedStack;
-import com.rampatra.common.SingleLinkedList;
-import com.rampatra.common.SingleLinkedNode;
-import com.rampatra.common.Stack;
+import com.rampatra.base.LinkedStack;
+import com.rampatra.base.SingleLinkedList;
+import com.rampatra.base.SingleLinkedNode;
+import com.rampatra.base.Stack;
 
 /**
  * Created by IntelliJ IDEA.

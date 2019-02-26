@@ -1,6 +1,6 @@
 package com.rampatra.arrays;
 
-import com.rampatra.common.MinHeap;
+import com.rampatra.base.MinHeap;
 
 import java.util.Arrays;
 

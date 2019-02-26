@@ -1,11 +1,10 @@
 package com.rampatra.trees;
 
-import com.rampatra.common.BinaryNode;
-import com.rampatra.common.BinaryTree;
-import com.rampatra.common.LinkedQueue;
-import com.rampatra.common.Queue;
+import com.rampatra.base.BinaryNode;
+import com.rampatra.base.BinaryTree;
+import com.rampatra.base.LinkedQueue;
+import com.rampatra.base.Queue;
 
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 import static java.lang.System.out;

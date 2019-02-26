@@ -1,13 +1,13 @@
 package com.rampatra;
 
-import com.rampatra.common.CircularSingleLinkedList;
-import com.rampatra.common.DoubleLinkedList;
-import com.rampatra.common.LinkedList;
-import com.rampatra.common.LinkedQueue;
-import com.rampatra.common.LinkedStack;
-import com.rampatra.common.Queue;
-import com.rampatra.common.SingleLinkedList;
-import com.rampatra.common.Stack;
+import com.rampatra.base.CircularSingleLinkedList;
+import com.rampatra.base.DoubleLinkedList;
+import com.rampatra.base.LinkedList;
+import com.rampatra.base.LinkedQueue;
+import com.rampatra.base.LinkedStack;
+import com.rampatra.base.Queue;
+import com.rampatra.base.SingleLinkedList;
+import com.rampatra.base.Stack;
 
 import java.util.Scanner;
 

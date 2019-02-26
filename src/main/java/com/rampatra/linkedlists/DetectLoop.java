@@ -1,7 +1,7 @@
 package com.rampatra.linkedlists;
 
-import com.rampatra.common.SingleLinkedList;
-import com.rampatra.common.SingleLinkedNode;
+import com.rampatra.base.SingleLinkedList;
+import com.rampatra.base.SingleLinkedNode;
 
 import java.util.HashMap;
 

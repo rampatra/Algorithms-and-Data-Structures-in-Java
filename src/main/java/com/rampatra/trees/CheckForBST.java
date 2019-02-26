@@ -1,8 +1,8 @@
 package com.rampatra.trees;
 
-import com.rampatra.common.BinaryNode;
-import com.rampatra.common.BinarySearchTree;
-import com.rampatra.common.BinaryTree;
+import com.rampatra.base.BinaryNode;
+import com.rampatra.base.BinarySearchTree;
+import com.rampatra.base.BinaryTree;
 
 import java.util.List;
 
