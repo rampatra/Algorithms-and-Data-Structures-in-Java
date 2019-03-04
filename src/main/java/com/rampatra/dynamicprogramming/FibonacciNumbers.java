@@ -9,7 +9,6 @@ import static java.lang.System.out;
  *
  * @author rampatra
  * @since 9/10/15
- * @time: 3:57 PM
  */
 public class FibonacciNumbers {
 
@@ -22,9 +21,9 @@ public class FibonacciNumbers {
      * @param k
      */
     public static int[] getFirstKFibonacciNumbers(int k) {
-        int[] fib = new int[k + 1];
+        int[] fib = new int[k];
         int i = 1;
-        while (i <= k) {
+        while (i < k) {
             if (i == 1 || i == 2) {
                 fib[i] = 1;
             } else {
@@ -35,7 +34,7 @@ public class FibonacciNumbers {
         return fib;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         out.println(Arrays.toString(getFirstKFibonacciNumbers(0)));
         out.println(Arrays.toString(getFirstKFibonacciNumbers(10)));
         out.println(Arrays.toString(getFirstKFibonacciNumbers(46)));
