@@ -10,7 +10,7 @@ import java.util.List;
  * @author rampatra
  * @since 2019-03-05
  */
-public class Blockchain {
+public class Blockchain { // TODO: WIP
 
     private List<Block> blockchain;
     private int difficulty;
