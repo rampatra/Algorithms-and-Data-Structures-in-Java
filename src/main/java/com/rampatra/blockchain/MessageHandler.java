@@ -12,9 +12,9 @@ import java.net.SocketException;
  */
 public class MessageHandler implements Runnable {
 
-    ObjectInputStream in;
-    ObjectOutputStream out;
-    Peer peer;
+    private ObjectInputStream in;
+    private ObjectOutputStream out;
+    private Peer peer;
 
     MessageHandler(Socket client, Peer peer) {
         try {
@@ -42,6 +42,11 @@ public class MessageHandler implements Runnable {
         }
     }
 
+    /**
+     * Handle messages accordingly.
+     *
+     * @param message is the message object from the peer.
+     */
     private void handleMessage(Message message) {
         Message.MessageType type = message.getMessageType();
         switch (type) {
@@ -78,6 +83,14 @@ public class MessageHandler implements Runnable {
         }
     }
 
+    /**
+     * If the latest block received from the peer has {@code previousHash} equal to the hash of the
+     * latest block in the current user's blockchain then add the latest block received to the 
+     * current user's blockchain, or else, if the latest block received has a larger index then 
+     * request the entire blockchain from the peer.
+     *
+     * @param latestBlock the block received from the peer
+     */
     private void handleLatestBlock(Block latestBlock) {
         Block latestBlockWithCurrentPeer = peer.getBlockchain().getLatestBlock();
 
@@ -91,6 +104,12 @@ public class MessageHandler implements Runnable {
         }
     }
 
+    /**
+     * If the blockchain received from the peer is valid and longer then replace current user's
+     * blockchain with the received blockchain.
+     *
+     * @param blockchain the entire blockchain received from the peer
+     */
     private void handleBlockchain(Blockchain blockchain) {
         if (blockchain.isValidChain() && blockchain.getSize() > peer.getBlockchain().getSize()) {
             peer.setBlockchain(blockchain);

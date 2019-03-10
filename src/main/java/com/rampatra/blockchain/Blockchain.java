@@ -40,6 +40,15 @@ public class Blockchain {
         blocks.add(block);
     }
 
+    /**
+     * Mine, create a new block with the {@code data}, and finally, add it to the blockchain.
+     * <p>
+     * Mining is nothing but the process of calculating a hash of a {@link Block} with {@code data} such
+     * that the hash starts with a specific number of zeros equal to the difficulty of the blockchain.
+     *
+     * @param data
+     * @return
+     */
     public Block mine(String data) {
         Block previousBlock = getLatestBlock();
         Block nextBlock = getNextBlock(previousBlock, data);
@@ -52,6 +61,11 @@ public class Blockchain {
         }
     }
 
+    /**
+     * Executes the {@link Blockchain#isValidNextBlock(Block, Block)} on the entire blockchain.
+     *
+     * @return {@code false} if at least one block in the blockchain is invalid, {@code true} otherwise.
+     */
     public boolean isValidChain() {
         ListIterator<Block> listIterator = blocks.listIterator();
         listIterator.next();
@@ -63,6 +77,11 @@ public class Blockchain {
         return true;
     }
 
+    /**
+     * Creates the Genesis Block for the blockchain. The Genesis Block is the first block in the blockchain.
+     *
+     * @return the genesis block
+     */
     private Block getGenesisBlock() {
         final long timestamp = new Date().getTime();
         int nonce = 0;
@@ -105,6 +124,13 @@ public class Blockchain {
         }
     }
 
+    /**
+     * Checks if the hash respects the difficulty of the blockchain, i.e, if the hash
+     * begins with a number of zeros equal to the difficulty of the blockchain.
+     *
+     * @param hash the SHA256 hash of the block.
+     * @return {@code true} if hash obeys difficulty, {@code false} otherwise.
+     */
     private boolean isValidHashDifficulty(String hash) {
         for (int i = 0; i < difficulty; i++) {
             if (hash.charAt(i) != '0') {
@@ -114,6 +140,16 @@ public class Blockchain {
         return true;
     }
 
+    /**
+     * Calculates the SHA256 hash of the block.
+     *
+     * @param index
+     * @param previousHash
+     * @param timestamp
+     * @param data
+     * @param nonce
+     * @return the SHA256 hash of the block.
+     */
     private String calculateHashForBlock(final int index, final String previousHash, final long timestamp,
                                          final String data, final int nonce) {
         try {

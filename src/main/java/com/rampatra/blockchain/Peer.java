@@ -28,11 +28,15 @@ public class Peer {
         getLatestBlockFromPeers();
     }
 
+    /**
+     * Once a new peer is created, we start the socket server to receive messages from the peers.
+     */
     private void startServer() {
         try {
             executor.submit(() -> {
                 server = new ServerSocket(port);
                 while (true) {
+                    // we create a new thread for each new client thereby supporting multiple client simultaneously
                     new Thread(new MessageHandler(server.accept(), this)).start();
                 }
             });
@@ -41,6 +45,9 @@ public class Peer {
         }
     }
 
+    /**
+     * Stop the server once a peer is removed from the network.
+     */
     public void stopServer() {
         try {
             if (!server.isClosed()) {
@@ -51,6 +58,10 @@ public class Peer {
         }
     }
 
+    /**
+     * Once a new peer is created and added to the network, it requests the latest block from 
+     * all the peers and updates its blockchain if it is outdated.
+     */
     private void getLatestBlockFromPeers() {
         sendMessageToPeers(Message.MessageBuilder
                 .aMessage()
@@ -60,6 +71,7 @@ public class Peer {
 
     private void sendMessageToPeers(Message message) {
         try {
+            // send to all peers except itself
             List<Peer> peers = P2P.getPeers()
                     .stream()
                     .filter(peer -> !(peer.port == this.port))
@@ -74,6 +86,11 @@ public class Peer {
         }
     }
 
+    /**
+     * Mine, create a new block with the {@code data}, and finally, add it to the blockchain.
+     *
+     * @param data
+     */
     public void mine(String data) {
         Block latestBlock = this.blockchain.mine(data);
         sendMessageToPeers(Message.MessageBuilder
@@ -103,6 +120,13 @@ public class Peer {
         return sb.toString();
     }
 
+    /**
+     * The main starting point of the blockchain demo. At first, add some peers (option 1) and mine some data 
+     * by choosing a particular peer (option 2). You would soon see that the newly mined block is broadcast to
+     * all the peers.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             int menuChoice;
@@ -129,18 +153,18 @@ public class Peer {
                         P2P.showPeersWithBlockchain();
                         break;
                     case 2:
-                        System.out.println("Choose peer: (ex. 1, 2, etc.)");
+                        System.out.println("Choose peer: (a number for ex. 1, 2, etc.)");
                         P2P.showPeers();
                         peerIndex = s.nextInt();
                         Peer p = P2P.getPeer(peerIndex - 1);
-                        System.out.println("Enter data: ");
+                        System.out.println("Enter data: (a string with no spaces)");
                         data = s.next();
                         p.mine(data);
                         System.out.println("Data mined!");
                         P2P.showPeersWithBlockchain();
                         break;
                     case 3:
-                        System.out.println("Choose peer: (ex. 1, 2, etc.)");
+                        System.out.println("Choose peer: (a number for ex. 1, 2, etc.)");
                         P2P.showPeers();
                         peerIndex = s.nextInt();
                         P2P.removePeer(peerIndex - 1);
