@@ -61,7 +61,7 @@ public class P2P {
 
     public static void showPeersWithBlockchain() {
         for (int i = 0; i < peers.size(); i++) {
-            System.out.println("Peer " + (i + 1) + ": " + peers.get(i).getBlockchain());
+            System.out.println("Peer " + (i + 1) + " (" + peers.get(i).getPort() + "): " + peers.get(i).getBlockchain());
         }
     }
 }

@@ -1,9 +1,12 @@
 package com.rampatra.blockchain;
 
+import sun.net.ConnectionResetException;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * @author rampatra
@@ -35,7 +38,9 @@ public class MessageHandler implements Runnable {
             in.close();
             out.close();
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            if (!(e instanceof SocketException)) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
