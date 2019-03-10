@@ -1,10 +1,12 @@
 package com.rampatra.blockchain;
 
+import java.io.Serializable;
+
 /**
  * @author rampatra
  * @since 2019-03-05
  */
-public class Block {
+public class Block implements Serializable {
     
     private int index;
     private String previousHash;

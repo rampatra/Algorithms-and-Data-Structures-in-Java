@@ -3,43 +3,70 @@ package com.rampatra.blockchain;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * @author rampatra
  * @since 2019-03-05
  */
-public class Blockchain { // TODO: P2P
+public class Blockchain {
 
-    private List<Block> blockchain;
+    private List<Block> blocks;
     private int difficulty;
 
-    public Blockchain(List<Block> blockchain, int difficulty) {
-        this.blockchain = blockchain;
+    public Blockchain(List<Block> blocks, int difficulty) {
+        this.blocks = blocks;
         this.difficulty = difficulty;
-        this.blockchain.add(getGenesisBlock("Blockchain in Java"));
+        this.blocks.add(getGenesisBlock());
     }
 
-    public List<Block> getBlockchain() {
-        return blockchain;
+    public List<Block> getBlocks() {
+        return blocks;
     }
 
-    public void mine(String data) {
-        Block previousBlock = blockchain.get(blockchain.size() - 1);
+    public int getSize() {
+        return blocks.size();
+    }
+
+    public Block getLatestBlock() {
+        if (blocks.isEmpty()) return null;
+
+        return blocks.get(blocks.size() - 1);
+    }
+
+    public void addBlock(Block block) {
+        blocks.add(block);
+    }
+
+    public Block mine(String data) {
+        Block previousBlock = getLatestBlock();
         Block nextBlock = getNextBlock(previousBlock, data);
-        
+
         if (isValidNextBlock(previousBlock, nextBlock)) {
-            blockchain.add(nextBlock);
+            blocks.add(nextBlock);
+            return nextBlock;
         } else {
             throw new RuntimeException("Invalid block");
         }
     }
 
-    private Block getGenesisBlock(String data) {
+    public boolean isValidChain() {
+        ListIterator<Block> listIterator = blocks.listIterator();
+        listIterator.next();
+        while (listIterator.hasPrevious() && listIterator.hasNext()) {
+            if (!isValidNextBlock(listIterator.previous(), listIterator.next())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private Block getGenesisBlock() {
         final long timestamp = new Date().getTime();
         int nonce = 0;
+        String data = "Blockchain in Java";
         String hash;
         while (!isValidHashDifficulty(hash = calculateHashForBlock(0, "0", timestamp, data, nonce))) {
             nonce++;
@@ -107,12 +134,5 @@ public class Blockchain { // TODO: P2P
             hexString.append(hex);
         }
         return hexString.toString();
-    }
-
-    public static void main(String[] args) {
-        Blockchain blockchain = new Blockchain(new ArrayList<>(), 3);
-        blockchain.mine("12");
-        blockchain.mine("26");
-        System.out.println("Blockchain: " + blockchain.getBlockchain());
     }
 }
