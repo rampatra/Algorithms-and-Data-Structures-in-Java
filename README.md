@@ -4,6 +4,28 @@ The repo consists of solutions to numerous problems using different data structu
 
 You can also refer to my [Java Notes](http://java.ramswaroop.me) for a quick refresh on the Java concepts.
 
+## Contents
+
+1. Cracking the coding interview.
+2. HackerRank.
+3. Basic Practice:  
+    1. [Arrays](/src/main/java/com/rampatra/arrays)
+    2. [Backtracking](/src/main/java/com/rampatra/backtracking)
+    3. [Bits](/src/main/java/com/rampatra/bits)
+    4. [Blockchain Demo](/src/main/java/com/rampatra/blockchain)
+    5. Dynamic Programming
+    6. Graphs
+    7. Java 8 
+    8. Linked Lists
+    9. Miscellaneous
+    10. Permutations
+    11. Searching
+    12. Sorting
+    13. Stacks
+    14. Strings
+    15. Threads
+    16. Trees
+
 ## Environment
 
 ### Java Version
