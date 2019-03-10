@@ -1,7 +1,5 @@
 package com.rampatra.blockchain;
 
-import sun.net.ConnectionResetException;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
