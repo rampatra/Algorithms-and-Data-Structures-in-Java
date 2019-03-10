@@ -5,6 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
@@ -39,7 +40,7 @@ public class Peer {
             throw new RuntimeException(e);
         }
     }
-    
+
     public void stopServer() {
         try {
             if (!server.isClosed()) {
@@ -89,29 +90,76 @@ public class Peer {
         this.blockchain = blockchain;
     }
 
+    public int getPort() {
+        return port;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Peer{");
-        sb.append("port=").append(port);
+        sb.append("blockchain=").append(blockchain);
+        sb.append(", port=").append(port);
         sb.append('}');
         return sb.toString();
     }
 
     public static void main(String[] args) {
-        Blockchain blockchain = new Blockchain(new ArrayList<>(), 3);
-        Peer peer1 = P2P.addPeer(blockchain);
-        System.out.println("Peers:" + P2P.getPeers());
-        peer1.mine("1st block by p1");
-        System.out.println("Blockchain with p1: " + peer1.getBlockchain().getBlocks());
-        Peer peer2 = P2P.addPeer(blockchain);
-        System.out.println("Peers: " + P2P.getPeers());
-        System.out.println("Blockchain with p1: " + peer1.getBlockchain().getBlocks());
-        System.out.println("Blockchain with p2: " + peer2.getBlockchain().getBlocks());
-        peer2.mine("2nd block by p2");
-        System.out.println("Blockchain with p1: " + peer1.getBlockchain().getBlocks());
-        System.out.println("Blockchain with p2: " + peer2.getBlockchain().getBlocks());
-        peer1.mine("3rd block by p1");
-        System.out.println("Blockchain with p1: " + peer1.getBlockchain().getBlocks());
-        System.out.println("Blockchain with p2: " + peer2.getBlockchain().getBlocks());
+        try {
+            int menuChoice;
+            int peerIndex;
+            String data;
+            Scanner s = new Scanner(System.in);
+            Blockchain blockchain = new Blockchain(new ArrayList<>(), 3);
+
+            while (true) {
+
+                System.out.println("\n======= Welcome to Blockchain in Java =======");
+                System.out.println("1. Add Peer");
+                System.out.println("2. Mine data in peer");
+                System.out.println("3. Remove peer");
+                System.out.println("4. Show peers");
+                System.out.println("5. Exit");
+
+                menuChoice = s.nextInt();
+
+                switch (menuChoice) {
+                    case 1:
+                        P2P.addPeer(blockchain);
+                        System.out.println("New peer added!");
+                        P2P.showPeersWithBlockchain();
+                        break;
+                    case 2:
+                        System.out.println("Choose peer: (ex. 1, 2, etc.)");
+                        P2P.showPeers();
+                        peerIndex = s.nextInt();
+                        Peer p = P2P.getPeer(peerIndex - 1);
+                        System.out.println("Enter data: ");
+                        data = s.next();
+                        p.mine(data);
+                        System.out.println("Data mined!");
+                        P2P.showPeersWithBlockchain();
+                        break;
+                    case 3:
+                        System.out.println("Choose peer: (ex. 1, 2, etc.)");
+                        P2P.showPeers();
+                        peerIndex = s.nextInt();
+                        P2P.removePeer(peerIndex - 1);
+                        System.out.println("Peer " + peerIndex + " removed!");
+                        P2P.showPeersWithBlockchain();
+                        break;
+                    case 4:
+                        P2P.showPeersWithBlockchain();
+                        break;
+                    case 5:
+                        P2P.removeAllPeers();
+                        System.out.println("Bye, see you soon!");
+                        System.exit(0);
+                    default:
+                        System.out.println("Wrong choice!");
+                }
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

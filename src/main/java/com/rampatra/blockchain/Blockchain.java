@@ -135,4 +135,12 @@ public class Blockchain {
         }
         return hexString.toString();
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Blockchain{");
+        sb.append("blocks=").append(blocks);
+        sb.append('}');
+        return sb.toString();
+    }
 }
