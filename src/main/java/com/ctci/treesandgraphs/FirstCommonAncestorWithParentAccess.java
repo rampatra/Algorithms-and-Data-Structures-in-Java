@@ -8,7 +8,7 @@ package com.ctci.treesandgraphs;
  * @author rampatra
  * @since 2019-02-23
  */
-public class LeastCommonAncestorWithParentAccess {
+public class FirstCommonAncestorWithParentAccess {
 
     /**
      * This is a simple approach where we start with two references, one pointing to {@code node a} and another
@@ -103,13 +103,13 @@ public class LeastCommonAncestorWithParentAccess {
         treeRoot.right.left.right = new TreeNode(7);
         treeRoot.right.left.right.parent = treeRoot.right.left;
 
-        System.out.println("LCA of 0 and 7 is: " + findLCA(treeRoot.left.left.left, treeRoot.right.left.right).val);
-        System.out.println("LCA of 0 and 9 is: " + findLCA(treeRoot.left.left.left, treeRoot.right.right).val);
-        System.out.println("LCA of 0 and 1 is: " + findLCA(treeRoot.left.left.left, treeRoot.left.left).val);
-        System.out.println("LCA of 1 and 2 is: " + findLCA(treeRoot.left.left, treeRoot.right.left).val);
-        System.out.println("LCA of 1 and 7 is: " + findLCA(treeRoot.left.left, treeRoot.right.left.right).val);
-        System.out.println("LCA of 4 and 7 is: " + findLCA(treeRoot, treeRoot.right.left.right).val);
-        System.out.println("LCA of 5 and 2 is: " + findLCA(treeRoot.left, treeRoot.right.left).val);
-        System.out.println("LCA of 7 and 9 is: " + findLCA(treeRoot.right.left.right, treeRoot.right.right).val);
+        System.out.println("FCA of 0 and 7 is: " + findLCA(treeRoot.left.left.left, treeRoot.right.left.right).val);
+        System.out.println("FCA of 0 and 9 is: " + findLCA(treeRoot.left.left.left, treeRoot.right.right).val);
+        System.out.println("FCA of 0 and 1 is: " + findLCA(treeRoot.left.left.left, treeRoot.left.left).val);
+        System.out.println("FCA of 1 and 2 is: " + findLCA(treeRoot.left.left, treeRoot.right.left).val);
+        System.out.println("FCA of 1 and 7 is: " + findLCA(treeRoot.left.left, treeRoot.right.left.right).val);
+        System.out.println("FCA of 4 and 7 is: " + findLCA(treeRoot, treeRoot.right.left.right).val);
+        System.out.println("FCA of 5 and 2 is: " + findLCA(treeRoot.left, treeRoot.right.left).val);
+        System.out.println("FCA of 7 and 9 is: " + findLCA(treeRoot.right.left.right, treeRoot.right.right).val);
     }
 }

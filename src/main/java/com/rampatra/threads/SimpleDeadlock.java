@@ -38,7 +38,7 @@ public class SimpleDeadlock implements Runnable {
         Object obj2 = new Object();
 
         Thread thread1 = new Thread(new SimpleDeadlock(obj1, obj2));
-        Thread thread2 = new Thread(new SimpleDeadlock(obj2, obj1));
+        Thread thread2 = new Thread(new SimpleDeadlock(obj2, obj1)); // note here that the object order is different
 
         thread1.start();
         thread2.start();

@@ -8,10 +8,10 @@ package com.ctci.treesandgraphs;
  * @author rampatra
  * @since 2019-02-24
  */
-public class LeastCommonAncestor {
+public class FirstCommonAncestor {
 
     /**
-     * We recurse through the entire tree with a function called findLCA(TreeNode root, TreeNode TreeNode a, TreeNode b).
+     * We recurse through the entire tree with a function called findFCA(TreeNode root, TreeNode TreeNode a, TreeNode b).
      * This function returns values as follows:
      * - Returns p,if root's subtree includes p (and not q).
      * - Returns q, if root's subtree includes q (and not p).
@@ -23,7 +23,7 @@ public class LeastCommonAncestor {
      * @param b
      * @return the least common ancestor node
      */
-    private static TreeNode findLCA(TreeNode root, TreeNode a, TreeNode b) {
+    private static TreeNode findFCA(TreeNode root, TreeNode a, TreeNode b) {
         if (root == null) { // validation
             return null;
         }
@@ -31,12 +31,12 @@ public class LeastCommonAncestor {
             return root;
         }
 
-        TreeNode left = findLCA(root.left, a, b);
+        TreeNode left = findFCA(root.left, a, b);
         if (left != null && left != a && left != b) {
             return left;
         }
 
-        TreeNode right = findLCA(root.right, a, b);
+        TreeNode right = findFCA(root.right, a, b);
         if (right != null && right != a && right != b) {
             return right;
         }
@@ -85,14 +85,14 @@ public class LeastCommonAncestor {
         treeRoot.right.right = new TreeNode(9);
         treeRoot.right.left.right = new TreeNode(7);
 
-        System.out.println("LCA of 0 and 7 is: " + findLCA(treeRoot, treeRoot.left.left.left, treeRoot.right.left.right).val);
-        System.out.println("LCA of 0 and 9 is: " + findLCA(treeRoot, treeRoot.left.left.left, treeRoot.right.right).val);
-        System.out.println("LCA of 0 and 1 is: " + findLCA(treeRoot, treeRoot.left.left.left, treeRoot.left.left).val);
-        System.out.println("LCA of 1 and 2 is: " + findLCA(treeRoot, treeRoot.left.left, treeRoot.right.left).val);
-        System.out.println("LCA of 1 and 7 is: " + findLCA(treeRoot, treeRoot.left.left, treeRoot.right.left.right).val);
-        System.out.println("LCA of 4 and 7 is: " + findLCA(treeRoot, treeRoot, treeRoot.right.left.right).val);
-        System.out.println("LCA of 5 and 2 is: " + findLCA(treeRoot, treeRoot.left, treeRoot.right.left).val);
-        System.out.println("LCA of 7 and 9 is: " + findLCA(treeRoot, treeRoot.right.left.right, treeRoot.right.right).val);
-        System.out.println("LCA of 7 and 10 is: " + findLCA(treeRoot, treeRoot.right.left.right, new TreeNode(10)).val); // this use case does not work with the above algorithm
+        System.out.println("FCA of 0 and 7 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.left.right).val);
+        System.out.println("FCA of 0 and 9 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.right).val);
+        System.out.println("FCA of 0 and 1 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.left.left).val);
+        System.out.println("FCA of 1 and 2 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left).val);
+        System.out.println("FCA of 1 and 7 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left.right).val);
+        System.out.println("FCA of 4 and 7 is: " + findFCA(treeRoot, treeRoot, treeRoot.right.left.right).val);
+        System.out.println("FCA of 5 and 2 is: " + findFCA(treeRoot, treeRoot.left, treeRoot.right.left).val);
+        System.out.println("FCA of 7 and 9 is: " + findFCA(treeRoot, treeRoot.right.left.right, treeRoot.right.right).val);
+        System.out.println("FCA of 7 and 10 is: " + findFCA(treeRoot, treeRoot.right.left.right, new TreeNode(10)).val); // this use case does not work with the above algorithm
     }
 }
