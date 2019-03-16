@@ -79,10 +79,10 @@ public class BalancingParenthesis {
     /**
      * Starting point of the program.
      *
-     * @param a
+     * @param args
      */
     public static void main(String[] args) {
-        readFile(a[0]);
+        readFile(args[0]);
     }
 }
 

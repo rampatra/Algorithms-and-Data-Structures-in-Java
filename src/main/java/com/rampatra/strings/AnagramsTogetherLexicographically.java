@@ -66,7 +66,7 @@ public class AnagramsTogetherLexicographically {
     /**
      * Take list of strings from console and print anagrams in groups.
      *
-     * @param a
+     * @param args
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

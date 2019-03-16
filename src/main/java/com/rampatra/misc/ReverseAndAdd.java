@@ -96,10 +96,10 @@ public class ReverseAndAdd {
     /**
      * Starting point of the program.
      *
-     * @param a
+     * @param args
      */
     public static void main(String[] args) {
-        readFile(a[0]);
+        readFile(args[0]);
         System.exit(0);
     }
 }
