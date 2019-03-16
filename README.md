@@ -26,10 +26,10 @@ You can also refer to my [Java Notes](http://java.ramswaroop.me) for a quick ref
 2. [Cracking the Coding Interview](/src/main/java/com/ctci):  
     1. [Arrays and Strings](/src/main/java/com/ctci/arraysandstrings)
     2. [Linked Lists](/src/main/java/com/ctci/linkedlists)
-    3. [Recursion and DP](/src/main/java/com/ctci/recursionanddp)
-    4. [Stacks and Queues](/src/main/java/com/ctci/stacksandqueues)
-    5. [Trees and Graphs](/src/main/java/com/ctci/treesandgraphs)
-    6. [Bit Manipulation](/src/main/java/com/ctci/bitmanipulation)
+    3. [Stacks and Queues](/src/main/java/com/ctci/stacksandqueues)
+    4. [Trees and Graphs](/src/main/java/com/ctci/treesandgraphs)
+    5. [Bit Manipulation](/src/main/java/com/ctci/bitmanipulation)
+    6. [Recursion and DP](/src/main/java/com/ctci/recursionanddp)
 3. [HackerRank](/src/main/java/com/hackerrank).
 
 
