@@ -28,7 +28,9 @@ public class BinaryToString {
                 return "ERROR";
             }
             realNum = realNum * 2;
+            // the binary bit is the whole number part (left to the decimal)
             binaryBit = (int) realNum;
+            // we only have to take the part after the decimal (right to the decimal) for the next iteration
             if (binaryBit == 1) {
                 realNum -= 1;
             }
