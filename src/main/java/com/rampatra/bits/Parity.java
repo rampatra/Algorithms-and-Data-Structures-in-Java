@@ -54,7 +54,7 @@ public class Parity {
         return setBitsCount % 2 == 0;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isEvenParity(0));
         System.out.println(isEvenParity(1));
         System.out.println(isEvenParity(5));

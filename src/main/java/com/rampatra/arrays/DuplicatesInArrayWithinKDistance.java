@@ -41,7 +41,7 @@ public class DuplicatesInArrayWithinKDistance {
         return Arrays.copyOf(duplicates, index);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(findDuplicatesInArrayWithinKDistance(new int[]{1, 2, 8, 1, 3, 4, 5, 6, 6, 7}, 3)));
     }
 }

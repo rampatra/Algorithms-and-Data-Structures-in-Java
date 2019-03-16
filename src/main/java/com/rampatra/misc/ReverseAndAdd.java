@@ -98,7 +98,7 @@ public class ReverseAndAdd {
      *
      * @param a
      */
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         readFile(a[0]);
         System.exit(0);
     }

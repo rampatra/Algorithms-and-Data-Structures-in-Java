@@ -35,7 +35,7 @@ public class MaximumSumNonAdjacentSubSequence {
         return Math.max(incl, excl);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(maximumSumNonAdjacentSubSequence(new int[]{3, 2, 7, 10}));
         System.out.println(maximumSumNonAdjacentSubSequence(new int[]{3, 2, 5, 10, 7}));
     }

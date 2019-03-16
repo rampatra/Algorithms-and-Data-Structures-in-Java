@@ -84,7 +84,7 @@ public class NextLargerNumber {
         a[index2] = temp;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(findNextLargerNumber(56));
         System.out.println(findNextLargerNumber(65));
         System.out.println(findNextLargerNumber(3451));

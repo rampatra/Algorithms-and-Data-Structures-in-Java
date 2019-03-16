@@ -78,7 +78,7 @@ public class FlattenMultiLevelLinkedList {
         out.println(curr.item.toString() + "]");
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         // 1st level
         DoubleLinkedNode<Integer> head = new DoubleLinkedNode<>(1);
         head.next = new DoubleLinkedNode<>(5);

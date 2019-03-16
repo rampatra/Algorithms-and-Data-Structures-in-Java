@@ -94,7 +94,7 @@ public class StackWithOperationOnMiddleElement<E extends Comparable<E>> {
         out.println(curr.item.toString() + "]");
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         StackWithOperationOnMiddleElement<Integer> stack = new StackWithOperationOnMiddleElement<>();
         stack.push(2);
         stack.push(3);

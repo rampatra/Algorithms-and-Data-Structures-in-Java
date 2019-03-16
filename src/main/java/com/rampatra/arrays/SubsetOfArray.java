@@ -48,7 +48,7 @@ public class SubsetOfArray {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isSubsetOfArray(new int[]{11, 1, 13, 21, 3, 7}, new int[]{11, 3, 7, 1}));
         System.out.println(isSubsetOfArray(new int[]{1, 2, 2, 3, 4, 5, 6}, new int[]{1, 2, 4}));
         System.out.println(isSubsetOfArray(new int[]{1, 2, 2, 3, 4, 5, 6}, new int[]{1, 2, 2, 4}));

@@ -49,7 +49,7 @@ public class KLargestElements {
         return minHeap.getHeap();
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getKLargestElements(new int[]{2, 3, 4, 1, 5, 7, 9}, 3)));
     }
 }

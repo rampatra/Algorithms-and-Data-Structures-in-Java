@@ -135,7 +135,7 @@ public class Streams {
                 .get();
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         System.out.println("1: " + getTransactionsIn2011SortedByValue());
         System.out.println("2: " + findUniqueCities());
         System.out.println("3: " + getAllTradersFromCambridgeAndSortByName());

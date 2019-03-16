@@ -68,7 +68,7 @@ public class AnagramsTogetherLexicographically {
      *
      * @param a
      */
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         List<String> strings = new ArrayList<>();
         String s;

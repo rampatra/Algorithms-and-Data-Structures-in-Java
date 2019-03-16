@@ -89,7 +89,7 @@ public class UnsortedSubArray {
         return unsortedArray;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getUnsortedSubArray(new int[]{10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60})));
         System.out.println(Arrays.toString(getUnsortedSubArray(new int[]{0, 1, 15, 25, 6, 7, 30, 40, 50})));
         System.out.println(Arrays.toString(getUnsortedSubArray(new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}))); // fully sorted already

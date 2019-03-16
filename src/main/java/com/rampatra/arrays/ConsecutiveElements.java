@@ -99,7 +99,7 @@ public class ConsecutiveElements {
         return true;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(areConsecutiveElements(new int[]{5, 4, 3, 2, 1}));
         System.out.println(areConsecutiveElements(new int[]{67, 68, 69, 72, 70, 71}));
         System.out.println(areConsecutiveElements(new int[]{67, 68, 69, 72, 70, 71, 70}));

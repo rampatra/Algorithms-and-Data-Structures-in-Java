@@ -18,7 +18,7 @@ public class MaxWithoutBranching {
         return a ^ ((a ^ b) & -((a < b) ? 1 : 0));
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getMinWithoutBranching(5, 6));
         System.out.println(getMinWithoutBranching(-5, -6));
         System.out.println(getMinWithoutBranching(-5, 6));

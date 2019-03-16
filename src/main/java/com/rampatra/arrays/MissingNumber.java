@@ -48,7 +48,7 @@ public class MissingNumber {
         return nXOR ^ arrayXOR;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println("Missing No: " + missingNumber(new int[]{2, 3, 1, 4, 6, 7, 8}, 8));
         System.out.println("Missing No using XOR: " + missingNumberUsingXOR(new int[]{2, 3, 1, 4, 6, 7, 8}, 8));
     }

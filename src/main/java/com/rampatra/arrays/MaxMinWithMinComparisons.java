@@ -53,7 +53,7 @@ public class MaxMinWithMinComparisons {
         return new int[]{min, max};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getMaxMinWithMinComparisons(new int[]{2, 5, 1, 6, 7, 9, 0, 8, 10})));
     }
 }

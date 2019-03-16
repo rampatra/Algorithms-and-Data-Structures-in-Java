@@ -58,7 +58,7 @@ public class RemoveDuplicates {
         }
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(0);
         linkedList.add(0);

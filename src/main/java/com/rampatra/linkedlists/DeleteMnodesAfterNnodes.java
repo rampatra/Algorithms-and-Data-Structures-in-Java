@@ -44,7 +44,7 @@ public class DeleteMnodesAfterNnodes {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(7);
         linkedList.add(5);

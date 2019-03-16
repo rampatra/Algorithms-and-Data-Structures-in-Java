@@ -27,7 +27,7 @@ public class Segregate0sAnd1s {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{0, 1, 1, 1, 0, 0, 1};
         segregate0sAnd1s(ar);
         System.out.println(Arrays.toString(ar));

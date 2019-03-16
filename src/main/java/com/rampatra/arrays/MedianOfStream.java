@@ -73,7 +73,7 @@ public class MedianOfStream {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printMedianOfStream(new int[]{5, 15, 1, 3, 2, 8, 7, 9, 10, 6, 11, 4});
         printMedianOfStream(new int[]{5, 15, 1});
         printMedianOfStream(new int[]{5, 15, 10, 20});

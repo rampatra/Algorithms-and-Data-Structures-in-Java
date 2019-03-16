@@ -24,7 +24,7 @@ public class DivideCircularListIntoTwo<E extends Comparable<E>> extends Circular
         return new CircularSingleLinkedList[]{getLinkedList(list.head), getLinkedList(secondHead)};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         CircularSingleLinkedList<Integer> linkedList = new CircularSingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);

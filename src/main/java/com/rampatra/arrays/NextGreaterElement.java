@@ -47,7 +47,7 @@ public class NextGreaterElement {
         System.out.println(a[i] + "->" + -1);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{4, 5, 2, 25};
         nextGreaterElements(ar);
         System.out.println("=========");

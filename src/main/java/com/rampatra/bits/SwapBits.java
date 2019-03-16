@@ -71,7 +71,7 @@ public class SwapBits {
         // (this logic is similar to swapping bits using XOR)
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(swapEvenOddBits(23));
         System.out.println(swapEvenOddBits(0));
         System.out.println(swapEvenOddBits(5));

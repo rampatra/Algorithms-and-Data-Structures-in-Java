@@ -38,7 +38,7 @@ public class MissingAndRepeatingElements {
         return result;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(findMissingAndRepeatingElements(new int[]{3, 1, 3})));
         System.out.println(Arrays.toString(findMissingAndRepeatingElements(new int[]{4, 3, 6, 2, 1, 1})));
         System.out.println(Arrays.toString(findMissingAndRepeatingElements(new int[]{4, 4, 6, 2, 5, 1})));

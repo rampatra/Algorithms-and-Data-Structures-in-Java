@@ -86,7 +86,7 @@ public class RatInAMaze {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printMazePath(0, 0, new int[][]{{1, 1, 1, 1}, {0, 0, 1, 1}});
     }
 }

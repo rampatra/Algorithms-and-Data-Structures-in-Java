@@ -63,7 +63,7 @@ public class ProductArrayPuzzle {
         return prod;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getProductArray(new int[]{10, 3, 5, 6, 2})));
         System.out.println(Arrays.toString(getProductArray(new int[]{0, 0})));
         System.out.println(Arrays.toString(getProductArray(new int[]{1})));

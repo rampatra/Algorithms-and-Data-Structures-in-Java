@@ -32,7 +32,7 @@ public class WiggleSort {
         a[index1] = a[index1] - a[index2];
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         int[] ar = {3, 5, 6, 7, 8, 1, 2};
         System.out.println(Arrays.toString(wiggleSortEasyWay(ar)));
         int[] ar1 = {3, 5, 6, 7, 2, 1};

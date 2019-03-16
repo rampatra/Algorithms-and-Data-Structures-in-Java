@@ -52,7 +52,7 @@ public class RemoveExtraSpaces {
         return String.valueOf(Arrays.copyOf(c, j));
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(removeExtraSpaces("ram swaroop is a good boy."));
         System.out.println(removeExtraSpaces("ram swaroop      is      a    good boy."));
         System.out.println(removeExtraSpaces("     ram swaroop      is      a    good boy."));

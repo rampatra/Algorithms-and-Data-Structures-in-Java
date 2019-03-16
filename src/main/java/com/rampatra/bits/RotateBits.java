@@ -25,7 +25,7 @@ public class RotateBits {
         return n >>> times | n << (32 - times);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(leftRotateBits(5, 3));
         System.out.println(leftRotateBits(234324, 3));
         System.out.println(rightRotateBits(5, 3));

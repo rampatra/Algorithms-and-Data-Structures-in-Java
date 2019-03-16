@@ -58,7 +58,7 @@ public class PivotedBinarySearch {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println("Pivot: " + findPivot(new int[]{1, 2, 3, 4, 5}, 0, 3));
         System.out.println("Index: " + pivotedBinarySearch(new int[]{1, 2, 3, 4, 5}, 4));
 

@@ -58,7 +58,7 @@ public class ReservoirSampling {
 
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] stream = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         System.out.println(Arrays.toString(getKRandomNumbers(stream, 4)));
     }

@@ -52,7 +52,7 @@ public class KthLargestElement {
         return maxHeap.findMax();
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{2, 4, 5, 7, 1, 8, 9};
         System.out.println(Arrays.toString(ar));
         System.out.println(getKthLargestElementNaive(ar, 3));

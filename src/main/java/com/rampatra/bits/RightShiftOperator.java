@@ -11,7 +11,7 @@ package com.rampatra.bits;
  */
 public class RightShiftOperator {
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int n = -4;
         System.out.printf("n:     %32d\n", n);
         System.out.printf("n:     %32s\n", Integer.toBinaryString(n));

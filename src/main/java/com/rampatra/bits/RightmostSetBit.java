@@ -34,7 +34,7 @@ public class RightmostSetBit {
         return n & (n - 1); // brian kerningham's algorithm
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getRightmostSetBitPosition(0));
         System.out.println(getRightmostSetBitPosition(1));
         System.out.println(getRightmostSetBitPosition(2));

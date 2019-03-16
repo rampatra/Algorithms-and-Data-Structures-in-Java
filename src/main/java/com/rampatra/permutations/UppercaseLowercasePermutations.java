@@ -43,7 +43,7 @@ public class UppercaseLowercasePermutations {
         return true;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printUppercaseLowercasePermutations("", "0ab");
         System.out.println("========");
         printUppercaseLowercasePermutations("", "01");

@@ -8,7 +8,7 @@ package com.rampatra.threads;
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
 public class Basics {
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Runnable r = new Runnable() {
             @Override
             public void run() {

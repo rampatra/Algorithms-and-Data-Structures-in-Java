@@ -36,7 +36,7 @@ public class HeightBalanced<E extends Comparable<E>> extends BinarySearchTree<E>
         return isHeightBalanced(node.left) && isHeightBalanced(node.right);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         HeightBalanced<Integer> bst = new HeightBalanced<>();
         bst.put(6);
         bst.put(3);

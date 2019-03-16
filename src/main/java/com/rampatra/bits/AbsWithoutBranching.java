@@ -28,7 +28,7 @@ public class AbsWithoutBranching {
         return (mask + n) ^ mask;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(abs(-5));
         System.out.println(abs(5));
         System.out.println(abs(0));

@@ -58,7 +58,7 @@ public class PancakeSort {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = {1, 2, 3, 4, 5, 6};
         System.out.println(Arrays.toString(ar));
         sort(ar);

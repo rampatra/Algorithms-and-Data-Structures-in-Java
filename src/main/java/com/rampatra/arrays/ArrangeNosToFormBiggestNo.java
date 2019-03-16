@@ -39,7 +39,7 @@ public class ArrangeNosToFormBiggestNo {
         return a;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(arrangeArrayOfNosToFormBiggestNo(new Integer[]{45, 567, 12, 1})));
         System.out.println(Arrays.toString(arrangeArrayOfNosToFormBiggestNo(new Integer[]{54, 546, 548, 60})));
         System.out.println(Arrays.toString(arrangeArrayOfNosToFormBiggestNo(new Integer[]{1, 34, 3, 98, 9, 76, 45, 4})));

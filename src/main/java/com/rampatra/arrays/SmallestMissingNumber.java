@@ -45,7 +45,7 @@ public class SmallestMissingNumber {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(smallestMissingNumber(new int[]{0, 1}, 0, 1));
         System.out.println(smallestMissingNumber(new int[]{0, 1, 2, 6, 9}, 0, 4));
         System.out.println(smallestMissingNumber(new int[]{4, 5, 10, 11}, 0, 3));

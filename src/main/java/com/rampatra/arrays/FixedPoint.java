@@ -33,7 +33,7 @@ public class FixedPoint {
         return -1;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(findFixedPoint(new int[]{-10, -5, 0, 3, 7}));
         System.out.println(findFixedPoint(new int[]{0, 2, 5, 8, 17}));
         System.out.println(findFixedPoint(new int[]{-10, -5, 3, 4, 7, 9}));

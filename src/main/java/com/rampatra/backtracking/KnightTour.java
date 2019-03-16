@@ -105,7 +105,7 @@ public class KnightTour {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printKnightTour(0, 0, new int[]{8, 8});
     }
 }

@@ -47,7 +47,7 @@ public class LargestSumContiguousSubArray {
         return maxSum;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getLargestSumOfContiguousSubArray(new int[]{-2, 1, -3, 4, 5, -1, 4}));
         System.out.println(getLargestSumOfContiguousSubArray(new int[]{2, -1, -3, 4, -5, 1, 4}));
         // kadane's algorithm doesn't work if all no.s are -ve

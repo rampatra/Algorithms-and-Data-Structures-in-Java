@@ -64,7 +64,7 @@ public class MajorityElementInSortedArray {
         return -1;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isMajorityElement(new int[]{2, 2}, 2));
         System.out.println(isMajorityElement(new int[]{1, 2}, 2));
         System.out.println(isMajorityElement(new int[]{1, 2, 2, 2, 2, 2, 3, 3}, 2));

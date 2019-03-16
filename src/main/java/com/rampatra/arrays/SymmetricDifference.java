@@ -51,7 +51,7 @@ public class SymmetricDifference {
         return Arrays.copyOf(res, index);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getSymmetricDifference(new int[]{1, 2, 3, 4}, new int[]{2, 4, 5})));
         System.out.println(Arrays.toString(getSymmetricDifference(new int[]{1, 2, 3, 4}, new int[]{5, 6, 7})));
         System.out.println(Arrays.toString(getSymmetricDifference(new int[]{1, 2, 3, 4}, new int[]{5, 6, 7, 8})));

@@ -95,7 +95,7 @@ public class Addition {
         return n ^ mask;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(add(0, 0)); //0
         System.out.println(add(12, 12)); //24
         System.out.println(add(12, 5)); //17

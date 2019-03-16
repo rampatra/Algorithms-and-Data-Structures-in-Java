@@ -36,7 +36,7 @@ public class SubStrings {
         printAllSubStrings(s.substring(1));
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println("----Iterative----");
         printAllSubStrings("ram");
         System.out.println("--------");

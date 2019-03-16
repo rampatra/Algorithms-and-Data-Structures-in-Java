@@ -63,7 +63,7 @@ public class PairDiff {
         return false;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(pairDiff(new int[]{-3, 4, -6, 1, 1}, -4));
         System.out.println(pairDiff(new int[]{3, 1}, 2));
         System.out.println(pairDiff(new int[]{-3, 4, -6, 1, 1}, -4, new HashMap<Integer, Integer>()));

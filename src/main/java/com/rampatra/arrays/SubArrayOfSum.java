@@ -37,7 +37,7 @@ public class SubArrayOfSum {
         System.out.println("Sub-array with sum " + sum + " not found!");
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printSubArrayOfSum(new int[]{1, 4, 20, 3, 10, 5}, 33);
         printSubArrayOfSum(new int[]{1, 4, 20, 3, 10, 5}, 38);
         printSubArrayOfSum(new int[]{1, 4, 20, 3, 10, 5}, 13);

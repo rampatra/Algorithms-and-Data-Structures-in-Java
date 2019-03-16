@@ -23,7 +23,7 @@ public class BooleanArrayPuzzle {
         return a;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(change1To0InArray(new int[]{0, 0})));
         System.out.println(Arrays.toString(change1To0InArray(new int[]{0, 1})));
         System.out.println(Arrays.toString(change1To0InArray(new int[]{1, 0})));

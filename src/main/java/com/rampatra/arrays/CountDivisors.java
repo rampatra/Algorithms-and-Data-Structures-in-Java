@@ -24,7 +24,7 @@ public class CountDivisors {
         return b - a;     // return integers in range
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         countDivisorsInRange(0, 2000000000, 5);
     }
 }

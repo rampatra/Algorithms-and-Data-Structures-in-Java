@@ -53,7 +53,7 @@ public class SelectionSort {
         a[index2] = temp;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{3, 2, 1, 5, 6, 9, 7, 10};
         selectionSort(ar);
         System.out.println(Arrays.toString(ar));

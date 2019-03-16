@@ -15,7 +15,7 @@ public class IntroTutorial {
         return Arrays.binarySearch(arr, searchVal);
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         int searchVal = in.nextInt();

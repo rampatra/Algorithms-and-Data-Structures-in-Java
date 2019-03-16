@@ -34,7 +34,7 @@ public class FibonacciNumbers {
         return fib;
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         out.println(Arrays.toString(getFirstKFibonacciNumbers(0)));
         out.println(Arrays.toString(getFirstKFibonacciNumbers(10)));
         out.println(Arrays.toString(getFirstKFibonacciNumbers(46)));

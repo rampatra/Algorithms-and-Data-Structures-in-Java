@@ -30,7 +30,7 @@ public class ElementOccurringOnce {
         return result;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getElementOccurringOnceInElementsRepeatedThreeTimes(new int[]{12, 12, 6, 6, 2, 12, 6}));
         System.out.println(getElementOccurringOnceInElementsRepeatedThreeTimes(new int[]{5, 5, 45, 45, 456, 5, 45}));
         System.out.println(getElementOccurringOnceInElementsRepeatedThreeTimes(new int[]{12, 12, 34, 34, 6, 12, 34}));

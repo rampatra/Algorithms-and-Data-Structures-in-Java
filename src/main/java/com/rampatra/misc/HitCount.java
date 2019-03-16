@@ -40,7 +40,7 @@ public class HitCount {
         return list.get(0).getKey();
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         List<String> inputList = new ArrayList<>();
         inputList.add("10.1.2.23 http://we.sdfdsf.sdf");
         inputList.add("10.1.2.24 http://we.sdfdsf.sdf");

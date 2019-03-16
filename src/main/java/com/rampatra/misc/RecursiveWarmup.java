@@ -87,7 +87,7 @@ public class RecursiveWarmup {
      *
      * @param a
      */
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         RecursiveWarmup RecursiveWarmup = new RecursiveWarmup();
         List<Integer> list1 = new ArrayList<>();
         list1.add(1);

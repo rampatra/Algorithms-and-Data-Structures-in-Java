@@ -60,7 +60,7 @@ public class RotateLinkedList {
 
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(00);
         linkedList.add(11);

@@ -39,7 +39,7 @@ public class SegregateEvenAndOddNos {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{12, 34, 45, 9, 8, 90, 3};
         segregateEvenAndOddNos(ar);
         System.out.println(Arrays.toString(ar));

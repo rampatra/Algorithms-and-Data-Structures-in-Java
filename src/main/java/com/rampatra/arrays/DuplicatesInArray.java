@@ -43,7 +43,7 @@ public class DuplicatesInArray {
         return duplicates;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(findDuplicatesInArray(new int[]{1, 1, 2, 3, 1, 3, 6, 6})));
         // doesn't work if 0 is present in array (as -0 makes no sense but we can modify the algorithm to handle 0)
         System.out.println(Arrays.toString(findDuplicatesInArray(new int[]{1, 0, 1, 2, 3, 1, 3, 6, 6})));

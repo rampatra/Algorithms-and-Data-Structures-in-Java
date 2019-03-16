@@ -70,7 +70,7 @@ public class TwoStacksInOneArray {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         TwoStacksInOneArray twoStack = new TwoStacksInOneArray(5);
         twoStack.push(1, 3);
         twoStack.push(1, 4);

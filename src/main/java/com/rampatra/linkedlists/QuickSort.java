@@ -75,7 +75,7 @@ public class QuickSort {
         return curr;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(23);
         linkedList.add(4);

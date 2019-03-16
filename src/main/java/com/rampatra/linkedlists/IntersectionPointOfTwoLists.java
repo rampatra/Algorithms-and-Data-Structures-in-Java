@@ -50,7 +50,7 @@ public class IntersectionPointOfTwoLists {
         return null;
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(0);
         linkedList1.add(1);

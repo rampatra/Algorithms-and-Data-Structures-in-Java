@@ -67,7 +67,7 @@ public class BooleanMatrix {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[][] ar = new int[][]{{1, 0, 0, 1}, {0, 0, 1, 0}, {0, 0, 0, 0}};
         print2DMatrix(ar);
         modifyBooleanMatrix(ar);

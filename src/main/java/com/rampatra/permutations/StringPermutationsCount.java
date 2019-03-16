@@ -34,7 +34,7 @@ public class StringPermutationsCount {
         return count;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getStringPermutationsCount("", "abc", "abcba", 0));
         System.out.println(getStringPermutationsCount("", "abc", "abcbacb", 0));
     }

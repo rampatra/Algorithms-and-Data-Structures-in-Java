@@ -272,7 +272,7 @@ public class BinaryTree<E extends Comparable<E>> extends Tree<E> {
     }
 
     // test cases
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(1);
         bt.put(2);

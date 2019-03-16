@@ -21,7 +21,7 @@ public class Modulo {
         return n & (d - 1);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getNmoduloD(18, 8));
         System.out.println(getNmoduloD(18, 4));
         System.out.println(getNmoduloD(13, 4));

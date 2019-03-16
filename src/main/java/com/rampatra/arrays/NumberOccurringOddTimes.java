@@ -28,7 +28,7 @@ public class NumberOccurringOddTimes {
         return res;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.print(numberOccurringOddTimes(new int[]{2, 3, 3, 3, 1, 2, 1}));
     }
 }

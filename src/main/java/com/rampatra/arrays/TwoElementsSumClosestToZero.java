@@ -39,7 +39,7 @@ public class TwoElementsSumClosestToZero {
         return new int[]{n1, n2};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getTwoElementsWhoseSumIsClosestToZero(new int[]{1, 60, -10, -80, 85, 70})));
         System.out.println(Arrays.toString(getTwoElementsWhoseSumIsClosestToZero(new int[]{-3, -100, -10, -80, 85, 70})));
     }

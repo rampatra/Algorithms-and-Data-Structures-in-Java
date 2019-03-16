@@ -8,7 +8,7 @@ package com.rampatra.misc;
  * To change this template go to Preferences | IDE Settings | File and Code Templates
  */
 public class Equals {
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Short i = new Short((short) 12);
         Short j = new Short((short) 12);
         System.out.print(j == i); // prints false as compiler compares 2 references instead of their values

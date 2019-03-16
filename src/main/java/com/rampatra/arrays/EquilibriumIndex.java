@@ -44,7 +44,7 @@ public class EquilibriumIndex {
         return -1;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getEquilibriumIndex(new int[]{-7, 1, 5, 2, -4, 3, 0}));
         System.out.println(getEquilibriumIndex(new int[]{-7, 1, 5, 0, 0, 0, 0, 1, 2, -4, 1, 3, 0}));
         System.out.println(getEquilibriumIndex(new int[]{4, 5, 2, 1, 6, 7, 8, 0, 1}));

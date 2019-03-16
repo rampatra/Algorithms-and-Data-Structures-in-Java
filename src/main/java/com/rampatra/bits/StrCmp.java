@@ -48,7 +48,7 @@ public class StrCmp {
         return n1 - n2;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(compareStringIgnoreCase("ram", "ram"));
         System.out.println(compareStringIgnoreCase("ram", "Ram"));
         System.out.println(compareStringIgnoreCase("", ""));

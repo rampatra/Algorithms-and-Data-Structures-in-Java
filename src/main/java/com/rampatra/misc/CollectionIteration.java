@@ -20,7 +20,7 @@ import static java.lang.System.out;
  */
 public class CollectionIteration {
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);

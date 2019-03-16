@@ -47,7 +47,7 @@ public class LRUCache<E, V> {
         }
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         LRUCache<Integer, Integer> cache = new LRUCache<>(3);
         cache.add(1, 1);
         cache.add(2, 2);

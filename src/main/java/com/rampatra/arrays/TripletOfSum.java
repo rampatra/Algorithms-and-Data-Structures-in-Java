@@ -42,7 +42,7 @@ public class TripletOfSum {
         return new int[]{-1};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getTripletOfSum(new int[]{12, 3, 4, 5, 1, 6, 9}, 24)));
         System.out.println(Arrays.toString(getTripletOfSum(new int[]{12, 3, 4, 5, 1, 6, 9}, 19)));
         System.out.println(Arrays.toString(getTripletOfSum(new int[]{1, 2, 3}, 6)));

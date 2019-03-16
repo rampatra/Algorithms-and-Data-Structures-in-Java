@@ -43,7 +43,7 @@ public class MatrixInSpiral {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printMatrixInSpiral(new int[][]{{1}, {2}});
         out.println();
         printMatrixInSpiral(new int[][]{{1, 2}, {3, 4}});

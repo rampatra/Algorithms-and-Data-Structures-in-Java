@@ -54,7 +54,7 @@ public class LongestBitonicSubArray {
         return bitonicLength;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getLongestBitonicSubArrayLength(new int[]{1, 2, 5, 4, 3}));
         System.out.println(getLongestBitonicSubArrayLength(new int[]{12, 4, 78, 90, 45, 23}));
         System.out.println(getLongestBitonicSubArrayLength(new int[]{10, 20, 30, 40}));

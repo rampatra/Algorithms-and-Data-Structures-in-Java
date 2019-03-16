@@ -58,7 +58,7 @@ public class PairSum {
         return false;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, -2));
         System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 5));
         System.out.println(pairSum(new int[]{-3, 4, -6, 1, 1}, 0));

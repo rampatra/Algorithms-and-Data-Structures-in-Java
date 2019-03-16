@@ -90,7 +90,7 @@ public class Trie<E> {
     }
 
     // unit testing
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Trie<String> trie = new Trie<>();
         trie.insert("ram");
         trie.insert("r");

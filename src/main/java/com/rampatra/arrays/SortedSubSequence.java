@@ -55,7 +55,7 @@ public class SortedSubSequence {
 
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printSortedSubSequenceOfSize3(new int[]{12, 11, 10, 5, 6, 2, 30});
         printSortedSubSequenceOfSize3(new int[]{1, 2, 3, 4});
         printSortedSubSequenceOfSize3(new int[]{4, 3, 2, 1});

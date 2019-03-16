@@ -57,7 +57,7 @@ public class MergeArrayOfNIntoArrayOfMPlusN {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] mPlusN = {2, NA, 12, NA, NA, 14, NA};
         int[] n = {5, 7, 8, 10};
         merge(mPlusN, n);

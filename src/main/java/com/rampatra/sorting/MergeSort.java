@@ -53,7 +53,7 @@ public class MergeSort {
         return sortedArray;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{3, 5, 1, 6, 9, 8};
         System.out.println(Arrays.toString(ar));
         System.out.println(Arrays.toString(mergeSort(ar)));

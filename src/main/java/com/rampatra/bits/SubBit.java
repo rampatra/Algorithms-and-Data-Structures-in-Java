@@ -22,7 +22,7 @@ public class SubBit {
         return num << (32 - end) >>> (start - end + 31); // more intuitive (start - 1 + 32 - end)
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getNumberFromSubBits(5, 1, 2));
     }
 }

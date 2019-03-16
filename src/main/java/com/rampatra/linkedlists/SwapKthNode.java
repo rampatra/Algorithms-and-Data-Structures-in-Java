@@ -60,7 +60,7 @@ public class SwapKthNode {
 
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(11);
         linkedList.add(22);

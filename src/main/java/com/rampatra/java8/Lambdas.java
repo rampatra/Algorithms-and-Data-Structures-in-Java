@@ -14,7 +14,7 @@ public class Lambdas {
         consumer.accept("Lambda");
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Lambdas l = new Lambdas();
         l.testScopeOfLambda(x -> System.out.println(x));
         l.testScopeOfLambda(x -> System.out.println(x + l.a));

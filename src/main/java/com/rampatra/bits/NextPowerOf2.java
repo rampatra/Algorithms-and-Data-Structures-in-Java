@@ -100,7 +100,7 @@ public class NextPowerOf2 {
         return (n > 1) ? p >> 1 : n; // check for n = 0 or 1;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
 
         System.out.println(nextHigherPowerOf2(2));
         System.out.println(nextHigherPowerOf2(3));

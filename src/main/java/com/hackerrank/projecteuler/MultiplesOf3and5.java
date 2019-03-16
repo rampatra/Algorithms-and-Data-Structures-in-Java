@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class MultiplesOf3and5 {
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         int t = Integer.parseInt(in.nextLine());

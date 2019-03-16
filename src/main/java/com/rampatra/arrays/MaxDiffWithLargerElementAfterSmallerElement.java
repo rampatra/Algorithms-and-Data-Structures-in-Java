@@ -35,7 +35,7 @@ public class MaxDiffWithLargerElementAfterSmallerElement {
         return maxDiff;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getMaxDiffWithLargerElementAfterSmallerElement(new int[]{2, 1, 4, 5, 10, 0}));
         System.out.println(getMaxDiffWithLargerElementAfterSmallerElement(new int[]{2, -6, 4, 5, 10, 1}));
         System.out.println(getMaxDiffWithLargerElementAfterSmallerElement(new int[]{-2, -6, -4, -5, -10, -1}));

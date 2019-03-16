@@ -37,7 +37,7 @@ public class CounterGame {
         return (louiseTurn) ? "Richard" : "Louise";
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         int t = Integer.parseInt(in.nextLine());

@@ -61,7 +61,7 @@ public class ReverseLinkedListInAlternateGroups<E extends Comparable<E>> extends
         return prev;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         ReverseLinkedListInAlternateGroups<Integer> linkedList = new ReverseLinkedListInAlternateGroups<>();
         linkedList.add(00);
         linkedList.add(11);

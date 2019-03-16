@@ -93,7 +93,7 @@ public class MaxInAllSubArrays {
         return result;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(maxInAllSubArraysOfSizeKNaive(new int[]{1, 2, 3, 1, 4, 5, 2, 3, 6}, 3)));
         System.out.println(Arrays.toString(maxInAllSubArraysOfSizeKNaive(new int[]{8, 5, 10, 7, 9, 4, 15, 12, 90, 13}, 4)));
         System.out.println(Arrays.toString(maxInAllSubArraysOfSizeK(new int[]{1, 2, 3, 1, 4, 5, 2, 3, 6}, 3)));

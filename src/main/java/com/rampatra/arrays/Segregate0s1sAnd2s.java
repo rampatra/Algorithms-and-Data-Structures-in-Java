@@ -45,7 +45,7 @@ public class Segregate0s1sAnd2s {
         a[index2] = temp;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{0, 1, 2, 0, 1, 2};
         segregate0s1sAnd2s(ar);
         System.out.println(Arrays.toString(ar));

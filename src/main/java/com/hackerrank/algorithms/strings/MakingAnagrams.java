@@ -47,7 +47,7 @@ public class MakingAnagrams {
         return c;
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         System.out.println(makeAnagrams("abc", "cde"));
     }
 }

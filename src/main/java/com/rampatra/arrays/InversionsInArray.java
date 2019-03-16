@@ -95,7 +95,7 @@ public class InversionsInArray {
         return sortedArray;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getInversionCountNaiveApproach(new int[]{2, 4, 1, 3, 5}));
         System.out.println(getInversionCount(new int[]{2, 4, 1, 3, 5}));
     }

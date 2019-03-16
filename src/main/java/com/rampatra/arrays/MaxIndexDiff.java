@@ -49,7 +49,7 @@ public class MaxIndexDiff {
         return maxDiff;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(maxDiff(new int[]{34, 8, 10, 3, 2, 80, 30, 33, 1}));
         System.out.println(maxDiff(new int[]{9, 2, 3, 4, 5, 6, 7, 8, 18, 0}));
         System.out.println(maxDiff(new int[]{1, 2, 3, 4, 5, 6}));

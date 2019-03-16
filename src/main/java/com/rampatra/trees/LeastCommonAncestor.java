@@ -53,7 +53,7 @@ public class LeastCommonAncestor {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         BinarySearchTree<Integer> bst = new BinarySearchTree<>();
         bst.put(6);
         bst.put(3);

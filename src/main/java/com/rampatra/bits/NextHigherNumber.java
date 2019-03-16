@@ -47,7 +47,7 @@ public class NextHigherNumber {
         return (n << count) | (leftPattern << count) | (rightPattern >> 1);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getNextHigherNumberWithSameSetBits(0));//doesn't work for 0
         System.out.println(getNextHigherNumberWithSameSetBits(4));//8
         System.out.println(getNextHigherNumberWithSameSetBits(5));//6

@@ -65,7 +65,7 @@ public class BinarySearch {
      *
      * @param a
      */
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         System.out.println(binarySearch(new int[]{0, 2}, 2));
         System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 2));
         System.out.println(binarySearch(new int[]{0, 1, 2, 3}, 3));

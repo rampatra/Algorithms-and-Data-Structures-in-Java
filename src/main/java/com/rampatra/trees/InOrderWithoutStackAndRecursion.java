@@ -67,7 +67,7 @@ public class InOrderWithoutStackAndRecursion<E extends Comparable<E>> extends Bi
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         InOrderWithoutStackAndRecursion<Integer> bst = new InOrderWithoutStackAndRecursion<>();
         bst.put(6);
         bst.put(3);

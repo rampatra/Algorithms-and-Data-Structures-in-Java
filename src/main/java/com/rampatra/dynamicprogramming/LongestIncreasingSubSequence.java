@@ -53,7 +53,7 @@ public class LongestIncreasingSubSequence {
         return maxLisLength;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getLongestIncreasingSubSequenceLength(new int[]{2, 3, 7, 8, 15}));
         System.out.println(getLongestIncreasingSubSequenceLength(new int[]{2, 20, 7, 8, 1}));
         System.out.println(getLongestIncreasingSubSequenceLength(new int[]{20, 10, 5}));

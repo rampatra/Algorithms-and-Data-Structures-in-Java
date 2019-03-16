@@ -55,7 +55,7 @@ public class CheckSorted {
         return true;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isSorted(new int[]{1, 2, 3, 4, 5}));
         System.out.println(isSorted(new int[]{5, 4, 3, 2, 1}));
         System.out.println(isSorted(new int[]{}));

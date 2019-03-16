@@ -44,7 +44,7 @@ public class SortAlternativelySortedLinkedList {
         return MergeSort.mergeTwoSortedLists(node, secondList);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
         linkedList.add(21);
         linkedList.add(67);

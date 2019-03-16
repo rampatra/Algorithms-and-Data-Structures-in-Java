@@ -14,7 +14,7 @@ public class FlatMapInStreams {
         return dishes.stream().map(Dish::getIngredients).flatMap(List::stream).count();
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         List<String> ingredients = new ArrayList<>();
         ingredients.add("rice");
         ingredients.add("chicken");

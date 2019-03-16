@@ -74,7 +74,7 @@ public class OccurrencesInSortedArray {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getOccurrencesInSortedArray(new int[]{1, 1, 2, 2, 2, 2, 3}, 1));
         System.out.println(getOccurrencesInSortedArray(new int[]{1, 1, 1, 2, 2, 2, 2, 3}, 1));
         System.out.println(getOccurrencesInSortedArray(new int[]{1, 1, 2, 2, 2, 2, 3}, 2));

@@ -53,7 +53,7 @@ public class RemoveMiddlePointsFromLineSegments {
         }
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         // test case 1
         SingleLinkedList<Point> linkedList = new SingleLinkedList<>();
         linkedList.add(new Point(0, 10));

@@ -49,7 +49,7 @@ public class AnagramsTogether {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printAnagramsTogether(new String[]{"cat", "dog", "tac", "god", "act"});
         printAnagramsTogether(new String[]{"cat", "tac", "act", "god", "dog"});
     }

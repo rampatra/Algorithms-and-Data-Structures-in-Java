@@ -31,7 +31,7 @@ public class PowerOf4 {
         return false;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isPowerOf4(0));
         System.out.println(isPowerOf4(1));
         System.out.println(isPowerOf4(4));

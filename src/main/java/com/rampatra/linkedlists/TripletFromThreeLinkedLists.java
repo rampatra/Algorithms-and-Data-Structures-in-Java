@@ -53,7 +53,7 @@ public class TripletFromThreeLinkedLists {
 
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(2);
         SingleLinkedList<Integer> linkedList2 = new SingleLinkedList<>();

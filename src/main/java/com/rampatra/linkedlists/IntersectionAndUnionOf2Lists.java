@@ -53,7 +53,7 @@ public class IntersectionAndUnionOf2Lists {
         return new SingleLinkedList[]{intersectionList, unionList};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList1 = new SingleLinkedList<>();
         linkedList1.add(00);
         linkedList1.add(11);

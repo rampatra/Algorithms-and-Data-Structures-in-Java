@@ -33,7 +33,7 @@ public class InsertInSortedList<E extends Comparable<E>> extends SingleLinkedLis
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         InsertInSortedList<Integer> linkedList = new InsertInSortedList<>();
         linkedList.add(00);
         linkedList.add(11);

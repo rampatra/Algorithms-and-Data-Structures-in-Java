@@ -41,7 +41,7 @@ public class StringRotation {
         return false;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isStringRotation("rampatra", "swaroopram"));
         System.out.println(isStringRotation("rampatra", "swaroopramramram"));
         System.out.println(isStringRotation("rampatra", "mswaroopra"));

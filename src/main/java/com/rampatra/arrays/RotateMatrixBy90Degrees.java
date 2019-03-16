@@ -42,7 +42,7 @@ public class RotateMatrixBy90Degrees {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[][] ar = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         print2DMatrix(ar);
         System.out.println("--------");

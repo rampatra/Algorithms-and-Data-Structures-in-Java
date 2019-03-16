@@ -69,7 +69,7 @@ public class SortedDLLToBBST {
         return root;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         DoubleLinkedList<Integer> linkedList = new DoubleLinkedList<>();
         linkedList.add(11);
         linkedList.add(22);

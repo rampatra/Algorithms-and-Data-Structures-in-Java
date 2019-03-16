@@ -36,7 +36,7 @@ public class TwoNonRepeatingElements {
         return new int[]{x, y};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getTwoNonRepeatingElementsInArray(new int[]{2, 3, 4, 2, 3, 4, 5, 6})));
     }
 }

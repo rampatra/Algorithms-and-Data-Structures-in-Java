@@ -43,7 +43,7 @@ public class IntegerOverflow {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         try {
             System.out.println(add(2, 3));
             System.out.println(add(2147483647, 999999999));

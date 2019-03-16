@@ -21,7 +21,7 @@ public class ConvertAToB {
         return CountSetBits.countSetBits(a ^ b);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getBitsToConvertAToB(3, 4));
         System.out.println(getBitsToConvertAToB(3, 5));
         System.out.println(getBitsToConvertAToB(5, 3));

@@ -98,7 +98,7 @@ public class SpiralTraversal<E extends Comparable<E>> extends BinaryTree<E> {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         SpiralTraversal<Integer> bt = new SpiralTraversal<>();
         bt.put(6);
         bt.put(3);

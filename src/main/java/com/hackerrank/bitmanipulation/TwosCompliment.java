@@ -19,7 +19,7 @@ public class TwosCompliment {
         return count;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         int t = Integer.parseInt(in.nextLine());

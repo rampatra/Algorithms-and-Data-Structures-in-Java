@@ -13,7 +13,7 @@ public class ReplaceAll {
         return str.replaceAll(regex, replacement);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(replaceAll("ram s", "\\s+", ""));
     }
 }

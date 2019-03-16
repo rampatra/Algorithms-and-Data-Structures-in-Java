@@ -13,7 +13,7 @@ public class OppositeSign {
         return (a ^ b) >>> 31;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isOppositeSign(-5, -3));
         System.out.println(isOppositeSign(-5, 3));
         System.out.println(isOppositeSign(5, -3));

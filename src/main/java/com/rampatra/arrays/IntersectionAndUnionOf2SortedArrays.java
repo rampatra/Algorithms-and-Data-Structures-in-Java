@@ -50,7 +50,7 @@ public class IntersectionAndUnionOf2SortedArrays {
         return new int[][]{intersection, union};
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] a1 = new int[]{2, 3, 4, 5, 6, 7, 8};
         int[] a2 = new int[]{6, 7, 8, 10, 12, 14, 16};
         int[][] result = getIntersectionAndUnionOf2SortedArrays(a1, a2);

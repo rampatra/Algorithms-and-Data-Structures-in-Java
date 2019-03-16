@@ -95,7 +95,7 @@ public class CheckForBST {
         return isBST(node.left, minValue, node.value) && isBST(node.right, node.value, maxValue);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         // in-order approach
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.put(6);

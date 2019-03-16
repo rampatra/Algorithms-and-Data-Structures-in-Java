@@ -64,7 +64,7 @@ public class Palindrome<E extends Comparable<E>> extends SingleLinkedList<E> {
         }
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         Palindrome<Integer> linkedList = new Palindrome<>();
         linkedList.add(0);
         linkedList.add(1);

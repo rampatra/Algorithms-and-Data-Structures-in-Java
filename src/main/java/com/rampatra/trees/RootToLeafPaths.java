@@ -106,7 +106,7 @@ public class RootToLeafPaths<E extends Comparable<E>> extends BinaryTree<E> {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         RootToLeafPaths<Integer> bt = new RootToLeafPaths<>();
         bt.put(6);
         bt.put(3);

@@ -30,7 +30,7 @@ public class StringPermutations {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         printAllPermutations("", "a");
         System.out.println("-------");
         printAllPermutations("", "ab");

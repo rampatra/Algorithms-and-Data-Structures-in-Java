@@ -45,7 +45,7 @@ public class MinimumDistanceBetweenTwoNos {
         return minDiff;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getMinimumDistanceBetweenTwoNos(new int[]{1, 2}, 1, 2));
         System.out.println(getMinimumDistanceBetweenTwoNos(new int[]{3, 4, 5}, 3, 5));
         System.out.println(getMinimumDistanceBetweenTwoNos(new int[]{3, 5, 4, 2, 6, 5, 6, 6, 5, 4, 8, 3}, 3, 6));

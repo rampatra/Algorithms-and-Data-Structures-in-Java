@@ -31,7 +31,7 @@ public class FlippingBits {
         return ~n;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getNumberByFlippingBits(5));
         System.out.println(getNumberByFlippingBits_V1(5));
     }

@@ -82,7 +82,7 @@ public class ReverseBits {
         return reverse;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getNumberByReversingBits(79876));
         System.out.println(getNumberByReversingBitsV1(79876));
         System.out.println(getNumberByReversingBitsV2(79876));

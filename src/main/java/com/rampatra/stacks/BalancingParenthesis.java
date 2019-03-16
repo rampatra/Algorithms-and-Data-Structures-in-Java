@@ -81,7 +81,7 @@ public class BalancingParenthesis {
      *
      * @param a
      */
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         readFile(a[0]);
     }
 }

@@ -63,7 +63,7 @@ public class NamePrint {
         secondThread.start();
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         NamePrint obj = new NamePrint();
         obj.printNameUsingMultipleThreads();
     }

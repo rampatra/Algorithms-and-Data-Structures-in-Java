@@ -60,7 +60,7 @@ public class Multiply {
         return (n << 3);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(multiplyWith3point5(3));
         System.out.println(multiplyWith3point5(4));
         System.out.println(multiplyWith3point5(6));

@@ -25,7 +25,7 @@ public class SmallestAndSecondSmallest {
         return new int[]{smallest, secondSmallest};
     }
 
-    public static void main(String[] a) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getSmallestAndSecondSmallest(new int[]{100, 1, 60, -10, -80, 85, 70, -80})));
         System.out.println(Arrays.toString(getSmallestAndSecondSmallest(new int[]{100, 1, 60, 10, 80, 85, 70, 0})));
     }

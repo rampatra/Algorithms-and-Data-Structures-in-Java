@@ -32,7 +32,7 @@ public class DoubleTree {
         doubleTree(node.right);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         BinaryTree<Integer> bt = new BinaryTree<>();
         bt.put(6);
         bt.put(3);

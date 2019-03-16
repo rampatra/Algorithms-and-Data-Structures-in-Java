@@ -36,7 +36,7 @@ public class InterpolationSearch {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(search(new int[]{0, 2}, 2));
         System.out.println(search(new int[]{0, 1}, 2));
         System.out.println(search(new int[]{0, 1, 2, 3}, 2));

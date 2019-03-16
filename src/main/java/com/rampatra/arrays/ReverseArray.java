@@ -43,7 +43,7 @@ public class ReverseArray {
         reverseRecursive(a, ++i, --j);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         int[] ar = new int[]{1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(ar));
         reverse(ar);

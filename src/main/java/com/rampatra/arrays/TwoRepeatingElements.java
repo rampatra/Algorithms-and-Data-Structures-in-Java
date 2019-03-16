@@ -88,7 +88,7 @@ public class TwoRepeatingElements {
         return repeatingElements;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{4, 2, 4, 5, 2, 3, 1})));
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{2, 4, 5, 2, 3, 1, 6, 7, 7})));
         System.out.println(Arrays.toString(getTwoRepeatingElements(new int[]{1, 2, 1, 2})));

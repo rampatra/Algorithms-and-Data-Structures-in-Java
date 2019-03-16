@@ -94,7 +94,7 @@ public class MedianOfTwoSortedArrays {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         // test cases
         System.out.println(median(new int[]{1, 2, 3, 6}, new int[]{4, 6, 8, 9}));
         System.out.println(median(new int[]{4, 6, 8, 9}, new int[]{1, 2, 3, 6}));

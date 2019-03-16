@@ -50,7 +50,7 @@ public class SmallestOf3Integers {
         return c;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(getSmallest(new int[]{4, 5, 6}));
         System.out.println(getSmallest_V1(new int[]{4, 5, 6}));
     }

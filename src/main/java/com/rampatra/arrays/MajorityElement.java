@@ -62,7 +62,7 @@ public class MajorityElement {
         }
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         majorityElement(new int[]{1, 6, 2, 2, 2, 1, 2, 2, 7, 2});
     }
 }

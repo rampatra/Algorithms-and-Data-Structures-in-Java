@@ -35,7 +35,7 @@ public class EqualProbabilityRandomNoGenerator {
         return new Random().nextInt(n);
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         System.out.println("How many random numbers you would like to generate?");

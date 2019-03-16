@@ -40,7 +40,7 @@ public class PowerOf2 {
         return n != 0 && (n & -n) == n;
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(isPowerOf2(18));
         System.out.println(isPowerOf2UsingANDoperator(18));
         System.out.println(isPowerOf2FromRandomClass(18));

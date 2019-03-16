@@ -30,7 +30,7 @@ public class CountSetBitsFromMinusNtoN {
         return n * 32 + CountSetBits.countSetBits((long) n); // 32 because int is of 32 bits in java
     }
 
-    public static void main(String a[]) {
+    public static void main(String[] args) {
         System.out.println(countSetBitsFromMinusNtoN(3));
         System.out.println(countSetBitsFromMinusNtoN(0));
         System.out.println(countSetBitsFromMinusNtoN(9));
