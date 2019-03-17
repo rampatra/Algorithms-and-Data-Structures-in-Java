@@ -10,7 +10,8 @@ public class FlipBitToWin {
      * You have an integer and you can flip exactly one bit from a O to a 1. Write code to find the length of the
      * longest sequence of 1s you could create.
      * Example:
-     * Input: 1775 (or: 11011101111) Output: 8
+     * Input: 1775 (or: 11011101111)
+     * Output: 8
      * <p>
      * Approach:
      * We just walk through the integer tracking the current 1s sequence length and the previous 1s sequence length.
