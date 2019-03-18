@@ -13,7 +13,7 @@ public class FirstCommonAncestor {
     /**
      * We recurse through the entire tree with a function called findFCA(TreeNode root, TreeNode TreeNode a, TreeNode b).
      * This function returns values as follows:
-     * - Returns p,if root's subtree includes p (and not q).
+     * - Returns p, if root's subtree includes p (and not q).
      * - Returns q, if root's subtree includes q (and not p).
      * - Returns null, if neither p nor q are in root's subtree.
      * - Else, returns the common ancestor of p and q.
