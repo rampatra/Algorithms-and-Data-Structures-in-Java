@@ -26,84 +26,73 @@ public class NextNumber {
     }
 
     private static int getNextLarger(int n) {
-        int zeroPrecededByOneFromRight = 0;
+        int rightmostNonTrailingZero = 0;
+        int noOfZeros = 0;
         int noOfOnes = 0;
-        int mask = 1;
+        int temp = n;
 
-        /* Find the position of the bit pattern '01' from the right and then make it '10'.
-            For example, see below:        
+        /* Count the number of zeros and ones until the rightmost non-trailing zero
+            For example, see below:       
                
                 n = 10110110011110
-                            ^^
-                n = 10110110101110 (after bit swap)
+                            ^
          */
-        for (int i = 0; i < Integer.BYTES * 8 - 1; i++) {
-            if ((n & mask) == mask) {
-                if ((n & mask << 1) == 0) {
-                    n = (n & ~mask) | mask << 1; // swap the bits
-                    break;
-                }
-                noOfOnes++;
-            }
-            zeroPrecededByOneFromRight++;
-            mask <<= 1;
+        while ((temp & 1) == 0 && temp != 0) {
+            noOfZeros++;
+            temp >>>= 1;
         }
 
-        if (zeroPrecededByOneFromRight == Integer.BYTES * 8 - 1) {
+        while ((temp & 1) == 1 && temp != 0) {
+            noOfOnes++;
+            temp >>>= 1;
+        }
+        
+        if (noOfZeros + noOfOnes == 31 || noOfZeros + noOfOnes == 0) {
             return -1;
         }
 
-        /* Shift all the 1s to the right end and then fill with 0s until the bit pattern '01.
+        /* Flip the bit and then shift all the 1s to the right end and then fill with 0s until the bit pattern '01.
             For example, consider the above number: 
-            
-                        n = 10110110101110 (after bit swap)
-                                    ^^    
-              next larger = 10110110100111 (the 1s are shifted to the right end)  
+                    n = 10110110011110 (original)
+                                ^
+                    n = 10110110111110 (after flip bit)
+                                ^    
+          next larger = 10110110100111 (the 1s are shifted to the right end and 0s to the left but before the rightmostNonTrailingZero)
+                                ^  
          */
-        mask = 1;
-        for (int i = 0; i < zeroPrecededByOneFromRight; i++) {
-            if (i < noOfOnes) {
-                n = n | mask; // set the bits
-            } else {
-                n = n & ~mask; // unset the bits
-            }
-            mask <<= 1;
-        }
+        rightmostNonTrailingZero = noOfOnes + noOfZeros;
+        n |= 1 << rightmostNonTrailingZero; // set the rightmost non-trailing zero
+        n &= ~((1 << rightmostNonTrailingZero) - 1); // unset all bits until rightmost non-trailing zero
+        n |= (1 << noOfOnes - 1) - 1; // set (noOfOnes - 1) bits from the right
+
         return n;
     }
 
     private static int getNextSmaller(int n) {
-        int onePrecededByZeroFromRight = 0;
+        int rightmostNonTrailingOne = 0;
         int noOfZeros = 0;
-        int mask = 1;
-
-        // find the position of the bit pattern '10' from the right and then make it '01'
-        for (int i = 0; i < Integer.BYTES * 8 - 1; i++) {
-            if ((n & mask) == 0) {
-                if ((n & mask << 1) == mask << 1) {
-                    n = (n | mask) & ~(mask << 1); // swap the bits
-                    break;
-                }
-                noOfZeros++;
-            }
-            onePrecededByZeroFromRight++;
-            mask <<= 1;
+        int noOfOnes = 0;
+        int temp = n;
+        
+        while ((temp & 1) == 1 && temp != 0) {
+            noOfOnes++;
+            temp >>>= 1;
         }
-
-        if (onePrecededByZeroFromRight == Integer.BYTES * 8 - 1) {
+        
+        if (temp == 0) {
             return -1;
         }
 
-        // shift all the 0s to the right end and then fill with 1s until the bit pattern '10'
-        mask = 1;
-        for (int i = 0; i < onePrecededByZeroFromRight; i++) {
-            if (i < noOfZeros) {
-                n = n & ~mask; // unset the bits
-            } else {
-                n = n | mask; // set the bits
-            }
-            mask <<= 1;
+        while ((temp & 1) == 0 && temp != 0) {
+            noOfZeros++;
+            temp >>>= 1;
         }
+        
+        rightmostNonTrailingOne = noOfZeros + noOfOnes;
+        n &= ~(1 << rightmostNonTrailingOne); // unset the rightmost non-trailing one
+        n |= (1 << rightmostNonTrailingOne - 1); // set all the bits until rightmost non-trailing one
+        n &= ~((1 << noOfZeros - 1) - 1); // unset (noOfZeros - 1) bits from the right
+        
         return n;
     }
 
