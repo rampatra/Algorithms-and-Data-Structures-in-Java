@@ -32,11 +32,14 @@
 
 ### Shifts
 
+_Disclaimer: We are taking `byte` (8 bits) as our datatype to explain the
+ concepts instead of the usual integer._
+
 #### 1. Left Shift (<<):
 
 1 << 3 = 8
 
-> 00000001 << 3 = 00001000 (only showing 8 bits)
+> 00000001 << 3 = 00001000
 
 #### 2. Right Shift:
 
@@ -58,7 +61,6 @@
 
 > 001000000 >>> 2 = 00010000
 
--64 >>> 2 = 
+-64 >>> 2 = 56
 
-> 111000000 >>> 2 = 00010000 
-        
+> 111000000 >>> 2 = 00111000
