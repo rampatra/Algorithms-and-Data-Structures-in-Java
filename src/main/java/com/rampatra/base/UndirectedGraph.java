@@ -18,8 +18,9 @@ public class UndirectedGraph<E extends Comparable<E>> extends Graph<E> {
     private Map<E, GraphNode<E>> nodes = new HashMap<>();
 
     /**
-     * Adds an edge between a node with value {@code value} and another node with value {@code adjacentValue}.
-     * If nodes with respective values are not present in the graph then this method creates them.
+     * Adds an edge between a node with value {@code value} and another node with value {@code adjacentValue}. As the
+     * graph is undirected, the edges are added in both the nodes. If nodes with respective values are not present in
+     * the graph then this method creates the nodes.
      *
      * @param value         refers to the value for first node
      * @param adjacentValue refers to the value for the second node
@@ -143,7 +144,7 @@ public class UndirectedGraph<E extends Comparable<E>> extends Graph<E> {
         graph.print();
 
         System.out.println("----");
-        
+
         // has path DFS
         System.out.println(graph.hasPathDFS(1, 5));
         System.out.println(graph.hasPathDFS(1, 6));

@@ -33,11 +33,16 @@ public class MessageHandler implements Runnable {
             while ((message = (Message) in.readObject()) != null) {
                 handleMessage(message);
             }
-            in.close();
-            out.close();
         } catch (Exception e) {
             if (!(e instanceof SocketException)) {
                 throw new RuntimeException(e);
+            }
+        } finally {
+            try {
+                in.close();
+                out.close();
+            } catch (Exception e) {
+                // do nothing
             }
         }
     }

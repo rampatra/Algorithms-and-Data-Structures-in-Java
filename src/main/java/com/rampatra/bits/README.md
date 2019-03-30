@@ -2,7 +2,7 @@
 
 ### Basic Operators
 
-#### AND:   
+#### AND:
 
 | x | y | x `&` y |
 ----|---|:-------:|
@@ -64,3 +64,24 @@ _Disclaimer: We are taking `byte` (8 bits) as our datatype to explain the
 -64 >>> 2 = 56
 
 > 111000000 >>> 2 = 00111000
+
+### Helpful Masks
+
+#### 1. Set the 4th bit from right:
+
+```java
+int mask = 1 << 3;
+```
+
+For example, 
+
+```
+00100000 | mask = 00101000
+```
+    
+#### 2. Set the first 3 bits from right:
+
+```java
+int mask = (1 << 4) - 1;
+```
+
