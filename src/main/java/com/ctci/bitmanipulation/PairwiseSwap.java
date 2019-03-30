@@ -34,7 +34,7 @@ public class PairwiseSwap {
         assert Integer.toBinaryString(swapBits(2680)).equals("10110110100");
         
         // fyi
+        System.out.println(Integer.toBinaryString(0x55555555));
         System.out.println(Integer.toBinaryString(0xaaaaaaaa));
-        System.out.println(Integer.toBinaryString(0x99999999));
     }
 }

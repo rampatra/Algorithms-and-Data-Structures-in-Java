@@ -1,6 +1,6 @@
-## Bits (Work In Progress)
+# Bits
 
-### Basic Operators
+## Basic Operators
 
 #### AND:
 
@@ -30,7 +30,7 @@
 | 1 | 1 | 0       |
 
 
-### Shifts
+## Shifts
 
 _Disclaimer: We are taking `byte` (8 bits) as our datatype to explain the
  concepts instead of the usual integer._
@@ -65,7 +65,7 @@ _Disclaimer: We are taking `byte` (8 bits) as our datatype to explain the
 
 > 111000000 >>> 2 = 00111000
 
-### Helpful Masks
+## Helpful Masks
 
 #### 1. Set the 4th bit from right:
 
