@@ -70,18 +70,53 @@ _Disclaimer: We are taking `byte` (8 bits) as our datatype to explain the
 #### 1. Set the 4th bit from right:
 
 ```java
-int mask = 1 << 3;
+byte mask = 1 << 3;
 ```
 
-For example, 
+Explanation, 
 
 ```
-00100000 | mask = 00101000
+00000001 << 3 = 00001000
 ```
     
 #### 2. Set the first 3 bits from right:
 
 ```java
-int mask = (1 << 4) - 1;
+byte mask = (1 << 3) - 1;
 ```
 
+Explanation,
+
+```
+00000001 << 3 = 00001000
+
+00001000 - 00000001 = 00000111
+```
+
+#### 3. Mask with alternating 1010...10
+
+```java
+byte mask = 0x55;
+```
+
+#### 4. Mask with alternating 0101...01
+
+```java
+byte mask = 0xaa;
+```
+
+#### 5. Unset the 4th bit
+
+```java
+byte mask = 1 << 3;
+
+byte num = num & ~mask;
+```
+
+Explanation,
+
+```
+00000001 << 3 = 00001000
+
+~(00001000) = 11110111
+```

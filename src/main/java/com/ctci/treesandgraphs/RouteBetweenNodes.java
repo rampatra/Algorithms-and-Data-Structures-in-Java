@@ -32,6 +32,13 @@ class Graph {
 
     private static final Map<Integer, GraphNode> nodes = new HashMap<>();
 
+    /**
+     * Adds an edge from a node with value {@code v1} to another node with value {@code v2}.
+     * Note: This code doesn't work for nodes having duplicate values.
+     *
+     * @param v1
+     * @param v2
+     */
     void addEdge(int v1, int v2) {
         GraphNode n1 = nodes.get(v1);
         GraphNode n2 = nodes.get(v2);
@@ -50,7 +57,7 @@ class Graph {
 
     /**
      * Checks for a path from a node with value {@code v1} to another node with value {@code v2} in a breadth-first
-     * manner.
+     * manner. Note: This code doesn't work for nodes having duplicate values.
      *
      * @param v1 the value of the first node or starting node.
      * @param v2 the value of the ending node.
