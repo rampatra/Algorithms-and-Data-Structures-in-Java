@@ -42,7 +42,9 @@ public class LeastCommonAncestor {
      * @return
      */
     public static <E extends Comparable<E>> BinaryNode<E> leastCommonAncestor(BinaryNode<E> node, E value1, E value2) {
-        if (node == null || value1.compareTo(value2) > 0) throw new NoSuchElementException();
+        if (node == null || value1 == null || value2 == null || value1.compareTo(value2) > 0) {
+            throw new NoSuchElementException();
+        }
 
         if (value1.compareTo(node.value) <= 0 && value2.compareTo(node.value) >= 0) {
             return node;

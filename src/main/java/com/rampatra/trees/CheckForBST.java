@@ -9,11 +9,15 @@ import java.util.List;
 import static java.lang.System.out;
 
 /**
- * Created by IntelliJ IDEA.
+ * A binary search tree is a binary tree in which every node fits a specific ordering property: all left
+ * descendents <= n < all right descendents. This must be true for each node n.
+ * <p>
+ * Note: The definition of a binary search tree can vary slightly with respect to equality. Under some definitions, the
+ * tree cannot have duplicate values. In others, the duplicate values will be on the right or can be on either side. All
+ * are valid definitions, but you should clarify this with your interviewer
  *
  * @author rampatra
  * @since 6/26/15
- * @time: 7:14 PM
  */
 public class CheckForBST {
 
