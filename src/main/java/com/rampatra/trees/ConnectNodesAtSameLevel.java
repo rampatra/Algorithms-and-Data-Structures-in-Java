@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * Given a binary tree, return lists of nodes at each level. The number of lists in the output will be equal to 
+ * the number of levels in the tree.
+ *
  * @author rampatra
  * @since 2019-04-02
  */
@@ -34,14 +37,14 @@ public class ConnectNodesAtSameLevel {
         List<TreeNode> connectedNodesAtLevel = new ArrayList<>();
 
         queue.add(root);
-        queue.add(new TreeNode(null));
+        queue.add(new TreeNode(null)); // we use a node with null value as a marker for each level
 
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            
+
             if (node.val != null) {
                 connectedNodesAtLevel.add(node);
-            } else {
+            } else { // when we encounter a null in the queue, we know that a level is completed
                 allNodes.add(connectedNodesAtLevel);
                 connectedNodesAtLevel = new ArrayList<>();
                 if (queue.peek() != null) queue.add(new TreeNode(null));
