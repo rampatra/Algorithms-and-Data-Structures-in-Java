@@ -7,62 +7,68 @@ import com.rampatra.searching.BinarySearch;
  *
  * @author rampatra
  * @since 5/31/15
- * @time: 10:44 PM
  */
 public class PivotedBinarySearch {
 
     /**
-     * Search an element in a sorted pivoted array {@param a}.
+     * Search an element in a sorted pivoted array {@code arr}.
      * <p/>
      * Example,
      * 1) For array [3,4,5,1,2] pivot is 5
      * 2) For array [6,7,8,5,4] pivot is 8
      *
-     * @param a
+     * @param arr
      * @param n
      * @return
      */
-    public static int pivotedBinarySearch(int a[], int n) {
-        int pivot = findPivot(a, 0, a.length - 1);
+    public static int pivotedBinarySearch(int[] arr, int n) {
+        int pivot = findPivotIndex(arr, 0, arr.length - 1);
 
-        if (pivot == -1 || a[pivot] == n) {
+        if (pivot == -1 || arr[pivot] == n) {
             return pivot;
-        } else if (n <= a[0]) {
-            return BinarySearch.binarySearch(a, n, pivot + 1, a.length - 1);
+        } else if (n < arr[0]) {
+            return BinarySearch.binarySearch(arr, n, pivot + 1, arr.length - 1);
         } else {
-            return BinarySearch.binarySearch(a, n, 0, pivot - 1);
+            return BinarySearch.binarySearch(arr, n, 0, pivot - 1);
         }
     }
 
     /**
-     * Finds the pivot element in array {@param a}. Pivot element is the only
+     * Finds the pivot element in array {@code arr}. Pivot element is the only
      * element for which next element to it is smaller than it.
      *
-     * @param a
+     * @param arr
      * @param low
      * @param high
-     * @return
+     * @return the index of the pivot element in the {@code arr}.
      */
-    public static int findPivot(int a[], int low, int high) {
+    public static int findPivotIndex(int[] arr, int low, int high) {
         if (low > high) return -1;
-        if (low == high) return low;
 
         int mid = (low + high) / 2;
 
-        if (a[mid] > a[mid + 1] && a[mid] > a[mid - 1]) {
+        if (mid == 0 || mid == arr.length - 1) return -1;
+        
+        if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
             return mid;
-        } else if (a[mid] > a[mid - 1] && a[mid] < a[mid + 1]) {
-            return findPivot(a, mid + 1, a.length - 1);
+        } else if (arr[mid] > arr[mid - 1] && arr[mid] < arr[mid + 1]) {
+            return findPivotIndex(arr, mid + 1, arr.length - 1);
         } else {
-            return findPivot(a, 0, mid - 1);
+            return findPivotIndex(arr, 0, mid - 1);
         }
     }
 
     public static void main(String[] args) {
-        System.out.println("Pivot: " + findPivot(new int[]{1, 2, 3, 4, 5}, 0, 3));
+        System.out.println("Pivot: " + findPivotIndex(new int[]{3, 4, 5, 1, 2}, 0, 4));
+        System.out.println("Index: " + pivotedBinarySearch(new int[]{3, 4, 5, 1, 2}, 5));
+
+        System.out.println("Pivot: " + findPivotIndex(new int[]{1, 2, 3, 4, 5}, 0, 4));
         System.out.println("Index: " + pivotedBinarySearch(new int[]{1, 2, 3, 4, 5}, 4));
 
-        System.out.println("Pivot: " + findPivot(new int[]{5}, 0, 0));
-        System.out.println("Index: " + pivotedBinarySearch(new int[]{5}, 5));
+        System.out.println("Pivot: " + findPivotIndex(new int[]{5, 4, 3, 2, 1}, 0, 4));
+        System.out.println("Index: " + pivotedBinarySearch(new int[]{5, 4, 3, 2, 1}, 4));
+
+        System.out.println("Pivot: " + findPivotIndex(new int[]{5}, 0, -1));
+        System.out.println("Index: " + pivotedBinarySearch(new int[]{5}, -1));
     }
 }
