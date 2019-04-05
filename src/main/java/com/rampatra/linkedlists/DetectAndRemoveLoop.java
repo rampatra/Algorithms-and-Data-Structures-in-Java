@@ -4,59 +4,56 @@ import com.rampatra.base.SingleLinkedList;
 import com.rampatra.base.SingleLinkedNode;
 
 /**
- * Created by IntelliJ IDEA.
+ * See this <a href="https://stackoverflow.com/a/32190575/1385441">Stackoverflow post</a> to understand
+ * how to find the starting node of the loop.
+ * <p>
+ * Proof for Flyod's Loop Detection Algorithm:
+ * <p>
+ * Suppose fastRunner had just skipped over slowRunner. fastRunner would only be 1 node ahead of slowRunner, since their
+ * speeds differ by only 1. So we would have something like this:
+ * <p>
+ * [ ] -> [s] -> [f]
+ * <p>
+ * What would the step right before this "skipping step" look like? fastRunner would be 2 nodes back, and slowRunner
+ * would be 1 node back. But wait, that means they would be at the same node! So fastRunner didn't skip over slowRunner!
+ * (This is a proof by contradiction.)
  *
  * @author rampatra
  * @since 7/1/15
- * @time: 12:39 PM
  */
 public class DetectAndRemoveLoop {
 
     /**
-     * Detects loop if any in {@param list} and removes it.
+     * Detects loop, if any, in {@code list} and removes it.
      * <p>
-     * Algorithm:
-     * <p>
+     * Approach:
      * 1) Use Floyd's cycle detection algorithm to detect loop.
      * 2) Acc. to FCD, once the fast pointer meets the slow pointer we conclude that there is a loop.
-     * 3) Now compute the length 'l' of the loop.
-     * 4) Move the fast pointer length 'l' from head.
-     * 5) Now move both slow and fast pointer at same pace and where they meet is the starting point of the loop.
-     * 6) Lastly, to remove the loop make the next of the node (before the starting point of loop) to null.
+     * 4) Now that we have concluded there is a loop, let's detect the starting node and remove the loop:
+     *    i. Move the slow pointer to head.
+     *   ii. Now, move both slow and fast pointer at same pace and where they meet is the starting point of the loop.
+     *  iii. Lastly, to remove the loop make the next of the node (before the starting point of loop) to null.
      *
      * @param list
      * @param <E>
      * @return {@code true} if loop exists {@code false} otherwise.
      */
     public static <E extends Comparable<E>> boolean detectAndRemoveLoop(SingleLinkedList<E> list) {
-        int i = 0, length = 0;
         boolean isLoopPresent = false;
-        SingleLinkedNode<E> slow = list.head, fast = slow.next;
+        SingleLinkedNode<E> slow = list.head, fast = list.head;
 
         while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
             if (slow == fast) {
                 isLoopPresent = true;
                 break;
             }
-            slow = slow.next;
-            fast = fast.next.next;
         }
 
-        if (isLoopPresent == false) return false;
+        if (!isLoopPresent) return false;
 
-        // compute length of loop
-        while (fast.next != slow) {
-            fast = fast.next;
-            length++;
-        }
-
-        // move fast pointer from head by the length of loop
-        slow = fast = list.head;
-        while (i <= length) {
-            fast = fast.next;
-            i++;
-        }
-
+        slow = list.head;
         // move both pointers at same pace to determine the starting node of loop
         while (true) {
             slow = slow.next;
@@ -72,13 +69,13 @@ public class DetectAndRemoveLoop {
 
     public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(44);
-        linkedList.add(55);
-        linkedList.getNode(1).next = linkedList.getNode(0);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
+        linkedList.getNode(4).next = linkedList.getNode(2);
         System.out.println(detectAndRemoveLoop(linkedList));
         linkedList.printList();
     }

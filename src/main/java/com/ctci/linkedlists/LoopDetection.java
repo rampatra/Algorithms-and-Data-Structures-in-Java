@@ -14,6 +14,8 @@ public class LoopDetection {
      * EXAMPLE
      * Input: A -> B -> C -> D -> E -> C [the same C as earlier]
      * Output: C
+     * <p>
+     * See {@link com.rampatra.linkedlists.DetectAndRemoveLoop} for a slightly more complex problem.
      *
      * @param head the starting node of the linked list
      * @return the {@code Node} where the loop starts, {@code null} otherwise.

@@ -10,7 +10,6 @@ import java.util.HashMap;
  *
  * @author rampatra
  * @since 6/19/15
- * @time: 9:24 AM
  */
 public class DetectLoop {
 
@@ -24,20 +23,21 @@ public class DetectLoop {
      * there is a loop. If pointers do not meet
      * then linked list does not have loop.
      * <p/>
-     * Time:    O(n)
-     * Space:   O(1)
+     * Level: Easy
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      *
      * @param list
      * @return
      */
     public static <E extends Comparable<E>> boolean isLoopPresent(SingleLinkedList<E> list) {
-        SingleLinkedNode<E> slow = list.head, fast = slow.next;
+        SingleLinkedNode<E> slow = list.head, fast = list.head;
         while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
             if (slow == fast) {
                 return true;
             }
-            slow = slow.next;
-            fast = fast.next.next;
         }
         return false;
     }
@@ -45,8 +45,8 @@ public class DetectLoop {
     /**
      * Uses HashMap to store visited nodes.
      * <p/>
-     * Time:    O(n)
-     * Space:   O(n)
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
      *
      * @param node
      * @return
