@@ -13,7 +13,7 @@ import static java.lang.System.out;
 public class FibonacciNumbers {
 
     /**
-     * Computes first {@param k} fibonacci numbers using
+     * Computes first {@code k} fibonacci numbers using
      * bottom-up DP approach.
      * <p/>
      * Time complexity: O(k)

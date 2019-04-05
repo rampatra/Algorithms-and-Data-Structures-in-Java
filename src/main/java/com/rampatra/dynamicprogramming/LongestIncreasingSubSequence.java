@@ -1,11 +1,8 @@
 package com.rampatra.dynamicprogramming;
 
 /**
- * Created by IntelliJ IDEA.
- *
  * @author rampatra
  * @since 9/29/15
- * @time: 10:15 PM
  */
 public class LongestIncreasingSubSequence {
 
@@ -26,11 +23,11 @@ public class LongestIncreasingSubSequence {
      * To get LIS of a given array, we need to return max(L(i)) where 0 < i < n So the LIS problem has optimal
      * substructure property as the main problem can be solved using solutions to sub-problems.
      *
-     * @param a
+     * @param arr
      * @return
      */
-    public static int getLongestIncreasingSubSequenceLength(int[] a) {
-        int len = a.length, maxLisLength = 0;
+    public static int getLongestIncreasingSubSequenceLength(int[] arr) {
+        int len = arr.length, maxLisLength = 0;
         int[] lis = new int[len];
 
         for (int i = 0; i < len; i++) {
@@ -39,7 +36,7 @@ public class LongestIncreasingSubSequence {
 
         for (int i = 1; i < len; i++) {
             for (int j = 0; j < i; j++) {
-                if (a[i] > a[j] && lis[i] < lis[j] + 1)
+                if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
                     lis[i] = lis[j] + 1;
             }
         }
