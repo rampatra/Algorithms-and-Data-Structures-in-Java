@@ -17,6 +17,8 @@ public class FirstCommonAncestor {
      * - Returns q, if root's subtree includes q (and not p).
      * - Returns null, if neither p nor q are in root's subtree.
      * - Else, returns the common ancestor of p and q.
+     * <p>
+     * See {@link com.rampatra.trees.LeastCommonAncestorInBT} for a simpler version.
      *
      * @param root
      * @param a

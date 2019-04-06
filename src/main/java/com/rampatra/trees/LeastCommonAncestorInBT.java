@@ -29,12 +29,18 @@ public class LeastCommonAncestorInBT {
     private static TreeNode findLCA(TreeNode root, TreeNode node1, TreeNode node2) {
         if (root == null) return null;
 
+        /* 
+            optimal: check this first before checking the child nodes recursively because even if the other node
+            is in one of the sub-trees the LCA would be root node
+         */
+        if (root == node1 || root == node2) {
+            return root;
+        }
+        
         TreeNode left = findLCA(root.left, node1, node2);
         TreeNode right = findLCA(root.right, node1, node2);
 
-        if (root == node1 || root == node2) {
-            return root;
-        } else if (left != null && right != null) { // one node is in the left sub-tree and the other on the right sub-tree
+        if (left != null && right != null) { // one node is in the left sub-tree and the other on the right sub-tree
             return root;
         } else if (left != null) { // we found one node in the left sub-tree
             return left;
