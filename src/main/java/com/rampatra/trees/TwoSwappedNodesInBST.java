@@ -13,6 +13,8 @@ import java.util.List;
  * <p>
  * Note: There is one edge case where the two nodes swapped are parent and child nodes. This means that in the in-order
  * traversal these two nodes will be adjacent. Therefore, in this case, these two nodes will be our answer.
+ * <p>
+ * See this <a href="https://www.youtube.com/watch?v=O4zB91sMKhM">youtube video</a> for a visual understanding.
  *
  * @author rampatra
  * @since 2019-04-06

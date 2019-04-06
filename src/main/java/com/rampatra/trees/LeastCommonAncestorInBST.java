@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
  * @since 6/26/15
  * @time: 7:38 PM
  */
-public class LeastCommonAncestor {
+public class LeastCommonAncestorInBST {
 
 
     public void leastCommonAncestor() {
