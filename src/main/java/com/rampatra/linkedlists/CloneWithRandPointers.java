@@ -4,12 +4,10 @@ import com.rampatra.base.DoubleLinkedList;
 import com.rampatra.base.DoubleLinkedNode;
 
 /**
- * Created by IntelliJ IDEA.
+ * Find the <a href="http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/">question here</a>.
  *
  * @author rampatra
  * @since 6/20/15
- * @time: 1:00 PM
- * @see: http://www.geeksforgeeks.org/a-linked-list-with-next-and-arbit-pointer/
  */
 public class CloneWithRandPointers {
 
@@ -45,7 +43,7 @@ public class CloneWithRandPointers {
         DoubleLinkedNode<E> dupNode;
         while (curr != null && curr.next != null) {
             dupNode = curr.next;
-            curr.next = (dupNode != null) ? dupNode.next : null;
+            curr.next = dupNode.next;
             dupNode.next = (curr.next != null) ? curr.next.next : null;
             curr = curr.next;
         }
