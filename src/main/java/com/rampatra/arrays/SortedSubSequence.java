@@ -5,7 +5,6 @@ package com.rampatra.arrays;
  *
  * @author rampatra
  * @since 10/12/15
- * @time: 8:32 PM
  */
 public class SortedSubSequence {
 
@@ -19,18 +18,18 @@ public class SortedSubSequence {
      * 2) Create another auxiliary array greater[0..n-1]. greater[i] should store the index of a number which is greater than arr[i] and is on right side of arr[i]. greater[i] should contain -1 if there is no such element.
      * 3) Finally traverse both smaller[] and greater[] and find the index i for which both smaller[i] and greater[i] are not -1.
      *
-     * @param a
+     * @param arr
      */
-    public static void printSortedSubSequenceOfSize3(int[] a) {
-        int len = a.length, min = a[0], max = a[len - 1];
+    public static void printSortedSubSequenceOfSize3(int[] arr) {
+        int len = arr.length, min = arr[0], max = arr[len - 1];
 
         int[] smaller = new int[len], larger = new int[len];
 
         smaller[0] = -1;
         for (int i = 1; i < len; i++) {
-            if (a[i] < min) {
+            if (arr[i] < min) {
                 smaller[i] = -1;
-                min = a[i];
+                min = arr[i];
             } else {
                 smaller[i] = min;
             }
@@ -38,9 +37,9 @@ public class SortedSubSequence {
 
         larger[len - 1] = -1;
         for (int i = len - 2; i >= 0; i--) {
-            if (a[i] > max) {
+            if (arr[i] > max) {
                 larger[i] = -1;
-                max = a[i];
+                max = arr[i];
             } else {
                 larger[i] = max;
             }
@@ -48,7 +47,7 @@ public class SortedSubSequence {
 
         for (int i = 0; i < len; i++) {
             if (smaller[i] != -1 && larger[i] != -1) {
-                System.out.println(smaller[i] + "," + a[i] + "," + larger[i]);
+                System.out.println(smaller[i] + "," + arr[i] + "," + larger[i]);
                 break;
             }
         }

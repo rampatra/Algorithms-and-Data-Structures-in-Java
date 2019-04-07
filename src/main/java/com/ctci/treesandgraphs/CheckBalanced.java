@@ -57,7 +57,7 @@ public class CheckBalanced {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    private static boolean isBalancedOptimized(TreeNode node) {
+    public static boolean isBalancedOptimized(TreeNode node) {
         return checkHeightAndBalance(node) != Integer.MIN_VALUE;
     }
 

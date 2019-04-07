@@ -1,5 +1,6 @@
 package com.rampatra.trees;
 
+import com.ctci.treesandgraphs.TreeNode;
 import com.rampatra.base.BinaryNode;
 import com.rampatra.base.BinarySearchTree;
 
@@ -19,7 +20,11 @@ public class HeightBalanced<E extends Comparable<E>> extends BinarySearchTree<E>
      * 1) Left subtree of T is balanced
      * 2) Right subtree of T is balanced
      * 3) The difference between heights of left subtree and right subtree is not more than 1.
-     *
+     * 
+     * This approach is simple but we are traversing each node multiple times while calculating the height. For a more
+     * optimized approach see {@link com.ctci.treesandgraphs.CheckBalanced#isBalancedOptimized(TreeNode)} where while
+     * calculating the height of tree we check whether it is balanced or not simultaneously.
+     * 
      * @return True if tree is height balanced otherwise false.
      */
     public boolean isHeightBalanced() {
