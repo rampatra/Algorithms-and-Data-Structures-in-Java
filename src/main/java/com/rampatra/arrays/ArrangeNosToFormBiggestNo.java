@@ -1,19 +1,17 @@
 package com.rampatra.arrays;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * Created by IntelliJ IDEA.
  *
  * @author rampatra
  * @since 11/1/15
- * @time: 8:53 PM
  */
 public class ArrangeNosToFormBiggestNo {
 
     /**
-     * Sorts no.s in array {@param a} such that if you form a number {@code n}
+     * Sorts {@code numbers} such that if you form a number {@code n}
      * by concatenating digits in order a[0]....a[size], it results being the
      * largest number possible.
      * <p/>
@@ -24,19 +22,14 @@ public class ArrangeNosToFormBiggestNo {
      * I/P: {1, 34, 3, 98, 9, 76, 45, 4}
      * O/P: {9, 98, 76, 45, 4, 34, 3, 1} i.e, 998764543431
      *
-     * @param a
-     * @return
+     * @param numbers input integer array
+     * @return integer array where if you concatenate all its elements, you will get the largest number
      */
-    public static Integer[] arrangeArrayOfNosToFormBiggestNo(Integer[] a) {
+    private static Integer[] arrangeArrayOfNosToFormBiggestNo(Integer[] numbers) {
 
-        Arrays.sort(a, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return Integer.parseInt(o1 + "" + o2) > Integer.parseInt(o2 + "" + o1) ? -1 : 1;
-            }
-        });
+        Arrays.sort(numbers, (o1, o2) -> Integer.parseInt(o1 + "" + o2) >= Integer.parseInt(o2 + "" + o1) ? -1 : 1);
 
-        return a;
+        return numbers;
     }
 
     public static void main(String[] args) {
