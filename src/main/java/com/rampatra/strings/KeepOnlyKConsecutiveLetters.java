@@ -18,27 +18,22 @@ public class KeepOnlyKConsecutiveLetters {
      *
      * @param str input string
      * @param k
-     * @return
+     * @return a string with at most {@code k} consecutive characters
      */
     private static String keepOnlyKConsecutiveLetters(String str, int k) {
         StringBuilder sb = new StringBuilder();
+        int count = 0;
 
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            for (int j = 0; i + j < str.length() && j < k; j++) {
-                char ch2 = str.charAt(i + j);
-                if (ch2 == ch) {
-                    sb.append(ch2);
-                } else {
-                    break;
-                }
+            if (i != 0 && str.charAt(i) != str.charAt(i - 1)) {
+                count = 0;
             }
-
-            while (i + 1 < str.length() && str.charAt(i + 1) == str.charAt(i)) {
-                i++;
+            if (count < k) {
+                sb.append(str.charAt(i));
+                count++;
             }
         }
+
         return sb.toString();
     }
 

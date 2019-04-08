@@ -11,7 +11,6 @@ import java.util.Map;
  *
  * @author rampatra
  * @since 9/23/15
- * @time: 8:11 PM
  */
 public class AnagramsTogether {
 
@@ -24,7 +23,7 @@ public class AnagramsTogether {
      *
      * @param s
      */
-    public static void printAnagramsTogether(String[] s) {
+    private static void printAnagramsTogether(String[] s) {
 
         // each key holds all the indexes of a anagram
         HashMap<String, List<Integer>> hashMap = new HashMap<>();

@@ -25,8 +25,7 @@ public class CloneWithRandPointers {
 
         // copy each node and insert after it
         while (curr != null) {
-            DoubleLinkedNode<E> newNode = new DoubleLinkedNode<>(null, curr.item, curr.next);
-            curr.next = newNode;
+            curr.next = new DoubleLinkedNode<>(null, curr.item, curr.next);
             curr = curr.next.next;
         }
 
@@ -53,10 +52,10 @@ public class CloneWithRandPointers {
 
     public static void main(String[] args) {
         DoubleLinkedList<Integer> linkedList = new DoubleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
         linkedList.getNode(0).prev = null;
         linkedList.getNode(1).prev = linkedList.getNode(2);
         linkedList.getNode(2).prev = linkedList.getNode(0);
