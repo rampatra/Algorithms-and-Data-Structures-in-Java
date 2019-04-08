@@ -4,11 +4,10 @@ import com.rampatra.base.SingleLinkedList;
 import com.rampatra.base.SingleLinkedNode;
 
 /**
- * Created by IntelliJ IDEA.
+ * Delete alternate nodes in a single linked list.
  *
  * @author rampatra
  * @since 6/27/15
- * @time: 5:27 PM
  */
 public class DeleteAlternateNodes {
 
@@ -26,12 +25,12 @@ public class DeleteAlternateNodes {
 
     public static void main(String[] args) {
         SingleLinkedList<Integer> linkedList = new SingleLinkedList<>();
-        linkedList.add(00);
-        linkedList.add(11);
-        linkedList.add(22);
-        linkedList.add(33);
-        linkedList.add(44);
-        linkedList.add(55);
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(3);
+        linkedList.add(4);
+        linkedList.add(5);
         linkedList.printList();
         deleteAlternateNodes(linkedList);
         linkedList.printList();

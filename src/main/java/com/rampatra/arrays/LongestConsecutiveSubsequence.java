@@ -10,9 +10,8 @@ import java.util.Set;
 public class LongestConsecutiveSubsequence {
 
     /**
-     * Given an array of integers, find the length of the longest sub-sequence such that
-     * elements in the subsequence are consecutive integers, the consecutive numbers can
-     * be in any order.
+     * Given an array of distinct integers, find the length of the longest sub-sequence such that
+     * elements in the subsequence are consecutive integers, the consecutive numbers can be in any order.
      * <p>
      * Examples:
      * Input: arr[] = {1, 9, 3, 10, 4, 20, 2};
@@ -24,14 +23,14 @@ public class LongestConsecutiveSubsequence {
      * Output: 5
      * The subsequence {36, 35, 33, 34, 32} is the longest subsequence
      * of consecutive elements.
-     *
+     * <p>
      * NOTE: You can also sort this array and check for consecutive elements. You can take this approach if interviewer
      * asks to solve with no additional space but do bear in mind that some sorting algorithms do require extra space.
      *
-     * @param arr unsorted array of integers
+     * @param arr unsorted array of non-repeating integers
      * @return the length of the longest consecutive subsequence
      */
-    private static int findLongestConsecutiveSubsequence(int[] arr) {
+    private static int findLengthOfLongestConsecutiveSubsequence(int[] arr) {
         int longestSubseqCount = 0;
         int subseqCount;
         int currElem;
@@ -67,11 +66,15 @@ public class LongestConsecutiveSubsequence {
     }
 
     public static void main(String[] args) {
-        System.out.println("{1, 9, 3, 10, 4, 20, 2}: " + findLongestConsecutiveSubsequence(new int[]{1, 9, 3, 10, 4, 20, 2}));
+
+        System.out.println("{1, 9, 3, 10, 4, 20, 2}: " +
+                findLengthOfLongestConsecutiveSubsequence(new int[]{1, 9, 3, 10, 4, 20, 2}));
         System.out.println("{36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}: " +
-                findLongestConsecutiveSubsequence(new int[]{36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}));
-        System.out.println("{1}: " + findLongestConsecutiveSubsequence(new int[]{1}));
-        System.out.println("{}: " + findLongestConsecutiveSubsequence(new int[]{}));
-        System.out.println("{1,5,8,3}: " + findLongestConsecutiveSubsequence(new int[]{1, 5, 8, 3}));
+                findLengthOfLongestConsecutiveSubsequence(new int[]{36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42}));
+        System.out.println("{1,5,8,3}: " + findLengthOfLongestConsecutiveSubsequence(new int[]{1, 5, 8, 3}));
+
+        // corner cases
+        System.out.println("{1}: " + findLengthOfLongestConsecutiveSubsequence(new int[]{1}));
+        System.out.println("{}: " + findLengthOfLongestConsecutiveSubsequence(new int[]{}));
     }
 }
