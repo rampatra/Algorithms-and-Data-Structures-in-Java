@@ -7,7 +7,6 @@ import java.util.*;
  *
  * @author rampatra
  * @since 10/11/15
- * @time: 7:56 PM
  */
 public class AnagramsTogetherLexicographically {
 
@@ -30,8 +29,8 @@ public class AnagramsTogetherLexicographically {
         });
 
         for (int i = 0; i < strings.length; i++) {
-            String removeSpaces = strings[i].replaceAll("\\s+", "");
-            char[] chars = removeSpaces.toCharArray();
+            String spaceRemovedStr = strings[i].replaceAll("\\s+", "");
+            char[] chars = spaceRemovedStr.toCharArray();
             Arrays.sort(chars);
 
             List<Integer> indexes = hashMap.get(String.valueOf(chars));

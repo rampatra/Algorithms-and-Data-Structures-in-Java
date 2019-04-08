@@ -15,21 +15,20 @@ import java.util.Map;
 public class AnagramsTogether {
 
     /**
-     * Prints all the anagrams together from the string
-     * array {@param s}.
+     * Prints all the anagrams together from the string array {@code strings}.
      * <p/>
      * Anagrams are words consisting of the same letters but in the same or different
      * order. For example, "cat" and "tac" are anagrams. Same as "god" and "dog".
      *
-     * @param s
+     * @param strings
      */
-    private static void printAnagramsTogether(String[] s) {
+    private static void printAnagramsTogether(String[] strings) {
 
         // each key holds all the indexes of a anagram
         HashMap<String, List<Integer>> hashMap = new HashMap<>();
 
-        for (int i = 0; i < s.length; i++) {
-            char[] chars = s[i].toCharArray();
+        for (int i = 0; i < strings.length; i++) {
+            char[] chars = strings[i].toCharArray();
             Arrays.sort(chars);
 
             List<Integer> indexes = hashMap.get(String.valueOf(chars));
@@ -42,7 +41,7 @@ public class AnagramsTogether {
 
         for (Map.Entry<String, List<Integer>> entry : hashMap.entrySet()) {
             for (int i = 0; i < entry.getValue().size(); i++) {
-                System.out.println(s[entry.getValue().get(i)]);
+                System.out.println(strings[entry.getValue().get(i)]);
             }
             System.out.println("------");
         }
