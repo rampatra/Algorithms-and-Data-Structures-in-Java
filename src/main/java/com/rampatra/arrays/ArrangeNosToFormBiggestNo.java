@@ -29,6 +29,16 @@ public class ArrangeNosToFormBiggestNo {
 
         Arrays.sort(numbers, (o1, o2) -> Integer.parseInt(o1 + "" + o2) >= Integer.parseInt(o2 + "" + o1) ? -1 : 1);
 
+        /*
+            Use the below version (without lambda) if you use JDK < 8
+        
+            Arrays.sort(numbers, new Comparator<Integer>() {
+                @Override
+                public int compare(Integer o1, Integer o2) {
+                    return Integer.parseInt(o1 + "" + o2) >= Integer.parseInt(o2 + "" + o1) ? -1 : 1;
+                }
+            });
+        */
         return numbers;
     }
 
