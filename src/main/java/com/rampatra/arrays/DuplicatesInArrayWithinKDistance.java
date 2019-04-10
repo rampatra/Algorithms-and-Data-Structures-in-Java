@@ -8,12 +8,11 @@ import java.util.HashSet;
  *
  * @author rampatra
  * @since 10/18/15
- * @time: 8:40 PM
  */
 public class DuplicatesInArrayWithinKDistance {
 
     /**
-     * Finds duplicates in an unsorted array {@param a} which are
+     * Finds duplicates in an unsorted array {@code a} which are
      * only k distance apart from each other.
      *
      * @param a

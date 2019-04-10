@@ -5,28 +5,27 @@ package com.rampatra.arrays;
  *
  * @author rampatra
  * @since 7/31/15
- * @time: 10:02 AM
  */
 public class MajorityElementInSortedArray {
 
     /**
-     * Checks if {@param n} is a majority element in array {@param a}
+     * Checks if {@code n} is a majority element in array {@code arr}
      * by performing a binary search.
      * <p/>
      * Time complexity: O(log n)
      *
-     * @param a
+     * @param arr
      * @param n
      * @return
      */
-    public static boolean isMajorityElement(int[] a, int n) {
-        int l = a.length;
-        int startIndex = getFirstIndexOf(a, n, 0, l - 1);
+    public static boolean isMajorityElement(int[] arr, int n) {
+        int l = arr.length;
+        int startIndex = getFirstIndexOf(arr, n, 0, l - 1);
 
         // element not found
         if (startIndex == -1) return false;
 
-        if (startIndex + l / 2 < l && a[startIndex + l / 2] == n) {
+        if (startIndex + l / 2 < l && arr[startIndex + l / 2] == n) {
             return true;
         } else {
             return false;
@@ -35,15 +34,15 @@ public class MajorityElementInSortedArray {
     }
 
     /**
-     * Returns the index of first occurrence of {@param n} in array {@param a}.
+     * Returns the index of first occurrence of {@code n} in array {@code arr}.
      *
-     * @param a
+     * @param arr
      * @param low
      * @param high
      * @param n
      * @return
      */
-    public static int getFirstIndexOf(int[] a, int n, int low, int high) {
+    public static int getFirstIndexOf(int[] arr, int n, int low, int high) {
         if (low <= high) {
             int mid = (low + high) / 2;
             /**
@@ -53,12 +52,12 @@ public class MajorityElementInSortedArray {
              * (i)  mid == 0 and a[mid] == n
              * (ii) n > a[mid-1] and a[mid] == n
              */
-            if (a[mid] == n && (mid == 0 || n > a[mid - 1])) {
+            if (arr[mid] == n && (mid == 0 || n > arr[mid - 1])) {
                 return mid;
-            } else if (n <= a[mid]) {
-                return getFirstIndexOf(a, n, low, mid - 1);
+            } else if (n <= arr[mid]) {
+                return getFirstIndexOf(arr, n, low, mid - 1);
             } else {
-                return getFirstIndexOf(a, n, mid + 1, high);
+                return getFirstIndexOf(arr, n, mid + 1, high);
             }
         }
         return -1;

@@ -1,20 +1,21 @@
 package com.rampatra.arrays;
 
 /**
- * Created by rampatra on 31/05/2016.
+ * @author rampatra
+ * @since 31/05/2016
  */
 public class CountDivisors {
 
     /**
-     * Counts the number of integers in the range {@param begin} and
-     * {@param end} that are divisible by {@param n}.
+     * Counts the number of integers in the range {@code begin}
+     * and {@code end} that are divisible by {@code n}.
      *
      * @param begin
      * @param end
      * @param n
      * @return
      */
-    public static int countDivisorsInRange(int begin, int end, int n) {
+    private static int countDivisorsInRange(int begin, int end, int n) {
         int b = end / n + 1;  // From 0 to end the integers divisible by n
         int a = begin / n + 1;  // From 0 to begin the integers divisible by n
 
@@ -25,6 +26,10 @@ public class CountDivisors {
     }
 
     public static void main(String[] args) {
-        countDivisorsInRange(0, 2000000000, 5);
+        System.out.println(countDivisorsInRange(0, 0, 5));
+        System.out.println(countDivisorsInRange(1, 1, 5));
+        System.out.println(countDivisorsInRange(0, 1, 5));
+        System.out.println(countDivisorsInRange(0, 10, 5));
+        System.out.println(countDivisorsInRange(0, 2000000000, 5));
     }
 }

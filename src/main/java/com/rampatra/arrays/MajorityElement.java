@@ -1,24 +1,18 @@
 package com.rampatra.arrays;
 
 /**
- * Created by IntelliJ IDEA.
- *
- * @author rampatra
- * @since 5/20/15
- * @time: 2:36 PM
- */
-
-
-/**
  * The algorithm for finding a possible candidate
  * works in O(n) which is known as Moore’s Voting Algorithm.
  * Basic idea of the algorithm is if we cancel out each
  * occurrence of an element e with all the other elements
- * that are different from e then e will exist till end
+ * that are different from e then e will exist until end
  * if it is a majority element.
  * <p/>
  * Time Complexity: O(n)
  * Auxiliary Space : O(1)
+ * 
+ * @author rampatra
+ * @since 5/20/15
  */
 public class MajorityElement {
 
@@ -29,7 +23,7 @@ public class MajorityElement {
      * @param a
      * @return
      */
-    public static int findCandidate(int a[]) {
+    public static int findCandidate(int[] a) {
         int candidate = a[0], count = 1;
         for (int i = 1; i < a.length; i++) {
             if (candidate == a[i]) {
@@ -45,7 +39,7 @@ public class MajorityElement {
         return candidate;
     }
 
-    public static void majorityElement(int a[]) {
+    public static void majorityElement(int[] a) {
         int candidate = findCandidate(a),
                 count = 0;
 
