@@ -19,20 +19,20 @@ public class MergeSort {
      * Time complexity:     O(n log n)
      * Space complexity:    O(n) (also needs O(log n) stack space as it is recursive)
      *
-     * @param a
+     * @param arr
      * @return
      */
-    public static int[] mergeSort(int[] a) {
-        if (a.length == 1) return a;
+    public static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) return arr;
 
-        int[] x = mergeSort(Arrays.copyOfRange(a, 0, a.length / 2));
-        int[] y = mergeSort(Arrays.copyOfRange(a, a.length / 2, a.length));
+        int[] x = mergeSort(Arrays.copyOfRange(arr, 0, arr.length / 2));
+        int[] y = mergeSort(Arrays.copyOfRange(arr, arr.length / 2, arr.length));
 
         return merge(x, y);
     }
 
     /**
-     * Merges two sorted arrays {@param a} and {@param b}.
+     * Merges two sorted arrays {@code a} and {@code b}.
      *
      * @param a
      * @param b
