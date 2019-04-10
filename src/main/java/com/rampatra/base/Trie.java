@@ -14,20 +14,30 @@ import java.util.HashMap;
  * Some resources:
  * <a href="https://en.wikipedia.org/wiki/Trie">Trie Data Structure</a>
  * <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries">More about Tries</a>
+ * <a href="https://www.youtube.com/watch?v=zIjfhVPRZCg">Video explanation from Gayle McDowell</a>
  *
  * @author rampatra
  * @since 9/22/15
  */
 public class Trie<E> {
 
-    TrieNode<E> root;
+    private class TrieNode<T> {
+        HashMap<T, TrieNode<T>> children;
+        boolean isCompleteWord; // to mark a complete word in the tri data structure
+
+        TrieNode(HashMap<T, TrieNode<T>> children) {
+            this.children = children;
+        }
+    }
+
+    private TrieNode<Character> root;
 
     Trie() {
-        root = new TrieNode<>(null, new HashMap<>());
+        root = new TrieNode<>(new HashMap<>());
     }
 
     /**
-     * Inserts {@param data} in trie.
+     * Inserts {@code data} in trie.
      *
      * @param data
      */
@@ -35,11 +45,11 @@ public class Trie<E> {
 
         int i = 0;
         String str = data.toString();
-        TrieNode<E> curr = root;
+        TrieNode<Character> curr = root;
 
         while (i < str.length()) {
-            if (curr.children.get(str.substring(i, i + 1)) != null) {
-                curr = curr.children.get(str.substring(i, i + 1));
+            if (curr.children.get(str.charAt(i)) != null) {
+                curr = curr.children.get(str.charAt(i));
                 i++;
             } else {
                 break;
@@ -47,12 +57,12 @@ public class Trie<E> {
         }
 
         while (i < str.length()) {
-            curr.children.put((E) str.substring(i, i + 1), new TrieNode<>(null, new HashMap<>()));
-            curr = curr.children.get(str.substring(i, i + 1));
+            curr.children.put(str.charAt(i), new TrieNode<>(new HashMap<>()));
+            curr = curr.children.get(str.charAt(i));
             i++;
         }
 
-        curr.data = data;
+        curr.isCompleteWord = true;
     }
 
     /**
@@ -63,29 +73,17 @@ public class Trie<E> {
      */
     public boolean search(E data) {
 
-        int i = 0;
         String str = data.toString();
-        TrieNode<E> curr = root;
+        TrieNode<Character> curr = root;
 
-        while (i < str.length()) {
-            if (curr.children.get(str.substring(i, i + 1)) == null) {
+        for (int i = 0; i < str.length(); i++) {
+            if (curr.children.get(str.charAt(i)) == null) {
                 return false;
             }
-            curr = curr.children.get(str.substring(i, i + 1));
-            i++;
+            curr = curr.children.get(str.charAt(i));
         }
 
-        return curr.data != null && curr.data.equals(data);
-    }
-
-    private class TrieNode<T> {
-        T data; // stores the complete string (required to determine whether the string is in the trie)
-        HashMap<T, TrieNode<T>> children;
-
-        TrieNode(T data, HashMap<T, TrieNode<T>> children) {
-            this.data = data;
-            this.children = children;
-        }
+        return curr.isCompleteWord;
     }
 
     // unit testing
