@@ -19,47 +19,37 @@ import java.util.HashMap;
  * @author rampatra
  * @since 9/22/15
  */
-public class Trie<E> {
+public class Trie {
 
     private class TrieNode<T> {
-        HashMap<T, TrieNode<T>> children;
+        char ch;
+        HashMap<T, TrieNode<T>> children = new HashMap<>();
         boolean isCompleteWord; // to mark a complete word in the tri data structure
 
-        TrieNode(HashMap<T, TrieNode<T>> children) {
-            this.children = children;
+        TrieNode(char ch) {
+            this.ch = ch;
         }
     }
 
     private TrieNode<Character> root;
 
     Trie() {
-        root = new TrieNode<>(new HashMap<>());
+        root = new TrieNode<>('0');
     }
 
     /**
      * Inserts {@code data} in trie.
      *
-     * @param data
+     * @param str
      */
-    public void insert(E data) {
-
-        int i = 0;
-        String str = data.toString();
+    public void insert(String str) {
+        char c;
         TrieNode<Character> curr = root;
 
-        while (i < str.length()) {
-            if (curr.children.get(str.charAt(i)) != null) {
-                curr = curr.children.get(str.charAt(i));
-                i++;
-            } else {
-                break;
-            }
-        }
-
-        while (i < str.length()) {
-            curr.children.put(str.charAt(i), new TrieNode<>(new HashMap<>()));
-            curr = curr.children.get(str.charAt(i));
-            i++;
+        for (int i = 0; i < str.length(); i++) {
+            c = str.charAt(i);
+            curr.children.putIfAbsent(c, new TrieNode<>(c));
+            curr = curr.children.get(c);
         }
 
         curr.isCompleteWord = true;
@@ -68,12 +58,11 @@ public class Trie<E> {
     /**
      * Searches {@code data} in trie.
      *
-     * @param data the value to search.
-     * @return {@code true} if {@code data} is present, {@code false} otherwise.
+     * @param str the value to search.
+     * @return {@code true} if {@code str} is present, {@code false} otherwise.
      */
-    public boolean search(E data) {
+    public boolean search(String str) {
 
-        String str = data.toString();
         TrieNode<Character> curr = root;
 
         for (int i = 0; i < str.length(); i++) {
@@ -88,7 +77,7 @@ public class Trie<E> {
 
     // unit testing
     public static void main(String[] args) {
-        Trie<String> trie = new Trie<>();
+        Trie trie = new Trie();
         trie.insert("ram");
         trie.insert("r");
         trie.insert("rama");
