@@ -14,7 +14,7 @@ public class LongestWord {
     private class TrieNode {
         char ch;
         HashMap<Character, TrieNode> children = new HashMap<>();
-        String completeWord; // to mark a complete word in the tri data structure
+        String completeWord; // to mark a complete word in the trie data structure
 
         TrieNode(char ch) {
             this.ch = ch;
