@@ -70,6 +70,17 @@ public class CheckSubtree {
         TreeNode treeRoot2 = new TreeNode(8);
         treeRoot2.left = new TreeNode(6);
         System.out.println(isT2SubtreeOfT1(treeRoot, treeRoot2));
+        
+        /*
+            The sub-tree:
+            
+                2
+               /
+              1
+         */
+        TreeNode treeRoot3 = new TreeNode(2);
+        treeRoot3.left = new TreeNode(1);
+        System.out.println(isT2SubtreeOfT1(treeRoot, treeRoot3));
 
         /*
             The sub-tree:
@@ -78,8 +89,8 @@ public class CheckSubtree {
                /
               9
          */
-        TreeNode treeRoot3 = new TreeNode(8);
-        treeRoot3.left = new TreeNode(9);
-        System.out.println(isT2SubtreeOfT1(treeRoot, treeRoot3));
+        TreeNode treeRoot4 = new TreeNode(8);
+        treeRoot4.left = new TreeNode(9);
+        System.out.println(isT2SubtreeOfT1(treeRoot, treeRoot4));
     }
 }
