@@ -20,19 +20,19 @@ public class AnagramsInString {
         
         char[] patternChars = pattern.toCharArray();
         Arrays.sort(patternChars); // takes O(m log m) time
-        String sortedPattern = String.valueOf(patternChars);
+        String patternSorted = String.valueOf(patternChars);
         
         String subText;
         char[] subTextChars;
-        String sortedSubText;
+        String subTextSorted;
         
         for (int i = 0; i <= textLen - patternLen; i++) { // loops n-m number of times
             subText = text.substring(i, i + patternLen); 
             subTextChars = subText.toCharArray();
             Arrays.sort(subTextChars); // sorts m number of characters, takes O(m log m)
-            sortedSubText = String.valueOf(subTextChars);
+            subTextSorted = String.valueOf(subTextChars);
             
-            if (sortedSubText.equals(sortedPattern)) { // compare m characters takes m time
+            if (subTextSorted.equals(patternSorted)) { // compare m characters takes m time
                 indexes.add(i);
             }
         }
