@@ -32,7 +32,8 @@ You can also refer to my [Java Notes](http://java.ramswaroop.me) for a quick ref
     4. [Trees and Graphs](/src/main/java/com/ctci/treesandgraphs)
     5. [Bit Manipulation](/src/main/java/com/ctci/bitmanipulation)
     6. [Recursion and DP](/src/main/java/com/ctci/recursionanddp)
-3. [HackerRank](/src/main/java/com/hackerrank).
+3. [LeetCode](/src/main/java/com/leetcode).
+4. [HackerRank](/src/main/java/com/hackerrank).
 
 
 ## Environment
