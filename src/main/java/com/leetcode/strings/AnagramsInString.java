@@ -50,8 +50,10 @@ public class AnagramsInString {
     }
 
     /**
-     * Time complexity: O(n). Completes within <a href="https://leetcode.com/submissions/detail/222911434/">7ms on
-     * leetcode.</a>
+     * Completes within <a href="https://leetcode.com/submissions/detail/222911434/">7ms on leetcode.</a>
+     * Time complexity: O(n)
+     * where,
+     * n = length of text or number of characters in text
      *
      * @param text
      * @param pattern
