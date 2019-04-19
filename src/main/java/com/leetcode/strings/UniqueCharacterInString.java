@@ -9,8 +9,8 @@ package com.leetcode.strings;
 public class UniqueCharacterInString {
 
     /**
-     * Completes within <a href="https://leetcode.com/submissions/detail/222914261/">7ms on leetcode.</a>
      * Time complexity: O(n)
+     * Runtime: <a href="https://leetcode.com/submissions/detail/222914261/">7 ms on leetcode</a>.
      *
      * @param str the input string
      * @return the index of the first non-repeating character in {@code str}, {@code -1} otherwise.

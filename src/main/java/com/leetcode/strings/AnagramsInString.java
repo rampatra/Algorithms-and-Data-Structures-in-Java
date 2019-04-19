@@ -13,7 +13,7 @@ import java.util.List;
 public class AnagramsInString {
 
     /**
-     * Time complexity: O ((n-m) * m log m)
+     * Time complexity: O((n-m) * m log m)
      * where,
      * n = text length
      * m = pattern length
@@ -50,10 +50,11 @@ public class AnagramsInString {
     }
 
     /**
-     * Completes within <a href="https://leetcode.com/submissions/detail/222911434/">7ms on leetcode.</a>
      * Time complexity: O(n)
      * where,
      * n = length of text or number of characters in text
+     * <p>
+     * Runtime: <a href="https://leetcode.com/submissions/detail/222911434/">7 ms on leetcode</a>.
      *
      * @param text
      * @param pattern
