@@ -14,34 +14,27 @@ public class LongestCommonPrefix {
      * r = no. of strings
      * c = max. no. of characters in a particular string
      * <p>
-     * Runtime: <a href="https://leetcode.com/submissions/detail/223735469/">1 ms</a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/223737988/">1 ms</a>.
      *
      * @param strs
      * @return
      */
     public static String longestCommonPrefix(String[] strs) {
-        StringBuilder sb = new StringBuilder();
+        if (strs == null || strs.length == 0) return "";
 
         int row;
-        for (int col = 0; col < Integer.MAX_VALUE; col++) {
+        for (int col = 0; col < strs[0].length(); col++) {
             for (row = 0; row < strs.length - 1; row++) {
-                // once we find a different character under one column, break the loop
+                // once we find a different character under one column, return the characters read so far
                 if (col == strs[row].length()
                         || col == strs[row + 1].length()
                         || strs[row].charAt(col) != strs[row + 1].charAt(col)) {
-                    break;
+                    return strs[row].substring(0, col);
                 }
-            }
-
-            // check the row counter to figure whether all characters in a particular column are identical
-            if (row == strs.length - 1 && strs[0].length() > 0 && col < strs[0].length()) {
-                sb.append(strs[0].charAt(col));
-            } else {
-                break;
             }
         }
 
-        return sb.toString();
+        return strs[0];
     }
 
     public static void main(String[] args) {
