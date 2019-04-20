@@ -2,7 +2,7 @@ package com.leetcode.strings;
 
 /**
  * Problem: https://leetcode.com/problems/reverse-string-ii/
- * 
+ *
  * @author rampatra
  * @since 2019-04-20
  */
@@ -13,7 +13,7 @@ public class ReverseStringII {
      * where,
      * n = no. of characters in string
      * <p>
-     * Runtime: <a href="https://leetcode.com/submissions/detail/223714484/">0 ms</a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/223715011/">0 ms</a>.
      *
      * @param str
      * @param k
@@ -22,14 +22,8 @@ public class ReverseStringII {
     public static String reverseStr(String str, int k) {
         char[] chars = str.toCharArray();
         int len = str.length();
-        int i = 0;
-        while (i < len) {
-            if (len - i + 1 >= 2 * k) {
-                reverse(chars, i, i + k);
-            } else {
-                reverse(chars, i, Math.min(len, i + k));
-            }
-            i += 2 * k;
+        for (int i = 0; i < len; i += 2 * k) {
+            reverse(chars, i, Math.min(len, i + k));
         }
         return new String(chars);
     }
