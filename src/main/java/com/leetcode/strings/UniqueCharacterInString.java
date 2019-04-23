@@ -1,7 +1,7 @@
 package com.leetcode.strings;
 
 /**
- * Leetcode Problem: https://leetcode.com/problems/first-unique-character-in-a-string/
+ * Problem: https://leetcode.com/problems/first-unique-character-in-a-string/
  *
  * @author rampatra
  * @since 2019-04-16

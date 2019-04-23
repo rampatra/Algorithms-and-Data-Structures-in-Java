@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- * Leetcode Problem: https://leetcode.com/problems/longest-word-in-dictionary/
+ * Problem: https://leetcode.com/problems/longest-word-in-dictionary/
  *
  * @author rampatra
  * @since 2019-04-10

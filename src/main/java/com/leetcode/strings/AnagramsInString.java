@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Leetcode Problem: https://leetcode.com/problems/find-all-anagrams-in-a-string/
+ * Problem: https://leetcode.com/problems/find-all-anagrams-in-a-string/
  *
  * @author rampatra
  * @since 2019-04-13

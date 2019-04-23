@@ -1,7 +1,7 @@
 package com.leetcode.strings;
 
 /**
- * Leetcode Problem: https://leetcode.com/problems/reverse-vowels-of-a-string/
+ * Problem: https://leetcode.com/problems/reverse-vowels-of-a-string/
  *
  * @author rampatra
  * @since 2019-04-19
