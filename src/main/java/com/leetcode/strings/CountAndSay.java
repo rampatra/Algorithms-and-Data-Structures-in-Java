@@ -1,6 +1,7 @@
 package com.leetcode.strings;
 
 /**
+ * Level: Easy
  * Problem: https://leetcode.com/problems/count-and-say/
  *
  * @author rampatra

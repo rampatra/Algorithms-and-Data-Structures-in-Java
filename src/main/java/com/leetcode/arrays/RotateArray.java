@@ -3,6 +3,7 @@ package com.leetcode.arrays;
 import java.util.Arrays;
 
 /**
+ * Level: Easy
  * Problem: https://leetcode.com/problems/rotate-array/
  *
  * @author rampatra

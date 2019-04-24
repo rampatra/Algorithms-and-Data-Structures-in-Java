@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Level: Easy
  * Problem: https://leetcode.com/problems/pascals-triangle/
  *
  * @author rampatra
