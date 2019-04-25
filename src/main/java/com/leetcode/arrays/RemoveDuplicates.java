@@ -15,7 +15,7 @@ import java.util.Arrays;
  * <p>
  * Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
  * <p>
- * It doesn't matter what you leave beyond the returned length.
+ * NOTE: It doesn't matter what you leave beyond the returned length.
  *
  * @author rampatra
  * @since 2019-04-24
@@ -23,6 +23,8 @@ import java.util.Arrays;
 public class RemoveDuplicates {
 
     /**
+     * This removes the duplicates from the array in-place.
+     * <p>
      * Time complexity: O(n)
      * where,
      * n = no. of elements in the array
