@@ -3,6 +3,7 @@ package com.leetcode.hashtables;
 /**
  * Level: Learning Cards
  * Problem Link: https://leetcode.com/explore/learn/card/hash-table/182/practical-applications/1139/
+ * Runtime: https://leetcode.com/submissions/detail/224872991/
  *
  * @author rampatra
  * @since 2019-04-24
@@ -30,7 +31,7 @@ public class MyHashSet {
 
     public void add(int key) {
         if (contains(key)) return;
-        
+
         Entry newEntry = new Entry(key);
         int bucket = key % SIZE;
 
@@ -41,19 +42,19 @@ public class MyHashSet {
     public void remove(int key) {
         int bucket = key % SIZE;
         Entry entry = entries[bucket];
-        
+
         if (entry != null && entry.key == key) {
             entries[bucket] = entry.next;
             return;
         }
-        
+
         Entry curr = new Entry(0);
         curr.next = entry;
-        
+
         while (curr.next != null && curr.next.key != key) {
             curr = curr.next;
         }
-        
+
         if (curr.next != null) {
             curr.next = curr.next.next;
         }
