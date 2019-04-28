@@ -15,16 +15,16 @@ public class MajorityElement {
 
     /**
      * Time complexity: O(n)
-     * Runtime: <a href="https://leetcode.com/submissions/detail/225284632/">1 ms</a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/225285480/">1 ms</a>.
      *
      * @param nums
      * @return
      */
     public static int majorityElement(int[] nums) {
-        int count = 0;
+        int count = 1;
         int majElem = nums[0];
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             if (count <= 0) {
                 majElem = nums[i];
                 count = 0;
