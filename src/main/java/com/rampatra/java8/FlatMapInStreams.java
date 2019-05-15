@@ -11,7 +11,10 @@ import java.util.List;
 public class FlatMapInStreams {
 
     public static long countTotalIngredientsInAllDishes(List<Dish> dishes) {
-        return dishes.stream().map(Dish::getIngredients).flatMap(List::stream).count();
+        return dishes.stream()
+                .map(Dish::getIngredients)
+                .flatMap(List::stream)
+                .count();
     }
 
     public static void main(String[] args) {
@@ -21,7 +24,7 @@ public class FlatMapInStreams {
         ingredients.add("haldi");
         List<Dish> dishes = Arrays.asList(
                 new Dish("biriyani", 600, ingredients),
-                new Dish("biriyani", 600, new ArrayList<>()));
+                new Dish("pulao", 600, new ArrayList<>()));
         // to show whether empty List is counted in flatMap
         System.out.println(countTotalIngredientsInAllDishes(dishes));
     }
