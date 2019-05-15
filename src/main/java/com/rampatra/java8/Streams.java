@@ -124,9 +124,14 @@ public class Streams {
 
     public static int findHighestTransactionValue() {
         return transactions.stream()
+                .mapToInt(Transaction::getValue)
+                .max().getAsInt();
+        
+        /* this is another solution
+        return transactions.stream()
                 .map(Transaction::getValue)
                 .reduce((t1, t2) -> (t1 > t2) ? t1 : t2) // you can replace with .reduce(Integer::max)
-                .get();
+                .get();*/
     }
 
     public static Transaction getSmallestTransaction() {
