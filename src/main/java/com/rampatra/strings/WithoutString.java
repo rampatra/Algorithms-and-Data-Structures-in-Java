@@ -39,7 +39,7 @@ public class WithoutString {
 
     public static void main(String[] args) {
         Assert.check(withoutString("Hello there", "llo").equals("He there"));
-        Assert.check(withoutString("THIS is a FISH", "is").equals("TH a FH"));
+        Assert.check(withoutString("THIS is a FISH", "is").equals("TH  a FH"));
         Assert.check(withoutString("xxx", "x").equals(""));
     }
 }
