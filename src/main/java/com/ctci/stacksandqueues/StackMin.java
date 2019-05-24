@@ -58,6 +58,5 @@ public class StackMin {
         Assert.check(min() == 1);
         pop();
         Assert.check(min() == 2);
-        
     }
 }
