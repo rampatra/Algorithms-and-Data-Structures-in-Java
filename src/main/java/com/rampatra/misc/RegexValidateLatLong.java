@@ -5,13 +5,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by IntelliJ IDEA.
- *
  * @author rampatra
  * @since 9/12/15
- * @time: 1:49 PM
  */
-public class Regex {
+public class RegexValidateLatLong {
 
     /**
      * Validates latitude/longitude in the form (+75, 180) etc.

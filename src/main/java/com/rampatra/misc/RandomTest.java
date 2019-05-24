@@ -3,11 +3,8 @@ package com.rampatra.misc;
 import java.util.Random;
 
 /**
- * Created by IntelliJ IDEA.
- * User: rampatra
- * Date: 2/23/15
- * Time: 12:48 PM
- * To change this template go to Preferences | IDE Settings | File and Code Templates
+ * @author rampatra
+ * @since 2/23/15
  */
 public class RandomTest {
     public static void main(String[] args) {
