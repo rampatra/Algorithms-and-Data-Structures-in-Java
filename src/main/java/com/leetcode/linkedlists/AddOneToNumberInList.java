@@ -4,7 +4,7 @@ package com.leetcode.linkedlists;
  * Level: Easy
  * Problem Link: https://leetcode.com/problems/plus-one-linked-list/
  * Problem Description: Given a non-empty single linked list representing a number where the head is the
- * most significant bit, add one to the number and modify the same linked list.
+ * most significant bit, add one to the number and return a new linked list.
  *
  * @author rampatra
  * @since 2019-06-19
