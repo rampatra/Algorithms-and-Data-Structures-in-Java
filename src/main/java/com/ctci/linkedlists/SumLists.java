@@ -1,7 +1,5 @@
 package com.ctci.linkedlists;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 2019-01-31
@@ -59,9 +57,9 @@ public class SumLists {
         l2.next = new Node(9);
         l2.next.next = new Node(9);
 
-        printList(l1);
-        printList(l2);
-        printList(sumLists(l1, l2));
+        l1.print();
+        l2.print();
+        sumLists(l1, l2).print();
         System.out.println("-----------");
 
         l1 = new Node(9);
@@ -71,9 +69,9 @@ public class SumLists {
         l2.next = new Node(9);
         l2.next.next = new Node(9);
 
-        printList(l1);
-        printList(l2);
-        printList(sumLists(l1, l2));
+        l1.print();
+        l2.print();
+        sumLists(l1, l2).print();
         System.out.println("-----------");
 
         l1 = null;
@@ -81,8 +79,8 @@ public class SumLists {
         l2.next = new Node(9);
         l2.next.next = new Node(8);
 
-        printList(l1);
-        printList(l2);
-        printList(sumLists(l1, l2));
+        l1.print();
+        l2.print();
+        sumLists(l1, l2).print();
     }
 }

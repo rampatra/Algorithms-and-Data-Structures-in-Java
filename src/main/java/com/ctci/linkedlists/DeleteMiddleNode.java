@@ -1,7 +1,5 @@
 package com.ctci.linkedlists;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 2019-01-27
@@ -35,33 +33,33 @@ public class DeleteMiddleNode {
         l1.next.next.next = new Node(4);
         l1.next.next.next.next = new Node(5);
         l1.next.next.next.next.next = new Node(6);
-        printList(l1);
+        l1.print();
         deleteMiddleNode(l1.next.next);
-        printList(l1);
+        l1.print();
 
         System.out.println("----");
 
         l1 = new Node(1);
         l1.next = new Node(2);
         l1.next.next = new Node(3);
-        printList(l1);
+        l1.print();
         deleteMiddleNode(l1.next);
-        printList(l1);
+        l1.print();
 
         System.out.println("----");
 
         l1 = new Node(1);
         l1.next = new Node(3);
-        printList(l1);
+        l1.print();
         deleteMiddleNode(l1);
-        printList(l1);
+        l1.print();
 
         System.out.println("----");
 
         l1 = new Node(1);
         l1.next = new Node(3);
-        printList(l1);
+        l1.print();
         deleteMiddleNode(l1.next);
-        printList(l1);
+        l1.print();
     }
 }

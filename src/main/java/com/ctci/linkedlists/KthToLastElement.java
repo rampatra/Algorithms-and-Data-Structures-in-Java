@@ -1,7 +1,5 @@
 package com.ctci.linkedlists;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 21/11/2018
@@ -60,7 +58,7 @@ public class KthToLastElement {
         l1.next.next.next = new Node(4);
         l1.next.next.next.next = new Node(5);
         l1.next.next.next.next.next = new Node(7);
-        printList(l1);
+        l1.print();
         System.out.println("k=2: " + getKthToLastElement(l1, 2).val); // NPE check is omitted intentionally to keep it simple
         System.out.print("k=2: ");
         printKthToLastElement(l1, 2);
@@ -71,7 +69,7 @@ public class KthToLastElement {
         l2.next.next.next = new Node(3);
         l2.next.next.next.next = new Node(4);
         l2.next.next.next.next.next = new Node(7);
-        printList(l2);
+        l2.print();
         System.out.println("k=1: " + getKthToLastElement(l2, 1).val);
         System.out.print("k=1: ");
         printKthToLastElement(l2, 1);
@@ -82,7 +80,7 @@ public class KthToLastElement {
         l3.next.next.next = new Node(3);
         l3.next.next.next.next = new Node(4);
         l3.next.next.next.next.next = new Node(7);
-        printList(l3);
+        l3.print();
         System.out.println("k=6: " + getKthToLastElement(l3, 6).val);
         System.out.print("k=6: ");
         printKthToLastElement(l3, 6);

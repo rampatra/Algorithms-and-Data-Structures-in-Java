@@ -1,4 +1,4 @@
-package com.ctci.linkedlists;
+package com.leetcode.linkedlists;
 
 /**
  * @author rampatra

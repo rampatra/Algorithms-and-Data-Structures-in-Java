@@ -1,7 +1,5 @@
 package com.ctci.linkedlists;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * Write code to partition a linked list around a value x, such that all nodes less than x come before all
  * nodes greater than or equal to x. If x is contained within the list, the values of x only need to be
@@ -59,36 +57,36 @@ public class Partition {
         l1.next.next.next.next = new Node(10);
         l1.next.next.next.next.next = new Node(2);
         l1.next.next.next.next.next.next = new Node(1);
-        printList(l1);
-        printList(partition(l1, 5));
+        l1.print();
+        l1.print();
 
         System.out.println("----");
 
         l1 = new Node(1);
         l1.next = new Node(2);
         l1.next.next = new Node(3);
-        printList(l1);
-        printList(partition(l1, 2));
+        l1.print();
+        l1.print();
 
         System.out.println("----");
 
         l1 = new Node(3);
         l1.next = new Node(2);
         l1.next.next = new Node(1);
-        printList(l1);
-        printList(partition(l1, 2));
+        l1.print();
+        l1.print();
 
         System.out.println("----");
         
         l1 = new Node(1);
-        printList(l1);
-        printList(partition(l1, 1));
+        l1.print();
+        l1.print();
 
         System.out.println("----");
 
         l1 = null;
-        printList(l1);
-        printList(partition(l1, 1));
+        l1.print();
+        l1.print();
 
         System.out.println("----");
     }

@@ -2,8 +2,6 @@ package com.ctci.linkedlists;
 
 import java.util.Stack;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 2019-02-02
@@ -75,7 +73,7 @@ public class Palindrome {
         l1.next.next.next = new Node(3);
         l1.next.next.next.next = new Node(2);
         l1.next.next.next.next.next = new Node(1);
-        printList(l1);
+        l1.print();
         System.out.println(isPalindrome(l1));
         System.out.println(isPalindromeOptimized(l1));
         System.out.println("------");
@@ -85,7 +83,7 @@ public class Palindrome {
         l1.next.next = new Node(3);
         l1.next.next.next = new Node(2);
         l1.next.next.next.next = new Node(1);
-        printList(l1);
+        l1.print();
         System.out.println(isPalindrome(l1));
         System.out.println(isPalindromeOptimized(l1));
         System.out.println("------");
@@ -95,13 +93,13 @@ public class Palindrome {
         l1.next.next = new Node(3);
         l1.next.next.next = new Node(3);
         l1.next.next.next.next = new Node(0);
-        printList(l1);
+        l1.print();
         System.out.println(isPalindrome(l1));
         System.out.println(isPalindromeOptimized(l1));
         System.out.println("------");
 
         l1 = new Node(1);
-        printList(l1);
+        l1.print();
         System.out.println(isPalindrome(l1));
         System.out.println(isPalindromeOptimized(l1));
 

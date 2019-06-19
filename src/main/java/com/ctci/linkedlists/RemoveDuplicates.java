@@ -3,8 +3,6 @@ package com.ctci.linkedlists;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 21/11/2018
@@ -44,10 +42,10 @@ public class RemoveDuplicates {
         l1.next.next.next.next = new Node(5);
         l1.next.next.next.next.next = new Node(5);
         System.out.print("With dups: ");
-        printList(l1);
+        l1.print();
         removeDuplicatesFromUnsortedList(l1);
         System.out.print("Without dups: ");
-        printList(l1);
+        l1.print();
 
         Node l2 = new Node(1);
         l2.next = new Node(1);
@@ -56,10 +54,10 @@ public class RemoveDuplicates {
         l2.next.next.next.next = new Node(4);
         l2.next.next.next.next.next = new Node(5);
         System.out.print("\nWith dups: ");
-        printList(l2);
+        l2.print();
         removeDuplicatesFromUnsortedList(l2);
         System.out.print("Without dups: ");
-        printList(l2);
+        l2.print();
 
         Node l3 = new Node(1);
         l3.next = new Node(2);
@@ -68,23 +66,23 @@ public class RemoveDuplicates {
         l3.next.next.next.next = new Node(4);
         l3.next.next.next.next.next = new Node(5);
         System.out.print("\nWith dups: ");
-        printList(l3);
+        l3.print();
         removeDuplicatesFromUnsortedList(l3);
         System.out.print("Without dups: ");
-        printList(l3);
-        
+        l3.print();
+
         Node l4 = new Node(1);
         System.out.print("\nWith dups: ");
-        printList(l4);
+        l4.print();
         removeDuplicatesFromUnsortedList(l4);
         System.out.print("Without dups: ");
-        printList(l4);
+        l4.print();
 
         Node l5 = null;
         System.out.print("\nWith dups: ");
-        printList(l5);
+        l5.print();
         removeDuplicatesFromUnsortedList(l5);
         System.out.print("Without dups: ");
-        printList(l5);
+        l5.print();
     }
 }

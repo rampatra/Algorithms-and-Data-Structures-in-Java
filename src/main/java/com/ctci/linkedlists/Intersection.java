@@ -1,7 +1,5 @@
 package com.ctci.linkedlists;
 
-import static com.ctci.linkedlists.Node.printList;
-
 /**
  * @author rampatra
  * @since 2019-02-02
@@ -75,16 +73,16 @@ public class Intersection {
         l2.next.next = new Node(2);
         l2.next.next.next = new Node(3);
         l2.next.next.next.next = l1.next.next.next;
-        printList(l1);
-        printList(l2);
+        l1.print();
+        l2.print();
         System.out.println(findIntersectingNode(l1, l2).val); // may throw NPE, not handling for the sake of simplicity
 
         System.out.println("----");
 
         l1 = new Node(1);
         l2 = l1;
-        printList(l1);
-        printList(l2);
+        l1.print();
+        l2.print();
         System.out.println(findIntersectingNode(l1, l2).val); // may throw NPE, not handling for the sake of simplicity
 
         System.out.println("----");
@@ -99,8 +97,8 @@ public class Intersection {
         l2.next = new Node(4);
         l2.next.next = new Node(2);
         l2.next.next.next = new Node(3);
-        printList(l1);
-        printList(l2);
+        l1.print();
+        l2.print();
         System.out.println(findIntersectingNode(l1, l2));
     }
 }
