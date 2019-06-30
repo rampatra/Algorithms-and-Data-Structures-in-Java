@@ -1,13 +1,10 @@
 package com.rampatra.threads;
 
 /**
- * Created by IntelliJ IDEA.
- * <p/>
- * Question: Print first name and last name (in order) using two different threads multiple times.
+ * Problem Description: Print first name and last name (in order) using two different threads 1000 times.
  *
  * @author rampatra
  * @since 10/6/15
- * @time: 7:10 PM
  */
 public class NamePrint {
 
@@ -21,7 +18,9 @@ public class NamePrint {
                 for (int i = 0; i < 1000; i++) {
                     try {
                         // wait if first name is printed but not the last name
-                        if (isFirstNamePrinted) lock.wait();
+                        if (isFirstNamePrinted) {
+                            lock.wait();
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -40,7 +39,9 @@ public class NamePrint {
                 for (int i = 0; i < 1000; i++) {
                     try {
                         // wait if first name is not printed
-                        if (!isFirstNamePrinted) lock.wait();
+                        if (!isFirstNamePrinted) {
+                            lock.wait();
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

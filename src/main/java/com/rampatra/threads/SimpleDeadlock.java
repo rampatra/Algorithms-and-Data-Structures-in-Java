@@ -5,6 +5,8 @@ import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
 
 /**
+ * Problem Description: Deadlock example.
+ *
  * @author rampatra
  * @since 2019-03-13
  */
