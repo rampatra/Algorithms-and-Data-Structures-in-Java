@@ -1,7 +1,8 @@
 package com.rampatra.threads;
 
 /**
- * Problem Description: A simple Producer/Consumer using Wait/Notify pattern.
+ * Problem Description: A simple Producer/Consumer using Synchronize and Wait/Notify pattern. For a better
+ * solution, please see {@link ProducerConsumerUsingLockApi}.
  *
  * @author rampatra
  * @since 2019-06-30
@@ -31,7 +32,7 @@ public class ProducerConsumerUsingWaitNotify {
                 if (isEmpty()) {
                     lock.wait();
                 }
-                System.out.println(buffer[currSize--]);
+                System.out.println(buffer[--currSize]);
                 lock.notify();
             }
         }
