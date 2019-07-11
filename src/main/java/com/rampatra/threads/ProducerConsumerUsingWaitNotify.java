@@ -12,7 +12,7 @@ public class ProducerConsumerUsingWaitNotify {
     private static int currSize = 0;
     private static int totalSize = 10;
     private static int[] buffer = new int[totalSize];
-    private static Object lock = new Object();
+    private static final Object lock = new Object();
 
     static class Producer {
         void produce() throws InterruptedException {
