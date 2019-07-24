@@ -19,7 +19,7 @@ import java.util.Arrays;
  * Output: [[1,2],[3,10],[12,16]]
  * Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
  * <p>
- * Companies: LinkedIn
+ * Companies: LinkedIn.
  * Related: {@link MergeIntervals}.
  *
  * @author rampatra
