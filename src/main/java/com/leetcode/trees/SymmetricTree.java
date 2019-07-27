@@ -1,5 +1,8 @@
 package com.leetcode.trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -63,6 +66,42 @@ public class SymmetricTree {
         return isSymmetric(leftRoot.left, rightRoot.right) && isSymmetric(leftRoot.right, rightRoot.left) && leftRoot.val == rightRoot.val;
     }
 
+    /**
+     * Time Complexity: O(n) Because we traverse the entire input tree once, the total run time is O(n), where n is the
+     * total number of nodes in the tree.
+     * Space Complexity: There is additional space required for the search queue. In the worst case, we have to
+     * insert O(n) nodes in the queue. Therefore, space complexity is O(n).
+     * Runtime: <a href="https://leetcode.com/submissions/detail/246708370/">1 ms</a>.
+     *
+     * @param root
+     * @return
+     */
+    public static boolean isSymmetricIterative(TreeNode root) {
+        if (root == null || (root.left == null && root.right == null)) return true;
+        if (root.left == null || root.right == null) return false;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root.left);
+        queue.add(root.right);
+
+        while (!queue.isEmpty()) {
+            TreeNode t1 = queue.poll();
+            TreeNode t2 = queue.poll();
+
+            if (t1 == null && t2 == null) continue;
+            if (t1 == null || t2 == null) return false;
+            if (t1.val != t2.val) return false;
+
+            // enqueue left and then right child of t1 but do the opposite for t2
+            queue.add(t1.left);
+            queue.add(t2.right);
+            queue.add(t1.right);
+            queue.add(t2.left);
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -73,5 +112,6 @@ public class SymmetricTree {
         root.right.right = new TreeNode(4);
 
         assertTrue(isSymmetric(root));
+        assertTrue(isSymmetricIterative(root));
     }
 }
