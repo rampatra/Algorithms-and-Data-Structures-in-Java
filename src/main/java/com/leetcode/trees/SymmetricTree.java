@@ -3,7 +3,7 @@ package com.leetcode.trees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Level: Easy
