@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author rampatra
  * @since 2019-07-27
  */
-public class NestedListWeightSumI {
+public class NestedListWeightSum {
 
     /**
      * Time Complexity: The algorithm takes O(N) time, where N is the total number of nested elements in the input

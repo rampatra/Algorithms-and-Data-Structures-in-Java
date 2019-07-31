@@ -4,14 +4,22 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Easy
- * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value/
+ * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value/ (premium)
  * Problem Description:
  *
  * @author rampatra
  * @since 2019-07-31
  */
-public class ClosestBinarySearchTreeValueI {
+public class ClosestBinarySearchTreeValue {
 
+    /**
+     *
+     * @param node
+     * @param parentNode
+     * @param val
+     * @param diff
+     * @return
+     */
     public static TreeNode findNodeWithClosestValue(TreeNode node, TreeNode parentNode, int val, int diff) {
         if (node == null) return parentNode;
 
