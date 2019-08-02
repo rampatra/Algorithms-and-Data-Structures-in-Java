@@ -6,6 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Level: Easy
  * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value/ (premium)
  * Problem Description:
+ * Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
+ * <p>
+ * Note:
+ * - Given target value is a floating point.
+ * - You are guaranteed to have only one unique value in the BST that is closest to the target.
  *
  * @author rampatra
  * @since 2019-07-31
@@ -13,7 +18,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ClosestBinarySearchTreeValue {
 
     /**
-     *
      * @param node
      * @param parentNode
      * @param val

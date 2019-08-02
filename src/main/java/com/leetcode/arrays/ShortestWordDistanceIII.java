@@ -4,24 +4,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Easy
- * Problem Link: https://leetcode.com/problems/shortest-word-distance/
+ * Problem Link: https://leetcode.com/problems/shortest-word-distance-iii/
  * Problem Description:
- * Given a list of words and two words word1 and word2, return the shortest distance between these two words in the
- * list of words.
- *
- * Example 1:
+ * This is a follow-up problem of {@link ShortestWordDistance}. The only difference is that now word1 could be the
+ * same as word2.
+ * <p>
+ * Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
+ * word1 and word2 may be the same and they represent two individual words in the list.
+ * <p>
+ * For example,
  * Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
- * Given word1 = "coding", word2 = "practice", return 3.
- * Given word1 = "makes", word2 = "coding", return 1.
- *
- * Note: You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
- *
- * Lastly, for a more complex variant, see {@link com.leetcode.maps.ShortestWordDistanceII}.
+ * Given word1 = “makes”, word2 = “coding”, return 1.
+ * Given word1 = "makes", word2 = "makes", return 3.
+ * <p>
+ * Note: You may assume word1 and word2 are both in the list. If they are same then it's guaranteed that there are
+ * two occurrences of the same.
  *
  * @author rampatra
  * @since 2019-07-31
  */
-public class ShortestWordDistance {
+public class ShortestWordDistanceIII {
 
     /**
      * Time Complexity:
@@ -40,9 +42,19 @@ public class ShortestWordDistance {
 
         for (int i = 0; i < words.length; i++) {
             if (words[i].equals(word1)) {
-                indexWord1 = i;
+                // if both words are same and the first index is already set then do nothing
+                if (word1.equals(word2) && indexWord1 != -1) {
+
+                } else {
+                    indexWord1 = i;
+                }
             }
             if (words[i].equals(word2)) {
+                // if both words are same and i is same as first index then it implies its the
+                // first occurrence, skip and continue look for the second occurrence
+                if (word1.equals(word2) && i == indexWord1) {
+                    continue;
+                }
                 indexWord2 = i;
             }
             if (indexWord1 != -1 && indexWord2 != -1) {
@@ -55,16 +67,14 @@ public class ShortestWordDistance {
 
     public static void main(String[] args) {
         assertEquals(3, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
-                "practice", "coding"));
+                "makes", "makes"));
         assertEquals(3, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
                 "coding", "practice"));
+        assertEquals(3, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
+                "practice", "coding"));
         assertEquals(1, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
                 "makes", "coding"));
         assertEquals(1, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
                 "makes", "perfect"));
-        assertEquals(0, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
-                "perfect", "perfect"));
-        assertEquals(0, findShortestDistance(new String[]{"practice", "makes", "perfect", "coding", "makes"},
-                "makes", "makes"));
     }
 }
