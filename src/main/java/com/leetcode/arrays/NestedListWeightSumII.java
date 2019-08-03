@@ -28,30 +28,31 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class NestedListWeightSumII {
 
     /**
+     * Time Complexity:
+     * Space Complexity:
+     * Runtime: <a href="https://leetcode.com/submissions/detail/248595263/">1 ms</a>.
+     *
      * @param nestedList
      * @return
      */
-    public static long nestedSum(List<NestedInteger> nestedList) {
-        long weightedSum = 0;
-        long unweightedSum = 0;
-        Queue<NestedInteger> queue = new LinkedList<>();
+    public static int nestedSum(List<NestedInteger> nestedList) {
+        int weightedSum = 0;
+        int unweightedSum = 0;
 
-        for (NestedInteger nestedInteger : nestedList) {
-            if (nestedInteger.isInteger()) {
-                unweightedSum += nestedInteger.getInteger();
-            } else {
-                queue.addAll(nestedInteger.getList());
-                while (!queue.isEmpty()) {
-                    NestedInteger ni = queue.poll();
-                    if (ni.isInteger()) {
-                        unweightedSum += ni.getInteger();
-                    } else {
-                        nestedList.addAll(ni.getList());
-                    }
+        while (!nestedList.isEmpty()) {
+            List<NestedInteger> nextLevel = new ArrayList<>();
+
+            for (NestedInteger ni : nestedList) {
+                if (ni.isInteger()) {
+                    unweightedSum += ni.getInteger();
+                } else {
+                    nextLevel.addAll(ni.getList());
                 }
-                unweightedSum += unweightedSum;
-                weightedSum = unweightedSum;
             }
+
+            unweightedSum += unweightedSum; // multiplication by repetitive addition
+            weightedSum = unweightedSum;
+            nestedList = nextLevel;
         }
 
         return weightedSum;
@@ -62,19 +63,20 @@ public class NestedListWeightSumII {
 
         assertEquals(0, nestedSum(Collections.singletonList(new NestedInteger().add(new NestedInteger()))));
 
+        // TODO: fix the test cases
+
+        // {2, {1,1}, {1,1}}
         NestedInteger ni = new NestedInteger(2);
         ni.add(new NestedInteger().add(new NestedInteger(1)).add(new NestedInteger(1)));
         ni.add(new NestedInteger().add(new NestedInteger(1)).add(new NestedInteger(1)));
 
-        assertEquals(10, nestedSum(Collections.singletonList(ni)));
+        assertEquals(6, nestedSum(Collections.singletonList(ni)));
 
+        // {1, {4, {6}}}
         ni = new NestedInteger(1);
         ni.add(new NestedInteger(4).add(new NestedInteger(6)));
 
-        assertEquals(27, nestedSum(Collections.singletonList(ni)));
-
-        /*assertEquals(10, nestedSum(new Object[]{new Object[]{1, 1}, 2, new Object[]{1, 1}}));
-        assertEquals(27, nestedSum(new Object[]{1, new Object[]{4, new Object[]{6}}}));*/
+        assertEquals(17, nestedSum(Collections.singletonList(ni)));
     }
 }
 

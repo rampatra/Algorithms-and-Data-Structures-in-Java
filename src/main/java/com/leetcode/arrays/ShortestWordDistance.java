@@ -26,7 +26,7 @@ public class ShortestWordDistance {
     /**
      * Time Complexity:
      * Space Complexity:
-     * TODO
+     * Runtime: <a href="https://leetcode.com/submissions/detail/248572791/">1 ms</a>.
      *
      * @param words
      * @param word1
@@ -41,8 +41,7 @@ public class ShortestWordDistance {
         for (int i = 0; i < words.length; i++) {
             if (words[i].equals(word1)) {
                 indexWord1 = i;
-            }
-            if (words[i].equals(word2)) {
+            } else if (words[i].equals(word2)) {
                 indexWord2 = i;
             }
             if (indexWord1 != -1 && indexWord2 != -1) {

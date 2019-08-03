@@ -45,18 +45,18 @@ public class LeavesOfBinaryTree {
      * the node into the list indexed by their heights.
      * Time Complexity:
      * Space Complexity:
-     * Runtime: <a href=""></a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/248573435/">1 ms</a>.
      *
      * @param root
      * @return
      */
-    public static List<List<TreeNode>> findLeavesOfBinaryTree(TreeNode root) {
-        List<List<TreeNode>> levels = new ArrayList<>();
+    public static List<List<Integer>> findLeavesOfBinaryTree(TreeNode root) {
+        List<List<Integer>> levels = new ArrayList<>();
         findLeavesOfBinaryTree(root, levels);
         return levels;
     }
 
-    private static int findLeavesOfBinaryTree(TreeNode root, List<List<TreeNode>> levels) {
+    private static int findLeavesOfBinaryTree(TreeNode root, List<List<Integer>> levels) {
         if (root == null) return -1;
 
         int leftHeight = findLeavesOfBinaryTree(root.left, levels);
@@ -66,7 +66,7 @@ public class LeavesOfBinaryTree {
         if (height >= levels.size()) {
             levels.add(height, new ArrayList<>());
         }
-        levels.get(height).add(root);
+        levels.get(height).add(root.val);
 
         return height;
     }

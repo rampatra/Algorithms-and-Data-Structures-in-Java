@@ -39,6 +39,13 @@ public class ShortestWordDistanceII {
         this.wordsToIndexesMap = getWordsToIndexesMap();
     }
 
+    /**
+     * Runtime: <a href="https://leetcode.com/submissions/detail/248572352/">65 ms</a>.
+     *
+     * @param word1
+     * @param word2
+     * @return
+     */
     public int findShortestDistance(String word1, String word2) {
         return findShortestDistance(wordsToIndexesMap.get(word1), wordsToIndexesMap.get(word2));
     }

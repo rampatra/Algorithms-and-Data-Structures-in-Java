@@ -20,6 +20,8 @@ package com.leetcode.dynamicprogramming;
 public class PaintHouse {
 
     /**
+     * Runtime: <a href="https://leetcode.com/submissions/detail/248573066/">1 ms</a>.
+     *
      * @param costs of coloring the houses with red, blue, and green respectively. 1st row represents house 1, 2nd row
      *              house 2 and so on
      * @return the minimum cost to paint all houses such that no two adjacent houses are of same color
