@@ -64,7 +64,6 @@ public class NestedListWeightSumII {
         assertEquals(0, nestedSum(Collections.singletonList(new NestedInteger().add(new NestedInteger()))));
 
         // TODO: fix the test cases
-
         // {2, {1,1}, {1,1}}
         NestedInteger ni = new NestedInteger(2);
         ni.add(new NestedInteger().add(new NestedInteger(1)).add(new NestedInteger(1)));
