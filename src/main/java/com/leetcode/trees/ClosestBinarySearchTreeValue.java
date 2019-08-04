@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Easy
- * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value/ (premium)
+ * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value/
  * Problem Description:
  * Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
  * <p>

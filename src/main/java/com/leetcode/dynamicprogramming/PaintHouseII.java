@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Hard
- * Problem Link: https://leetcode.com/problems/paint-house-ii/ (premium)
+ * Problem Link: https://leetcode.com/problems/paint-house-ii/
  * Problem Description:
  * There are a row of n houses, each house can be painted with one of the m colors.
  * The cost of painting each house with a certain color is different.

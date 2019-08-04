@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Medium
- * Problem Link: https://leetcode.com/problems/shortest-word-distance-ii/ (premium)
+ * Problem Link: https://leetcode.com/problems/shortest-word-distance-ii/
  * Problem Description:
  * Design a class which receives a list of words in the constructor, and implements a method that takes two words
  * word1 and word2 and return the shortest distance between these two words in the list. Your method will be called

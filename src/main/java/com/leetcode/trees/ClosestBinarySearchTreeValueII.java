@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Level: Hard
- * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value-ii/ (premium)
+ * Problem Link: https://leetcode.com/problems/closest-binary-search-tree-value-ii/
  * Problem Description:
  *
  *
