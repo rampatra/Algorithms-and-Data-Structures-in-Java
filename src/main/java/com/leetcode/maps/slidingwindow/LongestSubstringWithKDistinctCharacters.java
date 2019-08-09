@@ -44,8 +44,7 @@ public class LongestSubstringWithKDistinctCharacters {
         while (j < str.length()) {
             char ch = str.charAt(j);
 
-            letterCountInWindow.putIfAbsent(ch, 0);
-            letterCountInWindow.put(ch, letterCountInWindow.get(ch) + 1);
+            letterCountInWindow.put(ch, letterCountInWindow.getOrDefault(ch, 0) + 1);
 
             // when number of distinct characters in the window exceeds k:
             // - update length
