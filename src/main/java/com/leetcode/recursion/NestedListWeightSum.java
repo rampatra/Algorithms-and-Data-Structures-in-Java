@@ -1,4 +1,4 @@
-package com.leetcode.arrays;
+package com.leetcode.recursion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -1,4 +1,4 @@
-package com.leetcode.arrays;
+package com.leetcode.recursion;
 
 import java.util.*;
 
@@ -76,41 +76,5 @@ public class NestedListWeightSumII {
         ni.add(new NestedInteger(4).add(new NestedInteger(6)));
 
         assertEquals(17, nestedSum(Collections.singletonList(ni)));
-    }
-}
-
-class NestedInteger {
-
-    private Integer integer;
-    private List<NestedInteger> list;
-
-    public NestedInteger() {
-        this.list = new ArrayList<>();
-    }
-
-    public NestedInteger(int integer) {
-        this.integer = integer;
-        this.list = new ArrayList<>();
-    }
-
-    public boolean isInteger() {
-        return this.integer != null;
-    }
-
-    public Integer getInteger() {
-        return integer;
-    }
-
-    public void setInteger(Integer integer) {
-        this.integer = integer;
-    }
-
-    public List<NestedInteger> getList() {
-        return list;
-    }
-
-    public NestedInteger add(NestedInteger nestedInteger) {
-        this.list.add(nestedInteger);
-        return this;
     }
 }
