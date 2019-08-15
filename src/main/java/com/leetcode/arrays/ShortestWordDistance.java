@@ -1,5 +1,7 @@
 package com.leetcode.arrays;
 
+import com.leetcode.hashtables.ShortestWordDistanceII;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -16,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *
  * Note: You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
  *
- * Lastly, for a more complex variant, see {@link com.leetcode.maps.ShortestWordDistanceII}.
+ * Lastly, for a more complex variant, see {@link ShortestWordDistanceII}.
  *
  * @author rampatra
  * @since 2019-07-31

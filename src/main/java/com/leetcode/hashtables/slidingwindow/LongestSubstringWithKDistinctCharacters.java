@@ -1,4 +1,4 @@
-package com.leetcode.maps.slidingwindow;
+package com.leetcode.hashtables.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,11 +38,11 @@ public class LongestSubstringWithKDistinctCharacters {
         int length = 0;
         Map<Character, Integer> letterCountInWindow = new HashMap<>();
 
-        int i = 0; // start of window
-        int j = i; // end of window
+        int left = 0; // start of window
+        int right = 0; // end of window
 
-        while (j < str.length()) {
-            char ch = str.charAt(j);
+        while (right < str.length()) {
+            char ch = str.charAt(right);
 
             letterCountInWindow.put(ch, letterCountInWindow.getOrDefault(ch, 0) + 1);
 
@@ -51,20 +51,20 @@ public class LongestSubstringWithKDistinctCharacters {
             // - remove the first character in the window or reduce its count if the window had more than one of this character
             // - lastly, move the window forward
             if (letterCountInWindow.keySet().size() > k) {
-                char firstChar = str.charAt(i);
+                char firstChar = str.charAt(left);
                 int firstCharCount = letterCountInWindow.get(firstChar);
                 if (firstCharCount > 1) {
                     letterCountInWindow.put(firstChar, firstCharCount - 1);
                 } else {
                     letterCountInWindow.remove(firstChar);
                 }
-                length = Math.max(length, j - i);
-                i++;
+                length = Math.max(length, right - left);
+                left++;
             }
-            j++;
+            right++;
         }
 
-        return length == 0 ? j - i : length;
+        return length == 0 ? right - left : length;
     }
 
     public static void main(String[] args) {
@@ -75,5 +75,8 @@ public class LongestSubstringWithKDistinctCharacters {
         assertEquals(2, lengthOfLongestSubstringKDistinct("aa", 1));
         assertEquals(3, lengthOfLongestSubstringKDistinct("aaa", 1));
         assertEquals(0, lengthOfLongestSubstringKDistinct("aa", 0));
+        assertEquals(3, lengthOfLongestSubstringKDistinct("aab", 2));
+        assertEquals(8, lengthOfLongestSubstringKDistinct("abcabcbb", 3));
+        assertEquals(5, lengthOfLongestSubstringKDistinct("pwwkew", 3));
     }
 }
