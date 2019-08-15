@@ -48,7 +48,7 @@ public class LongestSubstringWithKDistinctCharacters {
 
             // when number of distinct characters in the window exceeds k:
             // - update length
-            // - remove the first character in the window or reduce its count if the window had more than one of this character
+            // - remove the first character in the window or reduce its count if the window has more than one of this character
             // - lastly, move the window forward
             if (letterCountInWindow.keySet().size() > k) {
                 char firstChar = str.charAt(left);
@@ -64,17 +64,18 @@ public class LongestSubstringWithKDistinctCharacters {
             right++;
         }
 
-        return length == 0 ? right - left : length;
+        return Math.max(length, right - left);
     }
 
     public static void main(String[] args) {
         assertEquals(3, lengthOfLongestSubstringKDistinct("eceba", 2));
         assertEquals(7, lengthOfLongestSubstringKDistinct("eceeeeeba", 2));
+        assertEquals(12, lengthOfLongestSubstringKDistinct("bbbeeeeebaaaaaaaaaaa", 2));
         assertEquals(2, lengthOfLongestSubstringKDistinct("abcdef", 2));
         assertEquals(1, lengthOfLongestSubstringKDistinct("a", 1));
+        assertEquals(0, lengthOfLongestSubstringKDistinct("aa", 0));
         assertEquals(2, lengthOfLongestSubstringKDistinct("aa", 1));
         assertEquals(3, lengthOfLongestSubstringKDistinct("aaa", 1));
-        assertEquals(0, lengthOfLongestSubstringKDistinct("aa", 0));
         assertEquals(3, lengthOfLongestSubstringKDistinct("aab", 2));
         assertEquals(8, lengthOfLongestSubstringKDistinct("abcabcbb", 3));
         assertEquals(5, lengthOfLongestSubstringKDistinct("pwwkew", 3));
