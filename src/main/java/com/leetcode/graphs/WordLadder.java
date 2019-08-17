@@ -51,7 +51,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class WordLadder {
 
     /**
-     * Runtime: <a href="https://leetcode.com/submissions/detail/251953011/">78 ms</a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/251960230/">79 ms</a>.
      *
      * @param beginWord
      * @param endWord
@@ -60,15 +60,15 @@ public class WordLadder {
      */
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         int L = beginWord.length();
-        Map<String, Set<String>> originalToTransformedWordMap = new HashMap<>();
+        Map<String, Set<String>> transformedToOriginalWordMap = new HashMap<>();
         Queue<Pair<String, Integer>> queue = new LinkedList<>();
 
         wordList.forEach(word -> {
                     String transformedWord;
                     for (int i = 0; i < L; i++) {
                         transformedWord = word.substring(0, i) + "*" + word.substring(i + 1, L);
-                        originalToTransformedWordMap.putIfAbsent(transformedWord, new HashSet<>());
-                        originalToTransformedWordMap.get(transformedWord).add(word);
+                        transformedToOriginalWordMap.putIfAbsent(transformedWord, new HashSet<>());
+                        transformedToOriginalWordMap.get(transformedWord).add(word);
                     }
                 }
         );
@@ -90,7 +90,7 @@ public class WordLadder {
             for (int i = 0; i < L; i++) {
                 transformedWord = word.substring(0, i) + "*" + word.substring(i + 1, L);
 
-                for (String originalWord : originalToTransformedWordMap.getOrDefault(transformedWord, Collections.emptySet())) {
+                for (String originalWord : transformedToOriginalWordMap.getOrDefault(transformedWord, Collections.emptySet())) {
                     if (!visited.contains(originalWord)) {
                         queue.add(new Pair<>(originalWord, level + 1));
                         visited.add(originalWord);
