@@ -102,6 +102,18 @@ public class WordLadder {
         return 0;
     }
 
+    /**
+     * TODO: Optimized both end BFS solution
+     *
+     * @param beginWord
+     * @param endWord
+     * @param wordList
+     * @return
+     */
+    public static int ladderLengthOptimized(String beginWord, String endWord, List<String> wordList) {
+        return -1;
+    }
+
     public static void main(String[] args) {
         assertEquals(5, ladderLength("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log", "cog")));
         assertEquals(0, ladderLength("hit", "cog", Arrays.asList("hot", "dot", "dog", "lot", "log")));
