@@ -66,13 +66,13 @@ public class ExclusiveTimeOfFunctions {
             int timestamp = Integer.parseInt(l[2]);
 
             if (operation.equals("start")) {
-                if (!stack.empty()) {
+                if (!stack.empty()) { // if there are other processes started before, calculate their time until now
                     times[stack.peek().getKey()] += (timestamp - stack.peek().getValue() - 1);
                 }
                 stack.push(new Pair<>(id, timestamp));
             } else {
                 times[id] += timestamp - stack.pop().getValue() + 1;
-                if (!stack.isEmpty()) {
+                if (!stack.isEmpty()) { // if there are other processes, make their start time to now
                     stack.push(new Pair<>(stack.pop().getKey(), timestamp));
                 }
             }
