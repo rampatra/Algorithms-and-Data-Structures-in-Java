@@ -34,6 +34,11 @@ public class DetectAndRemoveLoop {
      *   ii. Now, move both slow and fast pointer at same pace and where they meet is the starting point of the loop.
      *  iii. Lastly, to remove the loop make the next of the node (before the starting point of loop) to null.
      *
+     * Proof for Floyd's Cycle Detection: Consider a cyclic list and imagine the slow and fast pointers are two runners
+     * racing around a circle track. The fast runner will eventually meet the slow runner. Why? Consider this case -
+     * The fast runner is just one step behind the slow runner. In the next iteration, they both increment one and two
+     * steps respectively and meet each other.
+     *
      * @param list
      * @param <E>
      * @return {@code true} if loop exists {@code false} otherwise.
@@ -58,7 +63,7 @@ public class DetectAndRemoveLoop {
         while (true) {
             slow = slow.next;
             fast = fast.next;
-            if (slow.next == fast.next) {
+            if (slow == fast) {
                 fast.next = null;
                 break;
             }
@@ -76,6 +81,24 @@ public class DetectAndRemoveLoop {
         linkedList.add(4);
         linkedList.add(5);
         linkedList.getNode(4).next = linkedList.getNode(2);
+        System.out.println(detectAndRemoveLoop(linkedList));
+        linkedList.printList();
+
+        linkedList = new SingleLinkedList<>();
+        linkedList.add(0);
+        linkedList.add(1);
+        linkedList.getNode(1).next = linkedList.getNode(0);
+        System.out.println(detectAndRemoveLoop(linkedList));
+        linkedList.printList();
+
+        linkedList = new SingleLinkedList<>();
+        linkedList.add(0);
+        System.out.println(detectAndRemoveLoop(linkedList));
+        linkedList.printList();
+
+        linkedList = new SingleLinkedList<>();
+        linkedList.add(0);
+        linkedList.getNode(0).next = linkedList.getNode(0);
         System.out.println(detectAndRemoveLoop(linkedList));
         linkedList.printList();
     }
