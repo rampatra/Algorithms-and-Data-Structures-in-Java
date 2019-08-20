@@ -2,6 +2,7 @@ package com.rampatra.linkedlists;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Map;
  */
 public class LRUCache<E, V> {
 
-    LinkedHashMap<E, V> linkedHashMap;
+    private LinkedHashMap<E, V> linkedHashMap;
 
     // initialize cache
     LRUCache(final int size) {
@@ -37,7 +38,7 @@ public class LRUCache<E, V> {
     }
 
     V get(E key) {
-       return linkedHashMap.get(key);
+        return linkedHashMap.get(key);
     }
 
     private void print() {
@@ -52,12 +53,13 @@ public class LRUCache<E, V> {
         cache.add(1, 1);
         cache.add(2, 2);
         cache.add(3, 3);
+        cache.print(); // initial cache contents
+
+        cache.add(4, 4); // should remove 1 as it was accessed last
         cache.print();
-        if (cache.get(4) == null) {
-            cache.add(4, 4);
-        }
-        cache.print();
-        cache.add(5, 5);
+
+        cache.get(2);
+        cache.add(5, 5); // should remove 3 as 2 was recently accessed
         cache.print();
     }
 }
