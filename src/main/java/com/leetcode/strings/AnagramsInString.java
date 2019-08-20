@@ -55,7 +55,7 @@ public class AnagramsInString {
      * where,
      * n = length of text or number of characters in text
      * <p>
-     * Runtime: <a href="https://leetcode.com/submissions/detail/222911434/">7 ms on leetcode</a>.
+     * Runtime: <a href="https://leetcode.com/submissions/detail/253261320/">6 ms</a>.
      *
      * @param text
      * @param pattern
