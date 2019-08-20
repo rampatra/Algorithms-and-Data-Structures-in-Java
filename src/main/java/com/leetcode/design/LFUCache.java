@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Could you do both operations in O(1) time complexity?
  *
  * Note:
- * -
+ * - When setting a key which is already present, reset its frequency/count to 1.
  *
  * @author rampatra
  * @since 2019-08-20
