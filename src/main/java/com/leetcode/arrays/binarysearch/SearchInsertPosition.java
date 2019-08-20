@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Example 4:
  * Input: [1,3,5,6], 0
  * Output: 0
- *
+ * <p>
  * Similar question: {@link SmallestLetterGreaterThanTarget}.
  *
  * @author rampatra
@@ -59,5 +59,6 @@ public class SearchInsertPosition {
 
     public static void main(String[] args) {
         assertEquals(2, searchInsert(new int[]{1, 2}, 3));
+        assertEquals(1, searchInsert(new int[]{1, 3, 5, 6}, 2));
     }
 }

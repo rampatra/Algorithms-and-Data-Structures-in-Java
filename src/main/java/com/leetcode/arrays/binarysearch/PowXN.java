@@ -63,7 +63,7 @@ public class PowXN {
      */
     public static double myPow(double x, int n) {
         double res = 1;
-        long absN = Math.abs((long) n);
+        long absN = Math.abs((long) n); // used a long so that `absN / 2` doesn't overflow
 
         while (absN > 0) {
             if (absN % 2 == 1) res *= x; // store whatever we have calculated so far in the final result
