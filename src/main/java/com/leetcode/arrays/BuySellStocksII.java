@@ -2,8 +2,8 @@ package com.leetcode.arrays;
 
 /**
  * Level: Easy
- * Problem Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
- * Problem Description:
+ * Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+ * Description:
  * Say you have an array for which the ith element is the price of a given stock on day i.
  * <p>
  * Design an algorithm to find the maximum profit. You may complete as many transactions as you

@@ -5,6 +5,9 @@ package com.ctci.treesandgraphs;
  * tree. Avoid storing additional nodes in a data structure. Also, for this question, the tree node
  * does NOT have access to its parent node. NOTE: This is not necessarily a binary search tree.
  *
+ * First Common Ancestor or the Least/Lowest Common Ancestor of two nodes is a node which is the
+ * closest to both of the nodes.
+ *
  * @author rampatra
  * @since 2019-02-24
  */
@@ -18,7 +21,7 @@ public class FirstCommonAncestor {
      * - Returns null, if neither p nor q are in root's subtree.
      * - Else, returns the common ancestor of p and q.
      * <p>
-     * See {@link com.rampatra.trees.LeastCommonAncestorInBT} for a simpler version.
+     * See {@link com.rampatra.trees.LeastCommonAncestorInBT} for a better answer.
      *
      * @param root
      * @param a
