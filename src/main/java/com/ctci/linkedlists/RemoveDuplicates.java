@@ -9,6 +9,9 @@ import java.util.Set;
  */
 public class RemoveDuplicates {
 
+    public static final String WITHOUT_DUPS = "Without dups: ";
+    public static final String WITH_DUPS = "\nWith dups: ";
+
     /**
      * Removes duplicates in an unsorted linked list by using additional memory
      * and two references.
@@ -44,7 +47,7 @@ public class RemoveDuplicates {
         System.out.print("With dups: ");
         l1.print();
         removeDuplicatesFromUnsortedList(l1);
-        System.out.print("Without dups: ");
+        System.out.print(WITHOUT_DUPS);
         l1.print();
 
         Node l2 = new Node(1);
@@ -53,10 +56,10 @@ public class RemoveDuplicates {
         l2.next.next.next = new Node(3);
         l2.next.next.next.next = new Node(4);
         l2.next.next.next.next.next = new Node(5);
-        System.out.print("\nWith dups: ");
+        System.out.print(WITH_DUPS);
         l2.print();
         removeDuplicatesFromUnsortedList(l2);
-        System.out.print("Without dups: ");
+        System.out.print(WITHOUT_DUPS);
         l2.print();
 
         Node l3 = new Node(1);
@@ -65,24 +68,25 @@ public class RemoveDuplicates {
         l3.next.next.next = new Node(3);
         l3.next.next.next.next = new Node(4);
         l3.next.next.next.next.next = new Node(5);
-        System.out.print("\nWith dups: ");
+        System.out.print(WITH_DUPS);
         l3.print();
         removeDuplicatesFromUnsortedList(l3);
-        System.out.print("Without dups: ");
+        System.out.print(WITHOUT_DUPS);
         l3.print();
 
         Node l4 = new Node(1);
-        System.out.print("\nWith dups: ");
+        System.out.print(WITH_DUPS);
         l4.print();
         removeDuplicatesFromUnsortedList(l4);
-        System.out.print("Without dups: ");
+
+        System.out.print(WITHOUT_DUPS);
         l4.print();
 
         Node l5 = null;
-        System.out.print("\nWith dups: ");
+        System.out.print(WITH_DUPS);
         l5.print();
         removeDuplicatesFromUnsortedList(l5);
-        System.out.print("Without dups: ");
+        System.out.print(WITHOUT_DUPS);
         l5.print();
     }
 }
