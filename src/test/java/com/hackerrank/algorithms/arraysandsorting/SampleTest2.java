@@ -20,7 +20,7 @@ public class SampleTest2 {
 	
 	@Test
 	public void tesInsertIntoSorted2() {
-		int[] inputArr = new int[] {1,6,4};
+		int[] inputArr     = new int[] {1,6,4};
 		int[] inputResult = new int[] {1, 4, 6};
 		insertionSort1.insertIntoSorted(inputArr);
 		assertArrayEquals(inputResult, inputArr);
