@@ -72,10 +72,6 @@ public class BinarySearch {
         System.out.println(binarySearch(new int[]{0, 2}, 0));
         System.out.println(binarySearch(new int[]{0, 1, 2, 2, 2, 3, 3}, 2)); // doesn't return index of first occurrence
         System.out.println("---------");
-        System.out.println(binarySearchNonRecursive(new int[]{0, 2}, 2));
-        System.out.println(binarySearchNonRecursive(new int[]{0, 1, 2, 3}, 2));
-        System.out.println(binarySearchNonRecursive(new int[]{0, 1, 2, 3}, 3));
-        System.out.println(binarySearchNonRecursive(new int[]{0, 2}, 0));
-        System.out.println(binarySearchNonRecursive(new int[]{0, 1, 2, 2, 2, 3, 3}, 2));
+        
     }
 }
