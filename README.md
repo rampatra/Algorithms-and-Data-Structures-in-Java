@@ -53,4 +53,4 @@ MacBook Pro
 
 ---
 
-_P.S. If my open-source project(s) benefitted you in some way or the other, a follow on [Twitter](https://twitter.com/ram__patra) would be greatly appreciated 🙇‍♂️._
+_P.S. For any queries or concerns, [Twitter](https://twitter.com/ram__patra) is the best place to reach out to me. I'll try my best to help._
