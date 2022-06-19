@@ -53,4 +53,4 @@ MacBook Pro
 
 ---
 
-_P.S. For any queries or concerns, [Twitter](https://twitter.com/ram__patra) is the best place to reach out to me. I'll try my best to help._
+_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help 🙏._
