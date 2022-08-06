@@ -4,7 +4,7 @@ The repo consists of solutions to numerous problems using different data structu
 contains solutions to HackerRank problems which I have solved so far and questions from Cracking the Coding Interview 
 Book _(6th Edition)_.
 
-You can also refer to my [Java Notes](http://blog.rampatra.com/category/java) for a quick refresh on the Java concepts. Lastly, feel free to connect with me on [Twitter](https://twitter.com/ram__patra) for any queries or concerns. All the best!
+You can also refer to my [Java Notes](http://blog.rampatra.com/category/java) for a quick refresh on the Java concepts or if you want a break from coding then can read about my [interview experiences](https://blog.rampatra.com/category/interview/) at various companies. Lastly, feel free to connect with me on [Twitter](https://twitter.com/ram__patra) for any queries or concerns. All the best!
 
 ## Contents
 
