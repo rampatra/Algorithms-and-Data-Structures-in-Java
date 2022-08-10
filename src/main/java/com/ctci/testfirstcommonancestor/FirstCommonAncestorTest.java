@@ -38,7 +38,7 @@ class FirstCommonAncestorTest {
 	@Test
 	void testFindFCA() {
 		//test case
-		assertEquals(null, ancestor.findFCA(null, root.getLeft().getLeft().getLeft(), root.getRight().getRight()));
+		assertEquals(root, ancestor.findFCA(root, root.getLeft().getLeft().getLeft(), root.getRight().getRight()));
 	}
 	
 }
