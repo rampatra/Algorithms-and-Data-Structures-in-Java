@@ -21,6 +21,9 @@ public class WithoutString {
         int removeLen = remove.length();
         StringBuilder sb = new StringBuilder();
 
+        // in the case of removeLen is empty we return immediately, otherwise the loop will be executed forever
+        if (removeLen == 0) return original;
+
         for (int i = 0; i < baseLen; ) {
             int j = 0;
             // when we see a match, advance the pointer
