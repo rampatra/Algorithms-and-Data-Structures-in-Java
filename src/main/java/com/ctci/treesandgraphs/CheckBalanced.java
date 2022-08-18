@@ -50,7 +50,7 @@ public class CheckBalanced {
         int leftHeight = checkHeightAndBalance(node.left);
         int rightHeight = checkHeightAndBalance(node.right);
 
-        if (leftHeight == Integer.MIN_VALUE || rightHeight == Integer.MIN_VALUE || !(leftHeight - rightHeight <= 1)) {
+        if (leftHeight == Integer.MIN_VALUE || rightHeight == Integer.MIN_VALUE || (leftHeight - rightHeight > 1)) {
             return Integer.MIN_VALUE;
         }
 
