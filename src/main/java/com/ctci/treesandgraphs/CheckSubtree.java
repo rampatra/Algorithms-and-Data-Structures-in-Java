@@ -13,10 +13,8 @@ public class CheckSubtree {
             return true;
         }
 
-        if (t1.val == t2.val) {
-            if (matchTree(t1, t2)) {
+        if (t1.val == t2.val && matchTree(t1, t2)) {
                 return true;
-            }
         }
         return isT2SubtreeOfT1(t1.left, t2) || isT2SubtreeOfT1(t1.right, t2);
     }
