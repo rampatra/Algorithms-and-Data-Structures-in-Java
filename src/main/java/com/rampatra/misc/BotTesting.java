@@ -19,11 +19,16 @@ import java.util.concurrent.Executors;
 
 public class BotTesting {
     public static void main(String args[]) throws MalformedURLException {
-        final URL myURL = new URL("http://localhost:8080/ifb.html");
+
+        // URL use to track
+        String testUrl = "http://localhost:8080/ifb.html";
+        final URL myURL = new URL(testUrl);
         ExecutorService executorService = Executors.newFixedThreadPool(20);
         Long start = System.currentTimeMillis();
 
-        for (int i = 0; i <= 50; i++) {
+        // times to run the request
+        int requestTimes = 50;
+        for (int i = 0; i <= requestTimes; i++) {
             executorService.execute(new Runnable() {
 
                 @Override
