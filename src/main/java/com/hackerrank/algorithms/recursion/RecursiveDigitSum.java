@@ -24,7 +24,11 @@ public class RecursiveDigitSum {
     private static int superDigit(String n, int k) {
         if(n == null) throw new Exception("by input exception [" + n + "]");
         if (n.length() == 1 && k == 0) {
-            return Integer.parseInt(n);
+            try {
+				return Integer.parseInt(n);
+			}catch (Exception e) {
+				throw new Exception("by input exception [" + n + "]");
+			}
         }
 
         Long sum = 0L;
