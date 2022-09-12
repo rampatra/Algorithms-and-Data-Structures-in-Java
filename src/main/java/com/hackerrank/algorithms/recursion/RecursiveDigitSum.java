@@ -22,6 +22,7 @@ public class RecursiveDigitSum {
      * @return recursive sum of the digits
      */
     private static int superDigit(String n, int k) {
+        if(n == null) throw new Exception("by input exception [" + n + "]");
         if (n.length() == 1 && k == 0) {
             return Integer.parseInt(n);
         }
