@@ -34,7 +34,11 @@ public class RecursiveDigitSum {
         Long sum = 0L;
         char[] num = n.toCharArray();
         for (int i = 0; i < num.length; i++) {
-            sum += Long.parseLong(String.valueOf(num[i]));
+            try {
+				sum += Long.parseLong(String.valueOf(num[i]));
+			} catch(Exception ex) {
+				throw new Exception("by input exception [" + n + "]");
+			}
         }
 
         if (k != 0) sum *= k;
