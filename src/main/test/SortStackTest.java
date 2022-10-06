@@ -10,7 +10,9 @@ import com.ctci.stacksandqueues.SortStack;
 
 class SortStackTest {
 
-
+/**
+ * note
+ */
 	@Test
 	public void testStackNull() {
 		Stack<Integer> unsortedStack = new Stack<Integer>();
