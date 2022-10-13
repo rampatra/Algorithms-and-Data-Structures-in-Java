@@ -13,7 +13,7 @@ public class StringCompression {
      * @param str input string containing only a-z characters, both cases
      * @return which ever is the shorter string
      */
-    private static String compressString(String str) {
+     static String compressString(String str) {
         StringBuilder compressedSb = new StringBuilder();
         int countConsecutive = 0;
         for (int i = 0; i < str.length(); i++) {
