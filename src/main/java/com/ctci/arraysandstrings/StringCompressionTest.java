@@ -6,38 +6,38 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class StringCompressionTest {
     @Test
-    public void stringCompression_EmptyString() {
+    public void testEmptyString() {
         String str = "";
-        assertEquals(StringCompression.compressString(""), "");
+        assertEquals(StringCompression.compressString(str), "");
     }
 
     @Test
-    public void stringCompression_SingleCharacter() {
+    public void testSingleCharacter() {
         String str = "a";
-        assertEquals(StringCompression.compressString("a"), "a");
+        assertEquals(StringCompression.compressString(str), "a");
     }
 
     @Test
-    public void stringCompression_NoConsecutiveCharacter() {
+    public void testNoConsecutiveCharacter() {
         String str = "abcdef";
-        assertEquals(StringCompression.compressString("abcdef"), "abcdef");
+        assertEquals(StringCompression.compressString(str), "abcdef");
     }
 
     @Test
-    public void stringCompression_CompressedNotShorterThanOriginal() {
+    public void testCompressedNotShorterThanOriginal() {
         String str = "aabbccddee";
-        assertEquals(StringCompression.compressString("aabbccddee"), "aabbccddee");
+        assertEquals(StringCompression.compressString(str), "aabbccddee");
     }
 
     @Test
-    public void stringCompression_LowercaseNexttoUppercase() {
+    public void testLowercaseNexttoUppercase() {
         String str = "aAbbBBBCCCCcccc";
-        assertEquals(StringCompression.compressString("aAbbBBBCCCCcccc"), "a1A1b2B3C4c4");
+        assertEquals(StringCompression.compressString(str), "a1A1b2B3C4c4");
     }
 
     @Test
-    public void stringCompression_RandomString() {
+    public void testRandomString() {
         String str = "aabcccccccccccccccccccccccccaaa";
-        assertEquals(StringCompression.compressString("aabcccccccccccccccccccccccccaaa"), "a2b1c25a3");
+        assertEquals(StringCompression.compressString(str), "a2b1c25a3");
     }
 }
