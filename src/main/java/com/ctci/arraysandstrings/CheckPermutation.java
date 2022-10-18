@@ -1,5 +1,7 @@
 package com.ctci.arraysandstrings;
 
+import org.junit.Assert;
+import org.junit.Test;
 import java.util.Arrays;
 
 /**
@@ -54,6 +56,48 @@ public class CheckPermutation {
         }
         return true;
     }
+    
+    @Test
+	public void isOnePermutationOfOther_tc1_differentlength() {
+		String s1 = "rama";
+		String s2 = "mar";
+		Assert.assertFalse(isOnePermutationOfOther(s1, s2));
+	}
+    
+    @Test
+	public void isOnePermutationOfOther_tc2_isPermutation() {
+    	String s1 = "ram";
+		String s2 = "mar";
+		Assert.assertTrue(isOnePermutationOfOther(s1, s2));
+	}
+    
+    @Test
+	public void isOnePermutationOfOther_tc3_notPermutation() {
+    	String s1 = "rama";
+		String s2 = "marA";
+		Assert.assertFalse(isOnePermutationOfOther(s1, s2));
+	}
+    
+    @Test
+	public void isOnePermutationOfOtherGivenThatStringsContainOnlyAscii_tc1_differentlength() {
+		String s1 = "rama";
+		String s2 = "mar";
+		Assert.assertFalse(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii(s1, s2));
+	}
+    
+    @Test
+	public void isOnePermutationOfOtherGivenThatStringsContainOnlyAscii_tc2_isPermutation() {
+    	String s1 = "ram";
+		String s2 = "mar";
+		Assert.assertTrue(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii(s1, s2));
+	}
+    
+    @Test
+	public void isOnePermutationOfOtherGivenThatStringsContainOnlyAscii_tc3_notPermutation() {
+    	String s1 = "rama";
+		String s2 = "marA";
+		Assert.assertFalse(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii(s1, s2));
+	}
 
     public static void main(String[] args) {
         System.out.println(isOnePermutationOfOther("ram", "mar"));
