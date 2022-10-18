@@ -51,3 +51,4 @@ buildNumber.properties
 .mvn/timing.properties
 !/.mvn/wrapper/maven-wrapper.jar
 *_Practice.java
+/bin/
