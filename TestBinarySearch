@@ -1,0 +1,43 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestSearch {
+
+	BinarySearch binarySearch = new BinarySearch() ;
+	@Test
+	public void tesInsertIntoSorted() {
+		int[] inputArr = new int[] {0,1,2,3,4};
+		assertTrue( binarySearch.binarySearch(inputArr, 2) ==2 );	
+	}
+	
+	BinarySearch binarySearch1 = new BinarySearch() ;
+	@Test
+	public void tesInsertIntoSorted1() {
+		int[] inputArr = new int[] {0,1,2,3,4};
+		assertTrue( binarySearch1.binarySearch(inputArr, 1)==1 );
+	}
+	
+	BinarySearch binarySearch2 = new BinarySearch() ;
+	@Test
+	public void tesInsertIntoSorted2() {
+		int[] inputArr = new int[] {0,1,2,3,4};
+		assertTrue( binarySearch2.binarySearch(inputArr, 0)==0 );
+	}
+	
+	BinarySearch binarySearch3 = new BinarySearch() ;
+	@Test
+	public void tesInsertIntoSorted3() {
+		int[] inputArr = new int[] {0,1,2,3,4};
+		assertTrue( binarySearch3.binarySearch(inputArr, 1)==1 );
+	}
+	
+	BinarySearch binarySearch4 = new BinarySearch() ;
+	@Test
+	public void tesInsertIntoSorted4() {
+		int[] inputArr = new int[] {0,1,2,3,4};
+		assertTrue( binarySearch4.binarySearch(inputArr, 1)==1 );
+	}
+	
+
+}

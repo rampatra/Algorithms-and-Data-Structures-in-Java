@@ -1,0 +1,36 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestSort {
+
+	SelectionSort selectionSort = new SelectionSort();
+	@Test
+	public void tesInsertIntoSorted() {
+		int[] inputArr = new int[] {1,3,5};
+		int[] inputResult = new int[] {1,3,5};
+		selectionSort.selectionSort(inputArr);
+		assertArrayEquals(inputResult, inputArr);
+	}
+	
+	SelectionSort selectionSort2 = new SelectionSort();
+	@Test
+	public void tesInsertIntoSorted2() {
+		int[] inputArr = new int[] {5,3,1};
+		int[] inputResult = new int[] {1,3,5};
+		selectionSort.selectionSort(inputArr);
+		assertArrayEquals(inputResult, inputArr);
+	}
+	
+	
+	SelectionSort selectionSort3 = new SelectionSort();
+	@Test
+	public void tesInsertIntoSorted3() {
+		int[] inputArr = new int[] {4,5,3,2};
+		int[] inputResult = new int[] {2,3,4,5};
+		selectionSort.selectionSort(inputArr);
+		assertArrayEquals(inputResult, inputArr);
+	}
+	
+	
+}
