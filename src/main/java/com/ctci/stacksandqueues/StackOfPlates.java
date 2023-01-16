@@ -38,7 +38,7 @@ public class StackOfPlates {
     }
 
     private static Stack<Integer> getLastStack() {
-        if (stackList.size() == 0 || isFull(stackList.get(stackList.size() - 1))) {
+        if (stackList.isEmpty() || isFull(stackList.get(stackList.size() - 1))) {
             stackList.add(new Stack<>());
         }
         return stackList.get(stackList.size() - 1);
