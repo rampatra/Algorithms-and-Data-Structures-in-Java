@@ -1,0 +1,70 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void recoverTree(TreeNode root) {
+        
+        TreeNode temp1=null;
+        TreeNode temp2=null;
+        TreeNode prev=null;
+        TreeNode curr=root;
+        
+        while(curr!=null){
+            if(curr.left==null){
+                if(prev!=null && prev.val>curr.val){
+                        if(temp1==null){
+                            temp1=prev;
+                            temp2=curr;
+                        }else{
+                            temp2=curr;
+                        }
+                 }
+                prev=curr;
+                curr=curr.right;
+                 
+                
+            }else{
+                
+                TreeNode curr1=curr.left;
+                while(curr1.right!=null && curr1.right!=curr){
+                    curr1=curr1.right;
+                }
+                if(curr1.right==null){
+                    curr1.right=curr;
+                    curr=curr.left;
+                }else{
+                      if(prev!=null && prev.val>curr.val){
+                        // System.out.println(prev.val+" --"+curr.val);
+                        if(temp1==null){
+                            temp1=prev;
+                            temp2=curr;
+                        }else{
+                            temp2=curr;
+                        }
+                    }
+                    curr1.right=null;
+                    prev=curr;
+                    curr=curr.right;
+                    // System.out.println(prev.val+"**"+curr.val);
+                  
+                }
+                
+            }
+            
+        }
+        // System.out.println(temp1.val+"=="+temp2.val);
+        if(temp1==null){
+            return ;
+        }
+        
+        int temp=temp1.val;
+        temp1.val=temp2.val;
+        temp2.val=temp;
+    }
+}
