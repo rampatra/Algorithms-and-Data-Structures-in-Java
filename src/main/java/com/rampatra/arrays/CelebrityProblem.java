@@ -26,7 +26,7 @@ public class CelebrityProblem {
      * @param b
      * @return
      */
-    public static boolean haveAcquaintance(int[][] peoples, int a, int b) {
+    public static boolean isPersonAKnowPersonB(int[][] peoples, int a, int b) {
         return peoples[a][b] == 1;
     }
 
@@ -40,7 +40,7 @@ public class CelebrityProblem {
      * - Repeat above two steps till we left with only one person.
      * Find celebrity within remaining persons by performing the below operations:
      * - Push all the celebrities into a stack.
-     * - Pop off top two persons from the stack, discard one person based on return status of HaveAcquaintance(A, B).
+     * - Pop off top two persons from the stack, discard one person based on return status of isPersonAKnowPersonB(A, B).
      * - Push the remained person onto stack.
      * - Repeat step 2 and 3 until only one person remains in the stack.
      * - Check the remained person in stack does not have acquaintance with anyone else.
@@ -52,34 +52,49 @@ public class CelebrityProblem {
 
         Stack<Integer> possibleCelebrities = new LinkedStack<>();
 
-        for (int i = 0; i < peoples.length; i++) {
-            for (int j = 0; j < peoples[0].length; j++) {
-                if (haveAcquaintance(peoples, i, j)) {
-                    possibleCelebrities.push(j);
+        for (int a = 0; a < peoples.length; a++) {
+            for (int b = 0; b < peoples[0].length; b++) {
+                if (isPersonAKnowPersonB(peoples, a, b)) {
+                    possibleCelebrities.push(b);
                 }
             }
         }
 
-        int firstPerson = -1, secondPerson;
+        int personA = -1;
+        int personB;
         while (!possibleCelebrities.isEmpty()) {
-            firstPerson = possibleCelebrities.pop();
+            personA = possibleCelebrities.pop();
 
             // we have found the celebrity
             if (possibleCelebrities.isEmpty()) break;
 
-            secondPerson = possibleCelebrities.pop();
-            if (haveAcquaintance(peoples, firstPerson, secondPerson)) {
-                possibleCelebrities.push(secondPerson);
+            personB = possibleCelebrities.pop();
+            if (isPersonAKnowPersonB(peoples, personA, personB)) {
+                possibleCelebrities.push(personB);
             } else {
-                possibleCelebrities.push(firstPerson);
+                possibleCelebrities.push(personA);
             }
         }
 
-        return firstPerson;
+        return personA;
     }
 
     public static void main(String[] args) {
-        System.out.println(findCelebrity(new int[][]{{0, 0, 1, 0}, {0, 0, 1, 0}, {0, 0, 0, 0}, {0, 0, 1, 0}}));
-        System.out.println(findCelebrity(new int[][]{{0, 0, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 1}, {0, 0, 0, 1}}));
+        int[][] people1 = {
+                {0, 0, 1, 0},
+                {0, 0, 1, 0},
+                {0, 0, 0, 0},
+                {0, 0, 1, 0}
+        };
+
+        int[][] people2 = {
+                {0, 0, 0, 1},
+                {0, 0, 0, 1},
+                {0, 0, 0, 1},
+                {0, 0, 0, 1}
+        };
+
+        System.out.println(findCelebrity(people1));
+        System.out.println(findCelebrity(people2));
     }
 }
