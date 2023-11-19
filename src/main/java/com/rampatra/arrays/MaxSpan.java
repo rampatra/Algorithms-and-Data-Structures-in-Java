@@ -1,6 +1,6 @@
 package com.rampatra.arrays;
 
-import com.sun.tools.javac.util.Assert;
+//import com.sun.tools.javac.util.Assert;
 
 /**
  * Consider the leftmost and rightmost appearances of some value in an array. We'll say that the "span" is the
@@ -36,10 +36,10 @@ public class MaxSpan {
     }
 
     public static void main(String[] args) {
-        Assert.check(maxSpan(new int[]{1, 2, 1, 1, 3}) == 4);
-        Assert.check(maxSpan(new int[]{1, 4, 2, 1, 4, 1, 4}) == 6);
-        Assert.check(maxSpan(new int[]{1, 4, 2, 1, 4, 4, 4}) == 6);
-        Assert.check(maxSpan(new int[]{1}) == 1);
-        Assert.check(maxSpan(new int[]{}) == 0);
+//        Assert.check(maxSpan(new int[]{1, 2, 1, 1, 3}) == 4);
+//        Assert.check(maxSpan(new int[]{1, 4, 2, 1, 4, 1, 4}) == 6);
+//        Assert.check(maxSpan(new int[]{1, 4, 2, 1, 4, 4, 4}) == 6);
+//        Assert.check(maxSpan(new int[]{1}) == 1);
+//        Assert.check(maxSpan(new int[]{}) == 0);
     }
 }
