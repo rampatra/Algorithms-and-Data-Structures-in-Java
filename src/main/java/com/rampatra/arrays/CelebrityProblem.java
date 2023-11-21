@@ -55,8 +55,7 @@ public class CelebrityProblem {
     private static int findCelebrityInStack(Stack<Integer> possibleCelebrities, int[][] peoples) {
         int firstPerson = -1, secondPerson;
 
-        // Replace Nested Conditional with Guard Clauses: replace if within while with a guard clause
-        while (true) {
+        while (!possibleCelebrities.isEmpty()) {
             firstPerson = possibleCelebrities.pop();
             // we have found the celebrity
             if (possibleCelebrities.isEmpty()) {
