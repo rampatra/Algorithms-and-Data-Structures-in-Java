@@ -28,95 +28,77 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @since 2019-08-05
  */
 public class GraphValidTree {
-
+    
     /**
-     *
-     * @param n
-     * @param edges
-     * @return
+     * Checks if the given edges form a valid tree using BFS.
      */
     public static boolean isValidTree(int n, int[][] edges) {
-        List<List<Integer>> adjacencyList = new ArrayList<>(n);
+        List<List<Integer>> adjacencyList = buildAdjacencyList(n, edges);
+        return isTreeBFS(n, adjacencyList);
+    }
 
+    /**
+     * Builds the adjacency list from the given edges.
+     */
+    private static List<List<Integer>> buildAdjacencyList(int n, int[][] edges) {
+        List<List<Integer>> adjacencyList = new ArrayList<>(n);
         for (int i = 0; i < n; i++) {
             adjacencyList.add(new ArrayList<>());
         }
-
-        for (int i = 0; i < edges.length; i++) {
-            adjacencyList.get(edges[i][0]).add(edges[i][1]);
+        for (int[] edge : edges) {
+            adjacencyList.get(edge[0]).add(edge[1]);
+            adjacencyList.get(edge[1]).add(edge[0]);  // Since the graph is undirected
         }
-
-        boolean[] visited = new boolean[n];
-
-        if (hasCycle(adjacencyList, 0, -1, visited)) {
-            return false;
-        }
-
-        for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                return false;
-            }
-        }
-
-        return true;
+        return adjacencyList;
     }
-
-    private static boolean hasCycle(List<List<Integer>> adjacencyList, int node1, int exclude, boolean[] visited) {
-        visited[node1] = true;
-
-        for (int i = 0; i < adjacencyList.get(node1).size(); i++) {
-            int node2 = adjacencyList.get(node1).get(i);
-
-            if ((visited[node2] && exclude != node2) || (!visited[node2] && hasCycle(adjacencyList, node2, node1, visited))) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
 
     /**
-     * Union-find algorithm: We keep all connected nodes in one set in the union operation and in find operation we
-     * check whether two nodes belong to the same set. If yes then there's a cycle and if not then no cycle.
-     *
-     * Good articles on union-find:
-     * - https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/
-     * - https://www.youtube.com/watch?v=wU6udHRIkcc
-     *
-     * @param n
-     * @param edges
-     * @return
+     * Uses BFS to check for cycles and disconnected components.
      */
-    public static boolean isValidTreeUsingUnionFind(int n, int[][] edges) {
-        int[] roots = new int[n];
+    private static boolean isTreeBFS(int n, List<List<Integer>> adjacencyList) {
+        Set<Integer> visited = new HashSet<>();
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
+        visited.add(0);
 
-        for (int i = 0; i < n; i++) {
-            roots[i] = i;
-        }
-
-        for (int i = 0; i < edges.length; i++) {
-            // find operation
-            if (roots[edges[i][0]] == roots[edges[i][1]]) {
-                return false;
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            for (int neighbor : adjacencyList.get(node)) {
+                if (!visited.add(neighbor)) {  // if 'add' returns false, 'neighbor' is already visited
+                    return false;
+                }
+                queue.offer(neighbor);
             }
-            // union operation
-            roots[edges[i][1]] = findRoot(roots, roots[edges[i][0]]); // note: we can optimize this even further by
-            // considering size of each side and then join the side with smaller size to the one with a larger size (weighted union).
-            // We can use another array called size to keep count of the size or we can use the same root array with
-            // negative values, i.e, negative resembles that the node is pointing to itself and the number will represent
-            // the size. For example, roots = [-2, -1, -1, 0] means that node 3 is pointing to node 0 and node 0 is pointing
-            // to itself and is has 2 nodes under it including itself.
         }
-
-        return edges.length == n - 1;
+        return visited.size() == n;
     }
 
-    private static int findRoot(int[] roots, int node) {
-        while (roots[node] != node) {
-            node = roots[node];
+    /**
+     * Checks if the given edges form a valid tree using the Union-Find algorithm.
+     */
+    public static boolean isValidTreeUsingUnionFind(int n, int[][] edges) {
+        int[] parent = new int[n];
+        Arrays.fill(parent, -1);
+
+        for (int[] edge : edges) {
+            int x = find(parent, edge[0]);
+            int y = find(parent, edge[1]);
+
+            if (x == y) return false; // x and y are in the same set
+
+            // Union operation
+            parent[y] = x;
         }
-        return node;
+
+        return edges.length == n - 1; // Tree should have exactly n-1 edges
+    }
+
+    /**
+     * Finds the root of the node 'i' using path compression.
+     */
+    private static int find(int[] parent, int i) {
+        if (parent[i] == -1) return i;
+        return find(parent, parent[i]);
     }
 
     public static void main(String[] args) {
