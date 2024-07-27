@@ -60,6 +60,15 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.5.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun/tools -->
+        <dependency>
+            <groupId>com.sun</groupId>
+            <artifactId>tools</artifactId>
+            <version>1.8</version>
+            <scope>system</scope>
+        </dependency>
+
     </dependencies>
 
     <profiles>
