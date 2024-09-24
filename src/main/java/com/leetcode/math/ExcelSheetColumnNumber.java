@@ -35,10 +35,29 @@ package com.leetcode.math;
 public class ExcelSheetColumnNumber {
 
     private static int titleToNumber(String title) {
-        return 0;
+        int res = 0;
+        for (int i = 0; i < title.length(); i++) {
+            char c = title.charAt(i);
+            if (((int) c) >= 65 && ((int) c) <= 90) {
+                res = res * 26 + (int) c - 64;
+            } else {
+                return -1;
+            }
+        }
+        return res;
     }
 
     public static void main(String[] args) {
+        assertEquals(1, titleToNumber("A"));
 
+        assertEquals(28, titleToNumber("AB"));
+
+        assertEquals(701, titleToNumber("ZY"));
+
+        assertEquals(-1, titleToNumber("a"));
+
+        assertEquals(-1, titleToNumber("@"));
+
+        assertEquals(2147483647, titleToNumber("FXSHRXW"));
     }
 }
