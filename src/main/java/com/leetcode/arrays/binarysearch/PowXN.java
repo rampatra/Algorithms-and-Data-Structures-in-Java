@@ -74,12 +74,10 @@ public class PowXN {
     }
 
     public static void main(String[] args) {
-        assertEquals(1024.0, myPowNaive(2.0, 10));
-        assertEquals(0.25, myPowNaive(2.0, -2));
-        assertEquals(0.0, myPowNaive(0.00001, 2147483647));
-
-        assertEquals(1024.0, myPow(2.0, 10));
-        assertEquals(0.25, myPow(2.0, -2));
-        assertEquals(0.0, myPow(0.00001, 2147483647));
+        assertEquals(0.0, myPow(99.9, -2147483647));
+        assertEquals(-0.0, myPow(-99.9, -2147483647));
+        assertEquals(9.26100, myPow(2.10000, 3));
+        assertEquals(0.25000, myPow(2.00000, -2));
+        assertEquals(1024.0, myPow(2, 10));
     }
 }
