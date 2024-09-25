@@ -39,10 +39,26 @@ public class LongestCommonPrefix {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestCommonPrefix(new String[]{}));
-        System.out.println(longestCommonPrefix(new String[]{""}));
-        System.out.println(longestCommonPrefix(new String[]{"a"}));
-        System.out.println(longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
-        System.out.println(longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
+        assertEquals("", longestCommonPrefix(new String[]{""}));
+        assertEquals("a", longestCommonPrefix(new String[]{"a"}));
+        assertEquals("abcd", longestCommonPrefix(new String[]{"abcdefg", "abcdgfe", "abcdsafa", "abcdewfad",
+        "abcdacx", "abcdplp", "abcddmm", "abcdmms", "abcdsafa", "abcdwczsace", "abcdwfacesd", "abcdqwrq",
+        "abcdeas", "abcdascadsa", "abcdqsxz", "abcdbc", "abcdavs", "abcdpmsadsa", "abcdsaca", "abcdbww",
+        "abcdwqsax", "abcdasfe", "abcdaer"}));
+        assertEquals("abcdefghijklmnopqrstuvwxyz",
+        longestCommonPrefix(new String[]{
+        "abcdefghijklmnopqrstuvwxyzafwfafaafqfwafafadafeaaffadacesgrbrfseesfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzwasfdafsaawfdwafagafagagsgfsafsgdsdfdafafsafafadafaf"}));
+        assertEquals("abcdefghijklmnopqrstuvwxyz",
+        longestCommonPrefix(new String[]{
+        "abcdefghijklmnopqrstuvwxyzplkmpknoknoknokndacesgrbrfseesfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzlnokkjkjboknoknaffadacesgrbrfseesfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyznbkmbkkbkjoknonaaffadacesgrbrfseesfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzpoinjnoonjnonooboaacesgrbrfseesfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzfghdfsgsgdfhtdjdgsdfjdfhdsgdshdhdegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzthssfgegwgwgwfwfsfdsfdsfwfwfdfwfwfwfwfwfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzrwgwwgegeggwgwfwfsfdsfdsfwfwfdfwfwfwfwfwfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzrwgwwgegeggonaanfnfafnaffdfwfwfwfwfwfegwafeagewzfafafsa",
+        "abcdefghijklmnopqrstuvwxyzwasfdafsaawfdwafagafagagsgfsafsgdsdfdafafsafafadafaf"}));
     }
 }
