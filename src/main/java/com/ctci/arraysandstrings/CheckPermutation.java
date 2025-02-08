@@ -56,12 +56,26 @@ public class CheckPermutation {
     }
 
     public static void main(String[] args) {
-        System.out.println(isOnePermutationOfOther("ram", "mar"));
-        System.out.println(isOnePermutationOfOther("rama", "mar"));
-        System.out.println(isOnePermutationOfOther("rama", "marA"));
-        System.out.println("-------");
-        System.out.println(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii("ram", "mar"));
-        System.out.println(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii("rama", "mar"));
-        System.out.println(isOnePermutationOfOtherGivenThatStringsContainOnlyAscii("rama", "marA"));
+        System.out.println(isPermutationOfPalindrome("tactc oapapa"));
+        assertTrue(isPermutationOfPalindrome("tactc oapapa"));
+        System.out.println(isPermutationOfPalindrome("maam"));
+        assertTrue(isPermutationOfPalindrome("maam"));
+        System.out.println(isPermutationOfPalindrome("maa m"));
+        assertTrue(isPermutationOfPalindrome("maa m"));
+        System.out.println(isPermutationOfPalindrome("rammmar"));
+        assertTrue(isPermutationOfPalindrome("rammmar"));
+        System.out.println(isPermutationOfPalindrome("rammmara"));
+        assertFalse(isPermutationOfPalindrome("rammmara"));
+        System.out.println("---------");
+        System.out.println(isPermutationOfPalindromeViaBits("tactc oapapa"));
+        assertTrue(isPermutationOfPalindromeViaBits("tactc oapapa"));
+        System.out.println(isPermutationOfPalindromeViaBits("maam"));
+        assertTrue(isPermutationOfPalindromeViaBits("maam"));
+        System.out.println(isPermutationOfPalindromeViaBits("maa m"));
+        assertTrue(isPermutationOfPalindromeViaBits("maa m"));
+        System.out.println(isPermutationOfPalindromeViaBits("rammmar"));
+        assertTrue(isPermutationOfPalindromeViaBits("rammmar"));
+        System.out.println(isPermutationOfPalindromeViaBits("rammmara"));
+        assertFalse(isPermutationOfPalindromeViaBits("rammmara"));
     }
 }
