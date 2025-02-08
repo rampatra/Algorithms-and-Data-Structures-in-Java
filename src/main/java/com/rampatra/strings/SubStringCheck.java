@@ -19,6 +19,10 @@ public class SubStringCheck {
      * @return
      */
     public static boolean isSubString(String s1, String s2) {
+    	if (s1 == null || s2 == null) {
+    		return false; //Since null doesn't present in any string, we can return false on such cases
+    	}
+    	
         char[] c1 = s1.toCharArray(),
                 c2 = s2.toCharArray();
         int l1 = c1.length,
