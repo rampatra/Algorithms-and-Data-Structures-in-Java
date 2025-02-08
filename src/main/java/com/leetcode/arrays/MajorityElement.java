@@ -20,23 +20,19 @@ public class MajorityElement {
      * @param nums
      * @return
      */
-    public static int majorityElement(int[] nums) {
-        int count = 1;
-        int majElem = nums[0];
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        Integer candidate = null;
 
-        for (int i = 1; i < nums.length; i++) {
-            if (count <= 0) {
-                majElem = nums[i];
-                count = 0;
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
             }
-            if (majElem == nums[i]) {
-                count++;
-            } else {
-                count--;
-            }
+            count += (num == candidate) ? 1 : -1;
         }
 
-        return majElem;
+        return candidate;
+       
     }
 
     public static void main(String[] args) {
