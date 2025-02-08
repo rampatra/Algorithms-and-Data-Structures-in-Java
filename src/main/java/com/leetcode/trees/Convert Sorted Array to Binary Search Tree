@@ -1,0 +1,71 @@
+/*
+  Problem link : https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+  Difficulty level : Easy
+  Problem Description: 
+Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+
+Example:
+
+Given the sorted array: [-10,-3,0,5,9],
+
+One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
+
+      0
+     / \
+   -3   9
+   /   /
+ -10  5
+ 
+*/
+
+/* Solution Approach:
+  Since a sorted list is given which is to be converted in a Binary Search Tree, the middle most element in the list will be the root of the tree as all the elements on the left will be always lesser than it and hence considered to be left subtree.
+  A recursive Approach has been implemented below.
+ */
+
+
+
+package com.leetcode.trees;
+import java.util.*;
+
+class Solution {
+    private static TreeNode solve(int[] nums, int start, int end) {
+        if(start > end) return null;
+        
+        int mid = (start + end) / 2;
+        
+        TreeNode root = new TreeNode(nums[mid]);
+        root.left = solve(nums, start, mid - 1);
+        root.right = solve(nums, mid + 1, end);
+        return root;
+    }
+    
+    public TreeNode sortedArrayToBST(int[] nums) {
+        return solve(nums, 0, nums.length - 1);
+    }
+    
+    private static void display(TreeNode root){
+        if(root == null) return;
+        
+        TreeNode left = root.left, right = root.right;
+        if(left == null) System.out.print(".");
+        else System.out.print(left.val);
+        
+        System.out.print(" -> " + root.val + " <- ");
+        
+        if(right == null) System.out.print(".");
+        else System.out.print(right.val);
+        
+        display(left);
+        display(right);
+    }
+    
+    public static void main(String[] args){
+        int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        TreeNode root = sortedArrayToBST(nums);
+        display(root);
+    }
+    
+}
