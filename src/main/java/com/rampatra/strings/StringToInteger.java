@@ -13,7 +13,7 @@ public class StringToInteger {
      * @param str the input string, for example, 0, 123, +123, -123, etc.
      * @return the equivalent integer.
      */
-    private static int getIntegerFromString(String str) {
+    public static int getIntegerFromString(String str) {
         int number = 0;
         int digit;
         char ch;
@@ -43,7 +43,15 @@ public class StringToInteger {
 
             number += digit * (Math.pow(10, weight++));
         }
-        return isNegative ? -number : number;
+        
+        //Make sure to check this case, when we give the number MIN_VALUE inside this function, first the number that converted will be positive, thus can only handle up to 2^31 - 1 value, so 1 value is offseted. So I check for the case if the value is negative, and the current value equals MAX_VALUE, to return the MIN_VALUE thoroughly
+        if (number == Integer.MAX_VALUE && isNegative) {
+        	return -number - 1;
+        }else {
+        	return isNegative ? -number : number;
+        }
+        
+        
     }
 
     public static void main(String[] args) {
@@ -61,4 +69,5 @@ public class StringToInteger {
         System.out.println(getIntegerFromString("  "));
         System.out.println(getIntegerFromString("123L"));
     }
+
 }
