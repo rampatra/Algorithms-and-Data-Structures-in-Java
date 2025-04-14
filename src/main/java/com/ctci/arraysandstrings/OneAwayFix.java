@@ -4,7 +4,7 @@ package com.ctci.arraysandstrings;
  * @author rampatra
  * @since 24/11/2018
  */
-public class OneAway {
+public class OneAwayFix {
 
     /**
      * Checks if two strings are only one edit away, that is, by inserting, deleting, or editing
@@ -15,10 +15,11 @@ public class OneAway {
      * @return
      */
     public static boolean isOneEditAway(String s1, String s2) {
+    	if(s1 == null || s2 == null) {
+    		throw new NullPointerException("s1 or s2 parameter is null");
+    	}
         if (s1.length() == s2.length()) {
             return isOneCharacterDiffAtMax(s1, s2);
-        } else if (s1.length() < s2.length()) {
-            return checkForMaxOneInsertOrDeleteInS1(s1, s2);
         } else {
             return checkForMaxOneInsertOrDeleteInS1(s1, s2);
         }
