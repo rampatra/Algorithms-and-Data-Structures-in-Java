@@ -22,14 +22,23 @@ public class RecursiveDigitSum {
      * @return recursive sum of the digits
      */
     private static int superDigit(String n, int k) {
+        if(n == null) throw new Exception("by input exception [" + n + "]");
         if (n.length() == 1 && k == 0) {
-            return Integer.parseInt(n);
+            try {
+				return Integer.parseInt(n);
+			}catch (Exception e) {
+				throw new Exception("by input exception [" + n + "]");
+			}
         }
 
         Long sum = 0L;
         char[] num = n.toCharArray();
         for (int i = 0; i < num.length; i++) {
-            sum += Long.parseLong(String.valueOf(num[i]));
+            try {
+				sum += Long.parseLong(String.valueOf(num[i]));
+			} catch(Exception ex) {
+				throw new Exception("by input exception [" + n + "]");
+			}
         }
 
         if (k != 0) sum *= k;
