@@ -59,10 +59,11 @@ public class TopKFrequentElements {
     }
 
     public static void main(String[] args) {
-        assertEquals("[2, 1]", topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2).toString());
+        assertEquals("[1, 2]", topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2).toString());
         assertEquals("[0]", topKFrequent(new int[]{3, 0, 1, 0}, 1).toString());
         assertEquals("[1]", topKFrequent(new int[]{1}, 1).toString());
         assertEquals("[1, 2]", topKFrequent(new int[]{1, 2}, 2).toString());
         assertEquals("[2, -1]", topKFrequent(new int[]{4, 1, -1, 2, -1, 2, 3}, 2).toString());
+        assertEquals("[2, -1, 1]", topKFrequent(new int[]{4, 1, -1, 2, -1, 2, 1}, 3).toString());
     }
 }
