@@ -6,7 +6,7 @@ package com.ctci.arraysandstrings;
  */
 public class IsUnique {
 
-    private static boolean hasAllUniqueCharacters(String str) {
+    public static boolean hasAllUniqueCharacters(String str) {
         if (str == null || str.length() > 128) return false;
 
         boolean[] charSet = new boolean[128]; // assuming the string contains only ASCII characters
@@ -20,7 +20,7 @@ public class IsUnique {
         return true;
     }
 
-    private static boolean hasAllUniqueCharactersWhenStringContainsAllLowercase(String s) {
+    public static boolean hasAllUniqueCharactersWhenStringContainsAllLowercase(String s) {
         int checker = 0;
         for (int i = 0; i < s.length(); i++) {
             int charValue = s.charAt(i) - 'a';
