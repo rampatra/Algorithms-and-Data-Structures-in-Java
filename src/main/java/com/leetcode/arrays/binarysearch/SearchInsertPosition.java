@@ -1,3 +1,4 @@
+
 package com.leetcode.arrays.binarysearch;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,10 +43,14 @@ public class SearchInsertPosition {
      * @return
      */
     public static int searchInsert(int[] nums, int target) {
+    	if (nums == null) {
+            throw new IllegalArgumentException("nums must not be null");
+        }
+
         int low = 0;
         int high = nums.length - 1;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
+        	int mid = low + ((high - low) >>> 1);
             if (nums[mid] == target) {
                 return mid;
             } else if (nums[mid] < target) {
