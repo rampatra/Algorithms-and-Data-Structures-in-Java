@@ -17,6 +17,9 @@ public class StringCompression {
         StringBuilder compressedSb = new StringBuilder();
         int countConsecutive = 0;
         for (int i = 0; i < str.length(); i++) {
+            if(stringContainsNumber(str)) {
+        		return str;
+        	}
             countConsecutive++;
 
             /* If next character is different than current, append this char to result. */
@@ -27,6 +30,16 @@ public class StringCompression {
             }
         }
         return compressedSb.length() < str.length() ? compressedSb.toString() : str;
+    }
+    
+    private static boolean stringContainsNumber(String str) {
+    	int[] numArr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    	for(int i = 0; i < numArr.length; i++) {
+    		if(str.contains(String.valueOf(numArr[i]))) {
+    			return true;
+    		}
+    	}
+    	return false;
     }
 
     public static void main(String[] args) {
