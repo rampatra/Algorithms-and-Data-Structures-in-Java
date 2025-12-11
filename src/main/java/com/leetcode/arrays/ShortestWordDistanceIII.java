@@ -39,22 +39,15 @@ public class ShortestWordDistanceIII {
         int indexWord1 = -1;
         int indexWord2 = -1;
         int minDistance = Integer.MAX_VALUE;
+        boolean isSameWord = word1.equals(word2);
 
         for (int i = 0; i < words.length; i++) {
-            if (words[i].equals(word1)) {
-                // if both words are same and the first index is already set then do nothing
-                if (word1.equals(word2) && indexWord1 != -1) {
-
-                } else {
-                    indexWord1 = i;
-                }
+            // Update indexWord1 only if: words are different OR this is the first occurrence
+            if (words[i].equals(word1) && (!isSameWord || indexWord1 == -1)) {
+                indexWord1 = i;
             }
-            if (words[i].equals(word2)) {
-                // if both words are same and i is same as first index then it implies its the
-                // first occurrence, skip and continue look for the second occurrence
-                if (word1.equals(word2) && i == indexWord1) {
-                    continue;
-                }
+            // Update indexWord2 only if: words are different OR this is not the first occurrence
+            if (words[i].equals(word2) && (!isSameWord || i != indexWord1)) {
                 indexWord2 = i;
             }
             if (indexWord1 != -1 && indexWord2 != -1) {
