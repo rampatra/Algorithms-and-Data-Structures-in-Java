@@ -14,7 +14,7 @@ public class OneAway {
      * @param s2
      * @return
      */
-    private static boolean isOneEditAway(String s1, String s2) {
+    public static boolean isOneEditAway(String s1, String s2) {
         if (s1.length() == s2.length()) {
             return isOneCharacterDiffAtMax(s1, s2);
         } else if (s1.length() < s2.length()) {
@@ -24,7 +24,7 @@ public class OneAway {
         }
     }
 
-    private static boolean isOneCharacterDiffAtMax(String s1, String s2) {
+    public static boolean isOneCharacterDiffAtMax(String s1, String s2) {
         boolean foundDiff = false;
         for (int i = 0; i < s1.length(); i++) {
             if (s1.charAt(i) != s2.charAt(i)) {
@@ -37,7 +37,7 @@ public class OneAway {
         return true;
     }
 
-    private static boolean checkForMaxOneInsertOrDeleteInS1(String s1, String s2) {
+    public static boolean checkForMaxOneInsertOrDeleteInS1(String s1, String s2) {
         int i = 0;
         int j = 0;
         int s1Len = s1.length();
