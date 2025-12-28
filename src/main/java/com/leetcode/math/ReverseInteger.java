@@ -38,7 +38,7 @@ public class ReverseInteger {
      * @param num an integer.
      * @return the reverse of {@code num}.
      */
-    private static int reverse(int num) {
+    public static int reverse(int num) {
         long reverse = 0;
         int pop;
 
