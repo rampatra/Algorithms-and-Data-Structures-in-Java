@@ -57,15 +57,57 @@ public class FirstCommonAncestor {
         }
     }
 
-    private static class TreeNode {
+ public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-
-        TreeNode(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
+        
+        public void setLeft(TreeNode left) {
+        	this.left = left;
+        }
+        public TreeNode getLeft() {
+        	return left;
+        }
+        
+        public void setRight(TreeNode right) {
+        	this.right = right;
+        }
+        
+        public TreeNode getRight() {
+        	return right;
+        }
+        public int getVal() {
+        	return val;
+        }
     }
+     
+     // addNode
+     public void addNode(TreeNode treeRoot) {
+    	 treeRoot.left = new TreeNode(5);
+         treeRoot.right = new TreeNode(8);
+         treeRoot.left.left = new TreeNode(1);
+         treeRoot.left.right = new TreeNode(3);
+         treeRoot.left.left.left = new TreeNode(0);
+         treeRoot.right.left = new TreeNode(2);
+         treeRoot.right.right = new TreeNode(9);
+         treeRoot.right.left.right = new TreeNode(7);
+    }
+    
+	// test
+	public void testCase(TreeNode treeRoot) {
+		System.out.println("FCA of 0 and 7 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.left.right).val);
+        	System.out.println("FCA of 0 and 9 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.right).val);
+        	System.out.println("FCA of 0 and 1 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.left.left).val);
+        	System.out.println("FCA of 1 and 2 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left).val);
+        	System.out.println("FCA of 1 and 7 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left.right).val);
+        	System.out.println("FCA of 4 and 7 is: " + findFCA(treeRoot, treeRoot, treeRoot.right.left.right).val);
+        	System.out.println("FCA of 5 and 2 is: " + findFCA(treeRoot, treeRoot.left, treeRoot.right.left).val);
+        	System.out.println("FCA of 7 and 9 is: " + findFCA(treeRoot, treeRoot.right.left.right, treeRoot.right.right).val);
+        	System.out.println("FCA of 7 and 10 is: " + findFCA(treeRoot, treeRoot.right.left.right, new TreeNode(10)).val); // this use case does not work with the above algorithm
+	}
 
     public static void main(String[] args) {
         /* 
@@ -80,24 +122,9 @@ public class FirstCommonAncestor {
               0        7 
               
          */
-        TreeNode treeRoot = new TreeNode(4);
-        treeRoot.left = new TreeNode(5);
-        treeRoot.right = new TreeNode(8);
-        treeRoot.left.left = new TreeNode(1);
-        treeRoot.left.right = new TreeNode(3);
-        treeRoot.left.left.left = new TreeNode(0);
-        treeRoot.right.left = new TreeNode(2);
-        treeRoot.right.right = new TreeNode(9);
-        treeRoot.right.left.right = new TreeNode(7);
-
-        System.out.println("FCA of 0 and 7 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.left.right).val);
-        System.out.println("FCA of 0 and 9 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.right.right).val);
-        System.out.println("FCA of 0 and 1 is: " + findFCA(treeRoot, treeRoot.left.left.left, treeRoot.left.left).val);
-        System.out.println("FCA of 1 and 2 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left).val);
-        System.out.println("FCA of 1 and 7 is: " + findFCA(treeRoot, treeRoot.left.left, treeRoot.right.left.right).val);
-        System.out.println("FCA of 4 and 7 is: " + findFCA(treeRoot, treeRoot, treeRoot.right.left.right).val);
-        System.out.println("FCA of 5 and 2 is: " + findFCA(treeRoot, treeRoot.left, treeRoot.right.left).val);
-        System.out.println("FCA of 7 and 9 is: " + findFCA(treeRoot, treeRoot.right.left.right, treeRoot.right.right).val);
-        System.out.println("FCA of 7 and 10 is: " + findFCA(treeRoot, treeRoot.right.left.right, new TreeNode(10)).val); // this use case does not work with the above algorithm
+    	FirstCommonAncestor fcancestor = new FirstCommonAncestor();
+	FirstCommonAncestor.TreeNode treeRoot = fcancestor.new TreeNode(4);
+	fcancestor.addNode(treeRoot);
+	fcancestor.testCase(treeRoot); 
     }
 }
