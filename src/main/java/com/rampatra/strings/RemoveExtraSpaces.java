@@ -49,7 +49,10 @@ public class RemoveExtraSpaces {
             }
         }
 
-        return String.valueOf(Arrays.copyOf(c, j));
+        String stringAfterRemove = String.valueOf(Arrays.copyOf(c, j));
+        //Remove Extra Space at the beginning and the end
+        String removeBegAndEnd = stringAfterRemove.trim();
+        return removeBegAndEnd;
     }
 
     public static void main(String[] args) {
