@@ -75,7 +75,7 @@ public class CelebrityProblem {
             }
         }
 
-        return firstPerson;
+        return possibleCelebrites.pop();
     }
 
     public static void main(String[] args) {
